@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="i0qOvQw64y7uPfXz6d7vEl" data-dm-ref="1"><head data-page-node-id="HwgVvaUdAJBgetxdOxk1Ic"><meta charset="utf-8" data-page-node-id="IG8wDyhEHCOZwIIW221HaD"><meta name="viewport" content="width=device-width,initial-scale=1" data-page-node-id="ZG0QascRfEXeeEYHD8J5ov"><title>智能体学员讲义[进阶班]</title><style>:root{--klein:#002FA7;--klein2:#1649c7;--ink:#172033;--muted:#667085;--line:#dfe6f3;--soft:#f4f8ff;--code:#eaf5ff;--canvas:#eef2f8}
+*{box-sizing:border-box}html,body{margin:0;height:100%;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans SC","Microsoft YaHei",Arial,sans-serif;color:var(--ink);background:var(--canvas)}
+.shell{height:100vh;display:grid;grid-template-columns:340px minmax(0,1fr)}
+.sidebar{height:100vh;background:linear-gradient(160deg,#001f75 0%,var(--klein) 56%,#104ac9 100%);color:#fff;padding:28px 20px 20px;overflow:hidden;display:flex;flex-direction:column;border-right:1px solid rgba(255,255,255,.15)}
+.brand{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.72);font-weight:700;margin-bottom:12px}.sidebar h1{font-size:22px;line-height:1.3;margin:0 0 20px;font-weight:750}
+.toc-sec{margin-top:9px}.toc-sec:first-child{margin-top:0}.toc-group{display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%;margin:0 0 4px;padding:6px 11px;border:0;border-radius:8px;background:rgba(255,255,255,.10);color:#fff;font-family:inherit;font-size:15px;font-weight:800;letter-spacing:.05em;text-align:left;cursor:pointer;transition:.16s ease}.toc-group:hover{background:rgba(255,255,255,.20)}.toc-group:focus-visible{outline:2px solid #9cc0ff;outline-offset:2px}.toc-caret{width:0;height:0;flex:none;border-left:5px solid transparent;border-right:5px solid transparent;border-top:6px solid rgba(255,255,255,.8);transition:transform .18s ease}.toc-toggle{display:flex;align-items:center;justify-content:center;width:26px;height:26px;flex:none;padding:0;border:0;border-radius:6px;background:transparent;cursor:pointer;transition:.16s ease}.toc-toggle:hover{background:rgba(255,255,255,.22)}.toc-toggle:focus-visible{outline:2px solid #9cc0ff;outline-offset:1px}.toc-sec.collapsed .toc-caret{transform:rotate(-90deg)}.toc-sec.collapsed .toc-items{display:none}.toc-items{display:flex;flex-direction:column;gap:2px}
+.toc{display:flex;flex-direction:column;gap:2px;min-height:0;overflow-y:auto;padding-right:4px;margin:0 -4px}
+.toc::-webkit-scrollbar{width:6px}.toc::-webkit-scrollbar-thumb{background:rgba(255,255,255,.25);border-radius:3px}
+.toc a{display:flex;align-items:flex-start;gap:10px;color:rgba(255,255,255,.82);text-decoration:none;font-size:14px;line-height:1.3;padding:5px 9px;border-radius:8px;transition:.16s ease;cursor:pointer}
+.toc a:hover,.toc a.active{background:rgba(255,255,255,.14);color:#fff}
+.toc-dot{width:6px;height:6px;border-radius:50%;background:#8cb5ff;margin-top:6px;flex:none}
+
+.side-foot{margin-top:auto;padding-top:16px;color:rgba(255,255,255,.55);font-size:12px}
+.reader{height:100vh;overflow-y:auto;scroll-behavior:smooth;padding:42px 48px 80px}
+.paper{width:min(960px,100%);margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:14px;padding:52px 64px;box-shadow:0 1px 2px rgba(16,24,40,.04),0 12px 32px rgba(25,45,90,.06)}
+.hero{padding-bottom:28px;margin-bottom:30px;border-bottom:2px solid var(--klein)}.eyebrow{font-size:13px;font-weight:700;color:var(--klein);letter-spacing:.12em;margin-bottom:10px}.hero h1{font-size:32px;line-height:1.25;margin:0;color:#0d1b3e}.hero p{color:var(--muted);margin:12px 0 0}
+h2{font-size:27px;line-height:1.3;margin:54px 0 22px;color:var(--klein);scroll-margin-top:28px;padding-bottom:10px;border-bottom:1px solid #cfdaf0}h3{font-size:20px;line-height:1.4;margin:34px 0 14px;color:#153b94;scroll-margin-top:28px}
+p{font-size:16px;line-height:1.78;margin:10px 0}.spacer{height:8px}.depth-1{margin-left:0}.depth-2{margin-left:24px}.depth-3{margin-left:48px}.depth-4{margin-left:72px}.depth-5{margin-left:96px}
+.numbered,.bullet{display:grid;font-size:16px;line-height:1.72;margin:7px 0}.numbered{grid-template-columns:34px 1fr}.bullet{grid-template-columns:20px 1fr}.numbered .marker{font-weight:700;color:var(--klein);font-variant-numeric:tabular-nums}.bullet>span{color:var(--klein);font-weight:900}.numbered.depth-1,.bullet.depth-1{margin-left:0}.numbered.depth-2,.bullet.depth-2{margin-left:24px}.numbered.depth-3,.bullet.depth-3{margin-left:48px}.numbered.depth-4,.bullet.depth-4{margin-left:72px}.numbered.depth-5,.bullet.depth-5{margin-left:96px}
+strong{font-weight:750;color:#111b32}a{color:var(--klein2)}.inline-code{font-family:Consolas,Menlo,monospace;background:#edf3ff;color:#07338c;padding:2px 5px;border-radius:5px;font-size:.92em}
+.code-card{position:relative;margin:16px 0 20px;border:1px solid #b9d9f3;background:var(--code);border-radius:10px;overflow:hidden}.code-top{height:38px;display:flex;align-items:center;justify-content:space-between;padding:0 10px 0 14px;border-bottom:1px solid #c7e0f5;color:#48647c;font:12px/1.2 Consolas,monospace}.copy-btn{min-width:58px;height:28px;border:1px solid #9bc6ea;border-radius:6px;background:#fff;color:var(--klein);font-size:12px;font-weight:700;cursor:pointer}.copy-btn:hover{background:#f7fbff}.copy-btn:focus-visible{outline:3px solid #75a5ff;outline-offset:2px}.code-card pre{margin:0;padding:16px 18px 18px;white-space:pre-wrap;overflow-wrap:anywhere;word-break:break-word;font:14px/1.65 Consolas,Menlo,"Noto Sans Mono CJK SC",monospace;color:#16324b}
+.action-card{position:relative;margin:16px 0 20px;border:1px solid #b9d9f3;background:var(--code);border-radius:10px;overflow:hidden;display:flex;align-items:stretch}.action-card .ac-body{flex:1;padding:14px 16px 14px 18px;min-width:0}.action-card .ac-title{font-size:15px;font-weight:750;color:#0b398f;line-height:1.45}.action-card .ac-desc{font-size:12.5px;color:#48647c;margin-top:4px;line-height:1.55}.action-card .ac-url{display:block;margin-top:8px;font:12px/1.5 Consolas,Menlo,monospace;color:#16324b;word-break:break-all;overflow-wrap:anywhere}.action-card .ac-action{display:flex;align-items:center;padding:0 16px;border-left:1px solid #c7e0f5;background:#f7fbff;min-width:140px}.action-card .ac-btn{display:inline-flex;align-items:center;gap:6px;height:38px;padding:0 18px;border:0;border-radius:8px;background:var(--klein);color:#fff;font-size:13px;font-weight:700;cursor:pointer;text-decoration:none;white-space:nowrap;letter-spacing:.5px}.action-card .ac-btn:hover{filter:brightness(1.08);box-shadow:0 2px 6px rgba(11,57,143,.18)}.action-card .ac-btn:focus-visible{outline:3px solid #75a5ff;outline-offset:2px}@media(max-width:800px){.action-card{flex-direction:column}.action-card .ac-action{border-left:0;border-top:1px solid #c7e0f5;padding:12px 16px}.action-card .ac-btn{width:100%;justify-content:center}}
+.table-wrap{overflow-x:auto;margin:18px 0 26px;border:1px solid var(--line);border-radius:10px}table{width:100%;border-collapse:collapse;min-width:620px}th,td{text-align:left;vertical-align:top;padding:13px 15px;border-bottom:1px solid var(--line);border-right:1px solid var(--line);font-size:14px;line-height:1.6}th{background:#edf3ff;color:#0b398f;font-weight:750}tr:last-child td{border-bottom:0}th:last-child,td:last-child{border-right:0}
+blockquote{margin:18px 0;padding:14px 18px;border-left:4px solid var(--klein);background:#f5f8ff;color:#35415c;line-height:1.7;border-radius:0 8px 8px 0}blockquote p{margin:6px 0}
+.page{display:none}.page.active{display:block}
+@media(max-width:800px){html,body{overflow:auto}.shell{display:block;height:auto}.sidebar{position:relative;width:100%;height:auto;min-height:0;padding:22px 20px}.sidebar h1{font-size:21px;margin-bottom:16px}.toc{display:grid;grid-template-columns:1fr;max-height:46vh;overflow-y:auto;padding-right:6px}.toc-sec{grid-column:1/-1}.toc-items{display:grid;grid-template-columns:1fr;gap:2px}.side-foot{display:none}.reader{height:auto;overflow:visible;padding:18px}.paper{padding:30px 22px;border-radius:10px}.hero h1{font-size:26px}h2{font-size:23px;margin-top:42px}.depth-4,.depth-5,.numbered.depth-4,.bullet.depth-4,.numbered.depth-5,.bullet.depth-5{margin-left:36px}}
+@media(prefers-reduced-motion:reduce){.reader{scroll-behavior:auto}*{transition:none!important}}</style><style id="__dm_no_drag_style__">* { -webkit-user-drag: none !important; }</style><style id="__dm_bindable_badge_style__">[data-sp-bindable="database"]{outline:1px dashed #0088ff;outline-offset:2px;border-radius:4px;}[data-sp-bindable="database"] *{pointer-events:none !important;transition:none !important;animation:none !important;}[data-sp-bindable="database"]{transition:none !important;animation:none !important;}</style></head><body data-page-node-id="moFLabDS0KdRBtqo7ZXL1Y" style=""><div class="shell" data-page-node-id="DKRMO4Nv6OedJ1FDNbVCMu"><aside class="sidebar" data-page-node-id="zf3JWvWkGCFwpDWPSSPi63"><div class="brand" data-page-node-id="RsDTo1pIXDkbV7r8pnPW7e">AI COURSE · HANDBOOK</div><h1 data-page-node-id="nEuFjEjKfh2CCqWHnuS7P1">智能体学员讲义[进阶班]</h1><nav class="toc" aria-label="页面目录" data-page-node-id="rQJLSKnXkABZhp5AxvfmXT">
+<div class="toc-sec" data-page-node-id="scnODU6PuEX12pi6FV2ZZU"><div class="toc-group">课前准备<button class="toc-toggle" type="button" aria-expanded="true" aria-label="折叠或展开「课前准备」"><span class="toc-caret" data-page-node-id="zlVSXLJ2eDOZbQQiGVBRRQ"></span></button></div>
+<div class="toc-items" data-page-node-id="UIzTyI6bf2WupATuXbD0Cr">
+<a href="#" data-page="download" data-page-node-id="7X0fuW2qfU0A4f5jbjYudJ" class="active"><span class="toc-dot" data-page-node-id="aTkClHsbqaURlK31I3Vr6G"></span><span data-page-node-id="VX7LwFZLA1vCuocEDlFA9d">课程参考资料</span></a>
+</div></div>
+<div class="toc-sec" data-page-node-id="HHMqkjfXSDl75rm7DPOVuQ"><div class="toc-group">课程案例<button class="toc-toggle" type="button" aria-expanded="true" aria-label="折叠或展开「课程案例」"><span class="toc-caret" data-page-node-id="sWu1HX6jgWcorzHYfwGfUE"></span></button></div>
+<div class="toc-items" data-page-node-id="yjI6AA9HwHpSF2C7bIvDlo">
+<a href="#" data-page="case-101" data-page-node-id="MOVhEXmo8HhZoqpSMRYOCI"><span class="toc-dot" data-page-node-id="a7iozqQLoJQMHEZyIDVMie"></span><span data-page-node-id="t8TbttnwFPp5MFyQl2wHb7">案例101：团队会议管理</span></a>
+<a href="#" data-page="case-102" data-page-node-id="1hRqOpTZmMjZR7uHZWFyzx"><span class="toc-dot" data-page-node-id="u1TxABuYQGhfEJqBg3Mw7E"></span><span data-page-node-id="5QkwT5UWCT6DQpn3C8nZZJ">案例102：生产异常日报自动汇总</span></a>
+<a href="#" data-page="case-103" data-page-node-id="K2F4VDOvY3z9lSJMDTKdky"><span class="toc-dot" data-page-node-id="METh2BmvhzK3M7kMJuwPR6"></span><span data-page-node-id="wMhqHZxUnLQkNXKfb4eINy">案例103：招聘简历批量筛选与评分</span></a>
+<a href="#" data-page="case-201" data-page-node-id="UvT5cb27iDJXwyuZdiY6Ak"><span class="toc-dot" data-page-node-id="pGk7fEGlf3Tw0VpmCQcUAY"></span><span data-page-node-id="AhkbeP1xcO65isaBBqynHG">案例201：费用报销审核（2 个演示）</span></a>
+<a href="#" data-page="case-202" data-page-node-id="qwFbXKnQE5ubNGf8JDgGzP" class=""><span class="toc-dot" data-page-node-id="QuSZohLFKKbta3BKL9KVML"></span><span data-page-node-id="BLijDeJ22ifxVAnu67quBH" style="">案例202：采购与供应商管理（4 个演示）​</span></a>
+<a href="#" data-page="case-301" data-page-node-id="mBDkR1ySsYMGv9uqjYFmWR"><span class="toc-dot" data-page-node-id="ITQNxk2lSWpFaqrZuORBja"></span><span data-page-node-id="GZVchYQ9EUzhn3FaOOqpEM">案例301：员工制度问答助手</span></a>
+<a href="#" data-page="case-302" data-page-node-id="LN0ZJb4zvKvTq69KiYZHY1"><span class="toc-dot" data-page-node-id="vZszZLkQ3HdyJRBXXCvOaf"></span><span data-page-node-id="PmTvEIFOvvY3epGc6ANnX9" style="">案例302：员工教练​</span></a>
+<a href="#" data-page="case-303" data-page-node-id="fICFhmVqyAByJfoxKy7NZX"><span class="toc-dot" data-page-node-id="g0wE7EQHyuweu6fvtsW3W6"></span><span data-page-node-id="qviSGtCfN6A44qyTyh2sbw">案例303：车辆预约登记系统</span></a>
+<a href="#" data-page="case-304" data-page-node-id="TNBmksT3tRZ9akaWKmBCOV"><span class="toc-dot" data-page-node-id="lQtCWtV4bASxAORijz4CPU"></span><span data-page-node-id="DT7Y7yDyv5rOKoCPyGozOy">案例304：企业官网设计</span></a>
+<a href="#" data-page="case-401" data-page-node-id="TGuACBIwvdfEJHkxOOFp2n"><span class="toc-dot" data-page-node-id="iPFIWr0UVaDxC2uDoyhVN7"></span><span data-page-node-id="CkmoXapxusCUwXGD3xkeja">案例401：绩效评估与薪酬核算辅助</span></a>
+<a href="#" data-page="case-403" data-page-node-id="5Y8DDwqj8AatGtG4qBZ60N"><span class="toc-dot" data-page-node-id="jbciSnEqJPOlAdDMkGocGo"></span><span data-page-node-id="ZIaTXogACUB5sK4fTn0BMt" style="">案例403：设备巡检分析及周报​</span></a>
+<a href="#" data-page="case-404" data-page-node-id="TySdUi2gZ3p6rFzrkaAk2J"><span class="toc-dot" data-page-node-id="sd3Q839fT9jVshYhcRrGAN"></span><span data-page-node-id="3TC37xOAt32coxTmzxBDOR">案例404：现金流预测与资金缺口看板</span></a>
+<a href="#" data-page="case-405" data-page-node-id="KPeasbVbgvEWBunw2V6k4p"><span class="toc-dot" data-page-node-id="DiO5dlnxOWyTuhhsrHsB3E"></span><span data-page-node-id="nyrJKuCxP8nng3qnHlFuET">案例405：财务报表体检与经营周报</span></a>
+<a href="#" data-page="case-406" data-page-node-id="AKp9CClq49VUsjRC6pCVm1"><span class="toc-dot" data-page-node-id="FZRpCvDMpAfspmDYuQDIic"></span><span data-page-node-id="FhP6znlQgnfBacYOuC5iOY">案例406：应收账款逾期风险看板</span></a>
+</div></div>
+<div class="toc-sec"><div class="toc-group">实操练习<button class="toc-toggle" type="button" aria-expanded="true" aria-label="折叠或展开「实操练习」"><span class="toc-caret"></span></button></div>
+<div class="toc-items">
+<a href="#" data-page="ex-01"><span class="toc-dot"></span><span>实操一：用 AI 改造一次团队会议</span></a>
+<a href="#" data-page="ex-02"><span class="toc-dot"></span><span>实操二：简历筛选与面试准备</span></a>
+<a href="#" data-page="ex-03"><span class="toc-dot"></span><span>实操三：改造一个工作流</span></a>
+<a href="#" data-page="ex-04"><span class="toc-dot"></span><span>实操四：设计一个岗位教练</span></a>
+<a href="#" data-page="ex-05"><span class="toc-dot"></span><span>实操五：开发一个公司网站</span></a>
+<a href="#" data-page="ex-06"><span class="toc-dot"></span><span>实操六：做一个公司数据看板</span></a>
+<a href="#" data-page="ex-07"><span class="toc-dot"></span><span>实操七：开发一个小应用</span></a>
+<a href="#" data-page="ex-08"><span class="toc-dot"></span><span>实操八：搭建持续使用的数字员工</span></a>
+</div></div>
+</nav><div class="side-foot" data-page-node-id="huzBCYr2f9z3Yx4qyLiF9j" style="white-space: pre-wrap; cursor: text;">智能体讲义[进阶班] · V1.2.0915​</div></aside><main class="reader" data-page-node-id="wucsrVEPHFO4TEzfHdOJ4M"><section class="page active" id="page-download" data-page-node-id="0HqT5lK5AekHbP0W5WeiJ0"><article class="paper" data-page-node-id="dFf1wjYdnvM5sURwVrLvp7"><header class="hero" data-page-node-id="nQ1BjFI2wS71qSJhWIDR8H"><div class="eyebrow" data-page-node-id="rAjUcL1jOW3JpnQJbUfIga">智能体实战班</div><h1 data-page-node-id="D5PYgEoGAD1cNIlLu0FTtB">课程参考资料</h1><p data-page-node-id="32qUEMNI8eoWXxoWNOSCT9" style="">课程演示资料下载入口​</p></header><div class="spacer" aria-hidden="true" data-page-node-id="70eTgK3PfdocMBVw7auyWD"></div><div class="spacer" aria-hidden="true" data-page-node-id="OmEfSUymWCDdFFwXWzRQHj"></div><p data-page-node-id="3OA5kLo4t7KAKMfoHDdqNF">本次课程演示与练习所用的示例资料已整理，点击下方地址按需下载：</p>
+
+<h3 data-page-node-id="kbVGnrc8Sw300mJM3h6dRY">课程演示案例资料下载</h3>
+<div class="action-card" data-page-node-id="QSfFa3vHpq3mVIQfMmw2ax"><div class="ac-body" data-page-node-id="xjuKP92IyJLYTfj1QNY6Rb"><div class="ac-title" data-page-node-id="d39GXHC5GyNOKFYYOWVYTp">课程演示案例资料包</div><div class="ac-desc" data-page-node-id="FI9D5Kzs3RyF4xtEck6EsF">本次课程演示与练习所用的示例资料；点击右侧按钮直接下载。</div><span class="ac-url" data-page-node-id="CwywPV5F3SLJsATM6iO8Mc" style="">https://file.xiangbo.net/demo-data-0915.zip</span></div><div class="ac-action" data-page-node-id="bmJ6KIetFLeGUcrlGnRSYZ"><a class="ac-btn" href="https://file.xiangbo.net/demo-data-0915.zip" target="_blank" rel="noopener" data-page-node-id="AEMsA3RrR7cCSIEd9Bq5QY">⬇ 下载 demo-data-0915.zip</a></div></div>
+
+</article></section>
+<section class="page" id="page-case-101" data-page-node-id="aAQggAm5uper7NkPnomeHn"><article class="paper" data-page-node-id="TcA91GHwSczt3vnWBPpsZa"><header class="hero" data-page-node-id="PtL3fDfp2Hc85BtimeQPZ6"><div class="eyebrow" data-page-node-id="wEi6dTlkFjETezM3PDZQkA">模块一 · 单点提效</div><h1 data-page-node-id="udr4QEEpktHpCb7UJNxX2G">案例101｜团队会议管理</h1></header><h2 data-page-node-id="crc2bWkDauDEfaU50E0vVC">使用说明</h2><div class="numbered depth-1" data-page-node-id="z3SFjm02mIPPInnvNl9xO9"><span class="marker" data-page-node-id="1tdxa7q3wd6ATYnj6Mh1DA">1.</span><div data-page-node-id="1HdXGsSea3wO4PyPdWSg1Z">本案例把「团队会议管理」拆成 <strong data-page-node-id="VJcA83AIsuHLQDBQCEridt">6 个步骤</strong>（步骤 0 环境准备 → 步骤 5 企业微信通知）；每步给出<strong data-page-node-id="9rkY2GswdMAFADFZvkzxuD">可直接复制</strong>的提示词（置于代码块内）。</div></div>
+<div class="numbered depth-1" data-page-node-id="lgM5e1yGxzRQ5GK4Yvicvb"><span class="marker" data-page-node-id="961xB7lJAw1AO3pNO0XSFU">2.</span><div data-page-node-id="kzfx6aakBpbXfWFqbNs28M">按顺序逐段复制执行；每步先读「业务目标」，再把该步代码块中的提示词整体复制到 WorkBuddy 会话中运行，<strong data-page-node-id="1QQksHDb0d6QFEn6HhSgdo">上一步产物核对无误后再进入下一步</strong>。</div></div>
+<div class="numbered depth-1" data-page-node-id="Z3r0PIznbn8MBIq5WwWpa2"><span class="marker" data-page-node-id="AcHMyFj8kbuwZXyuTjriMP">3.</span><div data-page-node-id="vXEZpLgSJMGI3zrbkBfzlG">材料与模板已就位：<code class="inline-code" data-page-node-id="Ta0vfJdCpR4kzeNbczTX6W">01-input/</code> 放会议通知、上次会议纪要、项目资料、录音转写；<code class="inline-code" data-page-node-id="LMBlIxSblWfqf22UZH1ceK">02-working/</code> 放会议纪要模板与《企业微信通知权限开通指引》；产物统一存 <code class="inline-code" data-page-node-id="wnb6wkqEx7qS7AS6W1YLF5">03-output/</code>，行动台账存 <code class="inline-code" data-page-node-id="UCpxcrSUoasSBTWInQGThz">04-archive/会议行动台账.xlsx</code>。</div></div>
+<div class="numbered depth-1" data-page-node-id="j1vtw4W7DYxe2Z2EXg2BYQ"><span class="marker" data-page-node-id="o9elh3pSBAwxnnf0KcAf4f">4.</span><div data-page-node-id="or1BMvHVnNGzHUuxcEQMDW">步骤 3 需要会议录音（可直接上传，也可指定本地文件夹由 AI 读取）；步骤 5 需要 WorkBuddy 已连接并授权企业微信「消息」权限。</div></div>
+<div class="numbered depth-1" data-page-node-id="irRamzLYMZSWeTGs3pTpUH"><span class="marker" data-page-node-id="XFQCeww3yWOni93dcXXmyQ">5.</span><div data-page-node-id="kvVpZemLDLro2qD0SDlOt7">人工确认红线：会议结论与行动项（负责人、截止时间、验收标准）必须确认后才写入台账；企业微信通知<strong data-page-node-id="LPQfCXsK7ks4KdIrWf0sUB">展示并确认「发送」后</strong>才实际发出。</div></div><div class="spacer" aria-hidden="true" data-page-node-id="iQiMoLKBDzaskzqzag9dUw"></div><h2 data-page-node-id="L7Wn4kBUr8CozFU7qD0ob0">步骤 0｜环境与准备</h2><p data-page-node-id="Nm1N5bx4Zt2hocNs1CL254"><strong data-page-node-id="MWDrev5S0lwN2S5WkyP4io">业务目标</strong>：确认案例运行环境就绪，避免执行到一半才发现缺连接器、缺资料。</p><div class="code-card" data-page-node-id="oMNyHZspTyqzgGDxjELZcl"><div class="code-top" data-page-node-id="AZnEc56ZNAZ2E0hI0VUwc4"><span data-page-node-id="jDZbsCchSScUB2Dj01508Y">plain text</span><button class="copy-btn" type="button" aria-label="复制代码" data-page-node-id="4uS9XAGFljbqcDgZy5nq1N">复制</button></div><pre data-page-node-id="8FrfU2L49SikK3KUrvxoFF"><code data-page-node-id="YC0w2hxrVkb1BG6YxIMgWq">在开始会议管理流程前，请先做环境自检并逐项确认：
+1. 工作空间目录是否包含 01-input（会议资料）、02-working（模板）、03-output（产物）、04-archive（历史台账与示例）四个目录；
+2. 企业微信连接器是否已连接并授权「消息」权限（可查看 02-working/企业微信通知权限开通指引.md）；
+3. 01-input 中是否已有本次会议资料（会议通知、上次会议纪要、项目资料、录音转写等）。
+检查完成后，逐项汇报结果；如有缺失，先补齐再进入步骤 1。</code></pre></div><div class="spacer" aria-hidden="true" data-page-node-id="0owSXchApVyVAOIC3cQRA0"></div><h2 data-page-node-id="SlKwIVlsBcAlnCADtUtJJz">步骤 1｜会前资料整理与议题确认</h2><p data-page-node-id="PZ66chYUoLhBGXaWXXpZ4o"><strong data-page-node-id="NGjzK0nNN5pt7AOGOEDIoi">业务目标</strong>：读取 <code class="inline-code" data-page-node-id="JcWAwsWeZPEEHLmtRLiHGS">01-input</code> 全部资料，总结上次会议纪要、列出本次会议议题，并核对「议题 ↔ 参考资料」是否一一对应；若没有议题或资料，则请用户输入会议议题并上传资料。本步产出「会前资料清单 + 优先讨论问题 + 上次跟进事项进度」，<strong data-page-node-id="pV2QgFTMZWYiSJAVstuBFD">与用户确认议题后</strong>才进入下一步。</p><div class="code-card" data-page-node-id="DykNRqWHOT7fIustCarozO"><div class="code-top" data-page-node-id="h8CFVxheLbCdY0z5WiKnH1"><span data-page-node-id="leAgdjx04CR8BvfNv4eQCX">plain text</span><button class="copy-btn" type="button" aria-label="复制代码" data-page-node-id="14ve22UeqQ5wlhAtLujuWe">复制</button></div><pre data-page-node-id="8dd7AxDUwzNcmw4izEdCx4"><code data-page-node-id="pRkbbrA1bWSozNyKzWxo5J">你是制造企业的会议运营助理。本步骤目标：完成会前资料整理与议题确认。只做会前整理，不生成会议纪要，不补造事实。
+
+一、明确任务目标
+读取 01-input/ 目录下全部资料（会议通知、上次会议纪要、项目资料文件夹、公司档案等），完成三件事：
+1) 总结上次会议纪要要点（结论、行动项及状态）；
+2) 从会议通知中列出本次会议议题；
+3) 检查每个议题是否有对应的参考资料，形成一一对应关系。
+
+二、阅读输入材料
+- 上次会议纪要.docx：提取上次会议结论、行动项编号/负责人/截止时间/状态/结果备注；
+- 会议通知.docx（会议通知-主题-日期）：提取本次议题、负责人、预计时长、需准备资料、目标输出及会议要求；
+- 项目资料文件夹/：按议题归类（如交付计划、质量异常、客户变更等），标注每份资料支撑哪个议题；
+- 公司档案.docx：了解参会岗位与职责，便于后续分工判断。
+
+三、反问补缺（如有缺口先提问，不要猜）
+- 若存在「有议题无资料」或「资料明显不完整」（如客户书面样稿未取得），逐条列出缺口，并询问用户是否需要补充上传；
+- 若完全没有会议议题或资料，请直接请用户输入本次会议议题并上传相关会议资料，收到后再继续；
+- 本次确认前不进入下一步。
+
+四、处理框架
+1. 输出「会前资料清单」表格：资料名称 / 对应议题 / 提供人或来源 / 是否齐全 / 缺失或待确认内容 / 建议会前补齐动作；
+2. 单独列出「本次会议必须优先讨论的 3 个问题」，判断依据只能来自已提供资料；
+3. 汇总「上次会议跟进事项进度」：原编号 / 原负责人 / 原截止时间 / 当前状态 / 已有或缺失证据 / 本次处理建议，供步骤 2 使用。
+
+五、生成备选方案
+对每一处资料缺口，给出至少两种处理建议（例如：会前补齐资料 / 会上口头澄清并会后补证据 / 调整议题范围），并标注推荐方案。
+
+六、对产物进行质检
+自查：议题是否与资料一一对应；是否遗漏上次未完成行动项；3 个优先问题是否有资料依据；是否出现资料之外的臆测内容；表格是否可直接阅读。
+
+七、输出与确认
+将「会前资料清单 + 优先讨论问题 + 上次跟进事项进度」展示给用户，请用户确认本次会议议题无误后，再进入步骤 2。
+最后请询问用户：是否需要将本次「会前资料整理」流程沉淀为可复用的方法或模板？</code></pre></div><div class="spacer" aria-hidden="true" data-page-node-id="Q8EdwhRpti9BWSqTDDXi7S"></div><h2 data-page-node-id="GkOcEYllprRcxjHhmm5sfS">步骤 2｜生成会议议题讨论稿</h2><p data-page-node-id="q5DwRddHXv3ptzzKxmeD43"><strong data-page-node-id="CRACRxdyOrMW9RErDnISwg">业务目标</strong>：基于步骤 1 已确认的议题与资料，生成「会议议题讨论稿」，作为会上讨论与拍板的依据。讨论稿<strong data-page-node-id="XPYAijFN7rd8Dw5ENrZiuO">第一部分 = 上次会议跟进事项进度更新</strong>（含资料中涉及的上次跟进事项，同步并入当前议题）；<strong data-page-node-id="dwHeo8Gaufr2ZVStIqhBGr">第二部分 = 按议题逐一列出议题、背景事实、待澄清事实、需要讨论的问题</strong>。</p><div class="code-card" data-page-node-id="98leZNvX82kYlqtTnHZm8r"><div class="code-top" data-page-node-id="NpmwqA2GG18QNrC3FiXN7b"><span data-page-node-id="tnf8Cu7RYl50LDTuGxssdT">plain text</span><button class="copy-btn" type="button" aria-label="复制代码" data-page-node-id="fDBtHyLOEUjeUir1zJiuWV">复制</button></div><pre data-page-node-id="pvydmwL0RLNKj0xwZ3AIPt"><code data-page-node-id="CTHFqfRbBLiYXOe6Ny2WOT">你是制造企业的会议运营助理。本步骤目标：生成一份「会议议题讨论稿」文件，供会议主持与讨论使用。
+
+一、明确任务目标
+生成文件：03-output/会议议题讨论稿-&lt;会议主题&gt;-&lt;日期&gt;.docx（例如：会议议题讨论稿-生产与交付周例会-2026-08-20.docx）。结构固定为两部分：
+- 第一部分：上次会议跟进事项进度更新（放讨论稿最前）；
+- 第二部分：本次议题讨论稿（按议题逐一展开）。
+
+二、阅读输入材料
+- 步骤 1 已读取并确认的 01-input 全部资料与「会前资料清单」；
+- 步骤 1 用户补充上传的新资料（如有）；
+- 上次会议纪要中的行动项与进度核对结果。
+
+三、反问补缺
+- 若资料不足以支撑某议题（缺关键数据、书面凭证等），在「待澄清事实」中列明，并标注「会前需向用户确认」的问题，不自行猜测；
+- 若用户在上一步补充了资料，先纳入阅读范围再生成。
+
+四、处理框架
+1. 第一部分（上次跟进事项进度更新）：逐条列示上次行动项：原编号 / 行动项 / 负责人 / 原截止时间 / 当前状态（已完成、进行中、未完成）/ 已有证据 / 本次处理建议（关闭、继续跟进、升级、转为新行动项）。该部分必须放在讨论稿最前；
+2. 第二部分（议题讨论稿）：按议题逐一组织，每个议题包含四要素：
+   - 议题名称（附提出人、优先级）；
+   - 背景事实（只能来自资料，写清时间、数量、责任人等可核验事实）；
+   - 待澄清事实（列出缺口与需要补齐的证据）；
+   - 需要讨论的问题（3-5 个，动词开头、可当场回答、不含模糊表述）；
+3. 若资料中涉及上次跟进事项，将其同步并入对应议题的讨论部分，避免重复列示。
+
+五、生成备选方案
+对每个「待澄清事实」，给出 1-2 种会前或会上处理方案（例如：会上直接拍板 / 会后补充证据再定），供主持人在会上选择。
+
+六、对产物进行质检
+自查：第一部分是否覆盖全部上次行动项；每个议题是否具备「背景-待澄清-讨论问题」三段；是否出现「尽快、持续跟进、视情况」等模糊表述；讨论稿中是否有资料之外的臆测内容；命名是否符合「会议议题讨论稿-主题-日期」。
+
+七、输出与确认
+将讨论稿保存到 03-output/ 并在对话中展示要点，请用户核对；确认后进入下一步。
+最后请询问用户：是否需要将「议题讨论稿」的生成结构沉淀为可复用模板？</code></pre></div><div class="spacer" aria-hidden="true" data-page-node-id="rFZz3JZ8OXHGLEAT4QeeIp"></div><h2 data-page-node-id="AHIaFtXrdD4qvUeehsO9CR">步骤 3｜会议录音与转写</h2><p data-page-node-id="uAYdgpgjJgLKk7f8ppHRYi"><strong data-page-node-id="HfRSs5BHm3KnfLG0JWzoXG">业务目标</strong>：完成会议录音的获取与文字转写，为生成会议纪要准备文本素材。支持两种输入方式：<strong data-page-node-id="9xbzViIqR9xuvauP7ahCjg">手工上传录音文件</strong>，或<strong data-page-node-id="bUti1mmovEZnoAOuW33Vaw">指定本地文件夹中的录音文件</strong>。</p><div class="code-card" data-page-node-id="HCEErwZNeGYth77TkXkb0n"><div class="code-top" data-page-node-id="R3Vwg95YNetjHECBUfa3Ht"><span data-page-node-id="gNyFGjSdslMgEPT7J9VBoJ">plain text</span><button class="copy-btn" type="button" aria-label="复制代码" data-page-node-id="M4I0GP4rUc9kAvzNn97lLQ">复制</button></div><pre data-page-node-id="JV9WVDodVFHbiRRHOGiYeZ"><code data-page-node-id="1GhrmqC56Gr4W9x4NRRWJx">你是制造企业的会议运营助理。本步骤目标：获取本次会议录音并转写为文字稿，为生成会议纪要准备文本素材。
+
+一、明确任务目标
+获取会议录音并转写为文字稿，保存为 03-output/会议录音转写-&lt;会议主题&gt;-&lt;日期&gt;.txt（例如：会议录音转写-生产与交付周例会-2026-08-20.txt）。
+
+二、输入方式（二选一，请用户明确选择）
+1. 手工上传：请用户直接上传录音文件（mp3 / m4a / wav 等）；
+2. 指定本地文件夹：请用户告知本地录音文件路径（例如 01-input/ 或 01-input/项目资料文件夹/ 或其他指定目录），由我读取该文件。
+
+三、反问补缺
+- 若录音无法获取或当前环境不具备转写能力，请明确告知用户，并请用户直接提供转写文本或使用其他转写工具生成后上传；
+- 若录音包含多段或多位发言人，按发言顺序保留段落结构；能识别发言人则标注，不能识别则标注「发言人未识别」；
+- 转写中不要修正原话、不要补全内容，保留原始表述。
+
+四、处理框架
+1. 获取录音文件后调用转写能力生成文字稿；如无转写能力，请给出替代方案并请用户提供转写文本；
+2. 按时间顺序整理转写稿，保留关键时间点与承诺语句（负责人、截止时间、验收标准）；
+3. 将转写稿保存至 03-output/，并按「会议录音转写-主题-日期」命名。
+
+五、生成备选方案
+若转写质量不佳或存在缺失段落，提供备选：A. 基于现有转写文本继续（在纪要中标注缺漏）；B. 请用户补充缺失片段后再继续。
+
+六、对产物进行质检
+自查：转写稿是否完整覆盖录音内容；关键承诺、负责人、截止时间是否保留原文表述，未被擅自修正或润色。
+
+七、输出与确认
+展示转写稿全文或摘要，请用户确认无重大遗漏；确认后进入下一步。
+最后请询问用户：是否需要将「会议录音转写」操作流程沉淀为可复用指引？</code></pre></div><div class="spacer" aria-hidden="true" data-page-node-id="SIJJsotpwZmHQEQh2bhiwn"></div><h2 data-page-node-id="9BRefukDvDDrVjuLC7zDtr">步骤 4｜生成会议纪要并同步行动台账</h2><p data-page-node-id="TxsaDOse0yCv66LUzZ5EBY"><strong data-page-node-id="zBUkLIpYnVFyk5gxOn0ltY">业务目标</strong>：基于录音转写文本 + 用户补充资料生成会议纪要（参考 <code class="inline-code" data-page-node-id="FIsI3R2HY1JDO5mKvao28e">02-working/会议纪要模板.docx</code>，无模板则先生成模板），输出到 <code class="inline-code" data-page-node-id="7sJ6IyLVzsVB3A5Ugv0Zuv">03-output/会议纪要-主题-日期.docx</code>；随后<strong data-page-node-id="F1Pl5NScmjRv4UDnVEHTkY">同步更新行动台账</strong>（<code class="inline-code" data-page-node-id="Z5H9qb7rriJoAsJUraeOQH">04-archive/会议行动台账.xlsx</code>：写入新任务、更新原有任务状态），实现「纪要 → 台账」闭环。</p><div class="code-card" data-page-node-id="Gq4Rxp49bpL6Q8qGHaWzOL"><div class="code-top" data-page-node-id="3pBPMesy3KZXedMdtVtmDr"><span data-page-node-id="x3E9BBsbEKy4dzJLUYl4iw">plain text</span><button class="copy-btn" type="button" aria-label="复制代码" data-page-node-id="HAuSlfjPh4yBRo2GyOxVka">复制</button></div><pre data-page-node-id="foXpR4faLe8B9vqk2zwls7"><code data-page-node-id="9XDBpZukGw7TR3WFkC43IJ">你是制造企业的会议运营助理。本步骤目标：生成会议纪要，并完成「纪要 → 行动台账」的同步闭环。
+
+一、明确任务目标
+1. 生成会议纪要：03-output/会议纪要-&lt;会议主题&gt;-&lt;日期&gt;.docx（命名格式：会议纪要-主题-日期）；
+2. 同步更新行动台账：04-archive/会议行动台账.xlsx（写入本次新任务、更新原有任务跟进状态，保留历史记录不删除）。
+
+二、阅读输入材料
+- 会议录音转写（步骤 3 产物）；
+- 上次会议纪要、步骤 2 的会议议题讨论稿（含上次跟进事项进度）；
+- 用户补充提供的其他资料（如有）；
+- 会议纪要模板：02-working/会议纪要模板.docx；若模板不存在，先按标准结构生成模板再使用。
+
+三、反问补缺
+- 转写或资料中未明确的信息（负责人、截止时间、验收标准缺失）一律写入「待确认问题」，不自行补写；
+- 如需用户确认的事项较多，先列出待确认清单，不阻塞整体生成。
+
+四、处理框架
+1. 生成纪要，参考模板结构：会议基本信息 / 会议结论 / 已确认决议 / 上次行动项核对 / 本次行动项 / 待确认问题 / 下次会议核对事项；
+2. 行动项规则：每条包含编号（A-YYYYMMDD-NN）、动词开头的行动项、唯一直接负责人（协作人写入备注）、截止时间、可核验的验收标准、状态；不允许「尽快、持续跟进、视情况」等模糊表述；没有明确时间写「待确认」；
+3. 更新台账：将本次新行动项写入「行动项台账」工作表；对上次行动项更新状态（已完成 / 进行中 / 受阻 / 已关闭），保留历史记录；如有需要同步「跟进节奏」工作表。
+
+五、生成备选方案
+若台账与纪要行动项存在冲突（例如某行动项在会中被取消或合并），提供两种处理：A. 以纪要为准更新台账；B. 保留台账原记录并在备注标注变更原因。请用户选择。
+
+六、对产物进行质检
+自查：纪要是否覆盖全部会议结论与行动项；行动项字段是否完整（负责人 / 截止 / 验收 / 状态）；台账与纪要是否一致（新增条数、状态更新）；纪要命名是否符合「会议纪要-主题-日期」。
+
+七、输出与确认
+展示纪要要点与台账更新摘要，请用户核对；确认后进入下一步。
+最后请询问用户：是否需要将「纪要 → 台账」同步流程沉淀为可复用脚本或方法？</code></pre></div><div class="spacer" aria-hidden="true" data-page-node-id="CxBlzv3uqrVWAybNqjYLGx"></div><h2 data-page-node-id="oO46rPAoo81jm2xO47njst">步骤 5｜提取纪要要点并通过企业微信通知</h2><p data-page-node-id="Md10dTSvHwBiruaC36eXdD"><strong data-page-node-id="mfl8LzWZ6XcuE7H2wzSMEH">业务目标</strong>：从会议纪要中提取<strong data-page-node-id="bF8vwsrp1BruRj7R0OyuAL">要点（结论、决议、待确认问题）与待办事项（行动项）</strong>，生成纯文本通知，展示核对后通过已授权企业微信连接器发送给用户（默认发送到「我与机器人的最近会话」）。</p><div class="code-card" data-page-node-id="EBrkZSiPEE0ocOObmsZiPV"><div class="code-top" data-page-node-id="fI22S984jXD1RJy06S60Kg"><span data-page-node-id="TXGghiFrgsjiDwlfn3PVZk">plain text</span><button class="copy-btn" type="button" aria-label="复制代码" data-page-node-id="D9kEYNLFxDD51tAeLS669S">复制</button></div><pre data-page-node-id="ZydghgaldYX0vGELXpfvoj"><code data-page-node-id="hAWOb8bvHj8F5MLwL9NRQO">你是制造企业的会议运营助理。本步骤目标：提取会议纪要要点与待办事项，并通过企业微信通知用户。
+
+一、明确任务目标
+1. 从会议纪要中提取要点（会议结论、已确认决议、待确认问题）与待办事项（行动项清单）；
+2. 生成通知文案，经用户确认后通过已授权企业微信连接器发送。
+
+二、阅读输入材料
+- 步骤 4 生成的会议纪要（03-output/会议纪要-&lt;会议主题&gt;-&lt;日期&gt;.docx）；
+- 行动台账（04-archive/会议行动台账.xlsx）作为待办清单来源。
+
+三、反问补缺
+- 若纪要中行动项字段不全（缺负责人、截止时间、验收标准），先向用户确认补齐，不默认填充；
+- 发送对象默认是「我与机器人的最近会话」；如需发给其他人，请用户明确接收人。
+
+四、处理框架
+1. 提取要点：会议结论、已确认决议、待确认问题（简明列出，不含敏感信息）；
+2. 提取待办：按负责人归组，生成纯文本提醒，每条包含：会议名称 / 行动项 / 截止日期与时间 / 验收标准 / 风险或升级条件 / 请负责人回复验收凭证；如受阻，回复原因、补救动作和新的明确完成时间；
+3. 发送前检查：原样展示将发送的纯文本内容；确认不含 HTML 标签、颜色标签、薪酬、人事或未公开财务信息；仅待用户确认「发送」后执行实际发送；
+4. 发送：使用已连接并已授权「消息」权限的企业微信连接器发送到「我与机器人的最近会话」；成功后返回发送时间、接收会话与发送结果；失败时重试一次，仍失败则保存 03-output/企业微信通知草稿.txt 并提示人工转发。
+
+五、生成备选方案
+若用户不希望自动发送，提供：A. 仅生成文案供用户自行转发；B. 自动发送到最近会话。由用户选择。
+
+六、对产物进行质检
+自查：通知内容是否与纪要一致；是否包含敏感信息；每条待办是否含负责人、截止时间、验收标准；发送结果是否如实反馈。
+
+七、输出与确认
+展示发送结果（或草稿位置），请用户确认本步骤完成。最后请询问用户：是否需要将整套「团队会议管理」流程（会前整理 → 讨论稿 → 录音转写 → 纪要/台账 → 企业微信通知）沉淀为可复用的 Skill 或模板？</code></pre></div><div class="spacer" aria-hidden="true" data-page-node-id="Tnnns8QJ9FA6TYQm82HDss"></div></article></section>
+<section class="page" id="page-case-102" data-page-node-id="9scRmrdVszySXgPQI2Ey21"><article class="paper" data-page-node-id="tkrc0mDBAH5G0JQbeYzEbf"><header class="hero" data-page-node-id="NW44VzeNMDZWlv9vw17BEX"><div class="eyebrow" data-page-node-id="3FX4VH1RN5HXmAaucxiZ6C">模块一 · 单点提效</div><h1 data-page-node-id="Teq8iFVm9QogOPijDyg7IN">案例102｜生产异常日报自动汇总</h1></header><h2 data-page-node-id="JYwu4P1UoGUs5a2tSlNQYt">使用说明</h2><div class="numbered depth-1" data-page-node-id="awRqyEBxu39Y72IjnU5qVp"><span class="marker" data-page-node-id="qAWbgQuplYkecs1padIHlA">1.</span><div data-page-node-id="zmV5FL00pVjF7yu6hxTJdE">本案例把「生产异常日报自动汇总」封装为<strong data-page-node-id="Ap74vxLVNdCwIlHZumpx4r">一条完整的工作流</strong>（读材料 → 提取异常 → 分类关联定级 → 出日报与台账 → 企业微信通知），下方代码块内为完整提示词。</div></div>
+<div class="numbered depth-1" data-page-node-id="jwomOcJ0iR80hTGHTmdIu2"><span class="marker" data-page-node-id="ABzPWreyfwwBCcPDivcuNj">2.</span><div data-page-node-id="rLrXLSBQgHD4LX8gpGqOBY">把提示词<strong data-page-node-id="vDwSyeK7n4H6gs6J7yVcpr">整体复制</strong>到 WorkBuddy 新建任务中运行；AI 会按内部第 1→6 步顺序执行，每步完成后核对无误再往下。</div></div>
+<div class="numbered depth-1" data-page-node-id="b9AH7nmalv1ziuPDuPYstJ"><span class="marker" data-page-node-id="2Mp9udmz2nf00TFrP5m28f">3.</span><div data-page-node-id="2ygd89IehhabDW38ls6Onq">材料与工具已就位：<code class="inline-code" data-page-node-id="7PCJpFwRWgPyqNK1RtBBuN">01-input/</code> 内含 5 份标准材料（班组日报、车间微信群记录、设备异常记录、生产计划、部门责任分工表）；<code class="inline-code" data-page-node-id="V0ZKwqTVg1LOqlBDfhFyIX">02-working/</code> 异常汇总工具已就位，无需上传。</div></div>
+<div class="numbered depth-1" data-page-node-id="JDfa3GFf4XHruo15JrHaEe"><span class="marker" data-page-node-id="biaHMz8fc8tBdCDZQPYur2">4.</span><div data-page-node-id="z2ncSDr1TR11cr5xUzZhOA">定时任务已配置为<strong data-page-node-id="zm6qmwEczWqxoIAUh2wlyK">每天 18:00 自动生成日报并推送生产群</strong>，无需手动设置；如需调整时间，在对话里直接说。</div></div>
+<div class="numbered depth-1" data-page-node-id="uaJNqUNni8KXXOZytkq4IZ"><span class="marker" data-page-node-id="XzKaFxmQ0r5XSKCXGHla7K">5.</span><div data-page-node-id="ZsyeWHwHZZHMuPHhc2CCUu">人工确认红线：AI 只做汇总与标注，<strong data-page-node-id="haqvfH9l1Kp1CgA798TmV4">不自动处理异常</strong>——跟进动作由责任部门执行；三处产物颜色保持一致（高=深红 / 中=浅橙 / 低=浅黄）。</div></div><div class="spacer" aria-hidden="true" data-page-node-id="Rr7Hwd0pvjK9D0PE9oow0J"></div><h2 data-page-node-id="tkc6slNjao3eOVYscEEDk2">提示词｜生产异常日报自动汇总（一次执行 6 步）</h2><p data-page-node-id="GH7k3iGTDJ2862inO9sy1v"><strong data-page-node-id="iUNxTUtpemhLoSwwQEJuK7">业务目标</strong>：把当天散落在班组日报、微信群、设备记录里的生产异常，自动汇总成一份日报，产出 Word 日报、异常清单、工作台账等 3 份文件，并按企业微信绑定情况推送当日异常汇总。</p><div class="code-card" data-page-node-id="nGr6sc36PAYiOaAhp1qvlE"><div class="code-top" data-page-node-id="N8kYA8lLukQOBm5juhuYPA"><span data-page-node-id="6SjNU4mmKoX9cdbprRgjsK">plain text</span><button class="copy-btn" type="button" aria-label="复制代码" data-page-node-id="lSlLRLftTqaCBr17CN0v9f">复制</button></div><pre data-page-node-id="eJZfjnBv3J7xqOmNIMdCcA"><code data-page-node-id="D4Tw7CBAbj48LLYvMvnD5t">你是制造企业的生产管理助理。本次任务目标：把当天散落在班组日报、微信群、设备记录里的生产异常，自动汇总成一份日报，产出 4 个交付物并通过企业微信推送。全程按 6 步顺序执行；你只做汇总和标注，不自动处理异常。
+
+一、明确任务目标
+产出 4 个交付物：
+1. 03-output/生产异常日报.docx — Word 日报（当日总览 + 异常明细表 + 高优先级异常 + 待跟进责任部门）
+2. 03-output/生产异常清单.xlsx — 每条异常明细（原始记录 → 管理语言 / 异常类型 / 影响工单 / 责任部门 / 优先级）
+3. 03-output/生产异常工作台账.xlsx — 每条异常的处理状态（谁负责、处理到哪一步）
+4. 企业微信通知 — 当日异常总数、高优先级异常、影响工单、待跟进部门（先检测绑定，再决定发送或留草稿）
+
+二、阅读输入材料
+材料获取方式二选一：
+- 标准材料已就位：直接读取 01-input/ 下的材料，无需上传；
+- 材料在你手里：请直接拖入对话框上传，我放入 01-input/ 后再读取。
+
+汇总时优先使用 02-working/ 里的异常汇总工具（production_exception.py），保证分类口径一致；工具不可用时，用你自带能力完成并在汇总里说明哪步降级了。
+
+三、反问补缺（如有缺口先提问，不要猜）
+- 若 01-input/ 材料缺失或为空，先列出缺口请用户补齐，不自行编造；
+- 若微信群记录格式无法解析，请用户提供标准导出格式（日期 时间 昵称: 内容）；
+- 若生产计划缺失导致无法关联工单，在结果中标注「影响工单待定」，不阻塞流程。
+
+四、处理框架（按步骤顺序执行）
+【第1步：确认材料】
+确认 01-input/ 材料与 02-working/ 工具是否就位，缺哪个先补齐；都齐了再往下走。
+
+【第2步：提取异常事件】
+从班组日报、微信群记录、设备异常记录中提取当天异常事件；
+微信群口语化吐槽转管理语言（如"线体1又停机了，烦"→"线体1传送带当日多次卡料停机"）；
+同一设备/物料/人员的多次记录合并为一条（如传送带停机多处出现 → "当日同类事件 N 次，累计停机 X 分钟"）。
+
+【第3步：分类 + 关联 + 定级】
+- 按设备、物料、人员、质量、计划 5 类分类（用部门责任分工表 Sheet1 关键字匹配责任部门）；
+- 关联生产计划，识别影响工单；
+- 每条给出建议动作和优先级：
+  高优先级：停机≥30 分钟、缺料断线、影响交期、来料卡检验；
+  中优先级：抛料偏高、空调异常、请假缺人；低优先级：无影响的轻微异常。
+
+【第4步：出结果 + 人工确认（不自动处理）】
+输出到 03-output/ 三个文件（见「明确任务目标」）；
+颜色约定：高优先级=深红、中优先级=浅橙、低优先级=浅黄、正常=白，几处产物保持一致；
+重要：你只做汇总和标注，不自动处理异常——跟进动作由责任部门执行。
+
+【第5步：通知（先检测，再决定发还是留草稿）】
+先整理摘要：当日异常总数、高优先级异常、影响工单、待跟进责任部门。
+再检测当前用户是否已绑定企业微信：
+- 已绑定 → 直接发送 03-output/企业微信通知草稿.txt（纯文本版，不含任何标签）；企微 5.0.10 起消息能力已全面开放（不限企业规模），正常应发送成功；
+  发送后自查：若消息中出现 &lt;font 或 &lt;/font&gt; 字样 → 立即用纯文本版重新发送并说明原因；
+  若发送失败，重试一次仍失败 → 引导用户按工作台《企业微信通知权限开通指引》排查（重新授权/可见范围/会话范围），本次草稿已生成（纯文本版可先手动转发）；
+- 没绑定 → 明确说"本次未发送企业微信通知（原因：未绑定企微）"。
+
+【定时任务配置】
+配置每天 18:00 自动生成日报并推送生产群，如已经配置，则无需再次设置；如需调整时间，在对话里说即可。
+
+五、对产物进行质检
+自查：① 是否覆盖全部当天异常（含微信群口语化记录）；② 同一事件是否已合并去重；③ 每条是否有异常类型/影响工单/责任部门/优先级；④ 三处产物颜色是否一致（高深红/中浅橙/低浅黄）；⑤ 通知是否为纯文本、无标签字符。
+
+六、输出与确认
+给我一份简明汇总：当日几起异常（高中低各几）、5 类分类各几起、影响哪些工单、哪些部门要优先跟进。展示日报要点与汇总，请用户核对；确认后本流程结束。</code></pre></div><div class="spacer" aria-hidden="true" data-page-node-id="3CPMIjIKbaWrC0AK1filEY"></div></article></section>
+<section class="page" id="page-case-103" data-page-node-id="FN20zbqdTQB0kyMNvY6Ypz"><article class="paper" data-page-node-id="meE5TMc6m5xmYCWXsQLuPn"><header class="hero" data-page-node-id="OPTnUYAMEFUC4yPADy7CSy"><div class="eyebrow" data-page-node-id="rxvhJfB9ziSo9SXPAE5T9C">模块一 · 单点提效</div><h1 data-page-node-id="NdJlTg3IuGZu2PP4ObmZUH">案例103｜招聘简历批量筛选与评分</h1></header><h2 data-page-node-id="sgp7Vry5UNdrcD50XFzqRg">使用说明</h2><div class="numbered depth-1" data-page-node-id="uRy00r7E5XahNBM9PoWaSQ"><span class="marker" data-page-node-id="xGRMODme4cOzNQAw3KRH1A">1.</span><div data-page-node-id="aA7HpxoDgFFl1rD3HgKBE6">本案例为<strong data-page-node-id="IkqDCDF3RnEkPDF22cEH5V">一份完整的多步骤提示词</strong>（内部含确认材料 → 读材料 → 批量评分 → 名单判定 → 合规校验 → 出结果 → 通知汇总共 7 步），下方代码块内为完整提示词。</div></div>
+<div class="numbered depth-1" data-page-node-id="FLAFUMMGUplHwquKJxll5l"><span class="marker" data-page-node-id="2ISMt5lCOoyfuVg2gN1cMQ">2.</span><div data-page-node-id="8m7xFlYXkfPoG9JDRF0AJ9">把提示词整体复制到新对话运行即可；<code class="inline-code" data-page-node-id="sO2MNjyYEOXkBBvLZSrtT6">01-input/</code> 中的标准材料（岗位 JD、候选人简历、评分标准、候选人信息登记表）会被直接读取，不用上传。</div></div>
+<div class="numbered depth-1" data-page-node-id="xfbOtvkeBI1oTHvuWvque6"><span class="marker" data-page-node-id="v7xbH5OfAsvbNuOEMHqgbD">3.</span><div data-page-node-id="4HQSaWlyhwJx3zPG5i4pK2">产物：候选人评分表与推荐面试名单存 <code class="inline-code" data-page-node-id="GigvAQCraXLxjfOdd2xIX1">03-output/</code>，招聘工作台账存 <code class="inline-code" data-page-node-id="0NtaRXAGvUL0ScGrYCOEMF">04-archive/</code>；颜色约定 推荐=浅绿、备选=浅黄、不推荐=浅橙。</div></div>
+<div class="numbered depth-1" data-page-node-id="tfopWjgUhHDGkhqM5NjLSu"><span class="marker" data-page-node-id="w75vwkRYXXQwQgb0iv9p37">4.</span><div data-page-node-id="VUTRNHEHehykjPbP8Nrw0v">合规红线：只依据与岗位相关的教育背景、工作年限、行业经验、技能与项目管理能力评分，<strong data-page-node-id="wGFwywScDC83w6R0CSLIiV">不使用性别、年龄等与岗位无关的因素</strong>。</div></div>
+<div class="numbered depth-1" data-page-node-id="FFIVJMb25NW4cz89tkvxzA"><span class="marker" data-page-node-id="udJeFnwRJtgLHd1QyC5jiG">5.</span><div data-page-node-id="83rSXH3Stvem7Y2TMDzGxd">人工确认红线：AI 只做筛选、评分与分档，<strong data-page-node-id="bpEV8xUzykA1BphS24CLGY">不自动发面试邀请、不自动联系候选人</strong>；面试安排由用人经理确认。</div></div><div class="spacer" aria-hidden="true" data-page-node-id="Ug9bCoe6IhMc4gMbMFgpGb"></div><h2 data-page-node-id="kjn290it99c2DZ043K0yVl">提示词｜招聘简历批量筛选与评分（一次执行 7 步）</h2><p data-page-node-id="EJ0G94m01J6uzxoLV6ovXO"><strong data-page-node-id="c0cPdyMAytJpZfUFUOFTiD">业务目标</strong>：读候选〈岗位 JD 与评分标准〉，以 5 维评分批量筛选简历，输出「推荐面试 / 备选 / 不推荐」三档名单与待核验项，并通过企业微信通知用人经理。</p><div class="code-card" data-page-node-id="mBOCgLixO3LuCdx7fzKIAz"><div class="code-top" data-page-node-id="LdYOwGl811kZal5HrFihnz"><span data-page-node-id="JbP6gRuMl0QSz58TSN6vWs">plain text</span><button class="copy-btn" type="button" aria-label="复制代码" data-page-node-id="9I5fhqr75wWiVCj8JBDx9y">复制</button></div><pre data-page-node-id="F8eBFTTkyVsg93zxXuZ4mK"><code data-page-node-id="bAqjSFosxKyx5hrsYQ2GLK">你是企业的招聘筛选助理。本流程目标：批量读取候选人简历，按岗位 JD 与评分标准五维评分，输出推荐/备选/不推荐名单与待核验项，并通过企业微信通知用人经理。你只做筛选、评分与分档，不自动发面试邀请、不自动联系候选人；面试安排由用人经理确认。
+
+一、明确任务目标
+读取 01-input/ 中已就位的标准材料（已就位，直接读取开始，不用上传），完成三件事：
+1) 按岗位 JD 与招聘评分标准，对每份简历做 5 维评分（教育 / 年限 / 行业 / 技能 / 项目管理，权重按评分标准）并算出总分；
+2) 按硬性门槛与分档规则输出「推荐面试 / 备选 / 不推荐」三档名单，附推荐理由与待核验项；
+3) 将产物保存到 03-output/（评分表、推荐名单、招聘台账），并按检测结果发送企业微信通知。
+全程遵守合规红线：仅依据与岗位相关的教育背景、工作年限、行业经验、技能与项目管理能力评分，不使用性别、年龄等与岗位无关的因素。
+
+二、阅读输入材料
+- 岗位JD_销售经理.docx：岗位职责与任职要求（学历 / 经验 / 行业 / 技能 / 项目）；
+- 候选人简历/（多份 docx）：逐份提取教育背景、销售年限、团队管理年限、行业经验、技能、项目经历；
+- 招聘评分标准.xlsx：「评分标准」sheet 读取 5 个维度权重，并参照「硬性门槛」「分档规则」两个 sheet；
+- 候选人信息登记表.xlsx：仅用于联系与信息核验（性别、年龄、期望薪资等不参与评分）。
+（筛选优先使用 02-working 工作台的简历评分工具，保证评分口径一致；工具不可用时用自带能力完成，并在汇总中说明哪一步降级。）
+
+三、反问补缺
+- 若 01-input 材料缺失或无法读取，逐条列出缺口并请补齐后再继续，不自行猜测补造；
+- 若登记表与简历信息不一致（如候选人登记表学历为大专、简历写硕士），不替候选人下结论，写入「待核验项」交人工核验，核验通过前不推荐面试。
+
+四、处理框架（按顺序执行，勿跳过）
+步骤 1 确认材料：核对 01-input 材料与 02-working 工具是否就位，缺哪个先告诉我，齐了再往下；
+步骤 2 读取材料：读取岗位 JD、候选人简历（多份）、招聘评分标准、候选人信息登记表；
+步骤 3 批量评分：读 JD 与评分标准，逐份简历提取 5 维要素，按权重计算总分（保留 1 位小数）；
+步骤 4 名单判定：硬门槛优先于分数——学历未达本科或销售经验不足 5 年 → 不推荐；管理年限不足 3 年或信息待核验 → 备选（待核验通过再推荐）；总分 ≥80 且无硬伤 → 推荐面试，60-79 → 备选，&lt;60 → 不推荐；
+步骤 5 合规校验：复核全程未使用性别、年龄等不当因素，登记表信息仅用于联系与核验，并在输出中附合规说明；
+步骤 6 出结果：输出到 03-output/：① 候选人简历筛选评分表.xlsx（5 维得分 + 总分 + 名单 + 推荐理由 + 待核验项）② 推荐面试名单.xlsx（推荐/备选名单，含面试建议）
+输出到 04-archive/ ：招聘工作台账.xlsx（每位候选人处理状态）；颜色约定：推荐=浅绿、备选=浅黄、不推荐=浅橙，几处产物保持一致；重要：你只做筛选和评分，不自动发面试邀请；
+步骤 7 通知与汇总：先整理摘要（本批简历数 / 推荐面试人数 / 候选人 TOP5 / 需人工核验信息），再检测企业微信绑定：
+- 已绑定 → 直接发送 03-output/企业微信通知草稿.txt；发送后自查：若消息中出现 &lt;font 或 &lt;/font&gt; 字样 → 立即用纯文本版重新发送并说明原因；若发送失败，重试一次仍失败 → 引导按工作台《企业微信通知权限开通指引》排查（重新授权/可见范围/会话范围），本次草稿已生成（纯文本版可先手动转发）；
+- 未绑定 → 明确说明「本次未发送企业微信通知（原因：未绑定企微）」。
+最后给出简明汇总：简历几份、推荐/备选/不推荐各几人、TOP 是谁、哪些信息需人工核验。
+
+五、生成备选方案
+- 评分工具不可用：A. 用自带能力完成评分并在汇总中标注降级项；B. 暂停等待工具恢复后重跑（推荐 A，不阻塞交付）；
+- 企微发送失败：A. 使用 03-output 纯文本草稿人工转发（不阻塞任务）；B. 按指引排查（重新授权 / 可见范围 / 会话范围）后重发一次。
+
+六、对产物进行质检
+自查：五维得分与总分计算是否与评分标准一致；硬门槛是否优先于分数；三档名单与推荐理由是否清晰；待核验项是否标注完整；三处产物的颜色约定是否一致；通知是否为纯文本（无 &lt;font 等标签）；是否出现性别、年龄参与评分（不应发生）；是否擅自发送面试邀请（不应发生）。
+
+七、输出与确认
+向用户展示汇总结果（简历几份、推荐/备选/不推荐各几人、TOP 是谁、哪些信息需人工核验），请其核对名单与待核验项；面试安排由用人经理确认，AI 只做筛选提醒。
+最后请询问用户：是否需要将「招聘简历批量筛选与评分」流程沉淀为可复用的方法或模板？</code></pre></div><div class="spacer" aria-hidden="true" data-page-node-id="vmof8losrNonyGSa1tGJmK"></div></article></section>
+<section class="page" id="page-case-201" data-page-node-id="uwjkiV7IiYIkL6AUt3tWXN"><article class="paper" data-page-node-id="CnWFHJmW9D1nY7fzDQrEBl"><header class="hero" data-page-node-id="8BMpCO9HivFvH76Aa8gltL"><div class="eyebrow" data-page-node-id="ZLaMB8jWD3Do3YEkdz2dh9">模块二 · 流程改造</div><h1 data-page-node-id="sJrjyIEsFY07CZqsLmNb78">案例201｜费用报销审核（发票识别 + 合规审核）</h1></header><h2 data-page-node-id="3xoJNiZ3vtKOiPb60NYjsD">使用说明</h2><div class="numbered depth-1" data-page-node-id="jHLPGgB4Q3TT9LFJjfUYlr"><span class="marker" data-page-node-id="9HmzG3Csve65Nwjd6MAjBN">1.</span><div data-page-node-id="mxfzqP5EIt2BSMHNKXbAGy">本页整合案例 201「费用报销流程改造」的两个演示：<strong data-page-node-id="32uD3FxbnN6clLoMnAijtz">① 发票批量识别与报销初审</strong>、<strong data-page-node-id="cqPGzhLQlcGpZ7j9Gygi6a">② 费用报销合规审核与异常清单</strong>；两段提示词各自独立复制运行。</div></div>
+<div class="numbered depth-1" data-page-node-id="1iJP3vSBjBOx0zRxotLK0d"><span class="marker" data-page-node-id="crLs93WPlHJmBN8xMrbg8a">2.</span><div data-page-node-id="7TD2zXlayZTTAWQzOe5Nlk"><strong data-page-node-id="g91a2OddGGH9Mg0Aeb6DHO">注意：本页两个演示使用不同的示例文件夹，各自的示例资料与 <code class="inline-code" data-page-node-id="DdGUDueJw762PbDRjqD1rt">01-input/</code> 内容都不一样（属于两个独立项目文件夹）。运行提示词 ① 请打开「发票批量识别与报销初审」文件夹；运行提示词 ② 请打开「费用报销合规审核与异常清单」文件夹。切换演示时请同步切换文件夹，不要在同一文件夹里接着跑另一段提示词。</strong></div></div>
+<div class="numbered depth-1" data-page-node-id="IapSOecAlLCwjH9uZ1AC3A"><span class="marker" data-page-node-id="8CBWECK7m3UvdyyuzCx3Zd">3.</span><div data-page-node-id="x9Njq5p0a7B2pbTr2C8Nei">建议先跑提示词 ① 产出「发票 OCR 结构化结果」，再跑提示词 ② 做报销合规审核，形成「识别 → 审核」两段流程。</div></div>
+<div class="numbered depth-1" data-page-node-id="0yiFaut1xLTENZ6QYZc27h"><span class="marker" data-page-node-id="shFwkCXLUrQRIbMY5Tj5Cn">4.</span><div data-page-node-id="P9Ck7RNHvxn7cJmHPQ1SFp">材料与工具已就位：<code class="inline-code" data-page-node-id="inroRNc5FAztUCEGEfohYg">01-input/</code> 内含电子发票 PDF、发票照片、报销单、历史报销记录、费用制度与差旅标准；<code class="inline-code" data-page-node-id="iE1FK2qB5HMjMlgwk0f3Kq">02-working/</code> 识别与审核工具已配好，不用上传。</div></div>
+<div class="numbered depth-1" data-page-node-id="u9BAMZeSKSz2yUyMZ5MCf3"><span class="marker" data-page-node-id="GEtLzxAAdfYHVETmcRLu7U">5.</span><div data-page-node-id="e9MqlRzTUmWBGcxhoNlr2C">颜色约定：高风险=深红、中风险=浅橙、低风险=浅黄、正常=白，各处产物保持一致。</div></div>
+<div class="numbered depth-1" data-page-node-id="8qGtnOOACt3WH3iep4dPNg"><span class="marker" data-page-node-id="1Ug8SFWeZylXV8KngWwxQi">6.</span><div data-page-node-id="TTa6KEUh6EizzWa8wMIKqH">人工确认红线：AI 只做识别与异常标注，<strong data-page-node-id="RpoavAk3VVFkVdMYVYuzpt">不自动入账、不代替审批、不自动付款</strong>；异常清单必须由财务逐条确认后才能处理。</div></div><div class="spacer" aria-hidden="true" data-page-node-id="OmR3OR716isR1Ox6CYyFIJ"></div><h2 data-page-node-id="40Fl5voChOa6KWzfsdh97k">提示词 ①｜发票批量识别与报销初审</h2><p data-page-node-id="zax2C9A35TCklF8wcfohPT"><strong data-page-node-id="Z4EQn7TZNhBtGfGOC2Fl8z">业务目标</strong>：读取 <code class="inline-code" data-page-node-id="u8zgb0Ve4qMfVp5OHYP8aI">01-input/</code> 里的一批发票，逐张提取 10 项关键字段，确认本公司抬头，标注「非本公司抬头 / 疑似重复 / 低置信度」三类异常，并输出结构化结果、异常清单与工作台账。</p><div class="code-card" data-page-node-id="c4pzR8oDxCCmyoTjxgN2AT"><div class="code-top" data-page-node-id="uaWUqMsjCwnbXj42pwpT5q"><span data-page-node-id="14NoBoFCbg7SnL0OxETofz">plain text</span><button class="copy-btn" type="button" aria-label="复制代码" data-page-node-id="U6P3aXcxUTOmhFmCkDZjM9">复制</button></div><pre data-page-node-id="NrIZ9X7EV7GlL10WV83ElL"><code data-page-node-id="vCsKiU3G7CCuSii0pkvmxS">帮我处理项目文件夹 01-input/ 里这一批发票（标准材料已就位），直接读取开始。
+
+【第1步：确认材料】
+确认 01-input/发票文件/（电子发票 PDF）和 01-input/发票图片_OCR/（发票照片）里都有文件；都就位就直接往下走，缺哪个告诉我。
+
+【第2步：识别提取】
+每张发票提取 10 项：发票号码、开票日期、发票类型、购买方名称、购买方税号、销售方名称、销售方税号、金额、税额、价税合计。
+严守 3 条规则：
+① 数字/税号/日期必须一字不差（29.33 和 329.33 不能算一致）；
+② 发票防伪字体会重复（如"发发发票票票号号"），压缩重复汉字但别动数字；
+③ 金额核对：价税合计 = 金额 + 税额。
+（处理时优先用 02-working 工作台里的发票识别工具（读电子发票和发票照片）和发票识别字段模板；工具不可用时，用你自带能力完成并在汇总里说明哪步降级了。）
+
+【第3步：确认本公司抬头（购买方）】
+- 汇总本批全部发票的"购买方名称+税号"，去重得到候选抬头；
+- 如果 01-input/公司抬头与税号.txt 已存在 → 直接用它；
+- 不存在时：候选只有 1 个 → 自动确认；候选 ≥ 2 个 → 列出来让我选哪个是本公司；
+- 确认后保存到 01-input/公司抬头与税号.txt；
+- 我之后随时可以说"公司抬头改成 XXX"来调整。
+
+【第4步：初审找问题 + 出结果】
+- 购买方不是本公司抬头 → 标"非本公司抬头"（可能开错票）；
+- 发票号码在 04-archive/历史发票台账.xlsx 里出现过 → 标"疑似重复"（台账不存在就自动建一个，把本批第 1 张发票号码写进去模拟）；
+- 同一张票两种方式读出的结果不一致 → 标"低置信度"。
+输出到 03-output/：
+1. 发票OCR结构化结果.xlsx — 全部明细（识别结果 + 人工复核列）
+2. 发票初审异常清单.xlsx — 每条异常明细（留复核状态/复核人/复核意见）
+3. 发票识别工作台账.xlsx — 批次/来源/处理人/识别时间/异常标记/复核状态
+颜色约定：非本公司抬头=红、疑似重复=浅橙、低置信度=浅黄、正常=白。
+重要：异常清单需人工复核确认后才能处理，你只做识别和标注，不自动入账、不自动付款。
+
+【第5步：通知 + 汇总】
+先把汇总整理好：收几张、识别几张、几项异常。
+然后先检测当前用户是否已绑定企业微信：
+- 已绑定 → 直接发送 `03-output/企业微信通知草稿.txt`（**纯文本版，不含任何标签**）；企微 5.0.10 起消息能力已全面开放（不限企业规模），正常应发送成功；
+  发送后自查：若消息中出现 `&lt;font` 或 `&lt;/font&gt;` 字样 → 立即用纯文本版重新发送并说明原因；
+  若发送失败，重试一次仍失败 → 引导用户按工作台《企业微信通知权限开通指引》排查（重新授权/可见范围/会话范围），
+  本次草稿已生成（纯文本版可先手动转发）；
+- 没绑定 → 明确说"本次未发送企业微信通知（原因：未绑定企微）"。
+最后给我一份简明汇总：共收几张、识别成功几张、哪些异常要人工复核、每张票的数据来源（只读了电子发票文件 / 只看了发票照片）、本公司抬头确认结果。</code></pre></div><p data-page-node-id="Mg7S02hhEkKtSiTDqtPpjB"><strong data-page-node-id="KnArXlpAhqCDmfMrlUGdhM">人工检查</strong>：异常清单需人工复核确认后才能处理；AI 只做识别和标注，不自动入账、不自动付款。</p><div class="spacer" aria-hidden="true" data-page-node-id="60feKsiybBd2MBW83TFaSX"></div><h2 data-page-node-id="DhzTYyyRVVP5GovGfCtWW1">提示词 ②｜费用报销合规审核与异常清单</h2><p data-page-node-id="syj78rBEmFzEeVC4K0ae5e"><strong data-page-node-id="tVU4Jq2uXCbAbqOXlnI00X">业务目标</strong>：把每张报销单与发票、报销制度、住宿与招待标准、历史记录逐项比对，检查 6 类问题（住宿超标、招待缺审批、重复报销、抬头不对、报销超期、金额不一致），输出异常清单、审核驾驶舱与工作台账。</p><div class="code-card" data-page-node-id="ahatc2ZdvgTPIpRZH9Zndd"><div class="code-top" data-page-node-id="UE1nV3sCBu3r751TEDgUz5"><span data-page-node-id="ZK6LEhWwohTDD4kXIDIwVf">plain text</span><button class="copy-btn" type="button" aria-label="复制代码" data-page-node-id="hX0ksM45wHRthfYb5dlUkI">复制</button></div><pre data-page-node-id="EI2udXXjWfYFlj5qvj85IV"><code data-page-node-id="CiDNm8Byb0KnKP6gMHzbb8">帮我处理项目文件夹 01-input/ 里的标准材料（已就位），直接读取开始，不用上传。
+
+【第1步：确认材料】
+确认 01-input/ 里材料都就位（02-working 工具也都在），缺哪个告诉我；都齐了直接往下走。
+【第2步：读取材料】
+直接读取 01-input/ 里已就位的材料：发票OCR结构化结果、费用报销单
+（审核时优先用 02-working 工作台里的报销审核工具，并读取报销制度、差旅住宿标准、客户招待标准做比对，保证判定口径一致；工具不可用时，用你自带能力完成并在汇总里说明哪步降级了。）
+（报销制度、住宿标准、客户招待标准已在工作台配好，不用传；想改规则直接对话说）
+【第3步：逐项审核】
+把每张报销单与发票、制度、标准、历史记录比对，检查 6 类问题：
+① 住宿超标（住宿费超过该城市上限）
+② 招待缺审批（业务招待费没有审批单，或超过客户招待标准）
+③ 发票重复报销（发票号在历史记录里出现过）
+④ 发票抬头不对（购买方不是公司全称）
+⑤ 报销超期（开票日起超 30 天才报销）
+⑥ 金额不一致（报销金额与发票价税合计对不上）
+每条异常说明：报销人、部门、费用类型、异常原因、风险等级、制度依据、建议处理动作。
+
+【第4步：出结果 + 人工复核（不自动付款）】
+输出到 03-output/：
+1. 费用报销审核异常清单.xlsx — 每条异常明细
+2. 费用审核驾驶舱.html — 汇总卡片（总数/正常/各风险级/待复核/异常 TOP3）
+3. 费用审核工作台账.xlsx — 每张报销单的审核记录
+4. 财务审核FAQ_经验沉淀.md — 本次高频问题与处理口径
+颜色约定：高风险=深红、中风险=浅橙、低风险=浅黄、正常=白，几处产物保持一致。
+重要：异常清单必须由财务人工逐条确认后才能付款；你只标注异常和给建议，不代替审批、不自动付款。
+
+【第5步：通知（先检测，再决定发还是留草稿）】
+先把摘要整理好：总报销单数、待复核数量、建议驳回数量、主要异常类型 TOP3、待处理责任人。
+然后先检测当前用户是否已绑定企业微信：
+- 已绑定 → 直接发送 `03-output/企业微信通知草稿.txt`（**纯文本版，不含任何标签**）；企微 5.0.10 起消息能力已全面开放（不限企业规模），正常应发送成功；
+  发送后自查：若消息中出现 `&lt;font` 或 `&lt;/font&gt;` 字样 → 立即用纯文本版重新发送并说明原因；
+  若发送失败，重试一次仍失败 → 引导用户按工作台《企业微信通知权限开通指引》排查（重新授权/可见范围/会话范围），
+  本次草稿已生成（纯文本版可先手动转发）；
+- 没绑定 → 明确说"本次未发送企业微信通知（原因：未绑定企微）"。
+
+【第6步：汇总】
+给我一份简明汇总：共审几张、正常几张、异常几张（按风险等级分）、哪些需要我优先处理。
+
+【定时任务（可选）】
+如需**每周一 9:00 自动审核上周报销单**，在对话里说"帮我把报销审核设置成每周一 9:00 自动运行"即可。</code></pre></div><p data-page-node-id="ZJFZoEuqQMBD7hDZcPjhgJ"><strong data-page-node-id="OfA3EyNS9ydBc67nUEqBr0">人工检查</strong>：异常清单必须由财务人工逐条确认后才能付款；AI 只标注异常和给建议，不代替审批、不自动付款。可选每周一 9:00 自动审核上周报销单。</p><div class="spacer" aria-hidden="true" data-page-node-id="oey8WRCTJMPlRPWmm2bSMc"></div></article></section>
+<section class="page" id="page-case-202" data-page-node-id="wxniSaveYKIcMpUwQDEs5F"><article class="paper" data-page-node-id="r9b7ejA0K6GGuvzPJjuP8s"><header class="hero" data-page-node-id="y9OLLuIpla0KDh9zvSOBCi"><div class="eyebrow" data-page-node-id="1NWUVDN05hCXfdo1jIxbDX">模块二 · 流程改造</div><h1 data-page-node-id="XDGsx4eU1ovH1eXIiDOWGZ">案例202｜采购到货与供应商风险（4 个演示）</h1></header><h2 data-page-node-id="bq6Xmsxy0EQn8fmcKuNLuL">使用说明</h2><div class="numbered depth-1" data-page-node-id="N4aD9HDjB5eBzy9GsQNSf9"><span class="marker" data-page-node-id="KsJ53MXyopxMESGtnkfRVR">1.</span><div data-page-node-id="Uk7sc68ClYQKyfA3TEvUng">本页整合案例 202「采购到货与供应商风险」的 4 个演示：<strong data-page-node-id="feNIymmFPAjUKRsUNgABt2">① 采购送货单识别与三单匹配</strong>、<strong data-page-node-id="yfKcjteXX2e1rIlDrL4zDK">② 采购入库单生成与库存更新</strong>、<strong data-page-node-id="F6Yqk0nNn1BdlHOjrFuCgg">③ 采购计划生成与缺料风险预警</strong>、<strong data-page-node-id="F5IpMkwbzZIcIiZN18DWOL">④ 供应商交付风险预警与周报</strong>；四段提示词各自独立复制运行。</div></div>
+<div class="numbered depth-1" data-page-node-id="iBAFcJX0G0I5fkuxF0ycwm"><span class="marker" data-page-node-id="wlkv5vroZGkGLGlZSjisdI">2.</span><div data-page-node-id="fkcSWMpHZgzFHEy75hTavl"><strong data-page-node-id="lNl3H1kQ7XkznwNhLUlP2c">注意：本页四个演示使用四个不同的示例文件夹，各自的示例资料与 <code class="inline-code" data-page-node-id="LJkymAjGkLFRQT2Rr12CzH">01-input/</code> 内容都不一样（属于四个独立项目文件夹）：① 采购送货单识别与三单匹配、② 采购入库单生成与库存更新、③ 采购计划生成与缺料风险预警、④ 供应商交付风险预警与周报。运行哪段提示词，就打开对应的那个文件夹；切换演示时请同步切换文件夹，不要在同一文件夹里接着跑下一段提示词。</strong></div></div>
+<div class="numbered depth-1" data-page-node-id="oUkJIlCx6Fr8LP7Fte6a0i"><span class="marker" data-page-node-id="S4AhDgSgiIF3ApAoA7PYBE">3.</span><div data-page-node-id="djitJjbD5kfVTulND0QBwa">建议按 ① → ② → ③ / ④ 的顺序执行：先做送货单与订单、检验的核对，再生成可导入 ERP 的入库单，最后做采购计划与供应商风险预警；前一步的异常清单是后一步的输入。</div></div>
+<div class="numbered depth-1" data-page-node-id="ap72tc77WCjdDg3LjvXOpc"><span class="marker" data-page-node-id="HeANJgQ5oVfq56CqANtWVc">4.</span><div data-page-node-id="FxeNTfXRe7iBmxpRKX9j4s">材料与工具已就位：<code class="inline-code" data-page-node-id="eqshIa05OHYHeLUcdZ8aTy">01-input/</code> 内含送货单扫描件、采购订单清单、来料检验结果、库存台账、生产计划、用料表、ERP 入库单模板、供应商主数据等；<code class="inline-code" data-page-node-id="AlXEwaCXLKY0H4ixUorpEz">02-working/</code> 对应工具已配好。</div></div>
+<div class="numbered depth-1" data-page-node-id="lgaQU0pIU4FOSX2gJCxaF9"><span class="marker" data-page-node-id="qA5gUzP0WKcGWh3AxFUIZ8">5.</span><div data-page-node-id="IOJ43aHDQGYfHKhAwSA2El">定时任务：<strong data-page-node-id="QzQeLY16e4opREOXR7Maca">供应商风险周报已配置每周一 9:30</strong>、<strong data-page-node-id="Bv9iOSRvvKkxDR5oK0e8mA">采购计划缺料预警已配置每天 8:00</strong> 自动运行；三单匹配与入库生成可按需设置每天 9:00 / 9:30。</div></div>
+<div class="numbered depth-1" data-page-node-id="7cImq7yfcGL09XoAjXxlzM"><span class="marker" data-page-node-id="BxXFCxdBFIEVrolcHeo7Ze">6.</span><div data-page-node-id="4LqaWIJYy7rILbEHQy4QaD">人工确认红线：<strong data-page-node-id="r6oU8UArojVF197Of3zAmk">异常单不自动放行入库、不自动下单、不自动处理供应商</strong>；物料编码匹配优先于物料名称，未检验 / 不合格 / 数量异常一律不能自动入库。</div></div><div class="spacer" aria-hidden="true" data-page-node-id="1HXzqHTuh5j5wAxP0YTgBY"></div><h2 data-page-node-id="D9bQuwfzjJF3JBFaALsLk5">提示词 ①｜采购送货单识别与三单匹配</h2><p data-page-node-id="os6FlHsTz6VXmaGi2wdMpN"><strong data-page-node-id="HTxYxpEfqVMaXbgO96iqrB">业务目标</strong>：识别送货单扫描件并提取结构化字段，再把「送货单 ↔ 采购订单 ↔ 来料检验结果」逐条比对，检查 6 类异常（PO 不存在、物料不一致、超交短交、批次缺失、未检验或不合格、逾期到货），输出异常清单、核对台账与看板。</p><div class="code-card" data-page-node-id="9wpFwcLgGAmVn8IfSZudBJ"><div class="code-top" data-page-node-id="Vm8CMBATfA2AZaazrshuv8"><span data-page-node-id="0Dbb2vaA5WoxlVAFF6Ijsd">plain text</span><button class="copy-btn" type="button" aria-label="复制代码" data-page-node-id="NGXUYi4LSL92kWah0FjOZr">复制</button></div><pre data-page-node-id="WsMbjezZSO3VwubOuNFCan"><code data-page-node-id="l4sb7ePtCsCoSUkR9HDi9P">帮我处理项目文件夹 01-input/ 里的标准材料（已就位），直接读取开始，不用上传。
+
+【第1步：确认材料】
+确认 01-input/ 里材料都就位（02-working 工具也都在），缺哪个告诉我；都齐了直接往下走。
+【第2步：读取材料】
+直接读取 01-input/ 里已就位的材料：送货单扫描件（可传多张图片/PDF）、送货单结构化结果、采购订单清单、来料检验结果、物料主数据
+（处理时优先用 02-working 工作台里的三单匹配工具和送货单字段模板（识别扫描件用）；工具不可用时，用你自带能力完成并在汇总里说明哪步降级了。）
+（送货单字段模板已在工作台配好，不用传；想调整模板直接对话说）
+【第3步：识别送货单】
+如果传的是图片扫描件，先用工具识别送货单，提取：送货单号、供应商、PO 号、物料编码、物料名称、批次、数量、单位、送货日期。
+
+【第4步：三单匹配（送货单 ↔ 采购订单 ↔ 检验结果）】
+逐条比对送货单与采购订单、来料检验结果，共 6 项检查：
+① PO 不存在（送货单的 PO 号不在订单清单中）
+② 物料不一致（送货单物料编码/名称与订单不一致）
+③ 数量超交或短交（送货数量 vs 订购数量）
+④ 批次缺失（送货单没填批次号）
+⑤ 未检验或不合格入库（检验无记录或不合格）
+⑥ 逾期到货（送货日期晚于订单约定到货日期）
+每条异常给出：送货单号、异常类型、严重程度、说明。
+
+【第5步：出结果 + 人工确认（异常不自动入库）】
+输出到 03-output/：
+1. 送货单OCR结构化结果.xlsx — 识别后的结构化数据
+2. 入库核对异常清单.xlsx — 每条异常明细（异常类型/风险等级/建议处理动作）
+3. 采购入库核对台账.xlsx — 每条记录的处理状态
+4. 三单匹配看板.html — 汇总卡片 + 核对明细
+颜色约定：严重=深红、异常=浅橙、关注=浅黄、正常=白。
+重要：异常单不自动放行入库，必须采购和仓库人员确认后才能入库；高风险项（PO不存在/数量超交/未检验/不合格）建议直接驳回；你只标注异常和给建议，不代替采购判断、不自动入库。
+
+【第6步：通知（先检测，再决定发还是留草稿）】
+先把摘要整理好：本批送货单数量、通过核对数量、异常数量（含高风险明细）。
+然后先检测当前用户是否已绑定企业微信：
+- 已绑定 → 直接发送 `03-output/企业微信通知草稿.txt`（**纯文本版，不含任何标签**）；企微 5.0.10 起消息能力已全面开放（不限企业规模），正常应发送成功；
+  发送后自查：若消息中出现 `&lt;font` 或 `&lt;/font&gt;` 字样 → 立即用纯文本版重新发送并说明原因；
+  若发送失败，重试一次仍失败 → 引导用户按工作台《企业微信通知权限开通指引》排查（重新授权/可见范围/会话范围），
+  本次草稿已生成（纯文本版可先手动转发）；
+- 没绑定 → 明确说"本次未发送企业微信通知（原因：未绑定企微）"。
+
+【第7步：汇总】
+给我一份简明汇总：本批几张、正常几张、高风险几张、哪些送货单建议驳回、哪些需要采购确认。
+
+【定时任务（可选）】
+如需**每天 9:00 自动处理当天到货的送货单**，在对话里说"帮我把三单匹配设置成每天 9:00 自动运行"即可。</code></pre></div><p data-page-node-id="ZK5hFj4se8U0jZ5TVkYbAj"><strong data-page-node-id="HkobhlVFNug4P8aKZbpEhq">人工检查</strong>：异常单不自动放行入库，必须采购和仓库人员确认；高风险项（PO 不存在 / 数量超交 / 未检验 / 不合格）建议直接驳回。</p><div class="spacer" aria-hidden="true" data-page-node-id="6yvots56tDmDqg4okEGXsZ"></div><h2 data-page-node-id="S1g3kmZwx8xIb5r8z9ohRZ">提示词 ②｜采购入库单生成与库存更新</h2><p data-page-node-id="ZczKsgazOAIzTIQnT56HnN"><strong data-page-node-id="0HyEdEbMcQdHxYlHRod6rV">业务目标</strong>：只处理「核对通过且可入库」的明细，按 ERP 模板填单，并做重复入库、库位缺失、负库存 3 项入库前校验，输出可导入的 ERP 入库单、库存更新后台账与差异表。</p><div class="code-card" data-page-node-id="XecHK6vnUXJ2FNUbtgi1It"><div class="code-top" data-page-node-id="9YaqUpAg80S5UPjYJOAl48"><span data-page-node-id="Bj7yMXvRKCQC9JFLAv3kgb">plain text</span><button class="copy-btn" type="button" aria-label="复制代码" data-page-node-id="hi2wLvthv25GGF8hRvoEPa">复制</button></div><pre data-page-node-id="yThn4a3AqGYTmSLTC4KtjB"><code data-page-node-id="oCPKKG6wJAoMDcNAUxyHD3">帮我处理项目文件夹 01-input/ 里的标准材料（已就位），直接读取开始，不用上传。
+
+【第1步：确认材料】
+确认 01-input/ 里材料都就位（02-working 工具也都在），缺哪个告诉我；都齐了直接往下走。
+【第2步：读取材料】
+直接读取 01-input/ 里已就位的材料：入库核对异常清单、送货单结构化结果、ERP 入库单模板、库存台账、库位主数据
+（处理时优先用 02-working 工作台里的入库校验工具，保证与 ERP 模板、库存口径一致；工具不可用时，用你自带能力完成并在汇总里说明哪步降级了。）
+【第3步：筛选 + 填表 + 校验】
+- 筛选：只处理"核对通过且可入库"的明细（异常清单里风险等级=正常 的）
+- 填表：按 ERP 模板字段填（仓库/库位/物料编码/数量/批次/PO号/供应商/入库日期）
+- 入库前 3 项校验：
+① 重复入库（同一送货单+物料+批次 已在历史入库记录中）
+② 库位缺失（物料默认库位不在库位主数据中）
+③ 负库存（入库后库存为负）
+
+【第4步：出结果 + 人工确认（不自动导入）】
+输出到 03-output/：
+1. ERP入库单_可导入.xlsx — 通过校验的明细（按模板格式，可直接导入 ERP）
+2. 库存更新后台账.xlsx — 入库后的库存变化
+3. 库存更新差异表.xlsx — 入库前后库存对比（可入库/需确认/异常）
+4. 采购入库工作台账.xlsx — 每条明细的处理状态
+5. 入库单看板.html — 汇总卡片 + 差异表
+颜色约定：可入库=绿色、需人工确认=黄色、重复入库=橙色、禁止入库=灰色；负库存同橙色、库位缺失同黄色。
+重要：入库单导入 ERP 前必须由仓库人工确认，你只做生成和校验，不自动导入、不自动更新库存。
+
+【第5步：通知（先检测，再决定发还是留草稿）】
+先把摘要整理好：可入库行数、待确认行数、库位异常、重复入库疑点。
+然后先检测当前用户是否已绑定企业微信：
+- 已绑定 → 直接发送 `03-output/企业微信通知草稿.txt`（**纯文本版，不含任何标签**）；企微 5.0.10 起消息能力已全面开放（不限企业规模），正常应发送成功；
+  发送后自查：若消息中出现 `&lt;font` 或 `&lt;/font&gt;` 字样 → 立即用纯文本版重新发送并说明原因；
+  若发送失败，重试一次仍失败 → 引导用户按工作台《企业微信通知权限开通指引》排查（重新授权/可见范围/会话范围），
+  本次草稿已生成（纯文本版可先手动转发）；
+- 没绑定 → 明确说"本次未发送企业微信通知（原因：未绑定企微）"。
+
+【第6步：汇总】
+给我一份简明汇总：可入库几行、待确认几行、库位异常几项、重复入库疑点几项、哪些需要仓库优先确认。
+
+【定时任务（可选）】
+如需**每天 9:30 自动处理可入库明细**，在对话里说"帮我把入库生成设置成每天 9:30 自动运行"即可。</code></pre></div><p data-page-node-id="i2Tiz0xdHpA2eXv7k4BEyJ"><strong data-page-node-id="Ug6qWLAltvHPven4fmTqpc">人工检查</strong>：入库单导入 ERP 前必须由仓库人工确认；AI 只做生成和校验，不自动导入、不自动更新库存。</p><div class="spacer" aria-hidden="true" data-page-node-id="zPmyAcpAkFIfQt1HKHFXdS"></div><h2 data-page-node-id="JffHGVrhCnSRMpUC0Xngv2">提示词 ③｜采购计划生成与缺料风险预警</h2><p data-page-node-id="juOnQQESB7QN3K4TtibilA"><strong data-page-node-id="len6GMVNROZBvksgCCuYYl">业务目标</strong>：按未来 14 天生产计划展开用料需求，扣减库存与在途采购、计入损耗与安全库存，算出净需求与建议下单日期，按最早缺料日分级输出采购计划建议与缺料风险清单。</p><div class="code-card" data-page-node-id="EhAEBp0nFK3DmWHbiCUrnr"><div class="code-top" data-page-node-id="5wu1ndT1spoaH6TSsQJ7AJ"><span data-page-node-id="IAUWDCAZViHGawl7UBmNKQ">plain text</span><button class="copy-btn" type="button" aria-label="复制代码" data-page-node-id="rww1DukVkysXQRL9ieMTDS">复制</button></div><pre data-page-node-id="8mLrcw3mti12JWqk5LYJn9"><code data-page-node-id="q4kCMUwLWeuTHdHaI90w3N">帮我处理项目文件夹 01-input/ 里的标准材料（已就位），直接读取开始，不用上传。
+
+【第1步：确认材料】
+确认 01-input/ 里材料都就位（02-working 工具也都在），缺哪个告诉我；都齐了直接往下走。
+【第2步：读取材料】
+直接读取 01-input/ 里已就位的材料：生产计划（未来 14 天）、产品用料表、库存台账、在途采购订单、安全库存规则、供应商提前期表
+（推演时优先用 02-working 工作台里的采购计划工具，保证计算口径一致；工具不可用时，用你自带能力完成并在汇总里说明哪步降级了。）
+【第3步：业务推演（每步都要能解释给采购看）】
+1. 按生产计划展开产品用料表，算出每个物料 14 天的毛需求
+2. 扣减现有库存、在途采购（预计到货日前的）
+3. 加上损耗率和安全库存补齐要求
+4. 算出净需求
+5. 结合供应商提前期算建议下单日期
+6. 标出最早缺料日、影响哪些产品工单、风险等级
+
+【第4步：缺料风险分级】
+按最早缺料日分级：
+- 高风险：最早缺料日 ≤ 3 天，或建议下单日期已来不及（提前期太长）
+- 中风险：最早缺料日 4-7 天
+- 低风险：8-14 天
+- 正常：净需求 ≤ 0（库存够用）
+每个物料给出：毛需求、可用库存、净需求、建议下单日期、最早缺料日、影响工单、风险等级、建议动作。
+
+【第5步：出结果 + 人工确认（不自动下单）】
+输出到 03-output/：
+1. 未来14天采购计划建议.xlsx — 每个物料的推演明细
+2. 缺料风险清单.xlsx — 净需求 &gt; 0 的物料（高风险/中风险/低风险）
+3. 采购计划工作台账.xlsx — 谁推演的、什么状态
+4. 缺料风险看板.html — 汇总卡片 + 风险清单
+颜色约定：正常=绿色、低风险=黄色、中风险=橙色、高风险=红色。
+重要：你只给采购建议，不自动下单——采购计划需采购和计划人员确认后执行。
+
+【第6步：通知（先检测，再决定发还是留草稿）】
+先把摘要整理好：高风险物料数量、最早缺料日期、影响哪些工单、建议采购动作。
+然后先检测当前用户是否已绑定企业微信：
+- 已绑定 → 直接发送 `03-output/企业微信通知草稿.txt`（**纯文本版，不含任何标签**）；企微 5.0.10 起消息能力已全面开放（不限企业规模），正常应发送成功；
+  发送后自查：若消息中出现 `&lt;font` 或 `&lt;/font&gt;` 字样 → 立即用纯文本版重新发送并说明原因；
+  若发送失败，重试一次仍失败 → 引导用户按工作台《企业微信通知权限开通指引》排查（重新授权/可见范围/会话范围），
+  本次草稿已生成（纯文本版可先手动转发）；
+- 没绑定 → 明确说"本次未发送企业微信通知（原因：未绑定企微）"。
+
+【第7步：汇总】
+给我一份简明汇总：几个物料、正常/低/中/高风险各几个、最早缺料日是哪天、哪些物料要立即下单加急。
+
+【定时任务（已配置）】
+本案例已按要求配置**每天 8:00 自动运行缺料预警**，无需手动设置；如需调整时间，在对话里说即可。</code></pre></div><p data-page-node-id="qh5Ia0aTGW0uP5P8a9iM6q"><strong data-page-node-id="yMWP0qMS0fyeP3VCvjHVjw">人工检查</strong>：AI 只给采购建议，不自动下单；采购计划需采购和计划人员确认后执行。缺料预警要说明计算口径与假设。</p><div class="spacer" aria-hidden="true" data-page-node-id="Dl7mz9tXWugqDTMHEIXWkE"></div><h2 data-page-node-id="kPEIjKsIRzlDcA7eeu8OjF">提示词 ④｜供应商交付风险预警与周报</h2><p data-page-node-id="sWNWbwcFO5Ce4VGwuT2OdL"><strong data-page-node-id="Y0o0hyqRdu5iqSscYI7gYS">业务目标</strong>：按供应商汇总准时交付率、短交超交、质量异常与涨价幅度，按规则分高 / 中 / 低风险，输出供应商风险周报、绩效看板与风险台账，并按责任采购员推送通知。</p><div class="code-card" data-page-node-id="LB5NnldsfDx5qJUCZO53jP"><div class="code-top" data-page-node-id="D0NoBWL2WYyLz4iKCYnOie"><span data-page-node-id="BSYANDq5StJ92Y9awdeZkJ">plain text</span><button class="copy-btn" type="button" aria-label="复制代码" data-page-node-id="ngROugl0dB4LlA26e1KPvw">复制</button></div><pre data-page-node-id="N0772GaKOd8RJjhJtrusW0"><code data-page-node-id="thsUbwXVG2G9oUBS7fi5ly">帮我处理项目文件夹 01-input/ 里的标准材料（已就位），直接读取开始，不用上传。
+
+【第1步：确认材料】
+确认 01-input/ 里材料都就位（02-working 工具也都在），缺哪个告诉我；都齐了直接往下走。
+【第2步：读取材料】
+直接读取 01-input/ 里已就位的材料：供应商主数据、采购订单执行表、实际到货记录、质量异常记录、供应商报价变化表
+（巡检时优先用 02-working 工作台里的风险巡检工具，保证口径一致；工具不可用时，用你自带能力完成并在汇总里说明哪步降级了。）
+【第3步：风险巡检】
+按供应商维度汇总并计算：
+- 准时交付率（准时到货订单数 ÷ 总订单数）
+- 短交次数 / 超交次数
+- 质量异常次数
+- 涨价幅度（本期单价 vs 上期单价）
+
+【第4步：识别高风险供应商 + 分级】
+按规则分级：
+- 高风险：准时交付率 &lt; 80%（订单≥3 才计）或 质量异常 ≥ 2 次 或 涨价 &gt; 10%
+- 中风险：准时交付率 &lt; 90% 或 涨价 &gt; 5%
+- 低风险：其余基本正常
+每个供应商给出：准时交付率、短交/超交、质量异常、涨价幅度、风险等级、风险因素、建议动作。
+
+【第5步：出结果 + 人工确认（不自动处理供应商）】
+输出到 03-output/：
+1. 供应商风险周报.docx — Word 周报（总体情况 + 风险分级表 + 高风险明细 + 跟进动作）
+2. 供应商绩效看板.html — 汇总卡片 + 风险明细
+3. 供应商风险台账.xlsx — 每家的指标和风险等级
+颜色约定：正常=绿色、低风险=黄色、中风险=橙色、高风险=红色，看板和台账保持一致。
+重要：你只做巡检和建议，不自动处理供应商（暂停合作/索赔需采购决策）。
+
+【第6步：通知（先检测，再决定发还是留草稿；按责任采购员推送）】
+先把摘要整理好：高风险供应商、本周新增延期订单、本周质量异常、建议跟进动作。
+然后先检测当前用户是否已绑定企业微信：
+- 已绑定 → 直接发送 `03-output/企业微信通知草稿.txt`（**纯文本版，不含任何标签**）；企微 5.0.10 起消息能力已全面开放（不限企业规模），正常应发送成功；
+  发送后自查：若消息中出现 `&lt;font` 或 `&lt;/font&gt;` 字样 → 立即用纯文本版重新发送并说明原因；
+  若发送失败，重试一次仍失败 → 引导用户按工作台《企业微信通知权限开通指引》排查（重新授权/可见范围/会话范围），
+  本次草稿已生成（纯文本版可先手动转发）；
+- 没绑定 → 明确说"本次未发送企业微信通知（原因：未绑定企微）"。
+
+【第7步：汇总】
+给我一份简明汇总：巡检几家、正常/低/中/高风险各几家、哪些供应商需要立即处理、哪个采购员跟进最多。
+
+【定时任务（已配置）】
+本案例已按要求配置**每周一 9:30 自动生成供应商周报**，无需手动设置；如需调整时间，在对话里说即可。</code></pre></div><p data-page-node-id="DBpdODwFDStOgoC5NsJQpn"><strong data-page-node-id="kqc97kSqEVrAAkTmGtw7z0">人工检查</strong>：AI 只做巡检和建议，不自动处理供应商（暂停合作 / 索赔需采购决策）。</p><div class="spacer" aria-hidden="true" data-page-node-id="1CissNphYimmLVhPIqHI2x"></div></article></section>
+<section class="page" id="page-case-301" data-page-node-id="BYkZhuhI69h2hgxFF8yUdc"><article class="paper" data-page-node-id="BIA7ONzVo8v4IH1hGt0cxV"><header class="hero" data-page-node-id="QWUkWv0UM6yQVICh1Pyc7g"><div class="eyebrow" data-page-node-id="EBg2HdGC9rMv1DvwT7tnRQ">模块三 · 工具固化</div><h1 data-page-node-id="8b5S5PyXkYS5L36SXEdX8q">案例301｜员工制度问答助手</h1></header><h2 data-page-node-id="xb37veslLiEdbrOhB54fol">使用说明</h2><div class="numbered depth-1" data-page-node-id="DgCRXHvLFmFoc8lZFJMejs"><span class="marker" data-page-node-id="2mN2B8N07rbm0aSAlSGfcj">1.</span><div data-page-node-id="M18DCLNpS8s2C5Zc4p2AXS">本案例为<strong data-page-node-id="mtGmSKfVqpcDUtev4FoB5H">一条完整提示词</strong>（内部含开工准备 → 收材料 → 建知识库并逐题回答 → 出结果 → 通知汇总共 5 步），下方代码块内为完整提示词。</div></div>
+<div class="numbered depth-1" data-page-node-id="CkJ7ZxVa84uRTXjIyODoNz"><span class="marker" data-page-node-id="cqNIqjOTUlGPb5NC9s50Sf">2.</span><div data-page-node-id="Udklkp1ZS0d2EB4ae5QEFD">本案例需要<strong data-page-node-id="BvNkNv0bEGiCIhfqs00wGM">你自己上传材料</strong>：把员工手册、考勤制度、请假制度、福利政策、报销制度 5 份文档与测试问题集直接拖进对话框，AI 会放入 <code class="inline-code" data-page-node-id="IlvhUJMaZlBuVC5epNGfiV">01-input/</code>。</div></div>
+<div class="numbered depth-1" data-page-node-id="9xryNGdTp3fPNnU535BKgX"><span class="marker" data-page-node-id="16AhRtURxlcjQxKEt5aJd3">3.</span><div data-page-node-id="oMe6QiFeVhs5OOtaAqXZnA">FAQ 台账模板与知识库工具已在 <code class="inline-code" data-page-node-id="rD2wOK9V2Gljs4OV4GCdgl">02-working/</code> 就位，无需提供；4 个产物输出到 <code class="inline-code" data-page-node-id="B78m7Csp2wqDpqhqNGbp0S">03-output/</code>。</div></div>
+<div class="numbered depth-1" data-page-node-id="YnStGsd1zJpYgEXqB6dpjb"><span class="marker" data-page-node-id="oXPhzQNvpVU1T9ElvDzGfo">4.</span><div data-page-node-id="65MQhyWiutX9CInpugBu8c">答题红线：<strong data-page-node-id="ljc9OxAYlRpfRviFLH0lPg">有依据才回答、必须引用制度条款；制度没写的标注「需 HR 确认」，不凭常识编造</strong>；AI 不冒充 HR 承诺制度外内容。</div></div>
+<div class="numbered depth-1" data-page-node-id="sdr5NWTvzRhbAOLarU1cvN"><span class="marker" data-page-node-id="SvbJwjkPuLlFvHzFEL52JH">5.</span><div data-page-node-id="jXgAREGLrImQdbYVdeH3Hr">颜色约定：有依据=浅绿、部分依据=浅黄、需 HR 确认=浅橙；最后按企业微信绑定情况发送通知或保留草稿。</div></div><div class="spacer" aria-hidden="true" data-page-node-id="81hH2opMSREtfax3NzE53C"></div><h2 data-page-node-id="jI2RcVh9pdT8UOMDtpkfsj">提示词｜员工制度问答助手（一次执行 5 步）</h2><p data-page-node-id="KJK2JpyWpSqnmd3d5cbUgo"><strong data-page-node-id="QSFUyW1Mf3aASzIx14mkUt">业务目标</strong>：搭建员工制度问答助手并测试一批常见问题：建立知识库索引，逐题作答且每题引用制度条款，把制度未覆盖的问题转 HR，沉淀 FAQ 台账与需 HR 确认清单。</p><div class="code-card" data-page-node-id="ljH3vBIyKtCa075LAq7q6x"><div class="code-top" data-page-node-id="VXtpTTC06cGOfBd0v4ZvtS"><span data-page-node-id="BaeVAGXKJg8AHBwiTBuoxW">plain text</span><button class="copy-btn" type="button" aria-label="复制代码" data-page-node-id="Qi0Tv5FrsGELgDWPSIRjRv">复制</button></div><pre data-page-node-id="o7q2meZ3o0fztJ3t9bv6vV"><code data-page-node-id="z4Q8HGB74aAoH3lzSvIKBc">帮我搭建员工制度问答助手并测试一批常见问题，我直接把制度文件发给你。
+
+【第1步：开工准备】
+检查并创建四个文件夹：01-input / 02-working / 03-output / 04-archive。
+
+【第2步：收材料】
+把我提供的文件放进 01-input/：员工手册、考勤制度、请假制度、福利政策、报销制度（5 份制度文档）、测试问题集。
+（FAQ 台账模板已在工作台就位，无需我提供）
+放好后告诉我每个文件被放到了哪里。
+（问答时优先用 02-working 工作台里的知识库工具和 FAQ 台账模板，保证回答口径一致；工具不可用时，用你自带能力完成并在汇总里说明哪步降级了。）
+
+【第3步：建知识库 + 逐题回答】
+- 先用工作台里的工具建立知识库索引，并生成《员工制度问答测试表》（每题带候选依据条款）；
+- 然后逐题回答测试问题：
+  - **有依据才回答**——读候选条款，回答必须引用制度条款（如"考勤制度.md 第六条"）；
+  - **制度没写的，不编造**——标注"需HR确认"，不要凭常识给答案；
+  - 把回答、引用条款、是否需HR确认 三列填回问答测试表。
+
+【第4步：出结果】
+再次运行工作台工具（它会识别回答已填好），生成 4 个产物到 03-output/：
+1. 员工制度FAQ台账.xlsx — 按主题沉淀高频问题与回答
+2. 员工制度问答测试记录.xlsx — 每题的问答 + 引用条款 + 状态
+3. 需HR确认问题清单.xlsx — 制度没覆盖的问题，转 HR
+4. 企业微信通知草稿.txt — 新增高频问题/无法回答/需补充制度
+颜色约定：有依据=浅绿、部分依据=浅黄、需HR确认=浅橙。
+重要：AI 不冒充 HR 承诺制度外内容；需HR确认的问题必须转给 HR，不能给员工答复。
+
+【第5步：通知（先检测，再决定发还是留草稿）+ 汇总】
+先把摘要整理好：测试几题、有依据几题、需HR确认几题、沉淀几个 FAQ 主题。
+然后先检测当前用户是否已绑定企业微信：
+- 已绑定 → 直接发送 `03-output/企业微信通知草稿.txt`（**纯文本版，不含任何标签**）；企微 5.0.10 起消息能力已全面开放（不限企业规模），正常应发送成功；
+  发送后自查：若消息中出现 `&lt;font` 或 `&lt;/font&gt;` 字样 → 立即用纯文本版重新发送并说明原因；
+  若发送失败，重试一次仍失败 → 引导用户按工作台《企业微信通知权限开通指引》排查（重新授权/可见范围/会话范围），
+  本次草稿已生成（纯文本版可先手动转发）；
+- 没绑定 → 明确说"本次未发送企业微信通知（原因：未绑定企微）"。
+最后给我一份简明汇总：测了几题、哪些回答有制度依据（列条款）、哪些问题转 HR 确认。</code></pre></div><div class="spacer" aria-hidden="true" data-page-node-id="pZH5Fq0lnYAhLhesHeXoQB"></div></article></section>
+<section class="page" id="page-case-302" data-page-node-id="MkjNdPryC2HtopAKhRi8KB"><article class="paper" data-page-node-id="pHbe17QQyjyBH7U6M7BDtx"><header class="hero" data-page-node-id="8dRrZQAI2KsyNcfTq1aWTG"><div class="eyebrow" data-page-node-id="PyunGwEIiZMdpU3wslpCpS">模块三 · 工具固化</div><h1 data-page-node-id="UQDcPCdzJpPGCsCRhDvBk4">案例302｜员工教练：课件、题库与训练计划</h1></header><h2 data-page-node-id="EjxTFMZCl0MsCPFiraDiiQ">使用说明</h2><div class="numbered depth-1" data-page-node-id="E5L6KpX2cHphHIXxqOMaBC"><span class="marker" data-page-node-id="40oTiR8LRBxlJz9LAF80gi">1.</span><div data-page-node-id="DAdwKWCn916tlVsAPuO5Vi">本案例为<strong data-page-node-id="27SYMP0iQG1yCAZv4vcD0b">一条完整提示词</strong>（内部含读材料 → 生成课件与题库 → 出结果 → 通知汇总共 4 步），下方代码块内为完整提示词。</div></div>
+<div class="numbered depth-1" data-page-node-id="hYhcnVGH0Lf7Eg8WM8IOjH"><span class="marker" data-page-node-id="XlFAydsJPuIat4ImK5nZbQ">2.</span><div data-page-node-id="8rTWxI9uwHHCwHlbqQv87R">材料与工具已就位：<code class="inline-code" data-page-node-id="SJx3QCMawxPhOnRomnZAiN">01-input/</code> 含岗位 SOP、员工手册、产品知识、岗位能力要求表；<code class="inline-code" data-page-node-id="ZEDbQuTQOdZFs8AqHbkJUH">02-working/</code> 考试题模板与训练工具已配好，不用上传。</div></div>
+<div class="numbered depth-1" data-page-node-id="bL1kpbCZAFncdtNyF1jC1o"><span class="marker" data-page-node-id="C0glCKQH1wPi1PNV46PSKT">3.</span><div data-page-node-id="qnJeQdVbg7O4AE40iFgJQa">训练周期默认 7 天，如需修改在对话里直接说；4 个产物输出到 <code class="inline-code" data-page-node-id="0svLjDBbiU9Zvm3jChyXxz">03-output/</code>（题库、训练计划、训练台账、通知草稿）。</div></div>
+<div class="numbered depth-1" data-page-node-id="ZunWzXOXvEsaLbQE3A4EjA"><span class="marker" data-page-node-id="QEB86Eh3Zjd05ApwAs9nKu">4.</span><div data-page-node-id="vEj6lVHRhuPWG3B0zgg0QG">人工确认红线：训练计划涉及员工安排，<strong data-page-node-id="FPSZSoFMKo4EcFFktlAu1Q">生成后先经确认再通知</strong>；考试 60 分及格，不及格需补考。</div></div>
+<div class="numbered depth-1" data-page-node-id="dFtet2PIOIIJzLcNzVnHhL"><span class="marker" data-page-node-id="BPzO32drLdPq6LWIo2cGfq">5.</span><div data-page-node-id="sXY89YtjaQTADsswawlFWn">颜色约定：未开始=灰、进行中=浅蓝、已完成=浅绿、需补考=浅橙；通知状态 草稿=浅黄、已发送=浅绿。</div></div><div class="spacer" aria-hidden="true" data-page-node-id="ZKH5MaT4UfNNSjIKyd1FT1"></div><h2 data-page-node-id="07wEKK8B2BaCCjKQMW7GpE">提示词｜员工教练：培训课件、题库与训练计划</h2><p data-page-node-id="rH0xx9Vgu6AW83eUfo8R3h"><strong data-page-node-id="vo94IB3yUWWrSeoJ9b046H">业务目标</strong>：依据岗位 SOP 与能力要求生成培训课程大纲、讲稿与考试题库，再按员工 × 课程拆分训练计划与训练台账，并通过企业微信下发学习任务与考核要求。</p><div class="code-card" data-page-node-id="YhcISRaurPeYtWPEgW5aAC"><div class="code-top" data-page-node-id="0DBG0CumxKsH1AJsJtAsVI"><span data-page-node-id="7HLYPRsKzx7HnCaii1PIfX">plain text</span><button class="copy-btn" type="button" aria-label="复制代码" data-page-node-id="eHuuZrY9qyjLUq0IeBjhnc">复制</button></div><pre data-page-node-id="wPfOuOGfME7kzNB4H60il5"><code data-page-node-id="He55A6kWHXPbuW8LFQv00D">帮我跑一遍员工教练流程：项目材料已就位（01-input 材料、02-working 工具都在），直接读取开始，不用上传。
+
+【第1步：读材料】
+确认项目目录完整，直接读取 01-input/ 的岗位SOP、员工手册、产品知识、岗位能力要求表。
+训练周期默认 7 天，如需改告诉我。
+
+【第2步：生成课件】
+- 生成《培训课程大纲.docx》：3 个课程模块（岗位操作流程 / 员工制度规范 / 产品知识），含培训要点、时长分配（合计 30 分钟）和学习目标；
+- 生成《培训讲稿.docx》：30 分钟完整讲稿，口吻自然；
+- 用考试题模板（复制一份填题）出题：每模块 13 题（单选 5、判断 5、情景 3），每题附标准答案和解析；只依据材料内容，不编造。
+（出题时优先用 02-working 工作台里的考试题模板（复制一份填题），生成结果用工作台的训练工具，保证产物格式一致；工具不可用时，用你自带能力完成并在汇总里说明哪步降级了。）
+
+【第3步：出结果】
+运行工作台工具，生成 4 个产物到 03-output/：
+1. 培训考试题库.xlsx — 全部题目 + 答案解析
+2. 员工训练计划.xlsx — 按员工×课程拆分，截止 = 今天 + 训练周期（自动算）
+3. 员工训练工作台账.xlsx — 每人每门课一行，含进度和通知状态
+4. 企业微信通知草稿.txt — 培训主题/学习任务/截止时间/考核要求
+颜色约定：未开始=灰、进行中=浅蓝、已完成=浅绿、需补考=浅橙；通知状态 草稿=浅黄、已发送=浅绿。
+人工确认红线：训练计划涉及员工安排，生成后先给我确认再通知；考试 60 分及格，不及格需补考。
+定时任务（可选）：需每周提醒未完成员工时，告诉我频率即可。
+
+【第4步：通知（先检测，再决定发还是留草稿）+ 汇总】
+先把摘要整理好：几门课、多少题、几名员工几门课、截止日期。
+然后先检测当前用户是否已绑定企业微信：
+- 已绑定 → 直接发送 `03-output/企业微信通知草稿.txt`（**纯文本版，不含任何标签**）；企微 5.0.10 起消息能力已全面开放（不限企业规模），正常应发送成功；
+  发送后自查：若消息中出现 `&lt;font` 或 `&lt;/font&gt;` 字样 → 立即用纯文本版重新发送并说明原因；
+  若发送失败，重试一次仍失败 → 引导用户按工作台《企业微信通知权限开通指引》排查（重新授权/可见范围/会话范围），
+  本次草稿已生成（纯文本版可先手动转发）；
+- 没绑定 → 明确说"本次未发送企业微信通知（原因：未绑定企微）"。
+最后给我简明汇总：课程大纲几模块、讲稿时长、题库几题、训练计划覆盖几人几门课、截止日期。</code></pre></div><div class="spacer" aria-hidden="true" data-page-node-id="zFTCdcGDIFTjdKCnLQKHm6"></div></article></section>
+<section class="page" id="page-case-303" data-page-node-id="3sZ0lKm8sA1OxA3hARS1Wu"><article class="paper" data-page-node-id="g1URiauVa6fpQ5v3nVU1Oa"><header class="hero" data-page-node-id="YmtE38wVPho7FihUDJyqxT"><div class="eyebrow" data-page-node-id="qWeQ4BewZm8NTt9qzJOriV">模块三 · 工具固化</div><h1 data-page-node-id="V06g5pKVFVg7Dz0DjIUWfQ">案例303｜车辆预约登记系统</h1></header><h2 data-page-node-id="HuOwgZmIaVBru4c8DeEmfu">使用说明</h2><div class="numbered depth-1" data-page-node-id="o2sKCzEkGfvWenRqXnlpbQ"><span class="marker" data-page-node-id="buFh9u5F22HsIZsn4R8D1G">1.</span><div data-page-node-id="Uwuh1W14R5umd761XTlPJm">本案例为<strong data-page-node-id="08qqUGGORyyXdJJLZFZ9dG">一条可直接复制的完整提示词</strong>（含目标、要求、质检三部分），用于一次性生成「车辆预约登记系统」单网页应用。</div></div>
+<div class="numbered depth-1" data-page-node-id="Aa1FRwt27cA0FZdlsBRZtz"><span class="marker" data-page-node-id="gOjzz64L0XbNuFpFxcYMIS">2.</span><div data-page-node-id="EzWdpC8dvjBPhP6kxquEL3">把提示词整体复制到 WorkBuddy 新建任务中运行；AI 会在 <code class="inline-code" data-page-node-id="yGtN0GO2ZGDpAUT87eT6O2">02-working/vehicle-booking</code> 下生成代码并启动本地服务，<strong data-page-node-id="BmKPZ8swvcn6moZ1wkoFC5">用本地浏览器打开就能用，不需要装任何额外软件</strong>。</div></div>
+<div class="numbered depth-1" data-page-node-id="xBVtQWz8F9kFeokpVcAIpm"><span class="marker" data-page-node-id="zt4pHBWZ6XNGVvMOBbc5uq">3.</span><div data-page-node-id="6Dgg2wMAFpiOaLMpCv3x1r">数据存到 <code class="inline-code" data-page-node-id="BeN6r0NDpjDMIMy3fWcHS0">预约记录.csv</code> 与 <code class="inline-code" data-page-node-id="zvI8l2pF69UHyuE8bP4Spn">车辆.csv</code> 两个文件，要求 Excel/WPS 双击能直接打开、中文不乱码；列名<strong data-page-node-id="ZbR7hIHQ74kY0Lyt3Ac9Y4">全部用中文</strong>，不要改成英文。</div></div>
+<div class="numbered depth-1" data-page-node-id="QLSuEMxrVUXWOskiginwjh"><span class="marker" data-page-node-id="0TAABqpHADLRqrIlPH84lt">4.</span><div data-page-node-id="m4roCLY5D0jpvJiIXDNEib">页面包含登记预约、预约记录（筛选 / 改状态 / 删除 / 导出）、车辆管理三部分，并附带启动脚本（mac 与 Windows 双击即可启动并自动打开浏览器）；预置 3 辆示例车与 2 条示例预约。</div></div>
+<div class="numbered depth-1" data-page-node-id="xvRuEIlWqdDmB6fiMnTk9T"><span class="marker" data-page-node-id="gflv5Di9bCpuxldeiOlmqR">5.</span><div data-page-node-id="EpEP2dCZ2xEycnqJCnOGwo">自检要点：正常填表提交不误报、状态改动刷新后不丢、同时段重复预约弹冲突确认框、手机号格式校验生效。</div></div><div class="spacer" aria-hidden="true" data-page-node-id="NFCCMo7VgYqFPgKeBMWYcr"></div><h2 data-page-node-id="ordc7FI2FLjAmkHLQlPUcW">提示词｜车辆预约登记系统（一次做完）</h2><p data-page-node-id="4qQeNJbhLbW1cFYHD1ZnxP"><strong data-page-node-id="UDKxtYjZ0p4NQK32a184mJ">业务目标</strong>：生成一个可直接使用的车辆预约登记单网页应用：登记预约页、预约记录页（按日期与状态筛选、改状态、删除、导出）、车辆管理页，数据存 CSV 且中文列名不乱码。</p><div class="code-card" data-page-node-id="f0OnJzNsCYcbGBGht2U7ej"><div class="code-top" data-page-node-id="WwjFe8AWReAY3WDuGAytYR"><span data-page-node-id="67Qpaf2Icz7kSYcMXBPTB2">plain text</span><button class="copy-btn" type="button" aria-label="复制代码" data-page-node-id="tEtEb3vPGMVKnpBwsWc2FH">复制</button></div><pre data-page-node-id="FG3BWN4kd7ZUNzVYEplfO6"><code data-page-node-id="35R3HDiZT0pUpD1yf3kmPt">给我做一个「车辆预约登记系统」，一次做完，代码放在 02-working/vehicle-booking 文件夹里。
+
+### 01 目标
+
+1. 登记预约页：员工填 姓名/部门/手机号/用车日期/用车时段/目的地/事由/乘车人数/申请车辆，提交后存下来
+2. 预约记录页：看所有预约，能按日期和状态筛选，能改状态（待审核/已通过/已驳回/已取消/已完成），能删除，能导出
+3. 车辆管理页：加车、删车（车牌号/车辆名称/座位数/司机姓名/司机手机）
+
+### 02-要求
+
+1. 用本地浏览器打开就能用；不要装任何额外软件
+2. 所有数据存进两个文件：「预约记录.csv」和「车辆.csv」，要求 Excel/WPS 双击能直接打开、中文不乱码
+3. 预约记录表的列：编号/记录时间/姓名/部门/手机号/用车日期/用车时段/目的地/事由/乘车人数/申请车辆/状态/备注
+4. 车辆表的列：编号/车牌号/车辆名称/座位数/司机姓名/司机手机/车辆状态/备注
+5. 提交前检查：必填的没填要提示；手机号不对提示「手机号格式不正确」；同一天同一个时段如果已经有「待审核」或「已通过」的记录，弹窗问我要不要继续
+6. 登记页选车的下拉框，只显示「可用」的车，显示格式：车牌号（车辆名称）
+7. 页面每次改动都整个存回文件，刷新后不丢
+8. ⚠️ 最重要的一条：所有列名都用中文（姓名、手机号、用车日期这些），程序读写数据也按中文列名来，千万不要改成英文，否则所有字段都会报"没填"
+9. 给我一个启动脚本（mac和Windows 用户 双击它就能启动并自动打开浏览器）
+10. 预置 3 辆示例车（别克GL8 可用、考斯特 可用、雅阁 维修）和 2 条示例预约
+
+### 03-质检
+
+- 打开本地浏览器、启动本地服务
+- 正确填表提交 → 提示「预约已提交 ✓」，不弹任何"请填写xxx"的误报
+- 提交后记录列表出现新行，状态是「待审核」
+- 把状态改成「已通过」，刷新页面还在
+- 用 Excel 打开 预约记录.csv，中文不乱码，能看到新数据
+- 同一天同一个时段再提交一次，会弹冲突确认框
+- 车辆管理能加车删车，登记页选车下拉自动更新
+- 手机号填错提交时，提示「手机号格式不正确」</code></pre></div><div class="spacer" aria-hidden="true" data-page-node-id="T1OUI8arqxjeRfzSK19Q2d"></div></article></section>
+<section class="page" id="page-case-304" data-page-node-id="cJsABtSh9jd43mGUaap8wC"><article class="paper" data-page-node-id="qrAydW6kNzJp9zF5gE68Kt"><header class="hero" data-page-node-id="X40fEdOccR4YVfl3wZhwGi"><div class="eyebrow" data-page-node-id="MFDTAt33POVQS0QYAkdfHB">模块三 · 工具固化</div><h1 data-page-node-id="vBnxILQL8THd3rB3v0y2wu">案例304｜企业官网设计</h1></header><h2 data-page-node-id="adZuxH0Uu60s0i8pwYbjwr">使用说明</h2><div class="numbered depth-1" data-page-node-id="MPsfbqzOPvfiscDhlAWD3i"><span class="marker" data-page-node-id="p24RmIKsyF0VlkQDkBc1js">1.</span><div data-page-node-id="NRj4DVCtfRsgC8cDnMvMAy">本案例是「从零做企业官网」的分步操作手册，共 <strong data-page-node-id="VCRA4Zlbdn8ObFEWP707VD">9 段提示词</strong>：出方案 → 搭骨架 → 填产品数据 → 用上 Logo 与照片 → 写数据层 → 写页面渲染与样式 → 写后台管理 → 询盘写入腾讯文档 → 部署上线。</div></div>
+<div class="numbered depth-1" data-page-node-id="NClBLHGBWe9LIHdR7Nj8qw"><span class="marker" data-page-node-id="wFDBkjfGn0H3EI0EiAqZdE">2.</span><div data-page-node-id="i6igQfHG3sXbDyNhneIxsM">每一步 = <strong data-page-node-id="URkQeQG9rMlJ88XgWg4NwJ">复制提示词 → 粘贴给 WorkBuddy → 按「业务目标」操作 → 通过完成标准后再进下一步</strong>；每步都有独立代码块，逐段执行。</div></div>
+<div class="numbered depth-1" data-page-node-id="NrcovRwjUyrXgYX2ALiLCB"><span class="marker" data-page-node-id="VJ0dMszlWCiTvAuEfmCYaQ">3.</span><div data-page-node-id="pUPDTZgijDQtDHS1bCT6Sf">开始前先备料：把 Logo、产品照片、产品图册、企业介绍 PPT、原官网、资质证书、案例照片、联系方式等放进项目文件夹 <code class="inline-code" data-page-node-id="iCQjaq5CbqhajaIR101R8V">01-input/</code>（原官网等可放 <code class="inline-code" data-page-node-id="1HvzfGy2ZdxMjtCFKqjTz9">04-archive/</code>），并把提示词里的 <code class="inline-code" data-page-node-id="kqqisMXjPHAKJRTHn1fn4u">{{...}}</code> 占位符替换成你的企业信息。</div></div>
+<div class="numbered depth-1" data-page-node-id="aEc5ddCE3ZHNwwy4srudh3"><span class="marker" data-page-node-id="ZAgfdrBX0q6Wn4PX8n7PtT">4.</span><div data-page-node-id="izKYv99S6P4cmpTsE97s0B">全程只需要 WorkBuddy + Chrome/Edge 浏览器 + 一个腾讯云账号，<strong data-page-node-id="ODUY9tk2JyGG8cP6UDEwbV">不需要写代码、不需要懂技术</strong>。</div></div>
+<div class="numbered depth-1" data-page-node-id="P3eUBLy7UYj6h7I6RQFGoD"><span class="marker" data-page-node-id="qmGagrC4Y81sY0YTP6OhMU">5.</span><div data-page-node-id="D5WWjgizJeu3FEC2ED1xGc">第 7、8 步需要腾讯文档个人 Token 与 CloudBase 环境（也可课后完成）；日常更新记住三件事：打开 admin.html → 改内容保存 → 运行 ./deploy.sh。</div></div><div class="spacer" aria-hidden="true" data-page-node-id="Upla15rOSovMjOz7eQTNQE"></div><h2 data-page-node-id="OtxafPEZmg2i7ilsTrAaab">第 1 步｜让 AI 出方案</h2><p data-page-node-id="EM2J53RtyTGbfC70GJ3HjP"><strong data-page-node-id="TVHpPs5inwZcaFPYfWYnTl">业务目标</strong>：让 AI 先浏览项目资料，产出一份简洁方案：页面清单、每页核心内容、2 套配色、数据存储方案、功能取舍与产品型号清单。</p><div class="code-card" data-page-node-id="mz0wOGCgNENPwiGSgARwjC"><div class="code-top" data-page-node-id="Nk2DwXGnC9ooUOEQCsqjUM"><span data-page-node-id="0YHOclidXLYvNHd2ldgIkj">plain text</span><button class="copy-btn" type="button" aria-label="复制代码" data-page-node-id="JPkU6LUrcU3VCLmcNcDbiE">复制</button></div><pre data-page-node-id="svVcP8TCq3WfTcCBvBfsVv"><code data-page-node-id="bZLdwdcZ1GgHMscyX9n1Pd">你是资深网站架构师。我要用纯前端方式（HTML+CSS+JS，不用框架、不用后端）做一个企业官网。
+先浏览我的项目文件夹「我的企业官网」里的「01-input」文件夹（里面有我的 Logo、产品照片、产品图册、企业介绍、原官网截图、资质证书等原始资料）。重点看企业介绍的 PPT 文件，里面有产品照片、图册
+基于这些资料，给我一份简洁的方案，包含：
+1. 网站需要哪些页面（首页/产品/关于/案例/新闻/联系等，按需列）
+2. 每个页面的核心内容
+3. 配色方案（给我2套备选，每套3个颜色，参考我的企业资料里的 Logo 和原官网风格）
+4. 数据怎么存（我要能"把整个项目文件夹拷给别人就能用"，请推荐最简方案）
+5. 哪些功能做、哪些不做
+6. 产品图册里有几个产品型号、分别列出来
+请用表格输出，控制在800字以内，不要长篇大论。
+我的企业：{{深圳市智造自动化科技有限公司}}，主营{{深圳市智造自动化科技有限公司位于中国深圳，是一家拥有自主知识产权的高新技术企业，专注于DD马达，直驱电机的研发、生产、定制、销售和服务。   
+对于先进的制造行业，智造为客户提供高品质的直驱电机系列产品。 产品广泛应用于自动化光学筛选机、自动检测设备、LED设备、3C设备、机床及半导体设备、自动化装配、转盘丝印设备、新能源电池、医疗器械等高端智能设备。}}，电话{{+86-0755-28686964}}，地址{{深圳市龙岗区坪地龙二工业园C栋6楼}，想要{{科技风}}风格的官网。
+不管其他文件的要求，公司以及网站的名称都统一为：{{深圳市智造自动化科技有限公司}}</code></pre></div><div class="spacer" aria-hidden="true" data-page-node-id="R9gn7QKfXriGmoFr77ngnr"></div><h2 data-page-node-id="EMjMNZGrm3yy1bdfvJ26fw">第 2 步｜让 AI 搭项目骨架</h2><p data-page-node-id="yAqHskEZwHHTRQubwpGfoj"><strong data-page-node-id="Gr3CK3bGQ2Hwnywa7r1FaZ">业务目标</strong>：按方案在项目文件夹下搭建骨架：创建全部 HTML 页面与 css / js / data 目录，定义 CSS 变量，只搭骨架不写业务逻辑。</p><div class="code-card" data-page-node-id="Y3AQK2goUXPUJOk4UCJlYU"><div class="code-top" data-page-node-id="XUSRpnoHy53HTvdirZFUM6"><span data-page-node-id="wg9vBi2tl1ixw81czc2jZb">plain text</span><button class="copy-btn" type="button" aria-label="复制代码" data-page-node-id="HFjsCNH3XPAEPVyN6k8sAq">复制</button></div><pre data-page-node-id="YJHkPLqDuKhdB9kU9wOxiM"><code data-page-node-id="jjRD0nXsD8hqKjbqiP0Qyi">按照上一步的方案，在我的工作区文件夹下，并搭建项目骨架：
+1. 创建所有需要的 HTML 页面（每个页面先放一个 h1 标题占位即可）
+2. 创建 assets/css/style.css、assets/js/data.js、assets/js/main.js 三个文件
+3. 在 style.css 里定义 CSS 变量（主色、辅助色、文字色、背景色、圆角、容器宽度）
+4. 创建 data/ 文件夹（放业务数据，先建空文件：site.js products.js news.js categories.js 等）
+5. 每个 HTML 页面按顺序引入：style.css → data.js → main.js
+不写任何业务逻辑，只搭骨架。文件结构用目录树展示给我确认。</code></pre></div><div class="spacer" aria-hidden="true" data-page-node-id="TYF4E8DwCYSgjxwUUh9HXm"></div><h2 data-page-node-id="h6jI2vx8LoUpH5WcRJd1w9">第 3 步｜让 AI 填充产品数据</h2><p data-page-node-id="ZSc4z3XNH3YfnRisbb6xzh"><strong data-page-node-id="sYlwHqTFwwr8GlgAAmAtgx">业务目标</strong>：读取产品图册与产品照片，提取产品信息写入 data/products.js 与 data/categories.js，并把产品图片整理到 uploads/images/ 目录。</p><div class="code-card" data-page-node-id="LGbNtOYLtiTvhU4ucivhe1"><div class="code-top" data-page-node-id="Sjc5RFukrrzpWQM7FUDoTy"><span data-page-node-id="oEf2rjeDHSDHS8LoMod5S7">plain text</span><button class="copy-btn" type="button" aria-label="复制代码" data-page-node-id="iztKD0j8vGN59sHBuvyIK4">复制</button></div><pre data-page-node-id="lqD3yDBTVMENEECkWqC3at"><code data-page-node-id="o7Mn8oEK9uF0pHTmHhtwxD">帮我整理产品数据：
+1. 先读取「01-input/产品图册」和「01-input/产品照片」里的资料，提取产品信息（没有图册就用手写的产品列表）或者采用企业介绍中的相关图片
+2. 把产品信息写入 data/products.js（如果没有这个文件就先创建），字段：id、name、category、subCategory、image（有产品照片就填对应路径，没有先留空）、tags、params、features、applications、description
+3. 把产品分类写入 data/categories.js（一级分类+二级分类）
+4. 产品照片整理到项目的 uploads/images/ 目录（从「01-input/产品照片」复制过来），并让每个产品的 image 字段指向对应图片
+写完后用表格列出所有产品让我核对（名称/分类/是否有图/参数数量）。</code></pre></div><div class="spacer" aria-hidden="true" data-page-node-id="Q4wPz4NM1mAucIfbsKIcJi"></div><h2 data-page-node-id="fJd05x9W3UbBf7y9rWbYSS">第 3.5 步｜让 AI 用上你的 Logo 和照片</h2><p data-page-node-id="WtoBXHuOVsS3SjgCSvANl7"><strong data-page-node-id="19XCcNE41uPxedFRYbMtbN">业务目标</strong>：把 Logo 复制进项目并用在页头与页脚，同时把企业介绍、资质证书、案例照片分别用到公司介绍页与案例展示页，缺失的先占位并提醒补齐。</p><div class="code-card" data-page-node-id="YzGs11UXlZKlErOpBqaxHs"><div class="code-top" data-page-node-id="bLxCV65M1mH25xYsfdGDuk"><span data-page-node-id="VgCZ7OyumRE8gfWYGLrqsn">plain text</span><button class="copy-btn" type="button" aria-label="复制代码" data-page-node-id="WBqINbmY8D91PrM8PM2Oat">复制</button></div><pre data-page-node-id="Q1edd9Zna3k20cWWN8uS3k"><code data-page-node-id="hsK4Cq8AYVc3MEFppFfMLR">把「01-input/Logo」里的 Logo 复制到项目的 assets/img/ 目录，并让所有页面顶部和页脚使用它（替换默认占位）。
+同时确认「01-input/企业介绍」「01-input/资质证书」「01-input/案例照片」的内容，把它们用到：
+- 公司介绍页（简介用企业介绍PPT里的文字，资质用证书图片）
+- 案例展示页（用案例照片）
+如果某个资料缺失，先用占位并提醒我补。</code></pre></div><div class="spacer" aria-hidden="true" data-page-node-id="CFi2ur4XQvNdBsoD1xTzhq"></div><h2 data-page-node-id="vgpAg1rc9ulyuH9gk4ilAz">第 4 步｜让 AI 写数据层</h2><p data-page-node-id="MNte0SU08LGvkNO8ICy5eN"><strong data-page-node-id="tFMsoJcafIUsEy6UzAFrG5">业务目标</strong>：实现数据层 data.js：内嵌种子数据、提供读写 API、加入 File System 模块（选目录、恢复授权、写数据文件、存图片）与统一图片上传入口。</p><div class="code-card" data-page-node-id="813rgVfB7fomWe3RprUudg"><div class="code-top" data-page-node-id="uUIXEYw3iVESD8zZ7y2kRD"><span data-page-node-id="tNtygNzOJjhiq4issvNhQU">plain text</span><button class="copy-btn" type="button" aria-label="复制代码" data-page-node-id="bzt1BBrxXGLOFid76qUGDO">复制</button></div><pre data-page-node-id="e5h5gAPE3yhWroVatR1xFi"><code data-page-node-id="utPxLvAUPQ50cYbWukcbZC">实现 assets/js/data.js，要求：
+1. 内嵌所有种子数据（产品和分类用 data/*.js 里的内容）
+2. 对外提供 API：getProducts/getNews/getSite/getCategories 等读取方法，saveXxx/upsertXxx/deleteXxx 写入方法
+3. 读取顺序：编辑缓存 → data/*.js 覆盖层文件 → 内嵌种子
+4. 加一个 FileSystem 模块（用浏览器 File System Access API）：
+   - connect()：showDirectoryPicker 选择项目根目录
+   - restore()：从 IndexedDB 恢复授权（刷新免重连）
+   - writeDataFile(key,data)：把数据写入 data/xxx.js 文件
+   - saveFile(file,subdir)：把上传的图片存到 uploads/images 或 uploads/banners
+   - deleteFile(relPath)：删除文件
+5. 加 imageToDataURL 统一上传入口：已连接文件夹→存文件返回相对路径；未连接→降级 base64
+6. data.js 末尾用 document.write 同步注入 data/*.js 覆盖层文件
+7. 连接文件夹成功后清空浏览器旧缓存
+请输出完整代码，并简单说明每个函数干什么。</code></pre></div><div class="spacer" aria-hidden="true" data-page-node-id="V4O1S6w4O40qarJUSn0nYJ"></div><h2 data-page-node-id="JYNFy68j7Bzaw8TWQHsAem">第 5 步｜让 AI 写页面渲染 + 样式</h2><p data-page-node-id="SRxKXjG8dINh4dWtq8bERC"><strong data-page-node-id="m0PTNUtIABnO2ulowMHfzS">业务目标</strong>：实现前台渲染与完整样式：首页轮播 / 产品卡 / 优势区 / 新闻卡 / 询价表单，产品列表与详情的两级筛选，公司介绍、FAQ、联系我们页与响应式、滚动入场动画。</p><div class="code-card" data-page-node-id="MjCHvHYBC3Eg8BPteoyTji"><div class="code-top" data-page-node-id="ktXmeUsqDZKzhgDvOfHD3t"><span data-page-node-id="2HxQBOfSpTuronPplYouvc">plain text</span><button class="copy-btn" type="button" aria-label="复制代码" data-page-node-id="HDQWZ83wzcVuN5bV2xk9BS">复制</button></div><pre data-page-node-id="xFDlFMGsAFa4UrkLJPHBX0"><code data-page-node-id="0VL8DsPksfmQWJTNgENiCa">实现 assets/js/main.js 的前台渲染部分 和 assets/css/style.css 的完整样式，要求：
+1. applySite()：把站点信息（公司名/电话/地址/logo）填充到页面（元素用 .hp-num .f-phone .f-mobile .f-qq .f-email .f-address .f-beian 这些class）
+2. 首页：轮播图（3张，自动播放）、产品卡片网格（6个）、四大优势（4列）、合作流程、新闻卡片、在线询价表单（姓名+手机号+需求，提交后存起来）
+3. 产品列表页：一级分类筛选 + 二级子分类筛选（点击切换，再点取消）
+4. 产品详情页：URL参数id读取，显示封面图/参数表/特点/图集（点击放大）
+5. 公司介绍页：简介/资质/团队/荣誉
+6. 新闻列表+详情、案例列表+详情、FAQ手风琴、联系我们（联系信息卡片+地图+表单）
+7. 响应式：992/768/568三个断点，移动端汉堡菜单
+8. 滚动入场动画（IntersectionObserver）
+样式用我方案里的配色，工业简约风，表格展示每个页面的渲染函数清单。</code></pre></div><div class="spacer" aria-hidden="true" data-page-node-id="o3DcoOvVBjxCicjxsd2MGp"></div><h2 data-page-node-id="N2tmUmE6tGDxDDWApAyAZH">第 6 步｜让 AI 写后台管理</h2><p data-page-node-id="O4NnFKG0gqwkwnDI9c6AsH"><strong data-page-node-id="v21F0UiH35Ihvz0Je1On2I">业务目标</strong>：创建 admin.html 后台管理页与后台逻辑：登录、11 个管理模块、产品与新闻的新增编辑、图片上传、连接项目文件夹与清除缓存。</p><div class="code-card" data-page-node-id="wZYPe1KWA4xxb0kuuyBTAG"><div class="code-top" data-page-node-id="Pc1hFIPV1lwn3c5jNbhkMy"><span data-page-node-id="afkKy56NnuXu8cHxW8CX2f">plain text</span><button class="copy-btn" type="button" aria-label="复制代码" data-page-node-id="xvDyE9VJcyLxUf74k6EhdC">复制</button></div><pre data-page-node-id="1rrMYGkNIWKNEtT2k0IXVJ"><code data-page-node-id="LAncX8gLxCRjCBcQdSXVR1">创建 admin.html 后台管理页面，并在 main.js 里实现后台逻辑，要求：
+1. 登录：admin / {{设置一个密码}}，sessionStorage 记住登录
+2. 11个管理模块（tab切换）：站点设置 / 轮播Banner / 板块内容 / 产品管理 / 分类管理 / 子页内容 / 子页头图 / 新闻管理 / 询盘留言 / 前台预览 / 账号设置
+3. 产品管理：列表（缩略图/名称/分类/状态）+ 新增/编辑表单（名称/分类/参数表/特点/行业/图集/视频/附件）+ 排序下拉 + 分类筛选
+4. 新闻管理：发布/编辑/删除 + 封面图 + 富文本
+5. 所有图片上传用 DG.imageToDataURL 处理（已连接文件夹存 uploads/，未连接降级base64）
+6. 所有保存调用 DG.saveXxx()，保存后前台立即更新
+7. 顶部加两个按钮：「🔗 连接项目文件夹」（调用 DG.FileSystem.connect）和「🧹 清除缓存」
+请输出 admin.html 完整代码和 main.js 的后台部分。</code></pre></div><div class="spacer" aria-hidden="true" data-page-node-id="ulaXs7TVAlPJH9OPReSxGm"></div><h2 data-page-node-id="hBoCvFPquLtVR2TqpN8LKm">第 7 步｜访客询盘收到在线文档</h2><p data-page-node-id="h0tqAxTYkFOTZaBe8F5sye"><strong data-page-node-id="sEFKHi38Sa3tOdMoDRx5Me">业务目标</strong>：用「腾讯文档 MCP 个人 Token + CloudBase 云函数」方案，把官网询盘实时写入腾讯文档智能表格，前端表单提交时顺便保留本地兜底。</p><div class="code-card" data-page-node-id="jjta70q1FrmKrmgEJcWvw4"><div class="code-top" data-page-node-id="0IpkB3jcgykDCIE5qEhW0x"><span data-page-node-id="n5wwGNAo1EPN77FXtuz8rc">plain text</span><button class="copy-btn" type="button" aria-label="复制代码" data-page-node-id="tApkFpGavwOlo3YA7iKHvU">复制</button></div><pre data-page-node-id="8rBFWhzMcuJN89t0RCpwWN"><code data-page-node-id="H8aULkU1MfRmZjt728dgLA">帮我把网站询盘接入腾讯文档，采用「腾讯文档 MCP 个人 Token + CloudBase 云函数」方案：
+1. 先引导我去 https://docs.qq.com/open/auth/mcp.html 拿个人 Token
+2. 用 Token 调腾讯文档 MCP（https://docs.qq.com/openapi/mcp），建一张智能表格「在线询盘」，字段：提交时间(createdTime)/姓名(text)/手机号(phoneNumber)/需求描述(text)/意向产品(text)/来源页面(text)
+3. 在项目根目录建 cloudfunctions/inquiry 云函数（Event Function，Nodejs18 内置 fetch 零依赖），接收表单 POST，用 smartsheet.add_records 追加记录；Token 和表格 ID 放环境变量，不要写死在代码里
+4. 用 tcb 部署云函数 + 开 HTTP 访问路由（注意：路由的 domain 要填系统默认域名、命令要加 --yes）
+5. 前端 main.js 的询价表单提交时 POST 到云函数地址（保留 localStorage 兜底，接口挂了也不丢单）
+6. 部署静态站，端到端提交一单测试
+完成后把「询盘表链接」和「线上地址」发给我。</code></pre></div><div class="spacer" aria-hidden="true" data-page-node-id="LTOZWyjOrwcQ5xbBDZZ1AH"></div><h2 data-page-node-id="JTLSe9tpOakROj0NeVcD3J">第 8 步｜部署到腾讯云 CloudBase（上线部署，可选操作）</h2><p data-page-node-id="nufKZLPwaslFESm1FPlxhX"><strong data-page-node-id="gMZ8aa8hJXXo1T7yrpU3WB">业务目标</strong>：把项目部署到腾讯云 CloudBase 静态托管，并生成一键部署脚本 deploy.sh，拿到线上访问地址。</p><div class="code-card" data-page-node-id="AVuQ1GxQ78AOncrIXWAoD0"><div class="code-top" data-page-node-id="p16vWZZ58OsBNBCGQBybIo"><span data-page-node-id="BMwJjTOTTViTMDrhJay56Z">plain text</span><button class="copy-btn" type="button" aria-label="复制代码" data-page-node-id="ns4eQoD7y7MkGDnwCSkMqF">复制</button></div><pre data-page-node-id="pfgDz1JUhyY6wnTxkShEhO"><code data-page-node-id="Hh1IFkxxwA4Roiyl30kZ36">帮我把这个项目部署到腾讯云 CloudBase 静态托管： 部署完把线上地址发给我
+5顺便帮我写一个 deploy.sh 一键部署脚本（以后改完内容运行它就能更新线上）</code></pre></div><div class="spacer" aria-hidden="true" data-page-node-id="0Wu7TkELOtGRJiQJkqSPFn"></div></article></section>
+<section class="page" id="page-case-401" data-page-node-id="Ul1L4Had4vd3OyN3l9Nfan"><article class="paper" data-page-node-id="sHz059j2q5dQ8EAxeRDsma"><header class="hero" data-page-node-id="0UNihp9fw7OMgQ7TW0Pmj0"><div class="eyebrow" data-page-node-id="NGOtYZcgoRDnxX0jJECNX0">模块四 · 数字员工</div><h1 data-page-node-id="hbeETfTVjxzKGTJqQFtQ4g">案例401｜绩效评估与薪酬核算辅助</h1></header><h2 data-page-node-id="SsF26lEDMJGBPUwJZ8oBXL">使用说明</h2><div class="numbered depth-1" data-page-node-id="B2ocqKCTjL4qJjq7qvVKtS"><span class="marker" data-page-node-id="odgeABJpFmKsKGTr7BdJpR">1.</span><div data-page-node-id="ZvHxN2mWK2yoFFTaWURQWs">本案例为<strong data-page-node-id="qEqNYFDLuLObBP1Nup8Rob">一条完整提示词</strong>（内部含确认材料 → 读材料 → 核算 → 查异常出结果 → 通知汇总共 5 步），下方代码块内为完整提示词。</div></div>
+<div class="numbered depth-1" data-page-node-id="Qf8Ae7cXVpOgSMeUWbTyG3"><span class="marker" data-page-node-id="JHNTbXD8iCrJ28bnjX6GT7">2.</span><div data-page-node-id="uwgpe2PwsBWU6N3IwrWK7w">材料已就位：<code class="inline-code" data-page-node-id="uIHDgCVeapvdA4VfkV0Y5k">01-input/</code> 内 6 张表（绩效指标表、员工考勤表、提成规则、绩效评分表、薪酬结构表、员工主数据）；<code class="inline-code" data-page-node-id="aEzwvlZHVl1WGoe7GKIkFZ">02-working/</code> 核算工具已就位，不用上传。</div></div>
+<div class="numbered depth-1" data-page-node-id="GEZjldBjwjXfWGaBHNq50J"><span class="marker" data-page-node-id="JKR02zF2W7tCe5zJqTNi0V">3.</span><div data-page-node-id="apy43GVmg8nwlm0fti6AeF">4 个产物输出到 <code class="inline-code" data-page-node-id="znZWcq0lPuNqJy5wMI7MHH">03-output/</code>；颜色约定 正常=浅绿、需复核=浅橙、异常=浅红。</div></div>
+<div class="numbered depth-1" data-page-node-id="Qs6zv9dulm6CRnfjBWGMZ6"><span class="marker" data-page-node-id="l5FFfRzhEMNGDdA6ghPbk2">4.</span><div data-page-node-id="zEz4PlrJ0CvfbcznvX1oDO">敏感数据约定：本案例涉及薪酬，<strong data-page-node-id="DRgpHEBnbYREplXawKQ4cZ">通知只发给 HR 和财务负责人，不在普通群发送薪酬明细</strong>，草稿里只写人数 / 异常数 / 需复核事项，不含个人金额。</div></div>
+<div class="numbered depth-1" data-page-node-id="HnckOyliCqKpsAeMVsoFkE"><span class="marker" data-page-node-id="HLpou9iFG6tyLyCg8piFB1">5.</span><div data-page-node-id="298InFws4XiJPcNy12CBBO">人工确认红线：AI 只做核算与异常标注，<strong data-page-node-id="gbBhnZq3GLSnDJ1YfYT5Qq">不自动发工资</strong>；最终必须由 HR / 财务逐人复核确认。</div></div><div class="spacer" aria-hidden="true" data-page-node-id="2Rysjzc8HN0DnkFRBKN1L6"></div><h2 data-page-node-id="Vy8hRBNT6J601v3EkPHUkF">提示词｜绩效评估与薪酬核算辅助（一次执行 5 步）</h2><p data-page-node-id="SqfupIsp98p4VFGcdh3zw2"><strong data-page-node-id="NG58dH67fO55ThOiPolHBF">业务目标</strong>：读 6 张原始表，以员工主数据为基准逐人核算绩效得分与奖金、销售提成、考勤扣款与应发工资，检查 4 类异常并输出绩效评估表、薪酬核算复核表、异常清单与工作台账。</p><div class="code-card" data-page-node-id="Ixe7u72ha1IgUbujcsoSGR"><div class="code-top" data-page-node-id="TXvvFRAnuwCD7mtZ7ojElE"><span data-page-node-id="ZFvQZaAKSjQClmBW34BXC3">plain text</span><button class="copy-btn" type="button" aria-label="复制代码" data-page-node-id="3XaDLT9MC114WlCFOBOfvx">复制</button></div><pre data-page-node-id="z5E1qPXF4DNSLa5ELuCcR1"><code data-page-node-id="XYRV9HbybwmcWDDCFBhx6m">帮我处理项目文件夹 01-input/ 里的标准材料（已就位），做这一批员工的绩效评估与薪酬核算辅助，直接读取开始。
+
+【第1步：确认材料】
+确认 01-input/ 里 6 张表都就位：绩效指标表、员工考勤表、提成规则、绩效评分表、薪酬结构表、员工主数据（02-working 核算工具也都在）；缺哪个告诉我。
+
+【第2步：读取材料】
+直接读取 01-input/ 里已就位的材料：绩效指标表、员工考勤表、提成规则、绩效评分表、薪酬结构表、员工主数据。
+
+【第3步：核算】
+用工作台的核算工具，以员工主数据为基准统一员工编号和姓名，逐人计算：
+- 绩效得分（按指标权重加权）和绩效奖金；
+- 销售提成（按岗位提成规则）；
+- 考勤扣款（迟到超 3 次每次扣 50，旷工每天扣 200）；
+- 应发工资（基本+岗位+绩效奖金+提成+补贴-扣款）。
+（核算时优先用 02-working 工作台里的核算工具，保证计算口径一致；工具不可用时，用你自带能力完成并在汇总里说明哪步降级了。）
+
+【第4步：查异常 + 出结果 + 人工复核（不自动发工资）】
+检查 4 类异常：缺评分、考勤异常、提成超阈值、应发工资异常波动（环比超 ±20%）。
+输出到 03-output/：
+1. 绩效评估结果表.xlsx — 每人绩效得分与奖金
+2. 薪酬核算复核表.xlsx — 全部明细 + 核算状态（正常/需复核）+ 人工复核列
+3. 薪酬异常清单.xlsx — 每条异常（类型/说明/风险等级/建议处理）
+4. 薪酬核算工作台账.xlsx — 每人核算状态 + 通知状态
+颜色约定：正常=浅绿、需复核=浅橙、异常=浅红。
+重要红线：本案例涉及敏感薪酬数据，你只做核算和异常标注，不自动发工资——最终必须由 HR/财务逐人复核确认。
+
+【第5步：通知（先检测，再决定发还是留草稿）+ 汇总】
+先把摘要整理好：核算几人、异常几人、主要异常类型。
+然后先检测当前用户是否已绑定企业微信：
+- 已绑定 → 直接发送 `03-output/企业微信通知草稿.txt`（**纯文本版，不含任何标签**）；企微 5.0.10 起消息能力已全面开放（不限企业规模），正常应发送成功；
+  发送后自查：若消息中出现 `&lt;font` 或 `&lt;/font&gt;` 字样 → 立即用纯文本版重新发送并说明原因；
+  若发送失败，重试一次仍失败 → 引导用户按工作台《企业微信通知权限开通指引》排查（重新授权/可见范围/会话范围），
+  本次草稿已生成（纯文本版可先手动转发）；
+- 没绑定 → 明确说"本次未发送企业微信通知（原因：未绑定企微）"。
+⚠️ 敏感数据约定：通知**只发给 HR 和财务负责人**，不在普通群发送薪酬明细；草稿里只写人数/异常数/需复核事项，不含个人金额。
+最后给我简明汇总：核算几人、正常几人、异常几人（按类型）、哪些需优先复核。</code></pre></div><div class="spacer" aria-hidden="true" data-page-node-id="eAKhRa4UXxIF3ak4XXlDx4"></div></article></section>
+<section class="page" id="page-case-403" data-page-node-id="sqWxsVKZ5v6VPtos3MHBka"><article class="paper" data-page-node-id="f1TX5HAe6hnCiSRhdHNkI7"><header class="hero" data-page-node-id="gDoN2o8TlbblBoj1siGKEf"><div class="eyebrow" data-page-node-id="A8WBoX4DEYehhdY6uKsNg7">模块四 · 数字员工</div><h1 data-page-node-id="VKP8oASAuwPWXddCQhBGLO">案例403｜设备巡检记录智能分析及周报</h1></header><h2 data-page-node-id="G9p4eOtRHsMMdORDjL1wqQ">使用说明</h2><div class="numbered depth-1" data-page-node-id="m08yuNhXlJUncj7FCl4p1Y"><span class="marker" data-page-node-id="a3xRGsEhTiW2OMndakUem0">1.</span><div data-page-node-id="ajYGpHb9lHMpyLnioE0b3n">本案例为<strong data-page-node-id="yF2Qf9wMdYBi98vULqW03Z">一条完整提示词</strong>（内部含确认材料 → 读材料 → 四表交叉分析 → 风险分级 → 出结果 → 通知汇总共 6 步），下方代码块内为完整提示词。</div></div>
+<div class="numbered depth-1" data-page-node-id="hYhNJ6GRkL4wYYkC9MBrWg"><span class="marker" data-page-node-id="Hbsi7Ybu42chnmGDDaskXW">2.</span><div data-page-node-id="OVXTeuGdjAl2iitmuAiEWs">材料已就位：<code class="inline-code" data-page-node-id="eKxibDA0TJw0Fkxrg9S2D0">01-input/</code> 含设备巡检记录（本周）、维修记录（近 3 个月）、停机记录、保养计划、设备主数据；<code class="inline-code" data-page-node-id="WrvD6vCMFm9fch91Ti3jmg">02-working/</code> 设备分析工具已就位。</div></div>
+<div class="numbered depth-1" data-page-node-id="xyE5fwbPpDXqexdqWpJ3Pq"><span class="marker" data-page-node-id="IBQaz4pPAuAZDCRNz06gWk">3.</span><div data-page-node-id="U5gUGxcyDiMUPaDifK01UC">分析口径：巡检 / 维修 / 停机 / 保养四表按设备交叉汇总，按风险评分（维修 ×0.5、重复故障 ×2、停机每小时 ×1、巡检异常 ×0.5、保养超期加分）分级。</div></div>
+<div class="numbered depth-1" data-page-node-id="0ZjZENu2WzfGLdZAkaJEuc"><span class="marker" data-page-node-id="w0EWchI8o0KiQj0c4TEFFn">4.</span><div data-page-node-id="fJHbtxKObg1OeNCzjkmps8">4 个产物输出到 <code class="inline-code" data-page-node-id="Gua8kH092WeVsjTkem8Se9">03-output/</code>；颜色约定 高风险=深红、中风险=浅橙、低风险=浅黄、正常=浅绿；定时任务已配置<strong data-page-node-id="ii4H0CaXWlNX49114z2JjP">每周五 17:30 自动生成设备健康周报</strong>。</div></div>
+<div class="numbered depth-1" data-page-node-id="cxXmWSDya2YM9IlRR7Pw7R"><span class="marker" data-page-node-id="wjKpdtPiFqw5xoMWxsClZD">5.</span><div data-page-node-id="5rJ2V83ga55OGWH2Xppimt">人工确认红线：AI 只做分析与建议，<strong data-page-node-id="LlbEtyJWCSBPn1sCqR9gtR">不自动安排检修 / 保养</strong>——处理动作由设备负责人执行。</div></div><div class="spacer" aria-hidden="true" data-page-node-id="g3iBiMbl1wjSxdxJRchPGh"></div><h2 data-page-node-id="gxfaZHP6atRY3InUAi80kT">提示词｜设备巡检记录智能分析及周报（一次执行 6 步）</h2><p data-page-node-id="lrqDISgZu1bPUD0l0ELu0n"><strong data-page-node-id="czHqZv6loWa7AZ91ja0LiC">业务目标</strong>：把巡检、维修、停机、保养四份数据按设备交叉分析，统计重复故障、停机时长与保养超期情况，按风险评分分级并排定保养维修优先级，输出设备健康周报、风险清单与维护台账。</p><div class="code-card" data-page-node-id="AB3HeHzgZrkEbc18ZdzGKm"><div class="code-top" data-page-node-id="GDhA0VCzDSH9DCDGdYar4u"><span data-page-node-id="MDpv450I1DQs8qyGHHIG0n">plain text</span><button class="copy-btn" type="button" aria-label="复制代码" data-page-node-id="UOczDacrGOzMYcE1DcMIxV">复制</button></div><pre data-page-node-id="Wq2vq7SEYLwCwCb3DYXZHe"><code data-page-node-id="vkzddCHo28guyREHFSroGv">帮我处理项目文件夹 01-input/ 里的标准材料（已就位），直接读取开始，不用上传。
+
+【第1步：确认材料】
+确认 01-input/ 里材料都就位（02-working 工具也都在），缺哪个告诉我；都齐了直接往下走。
+【第2步：读取材料】
+直接读取 01-input/ 里已就位的材料：设备巡检记录（本周）、维修记录（近3个月）、停机记录、保养计划、设备主数据
+（分析时优先用 02-working 工作台里的设备分析工具，保证风险分级口径一致；工具不可用时，用你自带能力完成并在汇总里说明哪步降级了。）
+【第3步：四表交叉分析】
+把巡检、维修、停机、保养四份数据按设备交叉汇总，每台设备统计：
+- 巡检异常次数、维修次数、重复故障（同现象 ≥2 次，如"传送带卡料×3"）
+- 停机次数/总时长/影响产线、保养状态（超期 N 天 / 临期 / 未到期）
+
+【第4步：风险分级 + 优先级】
+按风险评分分级（维修×0.5/重复故障×2/停机每小时×1/巡检异常×0.5/保养超期加分）：
+- 高风险（≥4 分）：重复故障、停机集中（≥120 分钟）、保养超期 &gt;7 天等
+- 中风险（1.5-4 分）：保养超期 1-7 天、有异常但较轻
+- 低风险（0.5-1.5 分）：有维修/异常记录但无重复
+- 正常（&lt;0.5 分）：各项指标正常
+每台设备给出：风险因素、建议动作（专项检修/补保养/排查停机根因等）、保养维修优先级（按评分排序）。
+
+【第5步：出结果 + 人工确认（不自动安排检修）】
+输出到 03-output/：
+1. 设备健康周报.docx — Word 周报（总览 + 分级表 + 高风险明细 + 保养维修优先级 + 超期保养设备）
+2. 设备风险清单.xlsx — 每台设备全部指标和风险等级
+3. 设备维护工作台账.xlsx — 每台设备的处理状态
+4. 设备健康看板.html — 汇总卡片 + 风险明细
+颜色约定：高风险=深红、中风险=浅橙、低风险=浅黄、正常=浅绿，几处产物保持一致。
+重要：你只做分析和建议，不自动安排检修/保养——处理动作由设备负责人执行。
+
+【第6步：通知（先检测，再决定发还是留草稿）+ 汇总】
+先把摘要整理好：高风险设备、超期保养设备、重复故障 TOP5、建议维修动作。
+然后先检测当前用户是否已绑定企业微信：
+- 已绑定 → 直接发送 `03-output/企业微信通知草稿.txt`（**纯文本版，不含任何标签**）；企微 5.0.10 起消息能力已全面开放（不限企业规模），正常应发送成功；
+  发送后自查：若消息中出现 `&lt;font` 或 `&lt;/font&gt;` 字样 → 立即用纯文本版重新发送并说明原因；
+  若发送失败，重试一次仍失败 → 引导用户按工作台《企业微信通知权限开通指引》排查（重新授权/可见范围/会话范围），
+  本次草稿已生成（纯文本版可先手动转发）；
+- 没绑定 → 明确说"本次未发送企业微信通知（原因：未绑定企微）"。
+最后给我一份简明汇总：分析了几台设备、高/中/低/正常各几台、哪台最该先处理、哪些设备保养已超期。
+
+【定时任务（已配置）】
+本案例已按要求配置**每周五 17:30 自动生成设备健康周报**，无需手动设置；如需调整时间，在对话里说即可。</code></pre></div><div class="spacer" aria-hidden="true" data-page-node-id="LNqRvww8EtIQceYS2sZ7TK"></div></article></section>
+<section class="page" id="page-case-404" data-page-node-id="FeU9IQ68DCA0AULYAsRkYO"><article class="paper" data-page-node-id="kvTOOiCrl2492F78FX2ro4"><header class="hero" data-page-node-id="L9xlxpufjOnHNkIXAx0uWb"><div class="eyebrow" data-page-node-id="hXyPHwtzHaPSDGP6iPBaOr">模块四 · 数字员工</div><h1 data-page-node-id="fhWhzG3Jpf3UhdOWF7bS1L">案例404｜现金流预测与资金缺口看板</h1></header><h2 data-page-node-id="PimpEXBEcbJChlcpDMaWNQ">使用说明</h2><div class="numbered depth-1" data-page-node-id="INkKKW2mCpar9L0g1hacSG"><span class="marker" data-page-node-id="QkZB1TJb9VNHlHhCNO91rp">1.</span><div data-page-node-id="QMSZ99G5wG7bQ1e64Npwjd">本案例为<strong data-page-node-id="ZfNzY2jEhY8Gi5q7Q04RHA">一条完整提示词</strong>（内部含确认材料 → 读材料 → 现金流预测 → 出结果 → 通知汇总共 5 步），下方代码块内为完整提示词。</div></div>
+<div class="numbered depth-1" data-page-node-id="ldn5IiZZjZ0UCBLh2UBRXA"><span class="marker" data-page-node-id="YoHyvj5eTWXkr1YYE4QVEg">2.</span><div data-page-node-id="kJARLIlXE2T76G57dhEn0S">材料已就位：<code class="inline-code" data-page-node-id="IP4RRNncWLWRroPPzda4SE">01-input/</code> 含现金余额表、应收账款风险明细表、应付账款计划、工资社保计划、税费计划、贷款还款计划、固定支出台账；<code class="inline-code" data-page-node-id="DMyt9Qp6ZggkSwI9dy6HR3">02-working/</code> 现金流预测工具已就位。</div></div>
+<div class="numbered depth-1" data-page-node-id="VIe2zAnHVIo7C3WyG8c20o"><span class="marker" data-page-node-id="RPtMYWQwffgeH56brro2kk">3.</span><div data-page-node-id="04B3Mf5UNdR77aOmHiQf97">预测按 <strong data-page-node-id="rPpc6vtKPwqG9B3gNBRX9v">7 天 / 30 天 / 60 天</strong> 三个窗口输出，标记资金缺口、集中付款压力与资金紧张；4 个产物输出到 <code class="inline-code" data-page-node-id="fjM3oOxTJvM8U1XpJlpaAI">03-output/</code>。</div></div>
+<div class="numbered depth-1" data-page-node-id="1WPucvHwXRjENZEMSIboOX"><span class="marker" data-page-node-id="O7AC12Q95J1E6dLhMeA5ue">4.</span><div data-page-node-id="OxEC2SZvI8KAH2EZoOSfH2">颜色约定：资金缺口=深红、资金紧张=浅橙、关注=浅黄、正常=白；定时任务已配置<strong data-page-node-id="ooXyQpE5cg9daP2bYErMWJ">每天 8:30 自动更新现金流预警</strong>。</div></div>
+<div class="numbered depth-1" data-page-node-id="xJWER0EIafZutxyMNxmy1C"><span class="marker" data-page-node-id="SYFKZYEHh5FlSR6Wl2l0Mn">5.</span><div data-page-node-id="Um5xnUMyJxM5OiGCod0au8">人工确认红线：<strong data-page-node-id="LkvVLevj1u9SF8OhYVmraG">预测基于假设、不是确定事实</strong>，需财务确认后参考；资金缺口应对由管理层决策，AI 不自动联系银行、不自动调整付款计划。</div></div><div class="spacer" aria-hidden="true" data-page-node-id="CE32BvYsSxANuOG7iAR9U2"></div><h2 data-page-node-id="2qdoW5ytYOZJGUG1SQzOJF">提示词｜现金流预测与资金缺口看板（一次执行 5 步）</h2><p data-page-node-id="Yy5rHF3p8UBACl2qL6830c"><strong data-page-node-id="EjJO9btvdC6Wld0GSGBuJu">业务目标</strong>：汇总未来现金流入与流出，按 7 / 30 / 60 天三个窗口预测现金余额变化，标记资金缺口与集中付款压力，输出现金流预测模型、缺口预警清单、工作台账与风险看板。</p><div class="code-card" data-page-node-id="AoOtDPDOiMg76WFU3BJV51"><div class="code-top" data-page-node-id="Q2pHqbSA3CJxz6tV8BOoRb"><span data-page-node-id="yC764gNr70a5l1Vov2l99q">plain text</span><button class="copy-btn" type="button" aria-label="复制代码" data-page-node-id="q1X6NrDMRzi9zSMQTWdIw3">复制</button></div><pre data-page-node-id="LHeka6cOuEu4S4iRNleFEw"><code data-page-node-id="7SIYl7GkYlIEocXgNNEoez">帮我处理项目文件夹 01-input/ 里的标准材料（已就位），直接读取开始，不用上传。
+
+【第1步：确认材料】
+确认 01-input/ 里材料都就位（02-working 工具也都在），缺哪个告诉我；都齐了直接往下走。
+【第2步：读取材料】
+直接读取 01-input/ 里已就位的材料：现金余额表、应收账款风险明细表（未来回款预测）、应付账款计划、工资社保计划、税费计划、贷款还款计划、固定支出台账
+（预测时优先用 02-working 工作台里的现金流预测工具，保证计算口径一致；工具不可用时，用你自带能力完成并在汇总里说明哪步降级了。）
+【第3步：现金流预测】
+- 汇总未来现金流入：应收回款（分已确认/预计/高不确定性三档）
+- 汇总未来现金流出：应付账款、工资社保、税费、贷款、固定支出
+- 按 7 天 / 30 天 / 60 天三个窗口预测现金余额变化
+- 标记：资金缺口（某窗口现金为负）、集中付款压力（单日支出大）、资金紧张（余额低于安全线）
+
+【第4步：出结果 + 人工确认（预测是假设，决策要人来做）】
+输出到 03-output/：
+1. 现金流预测模型.xlsx — 未来 60 天逐笔事件（流入绿/流出橙）+ 每日净额 + 累计余额
+2. 资金缺口预警清单.xlsx — 三个窗口余额 + 集中付款压力点
+3. 现金流工作台账.xlsx — 谁预测的、什么状态
+4. 现金流风险看板.html — 汇总卡片 + 缺口预警 + 余额曲线
+颜色约定：资金缺口=深红、资金紧张=浅橙、关注=浅黄、正常=白。
+重要：预测基于假设，不是确定事实，请财务确认后参考；资金缺口应对措施由管理层决策执行，你只给建议，不自动联系银行、不自动调整付款计划。
+
+【第5步：通知（先检测，再决定发还是留草稿）】
+先把摘要整理好：未来 7/30/60 天最低现金余额、预计资金缺口、重点回款和重点付款事项。
+然后先检测当前用户是否已绑定企业微信：
+- 已绑定 → 直接发送 `03-output/企业微信通知草稿.txt`（**纯文本版，不含任何标签**）；企微 5.0.10 起消息能力已全面开放（不限企业规模），正常应发送成功；
+  发送后自查：若消息中出现 `&lt;font` 或 `&lt;/font&gt;` 字样 → 立即用纯文本版重新发送并说明原因；
+  若发送失败，重试一次仍失败 → 引导用户按工作台《企业微信通知权限开通指引》排查（重新授权/可见范围/会话范围），
+  本次草稿已生成（纯文本版可先手动转发）；
+- 没绑定 → 明确说"本次未发送企业微信通知（原因：未绑定企微）"。
+
+【第6步：汇总】
+给我一份简明汇总：期初余额多少、未来 7/30/60 天各剩多少、有无资金缺口、集中付款压力在哪几天、建议怎么应对。
+
+【定时任务（已配置）】
+本案例已按要求配置**每天 8:30 自动更新现金流预警**，无需手动设置；如需调整时间，在对话里说即可。</code></pre></div><div class="spacer" aria-hidden="true" data-page-node-id="P25zM2fwlkyjfgynKZKusy"></div></article></section>
+<section class="page" id="page-case-405" data-page-node-id="iGPHsmecpkodqHms51ChhG"><article class="paper" data-page-node-id="80OHqXQ4lDcb2kKcOQTG4X"><header class="hero" data-page-node-id="8ZAVOC5UUf4Ke03lD2ITsI"><div class="eyebrow" data-page-node-id="OwwiZPP8CItfjDYL2xRKkT">模块四 · 数字员工</div><h1 data-page-node-id="D8EGlgrHtAdB12JxFFKobQ">案例405｜财务报表自动体检与经营周报</h1></header><h2 data-page-node-id="dBZbEq8jhOJkW1EiCIHg7J">使用说明</h2><div class="numbered depth-1" data-page-node-id="QEGUV4VF0BECOtiiXDdsIw"><span class="marker" data-page-node-id="SfRdE1d3a9GFvsfk1qZHBM">1.</span><div data-page-node-id="J6f1tQZF725ne7C6HIVhkt">本案例为<strong data-page-node-id="VcFF7Xxp2lh2yWZlmy1Pft">一条完整提示词</strong>（内部含确认材料 → 读材料 → 报表体检 → 算指标出周报 → 通知汇总共 5 步），下方代码块内为完整提示词。</div></div>
+<div class="numbered depth-1" data-page-node-id="HXqixAzb8cude4omFQoKZ6"><span class="marker" data-page-node-id="NvVB3gF5m0q31dvXjjV5ij">2.</span><div data-page-node-id="4qDFcIIGntnVsfMX5seBD6">材料已就位：<code class="inline-code" data-page-node-id="DMOfzsGrvFuAHJscpjIFGl">01-input/</code> 含资产负债表、利润表、现金流量表、历史财报（近 4 个月）；<code class="inline-code" data-page-node-id="X4EWF7UJveh0muymDjbkeO">02-working/</code> 财报体检工具与财务指标评价规则已配好，不用上传。</div></div>
+<div class="numbered depth-1" data-page-node-id="rVBwU9YCaMBetfMO9Ux0tW"><span class="marker" data-page-node-id="YUHx7mxUB8PNtoIqkzYvWS">3.</span><div data-page-node-id="5WyigaksHuyvBpoWHnDerg">流程要点：<strong data-page-node-id="dQ1vfxod25rvA6RdZWU1HY">先体检、再分析</strong>——体检 5 类问题（缺失值、重复行、格式错误、金额异常、科目不平衡）时，周报须注明「待财务确认后方可定稿」，不把有问题的数字当结论。</div></div>
+<div class="numbered depth-1" data-page-node-id="r8UEcInEY7RlePVpFFOJwk"><span class="marker" data-page-node-id="r74iXY6PXuxNRWlwUpPi2H">4.</span><div data-page-node-id="Fm8k2dzhAFuEJgHdVHHtAs">产物输出到 <code class="inline-code" data-page-node-id="M3qJY6HfqbhCAYaioe8d6Y">03-output/</code>；颜色约定 严重=深红、预警=浅橙、待人工确认=浅黄、正常=白；可选每周五 17:00 自动体检并生成经营周报。</div></div>
+<div class="numbered depth-1" data-page-node-id="JOnITVgvp3hDyJiCACEEC6"><span class="marker" data-page-node-id="ND6nLcur5KvplNS1yyrHiQ">5.</span><div data-page-node-id="Fn8vjccLpPoRtB29Fhmcom">人工确认红线：体检问题与预警指标必须由财务人工确认后才能定稿，AI 不代替财务判断。</div></div><div class="spacer" aria-hidden="true" data-page-node-id="FFqJQ0dRMfN1qm1oCsK3fW"></div><h2 data-page-node-id="CoqOGZnHr2qtTCgAGCnL0x">提示词｜财务报表自动体检与经营周报（一次执行 5 步）</h2><p data-page-node-id="uMtpjIgi84QnOwCCHLBXLT"><strong data-page-node-id="L7c6sb55S5vbethCGPifM3">业务目标</strong>：先检查三大报表有没有「病」（缺失值、重复行、格式错误、金额异常、科目不平衡），再按评价规则算核心指标并对照预警阈值，输出财务数据体检清单、指标分析表与经营周报。</p><div class="code-card" data-page-node-id="TRKMMV6Y40dFlzzUHJd9KR"><div class="code-top" data-page-node-id="cTxByZSKjekRbEguNI0jEo"><span data-page-node-id="qQvCwlZTr9fTGn2uZi2NHb">plain text</span><button class="copy-btn" type="button" aria-label="复制代码" data-page-node-id="OIBuKCGGMUMaJMCKbxVe4c">复制</button></div><pre data-page-node-id="g0rXAj7PQjqLFAE6uLgByh"><code data-page-node-id="5z82fDGwPTDqB1QwvenGjg">帮我处理项目文件夹 01-input/ 里的标准材料（已就位），直接读取开始，不用上传。
+
+【第1步：确认材料】
+确认 01-input/ 里材料都就位（02-working 工具也都在），缺哪个告诉我；都齐了直接往下走。
+【第2步：读取材料】
+直接读取 01-input/ 里已就位的材料：资产负债表、利润表、现金流量表、历史财报（近4个月）
+（分析时优先用 02-working 工作台里的财报体检工具，并读取财务指标评价规则做判定，保证口径一致；工具不可用时，用你自带能力完成并在汇总里说明哪步降级了。）
+（财务指标评价规则已在工作台配好，不用传；想调整指标规则直接对话说）
+【第3步：先体检、再分析】
+先检查三大报表有没有"病"，共 5 类：
+① 缺失值（关键科目存在空值）
+② 重复行（同一科目出现多次）
+③ 格式错误（金额是文本、带千分位逗号）
+④ 金额异常（异常正负跳变，如 -99999）
+⑤ 科目不平衡（资产负债表 资产总计 ≠ 负债和所有者权益总计）
+每条问题给出：报表、问题类型、问题详情、严重程度、处理建议。
+
+【第4步：算指标 + 出周报 + 人工确认（体检后再分析）】
+- 按评价规则算核心指标：毛利率、净利率、资产负债率、现金余额、营业收入环比，对照预警阈值标出触发的；
+- 生成经营周报，分四部分：① 已知事实（报表直接读到的数值）② 分析判断（基于指标计算的结论）③ 风险提示（触发预警的指标）④ 待人工确认事项（体检发现的问题）；
+- 体检有问题时，周报注明"待财务确认后方可定稿"，不把有问题的数字当结论；
+- 体检问题和预警指标必须由财务人工确认后才能定稿，你只做体检、算指标、给提示，不代替财务判断。
+输出到 03-output/：财务数据体检清单、财务指标分析表、经营周报（Word）、财务体检工作台账。
+颜色约定：严重（体检问题/触发预警）=深红、预警/有问题=浅橙、待人工确认=浅黄、正常=白。
+
+【第5步：通知（先检测，再决定发还是留草稿）】
+先把摘要整理好：报表是否通过体检（几个问题）、触发预警的指标、需财务确认的问题。
+然后先检测当前用户是否已绑定企业微信：
+- 已绑定 → 直接发送 `03-output/企业微信通知草稿.txt`（**纯文本版，不含任何标签**）；企微 5.0.10 起消息能力已全面开放（不限企业规模），正常应发送成功；
+  发送后自查：若消息中出现 `&lt;font` 或 `&lt;/font&gt;` 字样 → 立即用纯文本版重新发送并说明原因；
+  若发送失败，重试一次仍失败 → 引导用户按工作台《企业微信通知权限开通指引》排查（重新授权/可见范围/会话范围），
+  本次草稿已生成（纯文本版可先手动转发）；
+- 没绑定 → 明确说"本次未发送企业微信通知（原因：未绑定企微）"。
+
+【第6步：汇总】
+给我一份简明汇总：体检出几个问题（分别什么类型）、指标算了几项、几项触发预警、哪些需要财务优先确认。
+
+【定时任务（可选）】
+如需**每周五 17:00 自动体检并生成经营周报**，在对话里说"帮我把财报体检设置成每周五 17:00 自动运行"即可。</code></pre></div><div class="spacer" aria-hidden="true" data-page-node-id="PQYAKLUnAlKvnOW0WSrrpR"></div></article></section>
+<section class="page" id="page-case-406" data-page-node-id="6a6GClhIqi7RKiiONpbBjB"><article class="paper" data-page-node-id="NyWlcYddU4ZsFa8lFsHZw5"><header class="hero" data-page-node-id="eXCOedEkjkrcEmUXHAGN9D"><div class="eyebrow" data-page-node-id="4rYvFG7TgBZWgCVFCJ1aWb">模块四 · 数字员工</div><h1 data-page-node-id="4uMc6w4Qjt47IuVOMXBEyo">案例406｜应收账款逾期风险看板</h1></header><h2 data-page-node-id="eCOdxtBNIGerRR6obY7RmB">使用说明</h2><div class="numbered depth-1" data-page-node-id="XcZxf5jVhCryakx7hIMxVQ"><span class="marker" data-page-node-id="xNPwiJnq9EjsZvEtEOzAGc">1.</span><div data-page-node-id="LCxdCes7mjHoJHSVXsUuaz">本案例为<strong data-page-node-id="bSvybh5yJEvqyO7OZO4w3C">一条完整提示词</strong>（内部含确认材料 → 读材料 → 风险分析 → 出结果 → 通知汇总共 5 步），下方代码块内为完整提示词。</div></div>
+<div class="numbered depth-1" data-page-node-id="Vtk9GwdWLiu0hE1BxTmJNp"><span class="marker" data-page-node-id="19qbSedtzVcpykJPQNAjT0">2.</span><div data-page-node-id="EUHRQW6CXqJ09wkIbtzoUH">材料已就位：<code class="inline-code" data-page-node-id="JJbVlr3PYCfAXq7BxbZCUo">01-input/</code> 含合同台账、开票记录、回款记录、客户信息表；<code class="inline-code" data-page-node-id="iRHwSE9ZYPjqVat6CCdDJ1">02-working/</code> 风险分析工具与销售负责人映射表已配好，不用上传。</div></div>
+<div class="numbered depth-1" data-page-node-id="lNpEWMVouKPBy1pfgJezPU"><span class="marker" data-page-node-id="wal4qjQ9NZGPU5VBGQF6D4">3.</span><div data-page-node-id="IRcd4fUM9qgRiq3EorsxAO">分析按客户计算应收金额、已回款、未回款、到期日、逾期天数与账龄区间，按「金额 + 逾期天数 + 客户等级」生成催收优先级与催收建议话术。</div></div>
+<div class="numbered depth-1" data-page-node-id="0dBwuFieMMtJX681L0ANqH"><span class="marker" data-page-node-id="SvL5coogHphA2jx2mrSNmJ">4.</span><div data-page-node-id="VSnhdheximhjxMn02t8qcI">4 个产物输出到 <code class="inline-code" data-page-node-id="EI1qKG3uWHKjqx5QZlrMiF">03-output/</code>；颜色约定 高风险=深红、中风险=浅橙、低风险=浅黄、正常=白；定时任务已配置<strong data-page-node-id="w31zV861bAlC9PYUxobKP3">每周一 9:00 自动生成应收风险看板</strong>。</div></div>
+<div class="numbered depth-1" data-page-node-id="u4ahhzee21N2QuVoMnyfAt"><span class="marker" data-page-node-id="FOJ9GI8wh2ZsH5cFqCyc2h">5.</span><div data-page-node-id="x50I77OPUp5MmNHLgVBUr1">人工确认红线：催收动作必须由销售负责人确认后执行，AI <strong data-page-node-id="QGh2gNO7OAz50PqN9MGXey">不自动发催收、不自动联系客户</strong>。</div></div><div class="spacer" aria-hidden="true" data-page-node-id="DX65g8xgI5piQX9OiinQ66"></div><h2 data-page-node-id="yJAY0kYoWD3OHA6kk1i74O">提示词｜应收账款逾期风险看板（一次执行 5 步）</h2><p data-page-node-id="JkXp2uvvyY5Jqg7kBLBLCv"><strong data-page-node-id="nc12VxBIlDtgVMsvROeD9J">业务目标</strong>：合并合同、开票、回款与客户数据，按客户算出应收、逾期天数与账龄区间，标记高风险客户并排定催收优先级、生成催收建议话术，输出风险明细表、催收清单与风险看板。</p><div class="code-card" data-page-node-id="oCc5UOIE2FdlvCnvxau1fZ"><div class="code-top" data-page-node-id="yg980Q1eXdsimjgVOMQUTw"><span data-page-node-id="2fTDi4U8NihBjC0LBGAdMf">plain text</span><button class="copy-btn" type="button" aria-label="复制代码" data-page-node-id="7nrOFcYqpRiuMNlJFFV0CG">复制</button></div><pre data-page-node-id="4kk5BmAYZmIiXZ5YzFCRXN"><code data-page-node-id="kaO44lB5IejUa1XvuKrd5i">帮我处理项目文件夹 01-input/ 里的标准材料（已就位），直接读取开始，不用上传。
+
+【第1步：确认材料】
+确认 01-input/ 里材料都就位（02-working 工具也都在），缺哪个告诉我；都齐了直接往下走。
+【第2步：读取材料】
+直接读取 01-input/ 里已就位的材料：合同台账、开票记录、回款记录、客户信息表
+（分析时优先用 02-working 工作台里的风险分析工具，并读取销售负责人映射表做归属，保证口径一致；工具不可用时，用你自带能力完成并在汇总里说明哪步降级了。）
+（销售负责人映射表已在工作台配好，不用传；想调整负责人或客户等级直接对话说）
+【第3步：风险分析】
+合并合同、开票、回款、客户信息、销售负责人数据，按客户计算：应收金额、已回款、未回款、到期日、逾期天数、账龄区间。
+- 按 金额 + 逾期天数 + 客户等级 生成催收优先级（谁先催）
+- 为每个待催收客户生成催收建议话术（按风险等级/逾期天数拟话术）
+- 标记高风险客户（逾期久、金额大、等级低）
+
+【第4步：出结果 + 人工确认（不自动催收）】
+输出到 03-output/：
+1. 应收账款风险明细表.xlsx — 每客户应收/回款/逾期/账龄/风险等级
+2. 催收优先级清单.xlsx — 按优先级排序，谁先催、怎么催（含催收建议话术）
+3. 应收账款工作台账.xlsx — 每客户的分析记录
+4. 应收账款逾期风险看板.html — 汇总卡片 + 催收 TOP10
+颜色约定：高风险=深红、中风险=浅橙、低风险=浅黄、正常=白，几处产物保持一致。
+重要：催收动作必须由销售负责人确认后执行，你只做分析和建议，不自动发催收、不自动联系客户。
+
+【第5步：通知（先检测，再决定发还是留草稿）】
+先把摘要整理好：本周新增逾期客户、高风险客户 TOP、责任销售、建议跟进动作。
+然后先检测当前用户是否已绑定企业微信：
+- 已绑定 → 直接发送 `03-output/企业微信通知草稿.txt`（**纯文本版，不含任何标签**）；企微 5.0.10 起消息能力已全面开放（不限企业规模），正常应发送成功；
+  发送后自查：若消息中出现 `&lt;font` 或 `&lt;/font&gt;` 字样 → 立即用纯文本版重新发送并说明原因；
+  若发送失败，重试一次仍失败 → 引导用户按工作台《企业微信通知权限开通指引》排查（重新授权/可见范围/会话范围），
+  本次草稿已生成（纯文本版可先手动转发）；
+- 没绑定 → 明确说"本次未发送企业微信通知（原因：未绑定企微）"。
+
+【第6步：汇总】
+给我一份简明汇总：共几个客户、正常/低/中/高风险各几个、未回款合计、谁最该先催、责任销售是谁。
+
+【定时任务（已配置）】
+本案例已按要求配置**每周一 9:00 自动生成应收风险看板**，无需手动设置；如需调整时间，在对话里说即可。</code></pre></div><div class="spacer" aria-hidden="true" data-page-node-id="bytWwAJSzeDeyhaqcSjI9h"></div></article></section>
+<section class="page" id="page-ex-01"><article class="paper">
+<header class="hero"><div class="eyebrow">进阶班 · 实操练习 · 模块一 单点提效</div><h1>实操一｜用 AI 改造一次团队会议</h1><p>以一次<strong>已经完成的真实会议</strong>为素材，用 AI 完整走一遍会前准备与会后整理：从议题梳理、议程与通知，到纪要、决议、行动项与跟进通知。</p></header>
+<h2>练习目标</h2>
+<p>把一次真实会议完整跑通「会前准备 → 会中记录 → 会后整理 → 通知跟进」四个环节，看清 AI 在会议场景能做到哪一步、哪些动作必须由人确认。</p>
+<h2>可参考案例</h2>
+<div class="action-card"><div class="ac-body"><div class="ac-title">案例 101 · 团队会议管理</div><div class="ac-desc">6 步全流程骨架：环境准备 → 会前准备 → 纪要整理 → 行动项提取 → 行动台账 → 企业微信通知。</div></div><div class="ac-action"><button class="ac-btn" type="button" onclick="showPage('case-101')">↗ 查看案例 101</button></div></div>
+<h2>操作步骤</h2>
+<div class="numbered depth-1"><span class="marker">1.</span><div>选一次<strong>已开完的真实会议</strong>，把原始材料凑齐：会议通知、议题清单、参会人名单、会中记录或录音转写、会上用到的项目资料。统一放进 <code class="inline-code">01-input/</code>。</div></div>
+<div class="numbered depth-1"><span class="marker">2.</span><div><strong>做会前准备</strong>：把议题与参会人交给 AI，让它梳理议程、估算每项议题时长、列出席人需提前准备的材料，并输出会议通知草稿。</div></div>
+<div class="numbered depth-1"><span class="marker">3.</span><div><strong>让 AI 先反问</strong>：明确要求「先别出纪要模板，先告诉我还缺哪些材料、哪些议题口径不确定」，补齐后再开工。</div></div>
+<div class="numbered depth-1"><span class="marker">4.</span><div><strong>做会后整理</strong>：把会中记录或转写交给 AI，按「纪要 + 决议 + 行动项 + 待确认问题」四段结构出稿；行动项必须写全<strong>责任人、截止时间、交付物</strong>。</div></div>
+<div class="numbered depth-1"><span class="marker">5.</span><div><strong>逐条核对</strong>：把 AI 出的纪要与你自己人工整理的实际结果比对，标出漏项、错记与口径偏差。</div></div>
+<div class="numbered depth-1"><span class="marker">6.</span><div><strong>通知与台账</strong>：起草会后通知（发给参会人之前必须自己确认），并把行动项登记进会议行动台账，写清状态与跟进人。</div></div>
+<div class="numbered depth-1"><span class="marker">7.</span><div><strong>沉淀模板</strong>：把跑通的提示词与纪要、台账模板存下来，下次会议直接复用。</div></div>
+<blockquote><p>本实操的硬性边界：<strong>禁止自动执行</strong>会议纪要、行动项与对外通知；AI 可以起草、标注、汇总，纪要发出与通知发送一律由人确认后执行。</p></blockquote>
+<h2>输出结果要求</h2>
+<div class="bullet depth-1"><span>•</span><div>会前材料 1 份：议程 + 时间分配 + 参会人准备事项 + 会议通知草稿。</div></div>
+<div class="bullet depth-1"><span>•</span><div>会议纪要 1 份：纪要 + 决议 + 行动项（责任人 / 截止时间 / 交付物）+ 待确认问题。</div></div>
+<div class="bullet depth-1"><span>•</span><div>核对记录 1 份：AI 稿与人工稿的差异清单（漏项 / 错记 / 口径偏差）。</div></div>
+<div class="bullet depth-1"><span>•</span><div>会议行动台账 1 份，字段含编号、行动项、责任人、截止时间、状态、跟进人。</div></div>
+<div class="bullet depth-1"><span>•</span><div>可复用的提示词与模板 1 套。</div></div>
+</article></section>
+
+<section class="page" id="page-ex-02"><article class="paper">
+<header class="hero"><div class="eyebrow">进阶班 · 实操练习 · 模块一 单点提效</div><h1>实操二｜候选人简历筛选与面试准备</h1><p>拿公司<strong>正在进行的真实招聘</strong>，把候选人简历批量筛一遍：按岗位要求出评分与排序，再为进入面试的候选人准备面试提纲与追问清单。</p></header>
+<h2>练习目标</h2>
+<p>体验 AI 在招聘初筛中的效率与边界：学会用「岗位画像 + 评分口径」把筛选做得可比、可复核，并清楚哪些判断必须由 HR 与用人部门来做。</p>
+<h2>可参考案例</h2>
+<div class="action-card"><div class="ac-body"><div class="ac-title">案例 103 · 招聘简历批量筛选与评分</div><div class="ac-desc">骨架：定岗位口径 → 批量读取简历 → 逐项打分 → 候选人对比表 → 待核验项标注。</div></div><div class="ac-action"><button class="ac-btn" type="button" onclick="showPage('case-103')">↗ 查看案例 103</button></div></div>
+<h2>操作步骤</h2>
+<div class="numbered depth-1"><span class="marker">1.</span><div><strong>先定岗位口径</strong>：写清必备条件、加分项、<strong>否决项</strong>，以及评分维度与权重——这是 AI 打分的唯一标准，口径不定不打分。</div></div>
+<div class="numbered depth-1"><span class="marker">2.</span><div><strong>凑材料</strong>：候选人简历统一放入 <code class="inline-code">01-input/</code>，同时备好岗位 JD 与评分表模板。</div></div>
+<div class="numbered depth-1"><span class="marker">3.</span><div><strong>让 AI 先复述口径</strong>：要求它先说明评分维度与否决项，并列出简历中缺失的关键信息，确认无误后再开始打分。</div></div>
+<div class="numbered depth-1"><span class="marker">4.</span><div><strong>批量打分</strong>：输出候选人对比表（姓名 / 各维度得分 / 总分 / 推荐排序 / 待核验项），每一项给分都要<strong>注明依据</strong>。</div></div>
+<div class="numbered depth-1"><span class="marker">5.</span><div><strong>单独列不确定项</strong>：简历没写清的信息（学历性质、离职原因、可到岗时间）必须单列，<strong>不允许 AI 推测</strong>。</div></div>
+<div class="numbered depth-1"><span class="marker">6.</span><div><strong>抽检复核</strong>：随机抽 2–3 份简历，人工按同一口径独立打分，与 AI 分数对比，看偏差出在哪个维度。</div></div>
+<div class="numbered depth-1"><span class="marker">7.</span><div><strong>准备面试</strong>：为推荐进入面试的候选人各出一份面试提纲，含必问项、针对简历薄弱点的追问清单、需候选人补充说明的问题。</div></div>
+<div class="numbered depth-1"><span class="marker">8.</span><div><strong>归档</strong>：对比表、评分依据、面试提纲统一归档；简历原件仅限内部使用，不对外发送。</div></div>
+<blockquote><p>本实操的硬性边界：<strong>禁止自动执行</strong>录用或淘汰决定；候选人简历不得上传到外部公开平台，筛选结果与面试结论由 HR 与用人部门确认。</p></blockquote>
+<h2>输出结果要求</h2>
+<div class="bullet depth-1"><span>•</span><div>岗位评分口径 1 份：维度、权重、否决项、数据来源。</div></div>
+<div class="bullet depth-1"><span>•</span><div>候选人对比表 1 份：各维度得分、总分、推荐排序、待核验项。</div></div>
+<div class="bullet depth-1"><span>•</span><div>抽检复核记录 1 份：人工与 AI 打分的差异及原因分析。</div></div>
+<div class="bullet depth-1"><span>•</span><div>面试提纲 ≥2 份：必问项 + 追问清单 + 需补充说明的问题。</div></div>
+<div class="bullet depth-1"><span>•</span><div>可复用提示词 1 套。</div></div>
+</article></section>
+
+<section class="page" id="page-ex-03"><article class="paper">
+<header class="hero"><div class="eyebrow">进阶班 · 实操练习 · 模块二 流程改造</div><h1>实操三｜改造一个工作流</h1><p>挑一个本部门<strong>正在用人工做</strong>的业务流程，套用课堂案例的骨架换成自己的材料，补足判断规则与人工复核点，跑通一次完整的流程改造。</p></header>
+<h2>练习目标</h2>
+<p>用「照抄骨架、替换材料」的方式，把课堂演示案例改造成本部门可用的业务流程，并留下可复用的提示词、规则清单与工作台账。</p>
+<h2>可参考案例</h2>
+<div class="action-card"><div class="ac-body"><div class="ac-title">案例 201 · 费用报销审核（2 个演示）</div><div class="ac-desc">适合报销、审核、合规类流程，骨架为「识别 → 比对 → 异常清单 → 台账」。</div></div><div class="ac-action"><button class="ac-btn" type="button" onclick="showPage('case-201')">↗ 查看案例 201</button></div></div>
+<div class="action-card"><div class="ac-body"><div class="ac-title">案例 202 · 采购到货与供应商风险（4 个演示）</div><div class="ac-desc">适合供应链、库存、计划、供应商类流程，骨架为「核对 → 生成 → 预警 → 周报」。</div></div><div class="ac-action"><button class="ac-btn" type="button" onclick="showPage('case-202')">↗ 查看案例 202</button></div></div>
+<h2>操作步骤</h2>
+<div class="numbered depth-1"><span class="marker">1.</span><div><strong>选一个流程</strong>：本部门高频、边界清楚、材料现成、风险较低的一个（单据审核、报销初审、单据核对、异常汇总、周报整理等）。</div></div>
+<div class="numbered depth-1"><span class="marker">2.</span><div><strong>选参照案例</strong>：按业务类型挑最像的——单据审核与合规类 → 201；采购、库存、供应商类 → 202；生产与设备类 → 102 / 403。</div></div>
+<div class="numbered depth-1"><span class="marker">3.</span><div><strong>抄流程骨架</strong>：把参照案例的步骤结构抄下来（确认材料 → 读取材料 → 逐项判断 → 出结果 → 通知 → 汇总），只搬结构，不搬内容。</div></div>
+<div class="numbered depth-1"><span class="marker">4.</span><div><strong>换成本部门材料</strong>：逐项列出本部门的输入材料（表单、台账、制度、模板），确认都能放进 <code class="inline-code">01-input/</code>，缺的补齐。</div></div>
+<div class="numbered depth-1"><span class="marker">5.</span><div><strong>至少补 3 条规则</strong>：每条写成「如果…则…」（如「如果住宿费超过该城市上限，则标记中风险」），并注明依据的制度或标准。</div></div>
+<div class="numbered depth-1"><span class="marker">6.</span><div><strong>定人工复核点</strong>：写清 AI 做到哪一步、哪些动作必须人工确认。</div></div>
+<div class="numbered depth-1"><span class="marker">7.</span><div><strong>设计台账</strong>：字段含编号、处理时间、处理人、状态、复核状态、复核意见，保证过程可追溯。</div></div>
+<div class="numbered depth-1"><span class="marker">8.</span><div><strong>跑通一次</strong>：用真实材料把改造后的流程跑一遍，记录卡点、降级步骤和需要人工兜底的地方。</div></div>
+<blockquote><p>本实操的硬性边界：<strong>禁止自动执行</strong>审批、付款、处罚、录用、外发、系统写入；AI 可以起草、标注、汇总，最终动作一律由人确认后执行。</p></blockquote>
+<h2>输出结果要求</h2>
+<div class="bullet depth-1"><span>•</span><div>改造后的流程说明 1 份：步骤、每步的输入与输出、人工确认点、完成标准。</div></div>
+<div class="bullet depth-1"><span>•</span><div>本部门输入材料清单 1 份，写明每份材料放在哪里。</div></div>
+<div class="bullet depth-1"><span>•</span><div>「如果…则…」规则 ≥3 条，每条注明依据。</div></div>
+<div class="bullet depth-1"><span>•</span><div>异常 / 风险清单 1 份，结构对齐参照案例（含风险等级与建议处理动作）。</div></div>
+<div class="bullet depth-1"><span>•</span><div>工作台账 1 份。</div></div>
+<div class="bullet depth-1"><span>•</span><div>改造前后对比与遗留问题 1 份。</div></div>
+</article></section>
+
+<section class="page" id="page-ex-04"><article class="paper">
+<header class="hero"><div class="eyebrow">进阶班 · 实操练习 · 模块三 工具固化</div><h1>实操四｜为一个岗位设计岗位教练</h1><p>挑一个岗位，把它需要的知识、常见问题、培训要点与考核方式整理成一套「岗位教练」，让新人和在岗同事都能随时提问、随时练。</p></header>
+<h2>练习目标</h2>
+<p>把一个岗位的经验沉淀成可对话、可训练、可考核的教练工具，理解「知识整理 → 问答 → 出题 → 训练计划」这条完整链路。</p>
+<h2>可参考案例</h2>
+<div class="action-card"><div class="ac-body"><div class="ac-title">案例 302 · 员工教练：课件、题库与训练计划</div><div class="ac-desc">骨架：知识整理 → 教练问答 → 题库生成 → 训练计划排布。</div></div><div class="ac-action"><button class="ac-btn" type="button" onclick="showPage('case-302')">↗ 查看案例 302</button></div></div>
+<div class="action-card"><div class="ac-body"><div class="ac-title">案例 301 · 员工制度问答助手</div><div class="ac-desc">知识库类问答的参照：材料分类、依据引用、答不到就说「资料未覆盖」。</div></div><div class="ac-action"><button class="ac-btn" type="button" onclick="showPage('case-301')">↗ 查看案例 301</button></div></div>
+<h2>操作步骤</h2>
+<div class="numbered depth-1"><span class="marker">1.</span><div><strong>选岗位并定边界</strong>：写明这个教练要解决什么（上岗培训 / 常见问题解答 / 技能考核），以及<strong>不</strong>解决什么。</div></div>
+<div class="numbered depth-1"><span class="marker">2.</span><div><strong>凑知识材料</strong>：岗位说明书、操作规范、制度文件、常见问题记录、历史培训资料。</div></div>
+<div class="numbered depth-1"><span class="marker">3.</span><div><strong>整理知识库</strong>：让 AI 把材料按主题归类、去重，标出相互冲突或明显过期的内容，<strong>冲突项单独列出由人裁定</strong>。</div></div>
+<div class="numbered depth-1"><span class="marker">4.</span><div><strong>建问答</strong>：要求 AI 回答一律给出依据出处；材料里没有的必须回答「资料未覆盖」，<strong>不允许编造</strong>。</div></div>
+<div class="numbered depth-1"><span class="marker">5.</span><div><strong>出题库</strong>：按知识点生成题目（单选 / 判断 / 情景问答），附标准答案与解析。</div></div>
+<div class="numbered depth-1"><span class="marker">6.</span><div><strong>排训练计划</strong>：按岗位上手顺序排出阶段目标、练习任务与达标标准。</div></div>
+<div class="numbered depth-1"><span class="marker">7.</span><div><strong>试用并修正</strong>：找 1–2 位该岗位同事试用，记录答不上来或答错的问题，回补知识材料。</div></div>
+<div class="numbered depth-1"><span class="marker">8.</span><div><strong>固化</strong>：知识库、问答提示词、题库、训练计划打包成套，注明维护责任人。</div></div>
+<blockquote><p>本实操的硬性边界：<strong>禁止自动执行</strong>薪酬、考核结论与处分判定；岗位教练只用于培训与练习，涉及个人利益的处理必须走人工流程。</p></blockquote>
+<h2>输出结果要求</h2>
+<div class="bullet depth-1"><span>•</span><div>岗位知识库 1 份（分类整理 + 冲突 / 过期内容清单）。</div></div>
+<div class="bullet depth-1"><span>•</span><div>问答提示词 1 套，带依据引用与「资料未覆盖」兜底规则。</div></div>
+<div class="bullet depth-1"><span>•</span><div>题库 ≥10 题，含标准答案与解析。</div></div>
+<div class="bullet depth-1"><span>•</span><div>训练计划 1 份：阶段目标 + 练习任务 + 达标标准。</div></div>
+<div class="bullet depth-1"><span>•</span><div>试用反馈与修正记录 1 份。</div></div>
+</article></section>
+
+<section class="page" id="page-ex-05"><article class="paper">
+<header class="hero"><div class="eyebrow">进阶班 · 实操练习 · 模块三 工具固化</div><h1>实操五｜开发一个公司网站</h1><p>用 AI 把公司官网从需求做到页面：定信息架构、写文案、定视觉方向、生成可预览的页面，最后逐条核对事实性内容。</p></header>
+<h2>练习目标</h2>
+<p>走完「需求 → 结构 → 文案 → 页面」的完整链路，理解网站开发中哪些内容可以由 AI 生成、哪些事实必须由公司提供并确认。</p>
+<h2>可参考案例</h2>
+<div class="action-card"><div class="ac-body"><div class="ac-title">案例 304 · 企业官网设计</div><div class="ac-desc">9 步骨架：定目标受众 → 信息架构 → 事实材料 → 栏目文案 → 视觉方向 → 逐页生成 → 事实核校 → 补齐页面 → 上线检查。</div></div><div class="ac-action"><button class="ac-btn" type="button" onclick="showPage('case-304')">↗ 查看案例 304</button></div></div>
+<h2>操作步骤</h2>
+<div class="numbered depth-1"><span class="marker">1.</span><div><strong>定目标与受众</strong>：网站给谁看（客户 / 求职者 / 合作伙伴）、要促成什么动作（咨询 / 留资 / 了解产品）。</div></div>
+<div class="numbered depth-1"><span class="marker">2.</span><div><strong>列信息架构</strong>：确定栏目与页面清单（首页 / 产品 / 案例 / 关于我们 / 联系），排出导航层级。</div></div>
+<div class="numbered depth-1"><span class="marker">3.</span><div><strong>备事实材料</strong>：公司简介、产品说明、资质、真实案例、联系方式——这部分<strong>必须由公司提供</strong>，AI 不生成。</div></div>
+<div class="numbered depth-1"><span class="marker">4.</span><div><strong>写文案</strong>：让 AI 按栏目逐页出文案，限定每段字数，禁止出现无法核实的表述与夸大用语。</div></div>
+<div class="numbered depth-1"><span class="marker">5.</span><div><strong>定视觉方向</strong>：给 AI 设计语言要求（主色、字体气质、版式风格），<strong>先出风格稿确认再展开</strong>。</div></div>
+<div class="numbered depth-1"><span class="marker">6.</span><div><strong>生成页面</strong>：让 AI 输出可预览的页面代码，逐个栏目生成，每页确认无误后再做下一页。</div></div>
+<div class="numbered depth-1"><span class="marker">7.</span><div><strong>事实核校</strong>：逐条核对公司名称、数据、资质、联系方式，标注所有 AI 生成但未经确认的表述。</div></div>
+<div class="numbered depth-1"><span class="marker">8.</span><div><strong>补齐常规页面</strong>：移动端适配、联系表单、页脚备案信息、404 页面。</div></div>
+<div class="numbered depth-1"><span class="marker">9.</span><div><strong>上线前检查</strong>：链接是否可用、表单能否提交、图片是否缺失。</div></div>
+<blockquote><p>本实操的硬性边界：<strong>禁止自动执行</strong>对外发布；网站全部事实性内容须经公司确认，AI 不得生成虚假资质、案例或客户背书。</p></blockquote>
+<h2>输出结果要求</h2>
+<div class="bullet depth-1"><span>•</span><div>信息架构 1 份：栏目 + 页面清单 + 导航层级。</div></div>
+<div class="bullet depth-1"><span>•</span><div>各栏目文案 1 套。</div></div>
+<div class="bullet depth-1"><span>•</span><div>可预览的网站页面（首页 + 主要栏目）。</div></div>
+<div class="bullet depth-1"><span>•</span><div>事实核校清单 1 份，标注待确认项。</div></div>
+<div class="bullet depth-1"><span>•</span><div>上线前检查记录 1 份。</div></div>
+</article></section>
+
+<section class="page" id="page-ex-06"><article class="paper">
+<header class="hero"><div class="eyebrow">进阶班 · 实操练习 · 模块四 数字员工</div><h1>实操六｜做一个公司的数据看板</h1><p>拿公司真实的经营与财务数据，做一个能给管理层看的看板：定指标与口径、清洗数据、生成图表，并写清每个数字是怎么算出来的。</p></header>
+<h2>练习目标</h2>
+<p>掌握「定指标 → 清数据 → 出看板 → 会解读」的方法，学会让 AI 在给结论的同时交代计算口径，避免数字对不上、看不懂、不敢用。</p>
+<h2>可参考案例</h2>
+<div class="action-card"><div class="ac-body"><div class="ac-title">案例 404 · 现金流预测与资金缺口看板</div><div class="ac-desc">资金视角：现金余额趋势 → 资金缺口测算 → 预警阈值。</div></div><div class="ac-action"><button class="ac-btn" type="button" onclick="showPage('case-404')">↗ 查看案例 404</button></div></div>
+<div class="action-card"><div class="ac-body"><div class="ac-title">案例 405 · 财务报表自动体检与经营周报</div><div class="ac-desc">报表视角：财务指标体检 → 异常项标注 → 经营周报解读。</div></div><div class="ac-action"><button class="ac-btn" type="button" onclick="showPage('case-405')">↗ 查看案例 405</button></div></div>
+<div class="action-card"><div class="ac-body"><div class="ac-title">案例 406 · 应收账款逾期风险看板</div><div class="ac-desc">应收视角：账龄分布 → 逾期分级 → 风险客户排行。</div></div><div class="ac-action"><button class="ac-btn" type="button" onclick="showPage('case-406')">↗ 查看案例 406</button></div></div>
+<h2>操作步骤</h2>
+<div class="numbered depth-1"><span class="marker">1.</span><div><strong>定用途与读者</strong>：谁看（老板 / 财务 / 业务负责人）、多久看一次、看完要做什么决策。</div></div>
+<div class="numbered depth-1"><span class="marker">2.</span><div><strong>定指标与口径</strong>：列出核心指标（现金余额、资金缺口、应收逾期率、毛利变化等），每个指标写清<strong>计算公式与数据来源</strong>。</div></div>
+<div class="numbered depth-1"><span class="marker">3.</span><div><strong>备数据</strong>：导出相关台账或报表（现金流、应收明细、财务报表），统一格式后放入 <code class="inline-code">01-input/</code>。</div></div>
+<div class="numbered depth-1"><span class="marker">4.</span><div><strong>让 AI 先对口径</strong>：要求它复述每个指标的定义与算法，指出数据中缺失、重复、口径不一致的地方，<strong>先补齐再算</strong>。</div></div>
+<div class="numbered depth-1"><span class="marker">5.</span><div><strong>清洗与校验</strong>：处理空值、异常值、单位不一致问题，并输出数据校验说明（原始条数 / 有效条数 / 剔除原因）。</div></div>
+<div class="numbered depth-1"><span class="marker">6.</span><div><strong>生成看板</strong>：按指标分组出图表（趋势、构成、Top 排行、风险分级），关键指标加<strong>预警阈值</strong>标记。</div></div>
+<div class="numbered depth-1"><span class="marker">7.</span><div><strong>写解读</strong>：每个图表配一段结论，说明「现在的状态 + 变化原因 + 建议动作」，并注明所用口径。</div></div>
+<div class="numbered depth-1"><span class="marker">8.</span><div><strong>人工复核</strong>：抽查 2–3 个关键数字手工重算，确认与看板一致。</div></div>
+<div class="numbered depth-1"><span class="marker">9.</span><div><strong>固化更新方式</strong>：写明数据多久更新一次、由谁更新、更新步骤是什么。</div></div>
+<blockquote><p>本实操的硬性边界：<strong>禁止自动执行</strong>对外披露财务数据；看板数字必须可追溯到原始数据，对外发布前一律由财务负责人确认。</p></blockquote>
+<h2>输出结果要求</h2>
+<div class="bullet depth-1"><span>•</span><div>指标与口径表 1 份：指标 / 计算公式 / 数据来源 / 预警阈值。</div></div>
+<div class="bullet depth-1"><span>•</span><div>数据校验说明 1 份：原始条数、有效条数、剔除原因。</div></div>
+<div class="bullet depth-1"><span>•</span><div>数据看板 1 份（含图表与预警标记）。</div></div>
+<div class="bullet depth-1"><span>•</span><div>每张图表的结论与建议动作 1 套。</div></div>
+<div class="bullet depth-1"><span>•</span><div>抽检复核记录 1 份。</div></div>
+<div class="bullet depth-1"><span>•</span><div>更新机制说明 1 份。</div></div>
+</article></section>
+
+<section class="page" id="page-ex-07"><article class="paper">
+<header class="hero"><div class="eyebrow">进阶班 · 实操练习 · 模块三 工具固化</div><h1>实操七｜开发一个小应用</h1><p>把工作中一个反复要人工登记、查询、统计的小场景，做成一个能用的表单小应用，跑通「提交 → 存储 → 查询」的闭环。</p></header>
+<h2>练习目标</h2>
+<p>体验用 AI 从零做一个内部小工具，理解「字段设计 → 表单 → 数据存储 → 查询统计」的最小闭环，并清楚上线前要检查哪些事项。</p>
+<h2>可参考案例</h2>
+<div class="action-card"><div class="ac-body"><div class="ac-title">案例 303 · 车辆预约登记系统</div><div class="ac-desc">骨架：场景与字段设计 → 状态流转 → 表单页 → 数据列表 → 查询筛选 → 权限说明。</div></div><div class="ac-action"><button class="ac-btn" type="button" onclick="showPage('case-303')">↗ 查看案例 303</button></div></div>
+<h2>操作步骤</h2>
+<div class="numbered depth-1"><span class="marker">1.</span><div><strong>选场景</strong>：找一个当前用微信、纸质或 Excel 手工登记、需要多人填、事后要统计的小场景（用车申请、会议室预约、物品领用、报修登记等）。</div></div>
+<div class="numbered depth-1"><span class="marker">2.</span><div><strong>定字段</strong>：列出必须采集的字段（申请人、时间、事由、审批人、状态），区分必填与选填，标明字段类型。</div></div>
+<div class="numbered depth-1"><span class="marker">3.</span><div><strong>定状态流转</strong>：写清一条记录会经历哪些状态（待审 → 已通过 → 已完成 / 已取消），以及谁能改状态。</div></div>
+<div class="numbered depth-1"><span class="marker">4.</span><div><strong>让 AI 先出方案</strong>：要求它先说明准备用什么方式存数据、有哪些限制与前提，确认可行再动手。</div></div>
+<div class="numbered depth-1"><span class="marker">5.</span><div><strong>生成应用</strong>：输出可运行的小应用（表单页 + 数据列表 + 查询筛选），逐个功能确认。</div></div>
+<div class="numbered depth-1"><span class="marker">6.</span><div><strong>加校验</strong>：必填项校验、时间范围校验、重复提交校验。</div></div>
+<div class="numbered depth-1"><span class="marker">7.</span><div><strong>自测</strong>：换不同角色各提交几条记录，检查数据是否落库、能否按条件查到、状态流转是否正确。</div></div>
+<div class="numbered depth-1"><span class="marker">8.</span><div><strong>写使用与权限说明</strong>：谁能看全部数据、谁能修改、数据存在哪里，附一页使用说明。</div></div>
+<blockquote><p>本实操的硬性边界：<strong>禁止自动执行</strong>审批、付款等业务动作；同时注意涉及员工个人信息的字段不得超出必要范围收集，内部数据应用不得直接公开到公网。</p></blockquote>
+<h2>输出结果要求</h2>
+<div class="bullet depth-1"><span>•</span><div>场景说明与字段清单 1 份。</div></div>
+<div class="bullet depth-1"><span>•</span><div>状态流转说明 1 份（状态 + 可操作角色）。</div></div>
+<div class="bullet depth-1"><span>•</span><div>可用的小应用（表单 + 列表 + 查询筛选）。</div></div>
+<div class="bullet depth-1"><span>•</span><div>自测记录 1 份：不同角色、不同条件各若干条。</div></div>
+<div class="bullet depth-1"><span>•</span><div>使用说明与权限说明 1 份。</div></div>
+</article></section>
+
+<section class="page" id="page-ex-08"><article class="paper">
+<header class="hero"><div class="eyebrow">进阶班 · 实操练习 · 模块四 数字员工</div><h1>实操八｜搭建一个持续使用的数字员工</h1><p>把前面练过的能力组合起来，为一项需要长期重复执行的工作搭一个「数字员工」：定时跑、自动出结果、按规则通知人，并留下可追溯的运行台账。</p></header>
+<h2>练习目标</h2>
+<p>从「做一次」升级到「长期跑」：学会把任务拆成定时触发、自动执行、人工确认、台账留痕四个部分，并明确哪些环节必须保留人的确认节点。</p>
+<h2>可参考案例</h2>
+<div class="action-card"><div class="ac-body"><div class="ac-title">案例 401 · 绩效评估与薪酬核算辅助</div><div class="ac-desc">取数核验 → 评估辅助 → 核算草稿，人工确认红线最重的 HR 数字员工。</div></div><div class="ac-action"><button class="ac-btn" type="button" onclick="showPage('case-401')">↗ 查看案例 401</button></div></div>
+<div class="action-card"><div class="ac-body"><div class="ac-title">案例 403 · 设备巡检记录智能分析及周报</div><div class="ac-desc">记录汇总 → 异常识别 → 周报生成，典型的「定时跑 + 出结果」结构。</div></div><div class="ac-action"><button class="ac-btn" type="button" onclick="showPage('case-403')">↗ 查看案例 403</button></div></div>
+<div class="action-card"><div class="ac-body"><div class="ac-title">案例 404 · 现金流预测与资金缺口看板</div><div class="ac-desc">周期性更新数据 → 预测 → 缺口看板，数据定期刷新、看板持续可用的范本。</div></div><div class="ac-action"><button class="ac-btn" type="button" onclick="showPage('case-404')">↗ 查看案例 404</button></div></div>
+<div class="action-card"><div class="ac-body"><div class="ac-title">案例 405 · 财务报表自动体检与经营周报</div><div class="ac-desc">报表体检 → 指标解读 → 经营周报，每周固定输入、固定产出的完整闭环。</div></div><div class="ac-action"><button class="ac-btn" type="button" onclick="showPage('case-405')">↗ 查看案例 405</button></div></div>
+<div class="action-card"><div class="ac-body"><div class="ac-title">案例 406 · 应收账款逾期风险看板</div><div class="ac-desc">定期扫描 → 逾期分级 → 风险提醒，按账期持续盯、自动催办的典型。</div></div><div class="ac-action"><button class="ac-btn" type="button" onclick="showPage('case-406')">↗ 查看案例 406</button></div></div>
+<h2>操作步骤</h2>
+<div class="numbered depth-1"><span class="marker">1.</span><div><strong>选一项长期重复的工作</strong>：至少每周做一次、有固定输入、有固定输出（周报、异常汇总、库存预警、巡检分析、应收提醒等）。</div></div>
+<div class="numbered depth-1"><span class="marker">2.</span><div><strong>画运行图</strong>：写清触发时间（每天 / 每周几几点）→ 输入来源 → 处理步骤 → 输出产物 → 通知谁 → 谁确认。</div></div>
+<div class="numbered depth-1"><span class="marker">3.</span><div><strong>定自动化边界</strong>：明确哪些步骤 AI 全自动完成，哪些<strong>必须停下来等人确认</strong>才能继续。</div></div>
+<div class="numbered depth-1"><span class="marker">4.</span><div><strong>备材料与模板</strong>：把输入材料位置、输出模板、通知话术固定下来，确保每次运行都用同一套标准。</div></div>
+<div class="numbered depth-1"><span class="marker">5.</span><div><strong>搭流程</strong>：把步骤拆成可独立运行的提示词并按顺序串起，确认每一步的输入依赖上一步的输出。</div></div>
+<div class="numbered depth-1"><span class="marker">6.</span><div><strong>设定时任务</strong>：按运行图配置定时触发，先跑一次试运行，检查是否按时产出了正确产物。</div></div>
+<div class="numbered depth-1"><span class="marker">7.</span><div><strong>建运行台账</strong>：记录每次运行的时间、输入条数、产物路径、异常项、确认人、确认结果。</div></div>
+<div class="numbered depth-1"><span class="marker">8.</span><div><strong>设异常兜底</strong>：写清数据缺失、格式错误、输出不完整时怎么办（跳过 / 标注 / 通知人工处理），一切正常则不加打扰。</div></div>
+<div class="numbered depth-1"><span class="marker">9.</span><div><strong>试用两周并复盘</strong>：记录误报、漏报与人工干预次数，据此调整规则与触发频率。</div></div>
+<blockquote><p>本实操的硬性边界：<strong>禁止自动执行</strong>审批、付款、处罚、录用、外发、系统写入；数字员工只做起草、汇总、标注、提醒，最终动作一律由人确认后执行。</p></blockquote>
+<h2>输出结果要求</h2>
+<div class="bullet depth-1"><span>•</span><div>数字员工运行图 1 份：触发 / 输入 / 步骤 / 输出 / 通知 / 确认。</div></div>
+<div class="bullet depth-1"><span>•</span><div>提示词流程 1 套（分步骤、可按序执行）。</div></div>
+<div class="bullet depth-1"><span>•</span><div>已配置的定时任务，含首次试运行记录。</div></div>
+<div class="bullet depth-1"><span>•</span><div>运行台账 1 份（模板 + 至少 1 次运行记录）。</div></div>
+<div class="bullet depth-1"><span>•</span><div>异常兜底规则 1 份。</div></div>
+<div class="bullet depth-1"><span>•</span><div>两周复盘记录 1 份：误报、漏报、人工干预次数与调整项。</div></div>
+</article></section>
+</main></div><script>document.querySelectorAll('.copy-btn').forEach(btn=>btn.addEventListener('click',async()=>{const text=btn.closest('.code-card').querySelector('code').innerText;try{await navigator.clipboard.writeText(text)}catch(e){const t=document.createElement('textarea');t.value=text;document.body.appendChild(t);t.select();document.execCommand('copy');t.remove()}const old=btn.textContent;btn.textContent='已复制';setTimeout(()=>btn.textContent=old,1400)}));
+function showPage(id,skipScroll){document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id==='page-'+id));document.querySelectorAll('.toc a[data-page]').forEach(a=>a.classList.toggle('active',a.getAttribute('data-page')===id));const rd=document.querySelector('.reader');if(!rd)return;rd.scrollTo({top:0,behavior:'auto'});if(window.innerWidth<=800&&!skipScroll)rd.scrollIntoView({block:'start',behavior:'auto'})}
+document.querySelectorAll('.toc-sec').forEach(sec=>{
+const group=sec.querySelector('.toc-group'),toggle=sec.querySelector('.toc-toggle'),first=sec.querySelector('.toc-items a[data-page]');
+if(group)group.addEventListener('click',()=>{const folded=sec.classList.toggle('collapsed');if(toggle)toggle.setAttribute('aria-expanded',folded?'false':'true');if(first)showPage(first.getAttribute('data-page'))});
+if(toggle)toggle.addEventListener('click',e=>{e.stopPropagation();const folded=sec.classList.toggle('collapsed');toggle.setAttribute('aria-expanded',folded?'false':'true')});
+});
+document.querySelectorAll('.toc a[data-page]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();showPage(a.getAttribute('data-page'))}));
+showPage('download',true);</script>
+</body></html>
