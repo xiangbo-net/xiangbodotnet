@@ -8,3 +8,8 @@
 /workbuddy-course-basic/.workbuddy
 /workbuddy-basic-course/.workbuddy
 .workbuddy
+
+# Notion 发布流水线的本地预览目录（--out 的默认落点）
+/.notion-preview*/
+.github/workflows/notion-publish.yml
+.env.example
