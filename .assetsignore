@@ -3,7 +3,7 @@
 # 语法与 .gitignore 完全一致；wrangler deploy 时，匹配到的文件不会上传到
 # Cloudflare，因而公网无法访问。
 #
-# 放置位置：assets.directory 的根目录。本项目 wrangler.jsonc 中
+# 放置位置：assets.directory 的根目录。本项目 wrangler.toml 中
 #           assets.directory = "."，即仓库根，所以本文件就放在这里。
 # 生效时机：下一次部署。推送后由 Cloudflare Workers Builds 自动构建，
 #           资源清单重建，被排除的文件即从线上移除。
@@ -23,7 +23,7 @@
 **/node_modules
 
 # ---- 3. 仓库配置与构建脚本（非站点内容）----
-wrangler.jsonc
+wrangler.toml
 .gitignore
 **/*.py
 

@@ -1,4 +1,18 @@
 name = "xiangbo-net"
-pages_build_output_dir = "."
 compatibility_date = "2026-07-15"
 compatibility_flags = ["nodejs_compat"]
+
+# 部署形态：Cloudflare Workers 静态资源
+#   directory = "."    —— 整个仓库根作为站点根
+#   binding  = "ASSETS" —— Worker 代码可通过 env.ASSETS 访问；本项目无 Worker 代码，可保留作为标准形态
+#   not_found_handling = "none" —— 关键：未匹配路径直接返回 404，不再回落到 index.html
+#     （历史值 `pages_build_output_dir = "."` 是 Pages 残留写法，会导致任何不存在的 URL 都自动显示
+#       根 index.html，即"SPA fallback"。本项目是纯静态多页 HTML，无客户端路由，不需要此行为。）
+#
+# 调试技巧：
+#   wrangler dev --local  本地起站（已在 .gitignore 排除 .wrangler/）
+#   wrangler deploy --dry-run --outdir=/tmp/wb-out  预演上传清单
+[assets]
+directory = "."
+not_found_handling = "none"
+binding = "ASSETS"
