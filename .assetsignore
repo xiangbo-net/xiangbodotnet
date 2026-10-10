@@ -1,0 +1,35 @@
+# .assetsignore —— Cloudflare Workers 静态资源排除清单
+#
+# 语法与 .gitignore 完全一致；wrangler deploy 时，匹配到的文件不会上传到
+# Cloudflare，因而公网无法访问。
+#
+# 放置位置：assets.directory 的根目录。本项目 wrangler.jsonc 中
+#           assets.directory = "."，即仓库根，所以本文件就放在这里。
+# 生效时机：下一次部署。推送后由 Cloudflare Workers Builds 自动构建，
+#           资源清单重建，被排除的文件即从线上移除。
+#
+# 说明：Cloudflare Pages 会自动排除 node_modules / .DS_Store / .git，
+#       Workers 静态资源不会，必须显式声明，故有本文件。
+
+# ---- 1. git 元数据（本次修复的核心）----
+# 构建机 clone 出的 .git 目录若不排除，会被当作网站文件公开挂出
+**/.git
+
+# 本文件自身也无需上传
+**/.assetsignore
+
+# ---- 2. 系统与依赖噪音 ----
+**/.DS_Store
+**/node_modules
+
+# ---- 3. 仓库配置与构建脚本（非站点内容）----
+wrangler.jsonc
+.gitignore
+**/*.py
+
+# ---- 4. 内部文档（已实测：全站 HTML/JS/JSON/XML 无任何引用）----
+**/*.md
+
+# ---- 5. 白名单提醒 ----
+# skills/*.zip 是课程页有意公开的下载项（ai-course 页面直接链接指向），
+# 请勿在本文件中排除 *.zip，否则课程页的下载会失效。
