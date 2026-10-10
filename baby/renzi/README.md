@@ -43,7 +43,8 @@ node tools/e2e.cjs        # 前端无头实测（需先起本地服务）
 Cloudflare D1 数据库 `hanzi-baby`，四张表：`chars`（字库 + 难度分）、`progress`（掌握状态）、
 `sessions`（对局记录）、`settings`（口令 / 令牌）。
 
-家长端口令初始为 `momo2026`，请登录后在「设置」里尽快修改。
+家长端初始口令**不写进本仓库**——本目录是公开发布目录，其中所有内容任何人都能直接访问。
+初始口令只保存在本地源项目的部署说明里；首次登录后请在「设置」里立即修改。
 
 ## 刻意不放进公开仓库的文件
 
@@ -52,3 +53,14 @@ Cloudflare D1 数据库 `hanzi-baby`，四张表：`chars`（字库 + 难度分�
 - `worker/seed.sql` —— 灌库脚本，内含初始口令的哈希（可用 `node tools/build-seed.cjs` 重新生成）
 - `tools/onlinetest.cjs` —— 线上端到端验证脚本（请求体里带口令）
 - `tools/liveshot.cjs` —— 线上站点截图脚本（登录要用口令）
+
+仓库内保留的测试脚本（`tools/` 下的 `.cjs`）一律**不写死口令**，运行时按顺序取值：
+
+1. 环境变量 —— 一般脚本用 `ADMIN_PASSWORD`，灌库脚本用 `SEED_PASSWORD`
+2. 本地文件 `tools/.adminpw`（已加入 `.gitignore`，不会提交）
+
+```bash
+ADMIN_PASSWORD=你的口令 node tools/apitest.cjs
+# 或者把口令放进本地文件，之后无需再传
+printf '%s' '你的口令' > tools/.adminpw
+```

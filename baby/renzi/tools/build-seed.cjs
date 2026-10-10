@@ -22,7 +22,14 @@ const ROOT = path.resolve(__dirname, '..');
 const IN_FILE = path.join(ROOT, 'src', 'hanzi.json');
 const OUT_FILE = path.join(ROOT, 'worker', 'seed.sql');
 
-const INITIAL_PASSWORD = 'momo2026';     // 家长端初始口令（可在 admin 页修改）
+// 家长端初始口令：不硬编码进仓库。优先读环境变量，其次读本地文件 tools/.adminpw（已 gitignore）
+const INITIAL_PASSWORD = process.env.SEED_PASSWORD || (() => {
+  try { return fs.readFileSync(path.join(__dirname, '.adminpw'), 'utf8').trim(); } catch (e) { return ''; }
+})();
+if (!INITIAL_PASSWORD) {
+  console.error('✘ 需要初始口令：设环境变量 SEED_PASSWORD，或写入 tools/.adminpw');
+  process.exit(1);
+}
 const FIXED_SALT = 'hzdet-seed-2026';    // 固定盐，保证重复生成结果一致
 
 const q = s => "'" + String(s == null ? '' : s).replace(/'/g, "''") + "'";
@@ -80,7 +87,7 @@ for (let i = 0; i < rows.length; i += BATCH) {
 
 /* 2) 家长口令（仅首次写入）-------------------------------------------- */
 const hash = FIXED_SALT + ':' + hashPassword(INITIAL_PASSWORD, FIXED_SALT);
-lines.push('-- 家长端口令：初始为 ' + INITIAL_PASSWORD + '（首次写入；已改过口令不会被覆盖）');
+lines.push('-- 家长端口令：由生成时传入（首次写入；已改过口令不会被覆盖）');
 lines.push('INSERT OR IGNORE INTO settings (key,value,updated_at) VALUES');
 lines.push(`('password_hash',${q(hash)},${now});`);
 lines.push('');

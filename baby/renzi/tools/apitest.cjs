@@ -6,6 +6,15 @@
  */
 const BASE = process.argv[2] || 'http://127.0.0.1:8787/api/baby';
 
+// 家长端口令：不硬编码进仓库。优先读环境变量，其次读本地文件 tools/.adminpw（已 gitignore）
+const PW = process.env.ADMIN_PASSWORD || (() => {
+  try { return require('fs').readFileSync(require('path').join(__dirname, '.adminpw'), 'utf8').trim(); } catch (e) { return ''; }
+})();
+if (!PW) {
+  console.error('✘ 需要家长端口令：设环境变量 ADMIN_PASSWORD，或写入 tools/.adminpw');
+  process.exit(1);
+}
+
 let pass = 0, fail = 0;
 function ok(name, cond, extra) {
   if (cond) { pass++; console.log('  ✅ ' + name); }
@@ -43,7 +52,7 @@ async function call(method, path, body, token) {
   r = await call('POST', '/admin/login', { password: 'wrong-password' });
   ok('错误口令被拒 401', r.status === 401, r);
 
-  r = await call('POST', '/admin/login', { password: 'momo2026' });
+  r = await call('POST', '/admin/login', { password: PW });
   ok('正确口令登录成功', r.status === 200 && !!r.body.token, r);
   const token = r.body.token;
 
@@ -144,19 +153,19 @@ async function call(method, path, body, token) {
   console.log('\n[10] 改口令');
   r = await call('POST', '/admin/password', { oldPassword: 'bad', newPassword: 'aaaa' }, token);
   ok('原口令错误被拒 401', r.status === 401, r);
-  r = await call('POST', '/admin/password', { oldPassword: 'momo2026', newPassword: 'test1234' }, token);
+  r = await call('POST', '/admin/password', { oldPassword: PW, newPassword: 'test1234' }, token);
   ok('改口令成功', r.status === 200, r);
   r = await call('GET', '/admin/chars', null, token);
   ok('改口令后旧令牌失效 401', r.status === 401, r);
   let r4 = await call('POST', '/admin/login', { password: 'test1234' });
   ok('新口令可登录', r4.status === 200 && !!r4.body.token, r4);
   // 改回去
-  r = await call('POST', '/admin/password', { oldPassword: 'test1234', newPassword: 'momo2026' }, r4.body.token);
+  r = await call('POST', '/admin/password', { oldPassword: 'test1234', newPassword: PW }, r4.body.token);
   ok('口令复原成功', r.status === 200, r);
 
   /* 11. 收尾：清空测试进度 */
   console.log('\n[11] 复原测试数据');
-  const tk = (await call('POST', '/admin/login', { password: 'momo2026' })).body.token;
+  const tk = (await call('POST', '/admin/login', { password: PW })).body.token;
   r = await call('POST', '/admin/reset', { keepSessions: false }, tk);
   ok('清空进度成功', r.status === 200 && r.body.stats.known === 0, r.body.stats);
 

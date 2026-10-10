@@ -22,6 +22,15 @@ fs.mkdirSync(OUT, { recursive: true });
 
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
+// 家长端口令：不硬编码进仓库。优先读环境变量，其次读本地文件 tools/.adminpw（已 gitignore）
+const PW = process.env.ADMIN_PASSWORD || (() => {
+  try { return fs.readFileSync(path.join(__dirname, '.adminpw'), 'utf8').trim(); } catch (e) { return ''; }
+})();
+if (!PW) {
+  console.error('✘ 需要家长端口令：设环境变量 ADMIN_PASSWORD，或写入 tools/.adminpw');
+  process.exit(1);
+}
+
 // 预置本地设置：跳过首次「怎么玩」引导层，否则它会挡住首页按钮
 const SKIP_GUIDE = () => {
   try {
@@ -58,7 +67,7 @@ async function swipe(page, dir) {
 
 (async () => {
   // 归零，保证截图可重现
-  const tk = (await api('POST', '/admin/login', { password: 'momo2026' })).token;
+  const tk = (await api('POST', '/admin/login', { password: PW })).token;
   await api('POST', '/admin/reset', { keepSessions: false }, tk);
 
   const browser = await chromium.launch({ executablePath: EXEC });
@@ -173,7 +182,7 @@ async function swipe(page, dir) {
   await sleep(500);
   await shot(a, 'admin-login');
 
-  await a.fill('#pw', 'momo2026');
+  await a.fill('#pw', PW);
   await a.click('#loginBtn');
   await a.waitForSelector('.chips .chip', { timeout: 8000 });
   await a.waitForSelector('.chr', { timeout: 8000 });

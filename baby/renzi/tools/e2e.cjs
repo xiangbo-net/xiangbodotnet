@@ -24,6 +24,16 @@ const HOST = process.env.HOST || 'http://127.0.0.1:8787';
 const API = HOST + '/api/baby';
 
 const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+// 家长端口令：不硬编码进仓库。优先读环境变量，其次读本地文件 tools/.adminpw（已 gitignore）
+const PW = process.env.ADMIN_PASSWORD || (() => {
+  try { return require('fs').readFileSync(path.join(__dirname, '.adminpw'), 'utf8').trim(); } catch (e) { return ''; }
+})();
+if (!PW) {
+  console.error('✘ 需要家长端口令：设环境变量 ADMIN_PASSWORD，或写入 tools/.adminpw');
+  process.exit(1);
+}
+
 let pass = 0, fail = 0;
 const fails = [];
 function ok(name, cond, extra) {
@@ -57,7 +67,7 @@ async function swipe(page, dir) {
 
 (async function () {
   // 清空进度，保证可重现
-  const tk = (await apiCall('POST', '/admin/login', { password: 'momo2026' })).body.token;
+  const tk = (await apiCall('POST', '/admin/login', { password: PW })).body.token;
   await apiCall('POST', '/admin/reset', { keepSessions: false }, tk);
   console.log('本地服务：' + HOST + '\n');
 
@@ -369,7 +379,7 @@ async function swipe(page, dir) {
   ok('错误口令提示', (await page.textContent('#loginErr')).length > 0);
 
   // 正确口令
-  await page.fill('#pw', 'momo2026');
+  await page.fill('#pw', PW);
   await page.click('#loginBtn');
   await page.waitForSelector('.tabs', { timeout: 8000 });
   ok('正确口令登录成功', (await page.$$('.tab')).length === 3);

@@ -13,3 +13,9 @@
 /.notion-preview*/
 .github/workflows/notion-publish.yml
 .env.example
+
+# 本地家长端口令（测试脚本读取，绝不入库）
+**/.adminpw
+
+# 灌库产物：含初始口令哈希，按 README 约定不进公开仓库
+baby/renzi/worker/seed.sql
