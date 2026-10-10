@@ -9,6 +9,10 @@
 /workbuddy-basic-course/.workbuddy
 .workbuddy
 
+# Cloudflare Pages 单文件 25 MiB 硬性限制：jjb 课程的 demo data 已迁移到外部
+# 存储（file.xiangbo.net），本仓库不再保留；避免以后误加再触发部署失败
+ai-course/jjb/demo-data.zip
+
 # Notion 发布流水线的本地预览目录（--out 的默认落点）
 /.notion-preview*/
 .github/workflows/notion-publish.yml
