@@ -2,12 +2,13 @@
    汉字小侦探 · 家长端（admin.html）
 
    功能：
-   1) 口令登录（口令存在后端 D1，初始口令不写在仓库里，可在此页修改）
+   1) 口令登录（口令存在后端 D1，默认 momo2026，可在此页修改）
    2) 识字总览看板（页面顶部，各标签页都可见）：字库总数 / 已经认识 / 需要练习 / 尚未测试，
       点任意一块直接跳到字库对应分组
    3) 字库：分组标签卡（全部 / 认识 / 不认识 / 未测 / 家长添加 / 自带字库），
       点一下直接看这一类，不用再手选筛选条件；每个分组里都带检索框，可按汉字或拼音查
-   4) 新增汉字：输入即自动补全拼音与组词；
+   4) 新增汉字：固定在页面首位的独立模块（无预览卡片）；
+      输入即自动补全拼音与组词；
       · 字库中还没有 → 新增（标为家长添加）
       · 字库中已有   → 按你选的「是否认识」更新它的状态（不重复加字）
    5) 设置：改口令 / 重置全部进度 / 重置某个字
@@ -104,6 +105,7 @@
     list: [], total: 0, page: 1, size: 48, q: '',
     group: 'all',
     lookup: null, lookupState: 'known',
+    addFocused: false,
     ready: false
   };
 
@@ -230,7 +232,7 @@
   function refreshStats() { renderTop(); paintDash(); }
 
   function renderTabs() {
-    var tabs = [['chars', '字库'], ['add', '新增汉字'], ['settings', '设置']];
+    var tabs = [['chars', '字库'], ['settings', '设置']];
     return '<div class="tabs">' + tabs.map(function (t) {
       return '<button class="tab ' + (S.tab === t[0] ? 'on' : '') + '" data-tab="' + t[0] + '">' + t[1] + '</button>';
     }).join('') + '</div>';
@@ -238,13 +240,14 @@
 
   function renderMain() {
     var m = $('#main');
-    m.innerHTML = '<div id="dashBox"></div>' + renderTabs() + '<div id="view"></div>';
+    // 新增汉字固定为页面首位的独立模块，识字总览看板在其后
+    m.innerHTML = '<div id="addBox"></div><div id="dashBox"></div>' + renderTabs() + '<div id="view"></div>';
+    renderAdd();
     paintDash();
     $$('[data-tab]', m).forEach(function (b) {
       b.addEventListener('click', function () { S.tab = b.dataset.tab; renderMain(); });
     });
     if (S.tab === 'chars') renderChars();
-    else if (S.tab === 'add') renderAdd();
     else renderSettings();
   }
 
@@ -325,7 +328,7 @@
     if (S.group === 'known') return '还没有标为「认识」的字。孩子答题时向左滑就会归到这里。';
     if (S.group === 'unknown') return '还没有标为「不认识」的字。孩子答题时向右滑就会归到这里。';
     if (S.group === 'untested') return '所有字都测过了，没有未测的字了。';
-    if (S.group === 'parent') return '还没有家长手动添加的字，到「新增汉字」里加一个。';
+    if (S.group === 'parent') return '还没有家长手动添加的字，用页面顶部的「新增汉字」模块加一个。';
     return '没有符合条件的字。';
   }
 
@@ -399,36 +402,29 @@
     }
   }
 
-  /* ---------------- 新增汉字 ---------------- */
+  /* ---------------- 新增汉字（页面首位的独立模块，无预览卡片） ---------------- */
   function renderAdd() {
-    var v = $('#view');
-    v.innerHTML =
-      '<div class="add-grid">' +
-        '<div class="card">' +
-          '<h2 style="font-size:16px;margin-bottom:14px">输入一个汉字</h2>' +
-          '<div class="form-row">' +
-            '<input class="input" id="hzInput" placeholder="在这里打一个汉字，例如：皓" ' +
-              'style="text-align:center;font-family:var(--font-hanzi);font-size:46px;padding:14px">' +
-          '</div>' +
-          '<div class="tip">打进去后会自动查它的<b>拼音、笔画、部首和常用组词</b>；如果字库里已经有这个字，会显示它现在的状态。</div>' +
-          '<div class="form-row" style="margin-top:18px">' +
-            '<label>这个字孩子认识吗？</label>' +
-            '<div class="state-picker">' +
-              '<button class="state-opt on" data-st="known"><div class="t">认识</div><div class="d">进「我的字库」</div></button>' +
-              '<button class="state-opt unk" data-st="unknown"><div class="t">不认识</div><div class="d">进练习库</div></button>' +
-              '<button class="state-opt none" data-st="none"><div class="t">先不改状态</div><div class="d">只把字加进字库</div></button>' +
-            '</div>' +
-          '</div>' +
-          '<div style="display:flex;gap:10px;margin-top:18px;flex-wrap:wrap">' +
-            '<button class="btn primary" id="saveBtn" disabled>保存</button>' +
-            '<button class="btn ghost" id="clearBtn">清空</button>' +
+    var box = $('#addBox');
+    box.innerHTML =
+      '<div class="card">' +
+        '<h2 style="font-size:16px;margin-bottom:14px">新增汉字</h2>' +
+        '<div class="form-row">' +
+          '<input class="input" id="hzInput" placeholder="在这里打一个汉字，例如：皓" ' +
+            'style="text-align:center;font-family:var(--font-hanzi);font-size:46px;padding:14px">' +
+        '</div>' +
+        '<div class="tip">打进去后会自动查它的<b>拼音、笔画、部首和常用组词</b>；如果字库里已经有这个字，会显示它现在的状态。</div>' +
+        '<div id="libInfo" class="tip" style="margin-top:12px"></div>' +
+        '<div class="form-row" style="margin-top:18px">' +
+          '<label>这个字孩子认识吗？</label>' +
+          '<div class="state-picker">' +
+            '<button class="state-opt on" data-st="known"><div class="t">认识</div><div class="d">进「我的字库」</div></button>' +
+            '<button class="state-opt unk" data-st="unknown"><div class="t">不认识</div><div class="d">进练习库</div></button>' +
+            '<button class="state-opt none" data-st="none"><div class="t">先不改状态</div><div class="d">只把字加进字库</div></button>' +
           '</div>' +
         '</div>' +
-
-        '<div class="card">' +
-          '<h2 style="font-size:16px;margin-bottom:14px">预览</h2>' +
-          '<div class="add-preview" id="preview"><div class="ph">在上面输入一个汉字</div></div>' +
-          '<div id="libInfo" class="tip" style="margin-top:12px"></div>' +
+        '<div style="display:flex;gap:10px;margin-top:18px;flex-wrap:wrap">' +
+          '<button class="btn primary" id="saveBtn" disabled>保存</button>' +
+          '<button class="btn ghost" id="clearBtn">清空</button>' +
         '</div>' +
       '</div>';
 
@@ -441,7 +437,7 @@
     function normalize() {
       var v2 = (input.value || '').replace(/[^\u4e00-\u9fa5]/g, '').slice(0, 1);
       if (input.value !== v2) input.value = v2;
-      if (v2) doLookup(v2); else resetPreview();
+      if (v2) doLookup(v2); else resetAddInfo();
     }
 
     input.addEventListener('compositionstart', function () {
@@ -473,12 +469,15 @@
       });
     });
     $('#saveBtn').addEventListener('click', saveChar);
-    $('#clearBtn').addEventListener('click', function () { input.value = ''; resetPreview(); input.focus(); });
-    setTimeout(function () { input.focus(); }, 100);
+    $('#clearBtn').addEventListener('click', function () { input.value = ''; resetAddInfo(); input.focus(); });
+    // 模块常驻页面顶部，切标签页重渲染时不再抢焦点（只在首次进入时聚焦一次）
+    if (!S.addFocused) {
+      S.addFocused = true;
+      setTimeout(function () { try { input.focus({ preventScroll: true }); } catch (e) { input.focus(); } }, 100);
+    }
   }
 
-  function resetPreview() {
-    $('#preview').innerHTML = '<div class="ph">在上面输入一个汉字</div>';
+  function resetAddInfo() {
     $('#libInfo').innerHTML = '';
     $('#saveBtn').disabled = true;
     S.lookup = null;
@@ -488,21 +487,18 @@
   function doLookup(hz) {
     var seq = ++lookupSeq;   // 防止旧请求的响应盖掉新结果
     $('#saveBtn').disabled = true;
-    $('#preview').innerHTML = '<div class="ph">查询中…</div>';
+    $('#libInfo').innerHTML = '查询中…';
     api('GET', '/admin/lookup?hanzi=' + encodeURIComponent(hz)).then(function (res) {
       if (seq !== lookupSeq) return;
       S.lookup = res;
-      var d = res.dict;
-      if (!d) {
-        $('#preview').innerHTML = '<div class="hz">' + esc(hz) + '</div><div class="ph">字典里没找到这个字，会把字直接加进字库（拼音和组词可以留空）。</div>';
-      } else {
-        $('#preview').innerHTML =
-          '<div class="hz">' + esc(hz) + '</div>' +
-          '<div class="py">' + esc(d.pinyin || '') + '</div>' +
-          '<div class="muted" style="font-size:12.5px">' + (d.strokes || 0) + ' 画 · ' + esc(d.radical || '—') + ' · ' + esc(d.structure || '—') + '</div>' +
-          '<div class="wd">' + (d.words && d.words.length ? esc(d.words.join(' · ')) : '（暂无组词）') + '</div>';
-      }
       var lines = [];
+      var d = res.dict;
+      if (d) {
+        lines.push('拼音 <b>' + esc(d.pinyin || '') + '</b> · ' + (d.strokes || 0) + ' 画 · 部首 ' + esc(d.radical || '—') +
+          '<br>组词：' + (d.words && d.words.length ? esc(d.words.join(' · ')) : '（暂无组词）'));
+      } else {
+        lines.push('字典里没找到这个字，保存会把字直接加进字库（拼音和组词可以留空）。');
+      }
       if (res.inLibrary) {
         lines.push('字库里<b>已经有</b>这个字，当前状态：' + (res.status === 'known' ? '<b style="color:var(--know-deep)">认识</b>' : (res.status === 'unknown' ? '<b style="color:var(--unk-deep)">不认识</b>' : '未测')) + '。保存会更新它的状态。');
       } else {
@@ -511,7 +507,7 @@
       $('#libInfo').innerHTML = lines.join('<br>');
       $('#saveBtn').disabled = false;
     }).catch(function (e) {
-      $('#preview').innerHTML = '<div class="ph">查询失败：' + esc(e.message) + '</div>';
+      $('#libInfo').innerHTML = '查询失败：' + esc(e.message);
     });
   }
 
@@ -527,7 +523,7 @@
       if (res.stats) { S.stats = res.stats; refreshStats(); }
       toast('「' + hz + '」' + (res.created ? '已新增到字库' : '状态已更新'));
       $('#hzInput').value = '';
-      resetPreview();
+      resetAddInfo();
       $('#hzInput').focus();
     }).catch(function (e) {
       $('#saveBtn').disabled = false;

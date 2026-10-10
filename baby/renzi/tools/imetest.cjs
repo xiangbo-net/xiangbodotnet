@@ -10,16 +10,6 @@ const { chromium } = req('playwright-core');
 const EXEC = '/Users/xiangbo/Library/Caches/ms-playwright/chromium-1208/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing';
 const HOST = 'http://127.0.0.1:8787';
 
-// 家长端口令：不硬编码进仓库。优先读环境变量，其次读本地文件 tools/.adminpw（已 gitignore）
-const path = require('path');
-const PW = process.env.ADMIN_PASSWORD || (() => {
-  try { return require('fs').readFileSync(path.join(__dirname, '.adminpw'), 'utf8').trim(); } catch (e) { return ''; }
-})();
-if (!PW) {
-  console.error('✘ 需要家长端口令：设环境变量 ADMIN_PASSWORD，或写入 tools/.adminpw');
-  process.exit(1);
-}
-
 let pass = 0, fail = 0;
 const ok = (n, c, x) => { if (c) { pass++; console.log('  ✅ ' + n); } else { fail++; console.log('  ❌ ' + n + (x != null ? '  → ' + JSON.stringify(x) : '')); } };
 
@@ -30,10 +20,10 @@ const ok = (n, c, x) => { if (c) { pass++; console.log('  ✅ ' + n); } else { f
   const cdp = await ctx.newCDPSession(page);
 
   await page.goto(HOST + '/admin', { waitUntil: 'load' });
-  await page.fill('#pw', PW);
+  await page.fill('#pw', 'momo2026');
   await page.click('#loginBtn');
   await page.waitForSelector('#app', { state: 'visible', timeout: 8000 });
-  await page.click('[data-tab="add"]');
+  // 新增汉字现在是页面首位的常驻模块，登录后直接可见，无需切换标签页
   await page.waitForSelector('#hzInput', { timeout: 5000 });
 
   await page.focus('#hzInput');
@@ -55,7 +45,7 @@ const ok = (n, c, x) => { if (c) { pass++; console.log('  ✅ ' + n); } else { f
   const committed = await page.inputValue('#hzInput');
   ok('真实输入法上屏后留下汉字', committed === '花', { committed });
 
-  const pv = await page.textContent('#preview');
+  const pv = await page.textContent('#libInfo');
   ok('上屏后自动查出拼音/笔画/组词', pv.includes('huā') && pv.includes('7 画'), { pv: pv.slice(0, 60) });
 
   // 3) 连续输入第二个字（覆盖上一次）

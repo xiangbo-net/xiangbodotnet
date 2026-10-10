@@ -24,16 +24,6 @@ const HOST = process.env.HOST || 'http://127.0.0.1:8787';
 const API = HOST + '/api/baby';
 
 const sleep = ms => new Promise(r => setTimeout(r, ms));
-
-// 家长端口令：不硬编码进仓库。优先读环境变量，其次读本地文件 tools/.adminpw（已 gitignore）
-const PW = process.env.ADMIN_PASSWORD || (() => {
-  try { return require('fs').readFileSync(path.join(__dirname, '.adminpw'), 'utf8').trim(); } catch (e) { return ''; }
-})();
-if (!PW) {
-  console.error('✘ 需要家长端口令：设环境变量 ADMIN_PASSWORD，或写入 tools/.adminpw');
-  process.exit(1);
-}
-
 let pass = 0, fail = 0;
 const fails = [];
 function ok(name, cond, extra) {
@@ -67,7 +57,7 @@ async function swipe(page, dir) {
 
 (async function () {
   // 清空进度，保证可重现
-  const tk = (await apiCall('POST', '/admin/login', { password: PW })).body.token;
+  const tk = (await apiCall('POST', '/admin/login', { password: 'momo2026' })).body.token;
   await apiCall('POST', '/admin/reset', { keepSessions: false }, tk);
   console.log('本地服务：' + HOST + '\n');
 
@@ -379,10 +369,10 @@ async function swipe(page, dir) {
   ok('错误口令提示', (await page.textContent('#loginErr')).length > 0);
 
   // 正确口令
-  await page.fill('#pw', PW);
+  await page.fill('#pw', 'momo2026');
   await page.click('#loginBtn');
   await page.waitForSelector('.tabs', { timeout: 8000 });
-  ok('正确口令登录成功', (await page.$$('.tab')).length === 3);
+  ok('正确口令登录成功', (await page.$$('.tab')).length === 2);
 
   // ---- 识字总览看板：总数 / 已经认识 / 需要练习 / 尚未测试 ----
   await page.waitForSelector('#dashBox .dash-item', { timeout: 8000 });
@@ -475,9 +465,13 @@ async function swipe(page, dir) {
   await page.click('.chip.g-all');
   await page.waitForTimeout(800);
 
-  // 新增字
-  await page.click('[data-tab="add"]');
+  // 新增字：固定在页面首位的独立模块，无需切换标签页
   await page.waitForSelector('#hzInput', { timeout: 5000 });
+  ok('「新增汉字」是页面首位模块（在看板之前）',
+    (await page.$eval('#main', e => e.firstElementChild.id)) === 'addBox' &&
+    !!(await page.$('#dashBox')),
+    { first: await page.$eval('#main', e => e.firstElementChild.id) });
+  ok('新增模块无预览卡片', !(await page.$('#preview')));
 
   // ---- 中文输入法回归：拼字过程中输入框不能被清空 ----
   // 旧实现会在 composition 的 input 事件里把拼音串（如 "hua"）过滤成空串直接写回 value，
@@ -502,8 +496,8 @@ async function swipe(page, dir) {
   ok('输入法拼字过程中输入框不被清空', ime.afterFirst === 'hu' && ime.afterMore === 'hua', ime);
   ok('输入法上屏后留下汉字', ime.committed === '花', ime);
   await page.waitForTimeout(800);
-  ok('输入法上屏后自动出预览（带拼音）', (await page.textContent('#preview')).includes('huā'),
-    { pv: (await page.textContent('#preview')).slice(0, 40) });
+  ok('输入法上屏后自动出查询结果（带拼音）', (await page.textContent('#libInfo')).includes('huā'),
+    { pv: (await page.textContent('#libInfo')).slice(0, 60) });
 
   // 非汉字字符仍应被过滤
   await page.click('#clearBtn');
@@ -527,7 +521,7 @@ async function swipe(page, dir) {
 
   await page.fill('#hzInput', '皓');
   await page.waitForTimeout(800);
-  ok('输入汉字后出预览（带拼音）', (await page.textContent('#preview')).includes('hào'), { pv: (await page.textContent('#preview')).slice(0, 40) });
+  ok('输入汉字后出查询结果（带拼音）', (await page.textContent('#libInfo')).includes('hào'), { pv: (await page.textContent('#libInfo')).slice(0, 60) });
   ok('提示「字库里还没有这个字」', (await page.textContent('#libInfo')).includes('还没有'));
   await page.click('.state-opt[data-st="known"]');
   await page.click('#saveBtn');
