@@ -202,17 +202,7 @@ select.input{width:auto;padding:9px 11px;font-size:14.5px}
 .pager{display:flex;align-items:center;gap:12px;justify-content:center;margin-top:18px;flex-wrap:wrap}
 .pager .info{font-size:13px;color:var(--ink-3)}
 
-/* 新增字 */
-.add-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.add-preview{
-  border:1.5px dashed var(--line);border-radius:var(--r-md);padding:20px;text-align:center;min-height:200px;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;
-}
-.add-preview .hz{font-family:var(--font-hanzi);font-size:76px;line-height:1.05;color:#26221E}
-.add-preview .py{font-size:19px;color:var(--unk);font-weight:600}
-.add-preview .wd{font-size:13px;color:var(--ink-3);line-height:1.7}
-.add-preview .ph{color:var(--ink-3);font-size:13.5px}
-
+/* 新增字（页面首位的独立模块，无预览卡片） */
 .state-picker{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
 .state-opt{
   flex:1 1 0;min-width:104px;border:2px solid var(--line);border-radius:var(--r-md);
