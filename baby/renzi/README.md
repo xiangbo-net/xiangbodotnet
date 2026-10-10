@@ -44,3 +44,11 @@ Cloudflare D1 数据库 `hanzi-baby`，四张表：`chars`（字库 + 难度分�
 `sessions`（对局记录）、`settings`（口令 / 令牌）。
 
 家长端口令初始为 `momo2026`，请登录后在「设置」里尽快修改。
+
+## 刻意不放进公开仓库的文件
+
+以下文件只保留在本地源项目里（构建 / 验证时用），因为含口令相关内容或会生成口令：
+
+- `worker/seed.sql` —— 灌库脚本，内含初始口令的哈希（可用 `node tools/build-seed.cjs` 重新生成）
+- `tools/onlinetest.cjs` —— 线上端到端验证脚本（请求体里带口令）
+- `tools/liveshot.cjs` —— 线上站点截图脚本（登录要用口令）
