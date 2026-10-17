@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>新用户关联励拓的操作步骤</title>
+<style>
+  :root{
+    --blue:#0052d9;
+    --blue-light:#eaf1ff;
+    --ink:#1f2329;
+    --ink-2:#51565d;
+    --ink-3:#8f959e;
+    --line:#e5e6eb;
+    --bg:#f5f6f7;
+    --card:#ffffff;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.75;
+    font-size:16px;
+  }
+  .page{max-width:860px;margin:0 auto;padding:48px 20px 80px}
+
+  /* ===== 头部 ===== */
+  header.hero{
+    background:linear-gradient(135deg,#0052d9 0%,#2b7bff 60%,#4e97ff 100%);
+    border-radius:20px;
+    color:#fff;
+    padding:44px 44px 40px;
+    margin-bottom:36px;
+    box-shadow:0 12px 32px rgba(0,82,217,.18);
+    position:relative;
+    overflow:hidden;
+  }
+  header.hero::after{
+    content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;
+    border-radius:50%;background:rgba(255,255,255,.10);
+  }
+  header.hero::before{
+    content:"";position:absolute;right:40px;bottom:-90px;width:160px;height:160px;
+    border-radius:50%;background:rgba(255,255,255,.08);
+  }
+  .hero .kicker{
+    display:inline-block;font-size:13px;letter-spacing:.12em;
+    background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.28);
+    padding:3px 12px;border-radius:999px;margin-bottom:16px;
+  }
+  .hero h1{font-size:30px;font-weight:700;letter-spacing:.01em;margin-bottom:10px}
+  .hero p{font-size:15px;opacity:.92;max-width:100%;white-space:nowrap}
+
+  .meta{
+    display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+    font-size:13px;color:var(--ink-3);margin:-14px 0 28px 8px;
+  }
+  .meta a{color:var(--blue);text-decoration:none}
+  .meta a:hover{text-decoration:underline}
+
+  /* ===== 步骤卡片 ===== */
+  .step{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:28px 32px 26px;
+    margin-bottom:22px;
+    box-shadow:0 1px 3px rgba(31,35,41,.04);
+  }
+  .step-head{display:flex;align-items:center;gap:14px;margin-bottom:12px}
+  .step-num{
+    flex:0 0 auto;width:34px;height:34px;border-radius:10px;
+    background:var(--blue);color:#fff;font-weight:700;font-size:16px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .step-head h2{font-size:19px;font-weight:650;letter-spacing:.01em}
+  .step p{color:var(--ink-2);margin-bottom:6px}
+  .step p + p{margin-top:6px}
+  code.inline{
+    background:var(--blue-light);color:var(--blue);
+    border:1px solid #d6e4ff;border-radius:6px;
+    padding:1px 7px;font-size:14px;
+    font-family:"SF Mono",ui-monospace,Menlo,Consolas,monospace;
+    word-break:break-all;
+  }
+  a.invite-link{
+    color:var(--blue);text-decoration:none;
+    border-bottom:1px solid #a9c6ff;
+    padding:1px 2px;
+    font-family:"SF Mono",ui-monospace,Menlo,Consolas,monospace;
+    font-size:14.5px;
+    transition:background .15s,border-color .15s;
+  }
+  a.invite-link:hover{background:var(--blue-light);border-bottom-color:var(--blue)}
+  a.invite-link::after{content:"↗";font-size:11px;margin-left:3px;vertical-align:1px}
+  .link-btn{
+    display:inline-flex;align-items:center;gap:6px;
+    font-size:13px;color:#fff;background:var(--blue);
+    border:1px solid var(--blue);border-radius:7px;
+    padding:3px 12px;margin-left:10px;
+    text-decoration:none;
+    transition:background .15s,box-shadow .15s;
+    vertical-align:1px;white-space:nowrap;
+  }
+  .link-btn:hover{background:#0043b3;border-color:#0043b3;box-shadow:0 3px 10px rgba(0,82,217,.28)}
+  .link-btn span{font-size:11px}
+
+  .hint{
+    display:inline-flex;align-items:center;gap:6px;
+    font-size:12.5px;color:var(--ink-3);
+    background:#fafbfc;border:1px dashed var(--line);
+    border-radius:8px;padding:3px 10px;margin-top:10px;
+  }
+
+  /* ===== 缩略图 ===== */
+  .thumbs{display:flex;flex-wrap:wrap;gap:14px;margin-top:16px}
+  .thumb{
+    position:relative;cursor:zoom-in;
+    border:1px solid var(--line);border-radius:10px;overflow:hidden;
+    background:#fbfcfd;
+    transition:transform .18s ease,box-shadow .18s ease;
+  }
+  .thumb:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(31,35,41,.12)}
+  .thumb img{display:block;height:132px;width:auto;max-width:300px;object-fit:cover}
+  .thumb::after{
+    content:"⤢";position:absolute;right:6px;bottom:6px;
+    width:22px;height:22px;border-radius:6px;
+    background:rgba(0,0,0,.55);color:#fff;font-size:12px;
+    display:flex;align-items:center;justify-content:center;
+    opacity:0;transition:opacity .18s;
+  }
+  .thumb:hover::after{opacity:1}
+
+  /* ===== 灯箱 ===== */
+  .lightbox{
+    position:fixed;inset:0;z-index:100;
+    background:rgba(17,20,24,.92);
+    display:none;align-items:center;justify-content:center;
+    backdrop-filter:blur(4px);
+  }
+  .lightbox.open{display:flex}
+  .lb-stage{
+    position:relative;max-width:92vw;max-height:88vh;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .lb-stage img{
+    max-width:92vw;max-height:88vh;
+    border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,.5);
+    user-select:none;-webkit-user-drag:none;
+  }
+  .lb-btn{
+    position:fixed;top:50%;transform:translateY(-50%);
+    width:46px;height:46px;border-radius:50%;
+    background:rgba(255,255,255,.12);color:#fff;
+    border:1px solid rgba(255,255,255,.25);
+    font-size:20px;line-height:1;cursor:pointer;
+    display:flex;align-items:center;justify-content:center;
+    transition:background .15s;
+  }
+  .lb-btn:hover{background:rgba(255,255,255,.28)}
+  .lb-prev{left:22px}
+  .lb-next{right:22px}
+  .lb-close{
+    position:fixed;top:20px;right:22px;
+    width:40px;height:40px;border-radius:50%;
+    background:rgba(255,255,255,.12);color:#fff;
+    border:1px solid rgba(255,255,255,.25);
+    font-size:17px;cursor:pointer;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .lb-close:hover{background:rgba(255,255,255,.28)}
+  .lb-caption{
+    position:fixed;left:0;right:0;bottom:22px;text-align:center;
+    color:rgba(255,255,255,.85);font-size:13.5px;letter-spacing:.05em;
+    pointer-events:none;
+  }
+  .lb-caption b{color:#fff;font-weight:600}
+
+  footer.foot{
+    text-align:center;color:var(--ink-3);font-size:13px;margin-top:44px;
+  }
+
+  @media (max-width:640px){
+    .page{padding:24px 14px 60px}
+    header.hero{padding:30px 24px}
+    .hero h1{font-size:23px}
+    .hero p{font-size:14px;white-space:normal}
+    .step{padding:22px 20px}
+    .thumb img{height:104px}
+    .lb-prev{left:8px}.lb-next{right:8px}
+  }
+  @media print{
+    body{background:#fff}
+    .step{box-shadow:none;break-inside:avoid}
+    .hint,.link-btn{display:none}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="hero">
+    <span class="kicker">操作指南</span>
+    <h1>新用户关联励拓的操作步骤</h1>
+    <p>通过邀请链接注册腾讯云账号并完成企业实名认证，即可关联励拓咨询（深圳）有限公司。</p>
+  </header>
+
+  <div class="meta">
+    <span>共 6 步 · 9 张示意图</span>
+    <span>·</span>
+    <span>图片可点击放大，左右方向键翻页</span>
+  </div>
+
+  <section class="step">
+    <div class="step-head"><span class="step-num">1</span><h2>打开邀请链接</h2></div>
+    <p>打开邀请链接：<a class="invite-link" id="invite-url" href="https://xiangbo.net/invite" target="_blank" rel="noopener noreferrer">https://xiangbo.net/invite</a><a class="link-btn" href="https://xiangbo.net/invite" target="_blank" rel="noopener noreferrer">打开邀请链接<span>↗</span></a></p>
+    <div class="thumbs">
+      <figure class="thumb"><img src="img/step-01.webp" width="2048" height="1402" alt="邀请链接页面" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <section class="step">
+    <div class="step-head"><span class="step-num">2</span><h2>选择注册或登录入口</h2></div>
+    <p>如果已经注册过腾讯云账号，请选择 <code class="inline">我已经有腾讯云账号，登录后关联</code>，请转到第 3 步。</p>
+    <p>如果尚未注册腾讯云账号，请点击右侧的 <code class="inline">还没有腾讯云账号，注册后在关联</code>。以下界面为无账号、新注册的界面。</p>
+    <div class="thumbs">
+      <figure class="thumb"><img src="img/step-02.webp" width="2048" height="1109" alt="关联入口选择界面" loading="lazy"></figure>
+      <figure class="thumb"><img src="img/step-03.webp" width="1610" height="890" alt="新用户注册界面" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <section class="step">
+    <div class="step-head"><span class="step-num">3</span><h2>注册并登录账号</h2></div>
+    <p>注册后，登录账号，可以微信扫码，也可以用企业微信等其他方式登录。</p>
+    <div class="thumbs">
+      <figure class="thumb"><img src="img/step-04.webp" width="2048" height="1259" alt="登录方式选择" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <section class="step">
+    <div class="step-head"><span class="step-num">4</span><h2>完成实名认证（选择企业认证）</h2></div>
+    <p>登录后，请先完成实名认证，认证时请选择企业认证。</p>
+    <div class="thumbs">
+      <figure class="thumb"><img src="img/step-05.webp" width="2048" height="1246" alt="实名认证入口" loading="lazy"></figure>
+      <figure class="thumb"><img src="img/step-06.webp" width="2000" height="906" alt="选择企业认证" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <section class="step">
+    <div class="step-head"><span class="step-num">5</span><h2>填写企业认证资料并选择认证方式</h2></div>
+    <p>填写企业认证的相关资料，填写认证资料后选择认证方式；认证方式有多种，请选择一个最方便的认证方式。<strong>推荐用企业法定代表人微信扫码认证。</strong></p>
+    <div class="thumbs">
+      <figure class="thumb"><img src="img/step-07.webp" width="1732" height="1506" alt="填写企业认证资料" loading="lazy"></figure>
+      <figure class="thumb"><img src="img/step-08.webp" width="1822" height="1634" alt="选择认证方式" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <section class="step">
+    <div class="step-head"><span class="step-num">6</span><h2>认证完成</h2></div>
+    <p>完成认证后，可以看到类似以下内容的界面，至此账户注册、认证完成。</p>
+    <div class="thumbs">
+      <figure class="thumb"><img src="img/step-09.webp" width="1635" height="640" alt="企业实名认证完成" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <footer class="foot">如有疑问，请联系励拓咨询对接人协助处理。</footer>
+</div>
+
+<!-- 灯箱 -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="图片查看器">
+  <button class="lb-btn lb-prev" id="lbPrev" aria-label="上一张">‹</button>
+  <div class="lb-stage"><img id="lbImg" src="" alt=""></div>
+  <button class="lb-btn lb-next" id="lbNext" aria-label="下一张">›</button>
+  <button class="lb-close" id="lbClose" aria-label="关闭">✕</button>
+  <div class="lb-caption" id="lbCaption"></div>
+</div>
+
+<script>
+(function(){
+  var thumbs=[].slice.call(document.querySelectorAll('.thumb img'));
+  var lb=document.getElementById('lightbox');
+  var lbImg=document.getElementById('lbImg');
+  var lbCaption=document.getElementById('lbCaption');
+  var cur=0,lastFocus=null;
+
+  function show(i){
+    cur=(i+thumbs.length)%thumbs.length;
+    var im=thumbs[cur];
+    lbImg.src=im.src;
+    lbImg.alt=im.alt||'';
+    lbCaption.innerHTML='<b>'+(cur+1)+' / '+thumbs.length+'</b>&ensp;·&ensp;'+(im.alt||'');
+  }
+  function open(i){
+    lastFocus=document.activeElement;
+    show(i);
+    lb.classList.add('open');
+    document.body.style.overflow='hidden';
+  }
+  function close(){
+    lb.classList.remove('open');
+    document.body.style.overflow='';
+    lbImg.src='';
+    if(lastFocus&&lastFocus.focus)lastFocus.focus();
+  }
+
+  thumbs.forEach(function(im,i){
+    im.parentElement.addEventListener('click',function(){open(i);});
+  });
+
+  document.getElementById('lbPrev').addEventListener('click',function(e){e.stopPropagation();show(cur-1);});
+  document.getElementById('lbNext').addEventListener('click',function(e){e.stopPropagation();show(cur+1);});
+  document.getElementById('lbClose').addEventListener('click',close);
+  lb.addEventListener('click',function(e){if(e.target===lb)close();});
+
+  document.addEventListener('keydown',function(e){
+    if(!lb.classList.contains('open'))return;
+    if(e.key==='ArrowLeft')show(cur-1);
+    else if(e.key==='ArrowRight')show(cur+1);
+    else if(e.key==='Escape'||e.key==='Esc')close();
+  });
+
+  /* 触摸滑动翻页 */
+  var tx=null;
+  lb.addEventListener('touchstart',function(e){tx=e.touches[0].clientX;},{passive:true});
+  lb.addEventListener('touchend',function(e){
+    if(tx===null)return;
+    var dx=e.changedTouches[0].clientX-tx;
+    if(Math.abs(dx)>50)show(cur+(dx<0?1:-1));
+    tx=null;
+  },{passive:true});
+
+})();
+</script>
+</body></html>
