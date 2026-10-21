@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-dm-ref="1"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AI企业建站｜实操流程与分步手册</title><style>:root{--klein:#002FA7;--klein2:#1649c7;--ink:#172033;--muted:#667085;--line:#dfe6f3;--soft:#f4f8ff;--code:#eaf5ff;--canvas:#eef2f8}
+*{box-sizing:border-box}html,body{margin:0;height:100%;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans SC","Microsoft YaHei",Arial,sans-serif;color:var(--ink);background:var(--canvas)}
+.shell{height:100vh;display:grid;grid-template-columns:340px minmax(0,1fr)}
+.sidebar{height:100vh;background:linear-gradient(160deg,#001f75 0%,var(--klein) 56%,#104ac9 100%);color:#fff;padding:28px 20px 20px;overflow:hidden;display:flex;flex-direction:column;border-right:1px solid rgba(255,255,255,.15)}
+.brand{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.72);font-weight:700;margin-bottom:12px}.sidebar h1{font-size:22px;line-height:1.3;margin:0 0 20px;font-weight:750}
+.toc-sec{margin-top:9px}.toc-sec:first-child{margin-top:0}.toc-group{display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%;margin:0 0 4px;padding:6px 11px;border:0;border-radius:8px;background:rgba(255,255,255,.10);color:#fff;font-family:inherit;font-size:15px;font-weight:800;letter-spacing:.05em;text-align:left;cursor:pointer;transition:.16s ease}.toc-group:hover{background:rgba(255,255,255,.20)}.toc-group:focus-visible{outline:2px solid #9cc0ff;outline-offset:2px}.toc-caret{width:0;height:0;flex:none;border-left:5px solid transparent;border-right:5px solid transparent;border-top:6px solid rgba(255,255,255,.8);transition:transform .18s ease}.toc-toggle{display:flex;align-items:center;justify-content:center;width:26px;height:26px;flex:none;padding:0;border:0;border-radius:6px;background:transparent;cursor:pointer;transition:.16s ease}.toc-toggle:hover{background:rgba(255,255,255,.22)}.toc-toggle:focus-visible{outline:2px solid #9cc0ff;outline-offset:1px}.toc-sec.collapsed .toc-caret{transform:rotate(-90deg)}.toc-sec.collapsed .toc-items{display:none}.toc-items{display:flex;flex-direction:column;gap:2px}
+.toc{display:flex;flex-direction:column;gap:2px;min-height:0;overflow-y:auto;padding-right:4px;margin:0 -4px}
+.toc::-webkit-scrollbar{width:6px}.toc::-webkit-scrollbar-thumb{background:rgba(255,255,255,.25);border-radius:3px}
+.toc a{display:flex;align-items:flex-start;gap:10px;color:rgba(255,255,255,.82);text-decoration:none;font-size:14px;line-height:1.3;padding:5px 9px;border-radius:8px;transition:.16s ease;cursor:pointer}
+.toc a:hover,.toc a.active{background:rgba(255,255,255,.14);color:#fff}
+.toc-dot{width:6px;height:6px;border-radius:50%;background:#8cb5ff;margin-top:6px;flex:none}
+
+.side-foot{margin-top:auto;padding-top:16px;color:rgba(255,255,255,.55);font-size:12px}
+.reader{height:100vh;overflow-y:auto;scroll-behavior:smooth;padding:42px 48px 80px}
+.paper{width:min(960px,100%);margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:14px;padding:52px 64px;box-shadow:0 1px 2px rgba(16,24,40,.04),0 12px 32px rgba(25,45,90,.06)}
+.hero{padding-bottom:28px;margin-bottom:30px;border-bottom:2px solid var(--klein)}.eyebrow{font-size:13px;font-weight:700;color:var(--klein);letter-spacing:.12em;margin-bottom:10px}.hero h1{font-size:32px;line-height:1.25;margin:0;color:#0d1b3e}.hero p{color:var(--muted);margin:12px 0 0}
+h2{font-size:27px;line-height:1.3;margin:54px 0 22px;color:var(--klein);scroll-margin-top:28px;padding-bottom:10px;border-bottom:1px solid #cfdaf0}h3{font-size:20px;line-height:1.4;margin:34px 0 14px;color:#153b94;scroll-margin-top:28px}
+p{font-size:16px;line-height:1.78;margin:10px 0}.spacer{height:8px}.depth-1{margin-left:0}.depth-2{margin-left:24px}.depth-3{margin-left:48px}.depth-4{margin-left:72px}.depth-5{margin-left:96px}
+.numbered,.bullet{display:grid;font-size:16px;line-height:1.72;margin:7px 0}.numbered{grid-template-columns:34px 1fr}.bullet{grid-template-columns:20px 1fr}.numbered .marker{font-weight:700;color:var(--klein);font-variant-numeric:tabular-nums}.bullet>span{color:var(--klein);font-weight:900}.numbered.depth-1,.bullet.depth-1{margin-left:0}.numbered.depth-2,.bullet.depth-2{margin-left:24px}.numbered.depth-3,.bullet.depth-3{margin-left:48px}.numbered.depth-4,.bullet.depth-4{margin-left:72px}.numbered.depth-5,.bullet.depth-5{margin-left:96px}
+strong{font-weight:750;color:#111b32}a{color:var(--klein2)}.inline-code{font-family:Consolas,Menlo,monospace;background:#edf3ff;color:#07338c;padding:2px 5px;border-radius:5px;font-size:.92em}
+.code-card{position:relative;margin:16px 0 20px;border:1px solid #b9d9f3;background:var(--code);border-radius:10px;overflow:hidden}.code-top{height:38px;display:flex;align-items:center;justify-content:space-between;padding:0 10px 0 14px;border-bottom:1px solid #c7e0f5;color:#48647c;font:12px/1.2 Consolas,monospace}.copy-btn{min-width:58px;height:28px;border:1px solid #9bc6ea;border-radius:6px;background:#fff;color:var(--klein);font-size:12px;font-weight:700;cursor:pointer}.copy-btn:hover{background:#f7fbff}.copy-btn:focus-visible{outline:3px solid #75a5ff;outline-offset:2px}.code-card pre{margin:0;padding:16px 18px 18px;white-space:pre-wrap;overflow-wrap:anywhere;word-break:break-word;font:14px/1.65 Consolas,Menlo,"Noto Sans Mono CJK SC",monospace;color:#16324b}
+.action-card{position:relative;margin:16px 0 20px;border:1px solid #b9d9f3;background:var(--code);border-radius:10px;overflow:hidden;display:flex;align-items:stretch}.action-card .ac-body{flex:1;padding:14px 16px 14px 18px;min-width:0}.action-card .ac-title{font-size:15px;font-weight:750;color:#0b398f;line-height:1.45}.action-card .ac-desc{font-size:12.5px;color:#48647c;margin-top:4px;line-height:1.55}.action-card .ac-url{display:block;margin-top:8px;font:12px/1.5 Consolas,Menlo,monospace;color:#16324b;word-break:break-all;overflow-wrap:anywhere}.action-card .ac-action{display:flex;align-items:center;padding:0 16px;border-left:1px solid #c7e0f5;background:#f7fbff;min-width:140px}.action-card .ac-btn{display:inline-flex;align-items:center;gap:6px;height:38px;padding:0 18px;border:0;border-radius:8px;background:var(--klein);color:#fff;font-size:13px;font-weight:700;cursor:pointer;text-decoration:none;white-space:nowrap;letter-spacing:.5px}.action-card .ac-btn:hover{filter:brightness(1.08);box-shadow:0 2px 6px rgba(11,57,143,.18)}.action-card .ac-btn:focus-visible{outline:3px solid #75a5ff;outline-offset:2px}@media(max-width:800px){.action-card{flex-direction:column}.action-card .ac-action{border-left:0;border-top:1px solid #c7e0f5;padding:12px 16px}.action-card .ac-btn{width:100%;justify-content:center}}
+.table-wrap{overflow-x:auto;margin:18px 0 26px;border:1px solid var(--line);border-radius:10px}table{width:100%;border-collapse:collapse;min-width:620px}th,td{text-align:left;vertical-align:top;padding:13px 15px;border-bottom:1px solid var(--line);border-right:1px solid var(--line);font-size:14px;line-height:1.6}th{background:#edf3ff;color:#0b398f;font-weight:750}tr:last-child td{border-bottom:0}th:last-child,td:last-child{border-right:0}
+blockquote{margin:18px 0;padding:14px 18px;border-left:4px solid var(--klein);background:#f5f8ff;color:#35415c;line-height:1.7;border-radius:0 8px 8px 0}blockquote p{margin:6px 0}
+.page{display:none}.page.active{display:block}
+@media(max-width:800px){html,body{overflow:auto}.shell{display:block;height:auto}.sidebar{position:relative;width:100%;height:auto;min-height:0;padding:22px 20px}.sidebar h1{font-size:21px;margin-bottom:16px}.toc{display:grid;grid-template-columns:1fr;max-height:46vh;overflow-y:auto;padding-right:6px}.toc-sec{grid-column:1/-1}.toc-items{display:grid;grid-template-columns:1fr;gap:2px}.side-foot{display:none}.reader{height:auto;overflow:visible;padding:18px}.paper{padding:30px 22px;border-radius:10px}.hero h1{font-size:26px}h2{font-size:23px;margin-top:42px}.depth-4,.depth-5,.numbered.depth-4,.bullet.depth-4,.numbered.depth-5,.bullet.depth-5{margin-left:36px}}
+@media(prefers-reduced-motion:reduce){.reader{scroll-behavior:auto}*{transition:none!important}}</style><style id="__dm_no_drag_style__">* { -webkit-user-drag: none !important; }</style><style id="__dm_bindable_badge_style__">[data-sp-bindable="database"]{outline:1px dashed #0088ff;outline-offset:2px;border-radius:4px;}[data-sp-bindable="database"] *{pointer-events:none !important;transition:none !important;animation:none !important;}[data-sp-bindable="database"]{transition:none !important;animation:none !important;}</style></head><body><div class="shell"><aside class="sidebar"><div class="brand">AI COURSE · HANDBOOK</div><h1>AI企业建站</h1><nav class="toc" aria-label="页面目录"><div class="toc-sec"><div class="toc-group">内容目录<button class="toc-toggle" type="button" aria-expanded="true" aria-label="折叠或展开「内容目录」"><span class="toc-caret"></span></button></div>
+<div class="toc-items">
+<a href="#" data-page="web" class="active"><span class="toc-dot"></span><span>AI企业建站：从需求到上线</span></a>
+</div></div></nav><div class="side-foot">扩展案例 · AI企业建站</div></aside><main class="reader"><section class="page active" id="page-web"><article class="paper">
+<header class="hero"><div class="eyebrow">企业官网 · 从需求到页面</div><h1>开发一个公司网站</h1><p>用 AI 把公司官网从需求做到页面：定信息架构、写文案、定视觉方向、生成可预览的页面，最后逐条核对事实性内容。</p></header>
+<h2>目标</h2>
+<p>走完「需求 → 结构 → 文案 → 页面」的完整链路，理解网站开发中哪些内容可以由 AI 生成、哪些事实必须由公司提供并确认。</p>
+<h2>配套分步手册</h2>
+<div class="action-card"><div class="ac-body"><div class="ac-title">企业官网设计 · 分步手册</div><div class="ac-desc">9 步骨架：定目标受众 → 信息架构 → 事实材料 → 栏目文案 → 视觉方向 → 逐页生成 → 事实核校 → 补齐页面 → 上线检查。</div></div><div class="ac-action"><a class="ac-btn" href="#manual">↘ 查看下方分步手册</a></div></div>
+<h2>操作步骤</h2>
+<div class="numbered depth-1"><span class="marker">1.</span><div><strong>定目标与受众</strong>：网站给谁看（客户 / 求职者 / 合作伙伴）、要促成什么动作（咨询 / 留资 / 了解产品）。</div></div>
+<div class="numbered depth-1"><span class="marker">2.</span><div><strong>列信息架构</strong>：确定栏目与页面清单（首页 / 产品 / 案例 / 关于我们 / 联系），排出导航层级。</div></div>
+<div class="numbered depth-1"><span class="marker">3.</span><div><strong>备事实材料</strong>：公司简介、产品说明、资质、真实案例、联系方式——这部分<strong>必须由公司提供</strong>，AI 不生成。</div></div>
+<div class="numbered depth-1"><span class="marker">4.</span><div><strong>写文案</strong>：让 AI 按栏目逐页出文案，限定每段字数，禁止出现无法核实的表述与夸大用语。</div></div>
+<div class="numbered depth-1"><span class="marker">5.</span><div><strong>定视觉方向</strong>：给 AI 设计语言要求（主色、字体气质、版式风格），<strong>先出风格稿确认再展开</strong>。</div></div>
+<div class="numbered depth-1"><span class="marker">6.</span><div><strong>生成页面</strong>：让 AI 输出可预览的页面代码，逐个栏目生成，每页确认无误后再做下一页。</div></div>
+<div class="numbered depth-1"><span class="marker">7.</span><div><strong>事实核校</strong>：逐条核对公司名称、数据、资质、联系方式，标注所有 AI 生成但未经确认的表述。</div></div>
+<div class="numbered depth-1"><span class="marker">8.</span><div><strong>补齐常规页面</strong>：移动端适配、联系表单、页脚备案信息、404 页面。</div></div>
+<div class="numbered depth-1"><span class="marker">9.</span><div><strong>上线前检查</strong>：链接是否可用、表单能否提交、图片是否缺失。</div></div>
+<blockquote><p>本流程的硬性边界：<strong>禁止自动执行</strong>对外发布；网站全部事实性内容须经公司确认，AI 不得生成虚假资质、案例或客户背书。</p></blockquote>
+<h2>输出结果要求</h2>
+<div class="bullet depth-1"><span>•</span><div>信息架构 1 份：栏目 + 页面清单 + 导航层级。</div></div>
+<div class="bullet depth-1"><span>•</span><div>各栏目文案 1 套。</div></div>
+<div class="bullet depth-1"><span>•</span><div>可预览的网站页面（首页 + 主要栏目）。</div></div>
+<div class="bullet depth-1"><span>•</span><div>事实核校清单 1 份，标注待确认项。</div></div>
+<div class="bullet depth-1"><span>•</span><div>上线前检查记录 1 份。</div></div>
+<div class="spacer" aria-hidden="true"></div><header class="hero" id="manual" style="scroll-margin-top:28px"><div class="eyebrow">分步操作手册</div><h1>企业官网设计</h1></header><h2>使用说明</h2><div class="numbered depth-1"><span class="marker">1.</span><div>本案例是「从零做企业官网」的分步操作手册，共 <strong>9 段提示词</strong>：出方案 → 搭骨架 → 填产品数据 → 用上 Logo 与照片 → 写数据层 → 写页面渲染与样式 → 写后台管理 → 询盘写入腾讯文档 → 部署上线。</div></div>
+<div class="numbered depth-1"><span class="marker">2.</span><div>每一步 = <strong>复制提示词 → 粘贴给 WorkBuddy → 按「业务目标」操作 → 通过完成标准后再进下一步</strong>；每步都有独立代码块，逐段执行。</div></div>
+<div class="numbered depth-1"><span class="marker">3.</span><div>开始前先备料：把 Logo、产品照片、产品图册、企业介绍 PPT、原官网、资质证书、案例照片、联系方式等放进项目文件夹 <code class="inline-code">01-input/</code>（原官网等可放 <code class="inline-code">04-archive/</code>），并把提示词里的 <code class="inline-code">{{...}}</code> 占位符替换成你的企业信息。</div></div>
+<div class="numbered depth-1"><span class="marker">4.</span><div>全程只需要 WorkBuddy + Chrome/Edge 浏览器 + 一个腾讯云账号，<strong>不需要写代码、不需要懂技术</strong>。</div></div>
+<div class="numbered depth-1"><span class="marker">5.</span><div>第 7、8 步需要腾讯文档个人 Token 与 CloudBase 环境（也可课后完成）；日常更新记住三件事：打开 admin.html → 改内容保存 → 运行 ./deploy.sh。</div></div><div class="spacer" aria-hidden="true"></div><h2>第 1 步｜让 AI 出方案</h2><p><strong>业务目标</strong>：让 AI 先浏览项目资料，产出一份简洁方案：页面清单、每页核心内容、2 套配色、数据存储方案、功能取舍与产品型号清单。</p><div class="code-card"><div class="code-top"><span>plain text</span><button class="copy-btn" type="button" aria-label="复制代码">复制</button></div><pre><code>你是资深网站架构师。我要用纯前端方式（HTML+CSS+JS，不用框架、不用后端）做一个企业官网。
+先浏览我的项目文件夹「我的企业官网」里的「01-input」文件夹（里面有我的 Logo、产品照片、产品图册、企业介绍、原官网截图、资质证书等原始资料）。重点看企业介绍的 PPT 文件，里面有产品照片、图册
+基于这些资料，给我一份简洁的方案，包含：
+1. 网站需要哪些页面（首页/产品/关于/案例/新闻/联系等，按需列）
+2. 每个页面的核心内容
+3. 配色方案（给我2套备选，每套3个颜色，参考我的企业资料里的 Logo 和原官网风格）
+4. 数据怎么存（我要能"把整个项目文件夹拷给别人就能用"，请推荐最简方案）
+5. 哪些功能做、哪些不做
+6. 产品图册里有几个产品型号、分别列出来
+请用表格输出，控制在800字以内，不要长篇大论。
+我的企业：{{深圳市智造自动化科技有限公司}}，主营{{深圳市智造自动化科技有限公司位于中国深圳，是一家拥有自主知识产权的高新技术企业，专注于DD马达，直驱电机的研发、生产、定制、销售和服务。   
+对于先进的制造行业，智造为客户提供高品质的直驱电机系列产品。 产品广泛应用于自动化光学筛选机、自动检测设备、LED设备、3C设备、机床及半导体设备、自动化装配、转盘丝印设备、新能源电池、医疗器械等高端智能设备。}}，电话{{+86-0755-28686964}}，地址{{深圳市龙岗区坪地龙二工业园C栋6楼}，想要{{科技风}}风格的官网。
+不管其他文件的要求，公司以及网站的名称都统一为：{{深圳市智造自动化科技有限公司}}</code></pre></div><div class="spacer" aria-hidden="true"></div><h2>第 2 步｜让 AI 搭项目骨架</h2><p><strong>业务目标</strong>：按方案在项目文件夹下搭建骨架：创建全部 HTML 页面与 css / js / data 目录，定义 CSS 变量，只搭骨架不写业务逻辑。</p><div class="code-card"><div class="code-top"><span>plain text</span><button class="copy-btn" type="button" aria-label="复制代码">复制</button></div><pre><code>按照上一步的方案，在我的工作区文件夹下，并搭建项目骨架：
+1. 创建所有需要的 HTML 页面（每个页面先放一个 h1 标题占位即可）
+2. 创建 assets/css/style.css、assets/js/data.js、assets/js/main.js 三个文件
+3. 在 style.css 里定义 CSS 变量（主色、辅助色、文字色、背景色、圆角、容器宽度）
+4. 创建 data/ 文件夹（放业务数据，先建空文件：site.js products.js news.js categories.js 等）
+5. 每个 HTML 页面按顺序引入：style.css → data.js → main.js
+不写任何业务逻辑，只搭骨架。文件结构用目录树展示给我确认。</code></pre></div><div class="spacer" aria-hidden="true"></div><h2>第 3 步｜让 AI 填充产品数据</h2><p><strong>业务目标</strong>：读取产品图册与产品照片，提取产品信息写入 data/products.js 与 data/categories.js，并把产品图片整理到 uploads/images/ 目录。</p><div class="code-card"><div class="code-top"><span>plain text</span><button class="copy-btn" type="button" aria-label="复制代码">复制</button></div><pre><code>帮我整理产品数据：
+1. 先读取「01-input/产品图册」和「01-input/产品照片」里的资料，提取产品信息（没有图册就用手写的产品列表）或者采用企业介绍中的相关图片
+2. 把产品信息写入 data/products.js（如果没有这个文件就先创建），字段：id、name、category、subCategory、image（有产品照片就填对应路径，没有先留空）、tags、params、features、applications、description
+3. 把产品分类写入 data/categories.js（一级分类+二级分类）
+4. 产品照片整理到项目的 uploads/images/ 目录（从「01-input/产品照片」复制过来），并让每个产品的 image 字段指向对应图片
+写完后用表格列出所有产品让我核对（名称/分类/是否有图/参数数量）。</code></pre></div><div class="spacer" aria-hidden="true"></div><h2>第 3.5 步｜让 AI 用上你的 Logo 和照片</h2><p><strong>业务目标</strong>：把 Logo 复制进项目并用在页头与页脚，同时把企业介绍、资质证书、案例照片分别用到公司介绍页与案例展示页，缺失的先占位并提醒补齐。</p><div class="code-card"><div class="code-top"><span>plain text</span><button class="copy-btn" type="button" aria-label="复制代码">复制</button></div><pre><code>把「01-input/Logo」里的 Logo 复制到项目的 assets/img/ 目录，并让所有页面顶部和页脚使用它（替换默认占位）。
+同时确认「01-input/企业介绍」「01-input/资质证书」「01-input/案例照片」的内容，把它们用到：
+- 公司介绍页（简介用企业介绍PPT里的文字，资质用证书图片）
+- 案例展示页（用案例照片）
+如果某个资料缺失，先用占位并提醒我补。</code></pre></div><div class="spacer" aria-hidden="true"></div><h2>第 4 步｜让 AI 写数据层</h2><p><strong>业务目标</strong>：实现数据层 data.js：内嵌种子数据、提供读写 API、加入 File System 模块（选目录、恢复授权、写数据文件、存图片）与统一图片上传入口。</p><div class="code-card"><div class="code-top"><span>plain text</span><button class="copy-btn" type="button" aria-label="复制代码">复制</button></div><pre><code>实现 assets/js/data.js，要求：
+1. 内嵌所有种子数据（产品和分类用 data/*.js 里的内容）
+2. 对外提供 API：getProducts/getNews/getSite/getCategories 等读取方法，saveXxx/upsertXxx/deleteXxx 写入方法
+3. 读取顺序：编辑缓存 → data/*.js 覆盖层文件 → 内嵌种子
+4. 加一个 FileSystem 模块（用浏览器 File System Access API）：
+   - connect()：showDirectoryPicker 选择项目根目录
+   - restore()：从 IndexedDB 恢复授权（刷新免重连）
+   - writeDataFile(key,data)：把数据写入 data/xxx.js 文件
+   - saveFile(file,subdir)：把上传的图片存到 uploads/images 或 uploads/banners
+   - deleteFile(relPath)：删除文件
+5. 加 imageToDataURL 统一上传入口：已连接文件夹→存文件返回相对路径；未连接→降级 base64
+6. data.js 末尾用 document.write 同步注入 data/*.js 覆盖层文件
+7. 连接文件夹成功后清空浏览器旧缓存
+请输出完整代码，并简单说明每个函数干什么。</code></pre></div><div class="spacer" aria-hidden="true"></div><h2>第 5 步｜让 AI 写页面渲染 + 样式</h2><p><strong>业务目标</strong>：实现前台渲染与完整样式：首页轮播 / 产品卡 / 优势区 / 新闻卡 / 询价表单，产品列表与详情的两级筛选，公司介绍、FAQ、联系我们页与响应式、滚动入场动画。</p><div class="code-card"><div class="code-top"><span>plain text</span><button class="copy-btn" type="button" aria-label="复制代码">复制</button></div><pre><code>实现 assets/js/main.js 的前台渲染部分 和 assets/css/style.css 的完整样式，要求：
+1. applySite()：把站点信息（公司名/电话/地址/logo）填充到页面（元素用 .hp-num .f-phone .f-mobile .f-qq .f-email .f-address .f-beian 这些class）
+2. 首页：轮播图（3张，自动播放）、产品卡片网格（6个）、四大优势（4列）、合作流程、新闻卡片、在线询价表单（姓名+手机号+需求，提交后存起来）
+3. 产品列表页：一级分类筛选 + 二级子分类筛选（点击切换，再点取消）
+4. 产品详情页：URL参数id读取，显示封面图/参数表/特点/图集（点击放大）
+5. 公司介绍页：简介/资质/团队/荣誉
+6. 新闻列表+详情、案例列表+详情、FAQ手风琴、联系我们（联系信息卡片+地图+表单）
+7. 响应式：992/768/568三个断点，移动端汉堡菜单
+8. 滚动入场动画（IntersectionObserver）
+样式用我方案里的配色，工业简约风，表格展示每个页面的渲染函数清单。</code></pre></div><div class="spacer" aria-hidden="true"></div><h2>第 6 步｜让 AI 写后台管理</h2><p><strong>业务目标</strong>：创建 admin.html 后台管理页与后台逻辑：登录、11 个管理模块、产品与新闻的新增编辑、图片上传、连接项目文件夹与清除缓存。</p><div class="code-card"><div class="code-top"><span>plain text</span><button class="copy-btn" type="button" aria-label="复制代码">复制</button></div><pre><code>创建 admin.html 后台管理页面，并在 main.js 里实现后台逻辑，要求：
+1. 登录：admin / {{设置一个密码}}，sessionStorage 记住登录
+2. 11个管理模块（tab切换）：站点设置 / 轮播Banner / 板块内容 / 产品管理 / 分类管理 / 子页内容 / 子页头图 / 新闻管理 / 询盘留言 / 前台预览 / 账号设置
+3. 产品管理：列表（缩略图/名称/分类/状态）+ 新增/编辑表单（名称/分类/参数表/特点/行业/图集/视频/附件）+ 排序下拉 + 分类筛选
+4. 新闻管理：发布/编辑/删除 + 封面图 + 富文本
+5. 所有图片上传用 DG.imageToDataURL 处理（已连接文件夹存 uploads/，未连接降级base64）
+6. 所有保存调用 DG.saveXxx()，保存后前台立即更新
+7. 顶部加两个按钮：「🔗 连接项目文件夹」（调用 DG.FileSystem.connect）和「🧹 清除缓存」
+请输出 admin.html 完整代码和 main.js 的后台部分。</code></pre></div><div class="spacer" aria-hidden="true"></div><h2>第 7 步｜访客询盘收到在线文档</h2><p><strong>业务目标</strong>：用「腾讯文档 MCP 个人 Token + CloudBase 云函数」方案，把官网询盘实时写入腾讯文档智能表格，前端表单提交时顺便保留本地兜底。</p><div class="code-card"><div class="code-top"><span>plain text</span><button class="copy-btn" type="button" aria-label="复制代码">复制</button></div><pre><code>帮我把网站询盘接入腾讯文档，采用「腾讯文档 MCP 个人 Token + CloudBase 云函数」方案：
+1. 先引导我去 https://docs.qq.com/open/auth/mcp.html 拿个人 Token
+2. 用 Token 调腾讯文档 MCP（https://docs.qq.com/openapi/mcp），建一张智能表格「在线询盘」，字段：提交时间(createdTime)/姓名(text)/手机号(phoneNumber)/需求描述(text)/意向产品(text)/来源页面(text)
+3. 在项目根目录建 cloudfunctions/inquiry 云函数（Event Function，Nodejs18 内置 fetch 零依赖），接收表单 POST，用 smartsheet.add_records 追加记录；Token 和表格 ID 放环境变量，不要写死在代码里
+4. 用 tcb 部署云函数 + 开 HTTP 访问路由（注意：路由的 domain 要填系统默认域名、命令要加 --yes）
+5. 前端 main.js 的询价表单提交时 POST 到云函数地址（保留 localStorage 兜底，接口挂了也不丢单）
+6. 部署静态站，端到端提交一单测试
+完成后把「询盘表链接」和「线上地址」发给我。</code></pre></div><div class="spacer" aria-hidden="true"></div><h2>第 8 步｜部署到腾讯云 CloudBase（上线部署，可选操作）</h2><p><strong>业务目标</strong>：把项目部署到腾讯云 CloudBase 静态托管，并生成一键部署脚本 deploy.sh，拿到线上访问地址。</p><div class="code-card"><div class="code-top"><span>plain text</span><button class="copy-btn" type="button" aria-label="复制代码">复制</button></div><pre><code>帮我把这个项目部署到腾讯云 CloudBase 静态托管： 部署完把线上地址发给我
+5顺便帮我写一个 deploy.sh 一键部署脚本（以后改完内容运行它就能更新线上）</code></pre></div><div class="spacer" aria-hidden="true"></div></article></section></main></div><script>document.querySelectorAll('.copy-btn').forEach(btn=>btn.addEventListener('click',async()=>{const text=btn.closest('.code-card').querySelector('code').innerText;try{await navigator.clipboard.writeText(text)}catch(e){const t=document.createElement('textarea');t.value=text;document.body.appendChild(t);t.select();document.execCommand('copy');t.remove()}const old=btn.textContent;btn.textContent='已复制';setTimeout(()=>btn.textContent=old,1400)}));
+function showPage(id,skipScroll){document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id==='page-'+id));document.querySelectorAll('.toc a[data-page]').forEach(a=>a.classList.toggle('active',a.getAttribute('data-page')===id));const rd=document.querySelector('.reader');if(!rd)return;rd.scrollTo({top:0,behavior:'auto'});if(window.innerWidth<=800&&!skipScroll)rd.scrollIntoView({block:'start',behavior:'auto'})}
+document.querySelectorAll('.toc-sec').forEach(sec=>{
+const group=sec.querySelector('.toc-group'),toggle=sec.querySelector('.toc-toggle'),first=sec.querySelector('.toc-items a[data-page]');
+if(group)group.addEventListener('click',()=>{const folded=sec.classList.toggle('collapsed');if(toggle)toggle.setAttribute('aria-expanded',folded?'false':'true');if(first)showPage(first.getAttribute('data-page'))});
+if(toggle)toggle.addEventListener('click',e=>{e.stopPropagation();const folded=sec.classList.toggle('collapsed');toggle.setAttribute('aria-expanded',folded?'false':'true')});
+});
+document.querySelectorAll('.toc a[data-page]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();showPage(a.getAttribute('data-page'))}));
+showPage('web',true);</script>
+</body></html>
