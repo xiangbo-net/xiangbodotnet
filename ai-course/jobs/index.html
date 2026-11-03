@@ -1,0 +1,2402 @@
+<!--pnid:JTbHHkTKC8636yVUmqmEEL--><!--BACKFIX2_2026_10_27--><!DOCTYPE html>
+<html data-page-node-id="Luuw5rG8v7ZCu1TVWKhMu2" lang="zh-CN">
+<head data-page-node-id="XRMAS2UlqzvMDAEQ3ezWIM">
+<!-- /page/page_comm/inject.js 已移除：离线本地版无平台 SDK 注入 -->
+<meta data-page-node-id="Mkre8e724mugc8xb09RQaf" charset="UTF-8">
+<meta data-page-node-id="45JHhjbXWsrGMXmleuyMBo" content="width=device-width, initial-scale=1.0" name="viewport">
+<title data-page-node-id="Bot1u0wcDR2Wa5rTz6zCUg" data-pnid-children="iHL4deurx7TkNgVZkCXsCw">人类职业进化计划丨一键生成你的专属应用</title>
+<style data-page-node-id="pEdO7wUHOdhXNqoKKOPwvR" data-pnid-children="JZ0JSYMHeA8srrKUeee8am">
+:root {
+  --bg: #0A0E23;
+  --surface: #121A3C;
+  --surface-raised: #182043;
+  --ink: #EDF1FF;
+  --ink-secondary: #A9B6E0;
+  --ink-muted: #6E7CAC;
+  --border: rgba(150,175,255,.16);
+  --accent: #7C93FF;
+  --accent-light: rgba(124,147,255,.16);
+  --gold: #E0B95C;
+  --gold-light: rgba(224,185,92,.14);
+  --like: #F4787A;
+  --like-light: rgba(244,120,122,.15);
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,.40), 0 0 0 1px rgba(150,175,255,.10);
+  --shadow-md: 0 4px 16px rgba(0,0,0,.50), 0 0 0 1px rgba(150,175,255,.10);
+  --shadow-float: 0 12px 40px rgba(0,0,0,.60), 0 0 0 1px rgba(150,175,255,.12);
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  font-family:'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;
+  background:var(--bg); color:var(--ink);
+  -webkit-font-smoothing:antialiased; min-height:100vh;
+}
+.noise {
+  position:fixed; inset:0; pointer-events:none; z-index:9999; opacity:.03;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* HEADER */
+.site-header {
+  position:sticky; top:0; z-index:100;
+  background:rgba(10,14,35,.88); backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+  padding:0 32px; height:56px;
+  display:flex; align-items:center; justify-content:space-between;
+}
+.logo { font-size:15px; font-weight:700; letter-spacing:-.3px; }
+.logo span { color:var(--accent); }
+.header-right { display:flex; align-items:center; gap:10px; }
+.header-link {
+  font-size:13px; color:var(--ink-secondary); cursor:pointer; font-weight:600;
+  padding:6px 10px; border-radius:var(--radius-sm); transition:background .12s;
+  background:none; border:none; font-family:inherit;
+}
+.header-link:hover { background:rgba(0,0,0,.05); }
+.header-cta {
+  background:var(--accent); color:#0A0E23; border:none; cursor:pointer;
+  padding:8px 18px; border-radius:var(--radius-sm); font-size:13px; font-weight:600;
+  transition:opacity .15s; white-space:nowrap;
+}
+.header-cta:hover { opacity:.82; }
+
+/* HERO BG — banner 卡片：与内容区对齐 */
+.hero-wrap {
+  position:relative; overflow:hidden;
+  max-width:1040px; margin:18px auto 0;
+  border-radius:24px; border:1px solid var(--border);
+  box-shadow:var(--shadow-md);
+  background:linear-gradient(90deg,#0A0E23 0%,#0B0A20 60%,#161032 100%);
+}
+.hero-bg {
+  position:absolute; inset:0; pointer-events:none; z-index:0; overflow:hidden;
+}
+.hero-bg img { width:100%; height:100%; object-fit:contain; object-position:90% center; display:block; filter:brightness(1.15) saturate(1.05); -webkit-mask-image:radial-gradient(ellipse 70% 96% at 76% 50%, #000 32%, rgba(0,0,0,.5) 66%, transparent 88%);
+  mask-image:radial-gradient(ellipse 70% 96% at 76% 50%, #000 32%, rgba(0,0,0,.5) 66%, transparent 88%);
+  animation:heroFloat 22s ease-in-out infinite;
+  transition:filter .5s ease;
+  will-change:transform; }
+.hero-bg::after { content:''; position:absolute; inset:0;
+  background:linear-gradient(90deg, rgba(9,11,26,.55) 0%, rgba(9,11,26,.30) 30%, rgba(9,11,26,0) 54%); }
+.hero-wrap > .hero { position:relative; z-index:1; }
+
+/* HERO */
+.hero {
+  padding:34px 44px 32px; position:relative;
+}
+.hero-left { max-width:600px; }
+.hero-desc { max-width:560px; }
+.hero h1 { display:inline-block; font-size:clamp(21px,3vw,32px); font-weight:800; line-height:1.25; letter-spacing:-.3px; margin-bottom:20px; background:linear-gradient(135deg,#3D5BD9 0%,#7B4FE0 100%); color:#FFFFFF; padding:10px 20px; border-radius:16px; box-shadow:var(--shadow-md); }
+.hero h1 em { font-style:normal; color:var(--accent); }
+.hero-desc { font-size:16px; line-height:2; color:rgba(255,255,255,.92); margin-bottom:18px; }
+.hero-desc strong { font-weight:600; color:var(--accent); }
+/* HERO 视频：实底完整质感；卡片底同色系 + 左缘线性渐隐，无接缝 */
+.hero-bg video { width:100%; height:100%; object-fit:contain; object-position:right center; display:block;
+  filter:brightness(1.15) saturate(1.08); opacity:1;
+  -webkit-mask-image:linear-gradient(90deg, transparent 56%, #000 70%);
+  mask-image:linear-gradient(90deg, transparent 56%, #000 70%);
+  animation:heroFloatV 26s ease-in-out infinite;
+  will-change:transform; }
+/* 小屏（含小程序）：横向遮罩会把视频切掉一大半，改成整幅居中 + 纵向渐隐 */
+@media(max-width:860px) {
+  .hero-bg video { object-fit:contain; object-position:center center; opacity:.55;
+    -webkit-mask-image:linear-gradient(180deg, transparent 0%, #000 26%, #000 74%, transparent 100%);
+    mask-image:linear-gradient(180deg, transparent 0%, #000 26%, #000 74%, transparent 100%); }
+  .hero-bg::after { background:linear-gradient(180deg, rgba(9,11,26,.74) 0%, rgba(9,11,26,.56) 48%, rgba(9,11,26,.34) 100%); }
+}
+@keyframes heroFloatV {
+  0%   { transform:scale(1.02); }
+  50%  { transform:scale(1.055); }
+  100% { transform:scale(1.02); }
+}
+@media(prefers-reduced-motion:reduce){ .hero-bg video { animation:none; transform:scale(1.03); } }
+@keyframes heroFloat {
+  0%   { transform:scale(1.03) rotate(0deg); }
+  50%  { transform:scale(1.07) rotate(1.6deg); }
+  100% { transform:scale(1.03) rotate(0deg); }
+}
+.hero-wrap:hover .hero-bg img { filter:brightness(1.32) saturate(1.14); }
+@media(prefers-reduced-motion:reduce){ .hero-bg img { animation:none; transform:scale(1.04); } }
+
+/* LEADERBOARD CARD in hero */
+.board-card {
+  background:var(--surface-raised); border:1px solid var(--border);
+  border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-md);
+}
+.board-head {
+  padding:16px 20px; border-bottom:1px solid var(--border);
+  background:linear-gradient(180deg,var(--gold-light),var(--surface-raised));
+  display:flex; align-items:center; justify-content:space-between;
+}
+.board-head h3 { font-size:15px; font-weight:800; display:flex; align-items:center; gap:6px; }
+.board-head .board-more {
+  font-size:12px; color:var(--accent); cursor:pointer; font-weight:600;
+  background:none; border:none; font-family:inherit; padding:0;
+}
+.board-head .board-more:hover { text-decoration:underline; }
+.board-list { padding:8px 0; }
+.board-item {
+  display:flex; align-items:center; gap:12px; padding:11px 20px;
+  cursor:pointer; transition:background .12s;
+}
+.board-item:hover { background:rgba(255,255,255,.05); }
+.board-rank {
+  width:22px; height:22px; border-radius:6px; flex-shrink:0;
+  display:flex; align-items:center; justify-content:center;
+  font-size:12px; font-weight:800; font-variant-numeric:tabular-nums;
+  background:rgba(255,255,255,.08); color:var(--ink-secondary);
+}
+.board-rank.r1 { background:#FFF4D6; color:#9A6B00; }
+.board-rank.r2 { background:#EFEFEF; color:#6B6B6B; }
+.board-rank.r3 { background:#FAEBDC; color:#95602F; }
+.board-info { flex:1; min-width:0; }
+.board-name {
+  font-size:13px; font-weight:700; white-space:nowrap;
+  overflow:hidden; text-overflow:ellipsis; margin-bottom:2px;
+}
+.board-meta { font-size:11px; color:var(--ink-muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.board-likes {
+  font-size:13px; font-weight:800; color:var(--like); flex-shrink:0;
+  font-variant-numeric:tabular-nums; display:flex; align-items:center; gap:3px;
+}
+.board-empty { padding:32px 20px; text-align:center; font-size:13px; color:var(--ink-muted); line-height:1.7; }
+
+/* BEST COMMENT */
+.best-comment {
+  margin-top:14px; background:var(--surface-raised); border:1px solid var(--border);
+  border-radius:var(--radius-md); padding:16px 18px; box-shadow:var(--shadow-sm);
+}
+.best-comment-label {
+  font-size:11px; font-weight:700; color:var(--gold); letter-spacing:.8px;
+  margin-bottom:8px; display:flex; align-items:center; gap:5px;
+}
+.best-comment-text {
+  font-size:13px; line-height:1.7; color:var(--ink); margin-bottom:8px;
+  display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden;
+}
+.best-comment-meta { font-size:11px; color:var(--ink-muted); display:flex; justify-content:space-between; gap:8px; }
+.best-comment-empty { font-size:12px; color:var(--ink-muted); line-height:1.6; }
+
+/* UPLOAD BAND */
+.upload-band { background:linear-gradient(135deg,rgba(124,147,255,.16),rgba(123,79,224,.12)); color:var(--ink); padding:40px 32px; border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+.upload-band-inner {
+  max-width:1040px; margin:0 auto;
+  display:flex; align-items:center; justify-content:space-between; gap:32px;
+}
+.upload-band h2 { font-size:20px; font-weight:800; margin-bottom:6px; }
+.upload-band p { font-size:14px; opacity:.65; line-height:1.6; }
+.upload-actions { display:flex; gap:12px; flex-shrink:0; }
+.btn-upload-primary {
+  background:var(--accent); color:#0A0E23; border:none; cursor:pointer;
+  padding:12px 24px; border-radius:var(--radius-sm); font-size:14px; font-weight:700;
+  white-space:nowrap; transition:opacity .15s;
+}
+.btn-upload-primary:hover { opacity:.88; }
+.btn-upload-secondary {
+  background:transparent; color:#fff; border:1.5px solid rgba(255,255,255,.35); cursor:pointer;
+  padding:12px 24px; border-radius:var(--radius-sm); font-size:14px; font-weight:600;
+  white-space:nowrap; transition:border-color .15s;
+}
+.btn-upload-secondary:hover { border-color:rgba(255,255,255,.7); }
+
+/* SECTION */
+.section { max-width:1040px; margin:0 auto; padding:56px 32px; }
+.section-head { margin-bottom:28px; }
+.section-head h2 { font-size:22px; font-weight:800; letter-spacing:-.3px; margin-bottom:6px; }
+.section-head p { font-size:14px; color:var(--ink-secondary); }
+
+/* SEARCH */
+.search-wrap { margin-bottom:32px; }
+.search-intro{font-size:14px;line-height:1.9;color:var(--ink-secondary);margin-bottom:14px}
+.search-intro b{color:var(--accent);font-weight:700}
+.search-intro{font-size:14px;line-height:1.9;color:var(--ink-secondary);margin-bottom:14px}
+.search-intro b{color:var(--accent);font-weight:700}
+.search-box {
+  position:relative; display:flex; align-items:center;
+  background:var(--surface-raised);
+  border:2px solid var(--ink);
+  border-radius:14px;
+  box-shadow:5px 5px 0 var(--ink);
+  padding:0 16px; height:58px;
+  transition:box-shadow .16s, transform .16s;
+}
+.search-box:focus-within { box-shadow:2px 2px 0 var(--ink); transform:translate(3px,3px); }
+.search-icon { width:22px; height:22px; color:var(--ink-muted); flex-shrink:0; }
+.search-input {
+  flex:1; border:none; outline:none; background:transparent;
+  font-size:16px; font-family:inherit; color:var(--ink);
+  padding:0 12px; min-width:0;
+}
+.search-input::placeholder { color:var(--ink-muted); }
+.search-clear {
+  display:none; width:26px; height:26px; flex-shrink:0;
+  border-radius:50%; border:none; cursor:pointer;
+  background:rgba(255,255,255,.10); color:var(--ink-secondary);
+  font-size:13px; line-height:1; font-family:inherit;
+  align-items:center; justify-content:center; transition:background .12s;
+}
+.search-clear:hover { background:rgba(255,255,255,.18); }
+.search-clear.show { display:flex; }
+.search-hint {
+  margin-top:10px; font-size:13px; color:var(--ink-secondary);
+  min-height:18px; padding-left:4px;
+}
+.search-hint b { color:var(--accent); font-weight:700; }
+.search-empty { display:none; text-align:center; padding:48px 24px; }
+.search-empty.show { display:block; }
+.search-empty-icon { font-size:40px; margin-bottom:12px; }
+.search-empty p { font-size:14px; color:var(--ink-muted); line-height:1.8; }
+.search-empty-link { color:var(--accent); font-weight:700; cursor:pointer; }
+.search-empty-link:hover { text-decoration:underline; }
+.track-card.hide { display:none; }
+.track-hit {
+  margin-top:10px; padding-top:10px; border-top:1px dashed var(--border);
+  font-size:11px; color:var(--ink-muted); line-height:1.7;
+}
+.track-hit b { color:var(--ink); font-weight:700; }
+mark { background:#FFE9A3; color:#0A0E23; padding:0 2px; border-radius:2px; }
+
+/* TRACK GRID — 翻牌卡：正面通道名+简介，悬停翻面，反面角色牌可点击 */
+.track-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:16px; }
+.track-card { perspective:1000px; cursor:pointer; position:relative; text-decoration:none; color:inherit; -webkit-tap-highlight-color:transparent; }
+.tc-inner {
+  position:relative; height:150px;
+  transition:transform .55s cubic-bezier(.4,.1,.2,1);
+  transform-style:preserve-3d;
+}
+@media(hover:hover){ .track-card:hover .tc-inner { transform:rotateY(180deg); } }
+.track-card.on .tc-inner { transform:rotateY(180deg); }
+.tc-face {
+  position:absolute; inset:0;
+  backface-visibility:hidden; -webkit-backface-visibility:hidden;
+  border-radius:var(--radius-md); border:1px solid var(--border);
+  overflow:hidden;
+}
+.tc-front { background:var(--surface-raised); padding:16px 15px; }
+.tc-front::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:3px;
+  background:var(--track-color,#7C93FF);
+}
+.tc-back {
+  transform:rotateY(180deg);
+  background:var(--track-bg,rgba(124,147,255,.14));
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:10px; padding:14px;
+}
+.tc-img { max-width:70%; max-height:74%; border-radius:10px; box-shadow:0 4px 14px rgba(0,0,0,.18); }
+.tc-go { font-size:12.5px; font-weight:800; color:var(--track-color,#7C93FF); }
+.track-card:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+.track-card[data-tid="mr9t4uv6w8x2y5z7"] .tc-face { border-style:dashed; }
+/* 移动端点击反馈：容器里跳转有网络延迟，按下立刻给「正在打开…」，避免以为没点上 */
+.track-card.tapping .tc-inner { transform:scale(.97); transition:transform .12s ease-out; }
+.track-card.tapping .tc-face { border-color:var(--track-color,#7C93FF); box-shadow:0 0 0 2px var(--track-color,#7C93FF); }
+.tc-tap { position:absolute; inset:0; z-index:5; display:none; align-items:center; justify-content:center; pointer-events:none; }
+.track-card.tapping .tc-tap { display:flex; }
+.tc-tap span { background:rgba(10,14,35,.88); color:#fff; font-size:12.5px; font-weight:700; padding:6px 14px; border-radius:100px; border:1px solid var(--track-color,#7C93FF); white-space:nowrap; }
+.track-icon { font-size:23px; margin-bottom:7px; display:block; }
+.track-name { font-size:15px; font-weight:800; margin-bottom:4px; }
+.track-desc { font-size:12px; color:var(--ink-muted); line-height:1.6; }
+/* 按顿号/逗号切段，段内不换行：换行只会落在「、」「，」后面 */
+.track-desc .nb { white-space:nowrap; }
+
+/* FULL LEADERBOARD SECTION — 深色酷炫区 */
+.board-section {
+  position:relative; overflow:hidden; background:#0C1130;
+  border-top:1px solid rgba(150,175,255,.10); border-bottom:1px solid rgba(150,175,255,.10);
+}
+.board-bg { position:absolute; inset:0; z-index:0; pointer-events:none; }
+.board-bg svg { width:100%; height:100%; display:block; }
+.board-inner { position:relative; z-index:1; }
+.board-head-txt h2 { color:#EDF1FF; }
+.board-head-txt p { color:rgba(237,241,255,.60); }
+
+/* 激励规则四步 */
+.rule-strip {
+  display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:26px;
+}
+.rule-step {
+  display:flex; gap:10px; align-items:flex-start;
+  background:rgba(255,255,255,.045); border:1px solid rgba(255,255,255,.10);
+  border-radius:var(--radius-md); padding:14px 15px;
+}
+.rule-no {
+  font-size:12px; font-weight:800; color:#F0C14B; flex-shrink:0;
+  font-variant-numeric:tabular-nums; letter-spacing:.5px; padding-top:1px;
+}
+.rule-t { font-size:13px; font-weight:700; color:#EDF1FF; margin-bottom:3px; }
+.rule-d { font-size:11.5px; color:rgba(237,241,255,.52); line-height:1.65; }
+
+.board-tabs { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:18px; }
+.board-tab {
+  padding:7px 14px; border-radius:100px; font-size:13px; font-weight:600;
+  background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.14);
+  cursor:pointer; transition:all .14s; font-family:inherit; color:rgba(237,241,255,.68);
+}
+.board-tab:hover { border-color:rgba(240,193,75,.55); color:#EDF1FF; }
+.board-tab.active { background:#F0C14B; color:#1C1E21; border-color:#F0C14B; }
+.board-full {
+  background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.10);
+  border-radius:var(--radius-md); overflow:hidden; backdrop-filter:blur(2px);
+}
+.board-row {
+  display:flex; align-items:center; gap:14px; padding:14px 20px;
+  border-bottom:1px solid rgba(255,255,255,.07); cursor:pointer; transition:background .12s;
+}
+.board-row:last-child { border-bottom:none; }
+.board-row:hover { background:rgba(255,255,255,.05); }
+.board-row-rank {
+  width:28px; height:28px; border-radius:8px; flex-shrink:0;
+  display:flex; align-items:center; justify-content:center;
+  font-size:13px; font-weight:800; font-variant-numeric:tabular-nums;
+  background:rgba(255,255,255,.08); color:rgba(237,241,255,.65);
+}
+.board-row-rank.r1 { background:#F0C14B; color:#3A2A00; }
+.board-row-rank.r2 { background:#C9CDD2; color:#2A2E33; }
+.board-row-rank.r3 { background:#C98A5A; color:#361F0C; }
+.board-row-main { flex:1; min-width:0; }
+.board-row-name { font-size:14px; font-weight:700; margin-bottom:3px; color:#EDF1FF; }
+.board-row-meta { font-size:12px; color:rgba(237,241,255,.45); }
+.board-row-track {
+  font-size:11px; padding:2px 8px; border-radius:100px; font-weight:600;
+  flex-shrink:0; white-space:nowrap;
+}
+.board-row-likes {
+  display:flex; flex-direction:column; align-items:flex-end; gap:1px; flex-shrink:0; min-width:52px;
+}
+.board-row-likes .n { font-size:16px; font-weight:800; color:#FF7A7A; font-variant-numeric:tabular-nums; }
+.board-row-likes .l { font-size:10px; color:rgba(237,241,255,.40); }
+.board-full .board-empty { color:rgba(237,241,255,.45); }
+
+/* 奖励 */
+.prize-head {
+  display:flex; align-items:baseline; gap:10px; margin:28px 0 12px; flex-wrap:wrap;
+}
+.prize-head h3 { font-size:16px; font-weight:800; color:#EDF1FF; }
+.prize-note { font-size:12px; color:rgba(237,241,255,.42); }
+.board-prize { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+.prize-chip {
+  background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.11);
+  border-radius:var(--radius-md); padding:15px 16px;
+  display:flex; flex-direction:column; gap:5px;
+}
+.prize-chip.pc-gold   { border-color:rgba(240,193,75,.45); background:rgba(240,193,75,.09); }
+.prize-chip.pc-silver { border-color:rgba(201,205,210,.32); }
+.prize-chip.pc-blue   { border-color:rgba(127,169,207,.32); }
+.prize-chip-rank { font-size:12.5px; font-weight:800; color:#EDF1FF; }
+.pc-gold   .prize-chip-rank { color:#F0C14B; }
+.pc-silver .prize-chip-rank { color:#D7DBE0; }
+.pc-blue   .prize-chip-rank { color:#9CC4E4; }
+.prize-chip-text { font-size:12px; color:rgba(237,241,255,.60); line-height:1.65; }
+.prize-slot {
+  margin-top:auto; font-size:11px; color:rgba(237,241,255,.38);
+  border:1px dashed rgba(255,255,255,.20); border-radius:var(--radius-sm);
+  padding:6px 9px; text-align:center;
+}
+
+/* 细则 */
+.rule-fine {
+  margin-top:20px; padding:14px 16px; border-radius:var(--radius-md);
+  background:rgba(0,0,0,.22); border:1px solid rgba(255,255,255,.08);
+  font-size:11.5px; line-height:1.9; color:rgba(237,241,255,.46);
+}
+.rule-fine b { color:rgba(237,241,255,.78); margin-right:8px; font-weight:700; }
+.rule-fine span { margin-right:4px; }
+
+/* MODAL OVERLAY */
+.modal-overlay {
+  position:fixed; inset:0; background:rgba(5,8,22,.62); z-index:200;
+  display:flex; align-items:flex-end; justify-content:flex-end;
+  opacity:0; pointer-events:none; transition:opacity .22s;
+}
+.modal-overlay.open { opacity:1; pointer-events:all; }
+.track-panel {
+  width:560px; max-width:94vw; height:100vh; background:var(--surface);
+  overflow-y:auto; transform:translateX(100%);
+  transition:transform .28s cubic-bezier(.32,.72,0,1);
+  display:flex; flex-direction:column;
+}
+.modal-overlay.open .track-panel { transform:translateX(0); }
+.panel-head {
+  position:sticky; top:0; z-index:10;
+  background:rgba(18,26,60,.96); backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--border); padding:20px 24px 16px;
+}
+.panel-head-top { display:flex; align-items:center; justify-content:space-between; margin-bottom:4px; }
+.panel-title { font-size:18px; font-weight:800; }
+.panel-close {
+  width:32px; height:32px; border-radius:50%; border:1px solid var(--border);
+  background:transparent; cursor:pointer; font-size:16px; color:var(--ink-secondary);
+  display:flex; align-items:center; justify-content:center; transition:background .12s;
+}
+.panel-close:hover { background:var(--border); }
+.panel-sub { font-size:13px; color:var(--ink-muted); }
+.panel-sort { display:flex; gap:6px; margin-top:12px; }
+.sort-btn {
+  padding:5px 12px; border-radius:100px; font-size:12px; font-weight:600;
+  background:transparent; border:1px solid var(--border); cursor:pointer;
+  color:var(--ink-secondary); font-family:inherit; transition:all .12s;
+}
+.sort-btn.active { background:var(--accent); color:#0A0E23; border-color:var(--accent); }
+.panel-body { padding:20px 24px 40px; flex:1; }
+.panel-loading { text-align:center; padding:40px 0; color:var(--ink-muted); font-size:14px; }
+.panel-empty { text-align:center; padding:48px 24px; }
+.panel-empty-icon { font-size:40px; margin-bottom:12px; }
+.panel-empty p { font-size:14px; color:var(--ink-muted); line-height:1.6; }
+.panel-empty .upload-prompt { margin-top:16px; color:var(--accent); font-size:13px; font-weight:600; cursor:pointer; }
+
+/* SKILL CARD */
+.skill-card {
+  background:var(--surface-raised); border:1px solid var(--border);
+  border-radius:var(--radius-md); padding:20px; margin-bottom:14px; transition:box-shadow .15s;
+}
+.skill-card:hover { box-shadow:var(--shadow-sm); }
+.skill-card-head { display:flex; align-items:flex-start; justify-content:space-between; gap:12px; margin-bottom:8px; }
+.skill-name-wrap { flex:1; min-width:0; }
+.skill-name { font-size:15px; font-weight:700; margin-bottom:3px; }
+.skill-rank-badge {
+  display:inline-flex; align-items:center; gap:3px; font-size:11px; font-weight:700;
+  background:var(--gold-light); color:var(--gold); padding:2px 7px; border-radius:100px; margin-left:6px;
+}
+.skill-tag {
+  font-size:11px; padding:2px 8px; border-radius:100px; font-weight:600;
+  background:var(--track-bg2,rgba(124,147,255,.14)); color:var(--track-color2,#9FB0FF);
+  white-space:nowrap; flex-shrink:0;
+}
+.skill-desc { font-size:13px; color:var(--ink-secondary); line-height:1.65; margin-bottom:14px; }
+.skill-prompt-box {
+  background:rgba(255,255,255,.04); border:1px solid var(--border);
+  border-radius:var(--radius-sm); padding:12px 14px; margin-bottom:12px;
+}
+.skill-prompt-label { font-size:11px; font-weight:600; color:var(--ink-muted); letter-spacing:.8px; margin-bottom:6px; }
+.skill-prompt-text { font-size:13px; color:var(--ink-secondary); line-height:1.6; word-break:break-word; white-space:pre-wrap; }
+.skill-link-row { margin-bottom:12px; }
+.skill-link {
+  display:inline-flex; align-items:center; gap:5px; font-size:12px; font-weight:600;
+  color:var(--accent); text-decoration:none; padding:5px 10px;
+  background:var(--accent-light); border-radius:var(--radius-sm); transition:opacity .12s;
+  word-break:break-all;
+}
+.skill-link:hover { opacity:.78; }
+.skill-actions { display:flex; gap:8px; margin-bottom:12px; flex-wrap:wrap; }
+.btn-copy, .btn-dosame {
+  flex:1; min-width:120px; padding:8px 12px; border-radius:var(--radius-sm);
+  font-size:13px; font-weight:600; cursor:pointer;
+  display:flex; align-items:center; justify-content:center; gap:5px;
+  font-family:inherit; transition:all .12s;
+}
+.btn-copy { background:var(--accent-light); color:var(--accent); border:1px solid rgba(124,147,255,.28); }
+.btn-copy:hover { background:rgba(124,147,255,.26); }
+.btn-copy.copied { background:rgba(110,231,183,.18); color:#8FE9C0; border-color:rgba(110,231,183,.30); }
+.btn-dosame { background:var(--accent); color:#0A0E23; border:none; }
+.btn-dosame:hover { opacity:.82; }
+
+/* LIKE + COMMENT BAR */
+.skill-social {
+  display:flex; align-items:center; gap:8px; padding-top:12px;
+  border-top:1px solid var(--border);
+}
+.btn-like {
+  display:flex; align-items:center; gap:5px; padding:6px 13px;
+  border-radius:100px; font-size:13px; font-weight:700; cursor:pointer;
+  background:var(--surface); border:1.5px solid var(--border); color:var(--ink-secondary);
+  font-family:inherit; transition:all .14s; font-variant-numeric:tabular-nums;
+}
+.btn-like:hover { border-color:var(--like); color:var(--like); }
+.btn-like.liked { background:var(--like-light); border-color:var(--like); color:var(--like); }
+.btn-like .heart { font-size:14px; line-height:1; transition:transform .2s; }
+.btn-like.liked .heart { transform:scale(1.15); }
+.btn-comment-toggle {
+  display:flex; align-items:center; gap:5px; padding:6px 13px;
+  border-radius:100px; font-size:13px; font-weight:600; cursor:pointer;
+  background:var(--surface); border:1.5px solid var(--border); color:var(--ink-secondary);
+  font-family:inherit; transition:all .14s;
+}
+.btn-comment-toggle:hover { border-color:var(--accent); color:var(--accent); }
+.skill-submitter { font-size:11px; color:var(--ink-muted); margin-left:auto; }
+
+/* COMMENT AREA */
+.comment-area { display:none; margin-top:14px; padding-top:14px; border-top:1px dashed var(--border); }
+.comment-area.open { display:block; }
+.comment-list { margin-bottom:12px; }
+.comment-item { padding:10px 0; border-bottom:1px solid rgba(255,255,255,.07); }
+.comment-item:last-child { border-bottom:none; }
+.comment-item-head { display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:4px; }
+.comment-author { font-size:12px; font-weight:700; color:var(--ink); }
+.comment-time { font-size:11px; color:var(--ink-muted); }
+.comment-text { font-size:13px; line-height:1.65; color:var(--ink-secondary); white-space:pre-wrap; word-break:break-word; }
+.comment-empty { font-size:12px; color:var(--ink-muted); text-align:center; padding:14px 0; }
+.comment-form { display:flex; flex-direction:column; gap:8px; }
+.comment-input-row { display:flex; gap:8px; }
+.comment-nick {
+  width:110px; flex-shrink:0; padding:8px 10px; border:1.5px solid var(--border);
+  border-radius:var(--radius-sm); font-size:12px; font-family:inherit; background:var(--surface);
+  transition:border-color .14s;
+}
+.comment-input {
+  flex:1; padding:8px 12px; border:1.5px solid var(--border);
+  border-radius:var(--radius-sm); font-size:13px; font-family:inherit;
+  background:var(--surface); resize:vertical; min-height:38px; line-height:1.5;
+  transition:border-color .14s;
+}
+.comment-nick:focus, .comment-input:focus {
+  outline:none; border-color:var(--accent); box-shadow:0 0 0 3px rgba(124,147,255,.22);
+}
+.comment-submit {
+  align-self:flex-end; padding:7px 18px; border-radius:var(--radius-sm);
+  background:var(--accent); color:#0A0E23; border:none; cursor:pointer;
+  font-size:12px; font-weight:700; font-family:inherit; transition:opacity .14s;
+}
+.comment-submit:hover:not(:disabled) { opacity:.84; }
+.comment-submit:disabled { opacity:.45; cursor:not-allowed; }
+
+/* UPLOAD MODAL */
+.upload-modal-overlay {
+  position:fixed; inset:0; background:rgba(5,8,22,.66); z-index:300;
+  display:flex; align-items:center; justify-content:center; padding:20px;
+  opacity:0; pointer-events:none; transition:opacity .2s;
+}
+.upload-modal-overlay.open { opacity:1; pointer-events:all; }
+.upload-modal {
+  background:var(--surface-raised); border-radius:var(--radius-lg);
+  width:100%; max-width:560px; max-height:90vh; overflow-y:auto;
+  box-shadow:var(--shadow-float);
+  transform:scale(.96) translateY(8px); transition:transform .22s cubic-bezier(.32,.72,0,1);
+}
+.upload-modal-overlay.open .upload-modal { transform:scale(1) translateY(0); }
+.modal-head {
+  padding:28px 28px 20px; border-bottom:1px solid var(--border);
+  display:flex; align-items:flex-start; justify-content:space-between;
+}
+.modal-head-text h3 { font-size:18px; font-weight:800; margin-bottom:4px; }
+.modal-head-text p { font-size:13px; color:var(--ink-muted); }
+.modal-close-btn {
+  width:32px; height:32px; border-radius:50%; border:1px solid var(--border);
+  background:transparent; cursor:pointer; font-size:16px; color:var(--ink-secondary);
+  display:flex; align-items:center; justify-content:center; flex-shrink:0; transition:background .12s;
+}
+.modal-close-btn:hover { background:var(--border); }
+.modal-body { padding:24px 28px 28px; }
+.form-group { margin-bottom:18px; }
+.form-label { display:block; font-size:13px; font-weight:600; margin-bottom:6px; }
+.form-label .req { color:#FF7A7A; margin-left:2px; }
+.form-input, .form-select, .form-textarea {
+  width:100%; padding:10px 14px; border:1.5px solid var(--border);
+  border-radius:var(--radius-sm); font-size:14px; color:var(--ink);
+  background:var(--surface); font-family:inherit;
+  transition:border-color .15s, box-shadow .15s; -webkit-appearance:none;
+}
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  outline:none; border-color:var(--accent); box-shadow:0 0 0 3px rgba(124,147,255,.22);
+}
+.form-input.error, .form-select.error, .form-textarea.error {
+  border-color:#FF7A7A; box-shadow:0 0 0 3px rgba(255,122,122,.16);
+}
+.form-error { font-size:12px; color:#FF7A7A; margin-top:4px; display:none; }
+.form-error.show { display:block; }
+
+/* 分享方式二选一 */
+.share-switch { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.sw-opt {
+  position:relative; display:flex; flex-direction:column; gap:2px;
+  padding:13px 14px 12px; border:1.5px solid var(--border);
+  border-radius:var(--radius-md); background:var(--surface);
+  cursor:pointer; transition:border-color .14s, background .14s, box-shadow .14s;
+}
+.sw-opt:hover { border-color:var(--ink-muted); }
+.sw-opt input { position:absolute; opacity:0; width:0; height:0; }
+.sw-opt.active {
+  border-color:var(--accent); background:var(--accent-light);
+  box-shadow:0 0 0 3px rgba(124,147,255,.18);
+}
+.sw-ico { font-size:17px; line-height:1; margin-bottom:3px; }
+.sw-main { font-size:13.5px; font-weight:700; color:var(--ink); }
+.sw-opt.active .sw-main { color:var(--accent); }
+.sw-sub { font-size:11.5px; color:var(--ink-muted); line-height:1.5; }
+.form-group.is-hidden { display:none; }
+.contact-switch { margin-bottom:10px; }
+.contact-field.is-hidden { display:none; }
+
+/* 链接操作指引 */
+.link-guide {
+  margin-top:10px; padding:13px 15px; border-radius:var(--radius-md);
+  background:rgba(124,147,255,.08); border:1px solid rgba(124,147,255,.18);
+}
+.lg-title { font-size:12.5px; font-weight:700; color:var(--accent); margin-bottom:7px; }
+.lg-steps { margin:0 0 9px; padding-left:17px; }
+.lg-steps li { font-size:12px; color:var(--ink-secondary); line-height:1.85; }
+.lg-steps b { color:var(--ink); font-weight:700; }
+.lg-ok { display:flex; flex-wrap:wrap; align-items:center; gap:6px; margin-bottom:8px; }
+.lg-ok-label { font-size:11.5px; color:var(--ink-muted); }
+.lg-ok code {
+  font-size:11px; background:var(--surface-raised); color:var(--ink-secondary);
+  border:1px solid var(--border); border-radius:4px; padding:2px 7px;
+  font-family:ui-monospace,Menlo,Consolas,monospace; word-break:break-all;
+}
+.lg-warn { font-size:11.5px; color:var(--ink-muted); line-height:1.7; }
+.form-textarea { resize:vertical; min-height:90px; line-height:1.6; }
+.form-hint { font-size:12px; color:var(--ink-muted); margin-top:4px; line-height:1.5; }
+.form-submit {
+  width:100%; padding:13px; border-radius:var(--radius-sm); font-size:15px; font-weight:700;
+  background:var(--accent); color:#0A0E23; border:none; cursor:pointer;
+  transition:opacity .15s; margin-top:8px; font-family:inherit;
+}
+.form-submit:hover:not(:disabled) { opacity:.85; }
+.form-submit:disabled { opacity:.5; cursor:not-allowed; }
+.form-success { text-align:center; padding:40px 24px; display:none; }
+.form-success-icon { font-size:48px; margin-bottom:12px; }
+.form-success h4 { font-size:17px; font-weight:800; margin-bottom:6px; }
+.form-success p { font-size:13px; color:var(--ink-secondary); line-height:1.7; }
+
+/* TOAST */
+.toast {
+  position:fixed; bottom:32px; left:50%; transform:translateX(-50%) translateY(80px);
+  background:var(--accent); color:#0A0E23; padding:12px 20px; border-radius:var(--radius-md);
+  font-size:14px; font-weight:600; z-index:500; opacity:0;
+  transition:transform .22s, opacity .22s; pointer-events:none; max-width:90vw; text-align:center;
+}
+.toast.show { transform:translateX(-50%) translateY(0); opacity:1; }
+
+/* MPSAME_2026_10_27 小程序端「做同款」弹窗：可复制提示词，不展示提示词内容 */
+.mp-same-ov{position:fixed;inset:0;z-index:4500;display:none;align-items:center;justify-content:center;
+  background:rgba(6,9,22,.72);padding:22px}
+.mp-same-ov.on{display:flex}
+.mp-same-box{position:relative;width:100%;max-width:352px;background:#FFFFFF;border-radius:20px;
+  padding:22px 18px 18px;display:flex;flex-direction:column;gap:14px;
+  box-shadow:0 24px 60px rgba(0,0,0,.45)}
+.mp-same-x{position:absolute;top:12px;right:12px;width:26px;height:26px;border:none;border-radius:50%;
+  background:#F2F3F7;color:#666;font-size:13px;line-height:1;cursor:pointer;font-family:inherit}
+.mp-same-ti{font-size:16.5px;font-weight:800;line-height:1.6;color:#111827;padding-right:22px}
+.mp-same-ds{font-size:13px;line-height:1.75;color:#6B7280}
+.mp-same-cp{width:100%;padding:14px;border:1.5px solid #111418;border-radius:14px;background:#FFFFFF;
+  color:#111418;font-size:15.5px;font-weight:800;font-family:inherit;cursor:pointer;letter-spacing:.02em}
+.mp-same-cp.ok{background:#1D9E75;border-color:#1D9E75;color:#fff}
+.mp-same-go{width:100%;padding:14.5px;border:none;border-radius:14px;background:#111418;color:#FFFFFF;
+  font-size:16.5px;font-weight:800;font-family:inherit;cursor:pointer;letter-spacing:.02em}
+
+.page-footer {
+  text-align:center; padding:32px; font-size:12px; color:var(--ink-muted);
+  border-top:1px solid var(--border);
+}
+
+@media(max-width:860px) {
+  .hero { padding:36px 24px 30px; }
+  .hero-wrap { margin:12px 12px 0; }
+  .section { padding:40px 20px; }
+  .track-grid { grid-template-columns:1fr 1fr; gap:12px; }
+  .upload-band { padding:32px 20px; }
+  .upload-band-inner { flex-direction:column; align-items:flex-start; gap:20px; }
+  .upload-actions { width:100%; }
+  .btn-upload-primary { flex:1; }
+  .site-header { padding:0 16px; }
+  .header-link { display:none; }
+  .search-box { height:52px; box-shadow:4px 4px 0 var(--ink); }
+  .search-input { font-size:15px; }
+  .rule-strip { grid-template-columns:1fr 1fr; }
+  .board-prize { grid-template-columns:1fr 1fr; }
+}
+@media(max-width:480px) {
+  .track-grid { grid-template-columns:1fr; gap:10px; }
+  /* 小屏：翻牌卡改紧凑行，一眼一条，点即进 */
+  .tc-inner { height:auto; transform-style:flat; }
+  .tc-back { display:none; }
+  .tc-face { position:static; }
+  /* 小屏：图标 +（名称/说明上下两行）+ 箭头。说明独占一整行，不再被挤成半句 */
+  .tc-front { display:grid; grid-template-columns:auto minmax(0,1fr) auto;
+    align-items:center; column-gap:13px; padding:15px 16px; }
+  .track-icon { grid-column:1; grid-row:1 / span 2; font-size:24px; margin:0; }
+  .track-name { grid-column:2; grid-row:1; font-size:15.5px; margin-bottom:2px; }
+  .track-desc { grid-column:2; grid-row:2; font-size:12px; line-height:1.55; }
+  .tc-front::after { grid-column:3; grid-row:1 / span 2; content:'›'; justify-self:end;
+    font-size:22px; line-height:1; color:var(--ink-muted); font-weight:700; }
+  .comment-input-row { flex-direction:column; }
+  .comment-nick { width:100%; }
+  .board-row-track { display:none; }
+  .rule-strip { grid-template-columns:1fr; }
+  .board-prize { grid-template-columns:1fr; }
+}
+@media(prefers-reduced-motion:reduce) { *, *::before, *::after { transition-duration:.01ms !important; } }
+
+  /* MOBGUIDE_2026_10_26 手机端下载客户端指引：顶部条 + 灵感社区弹层 */
+  .dltop{display:flex;align-items:center;gap:10px;padding:10px 14px;
+    background:rgba(16,22,48,.92);border-bottom:1px solid rgba(224,185,92,.28);
+    font-size:12.5px;line-height:1.6;color:var(--ink2,#A9B6E0)}
+  .dltop-txt{flex:1;min-width:0}
+  .dltop-txt b{color:var(--brass,#E0B95C);font-weight:800}
+  .dltop-cp{flex:none;border:1px solid rgba(224,185,92,.55);background:transparent;color:#E0B95C;
+    font-size:12px;font-weight:700;padding:4px 12px;border-radius:8px;cursor:pointer;
+    white-space:nowrap;font-family:inherit}
+  .dltop-cp.ok{background:#1D9E75;border-color:#1D9E75;color:#fff}
+  .dltop-tip{padding:8px 14px 10px;font-size:12px;line-height:1.6;color:var(--ink2,#A9B6E0);
+    background:rgba(224,185,92,.10);border-bottom:1px solid rgba(224,185,92,.28);
+    word-break:break-all;user-select:text;-webkit-user-select:text}
+  .mg-ov{position:fixed;inset:0;z-index:4000;display:none;align-items:center;justify-content:center;
+    background:rgba(6,9,22,.72);padding:22px}
+  .mg-ov.on{display:flex}
+  .mg-box{position:relative;width:100%;max-width:352px;background:#FFFFFF;border-radius:20px;
+    padding:20px 18px 18px;display:flex;flex-direction:column;gap:13px;
+    box-shadow:0 24px 60px rgba(0,0,0,.45)}
+  .mg-x{position:absolute;top:12px;right:12px;width:26px;height:26px;border:none;border-radius:50%;
+    background:#F2F3F7;color:#666;font-size:13px;line-height:1;cursor:pointer;font-family:inherit}
+  .mg-ti{font-size:16.5px;font-weight:800;line-height:1.6;color:#111827;padding-right:22px}
+  .mg-ds{font-size:13px;line-height:1.75;color:#6B7280}
+  .mg-go{width:100%;padding:14.5px;border:none;border-radius:14px;background:#111418;color:#FFFFFF;
+    font-size:16.5px;font-weight:800;font-family:inherit;cursor:pointer;letter-spacing:.02em}
+  .mg-go.ok{background:#1D9E75;color:#fff}
+  .mg-tip{display:none;font-size:12px;font-weight:700;color:#1D9E75;line-height:1.6;text-align:center}
+</style>
+<style data-page-node-id="eTSj8hNfNNLfhwrNCDzWNP" data-pnid-children="CNAAzcfGh8CTDmQWidozLC">/* 搜索功能临时隐藏 2026-10-25：工具与赛道更丰富后再放开，删掉本行即可恢复 */
+.search-box,.search-hint,.search-empty{display:none!important}
+</style>
+<style data-page-node-id="Kc5TSJEN6aMg3Nz2VFDq7X" data-pnid-children="DQwkxv3Fes54xkltqpKSP0" data-patch="MBTYPO_2026_10_26">
+/* MBTYPO_2026_10_26：移动端头屏排版 —— 只在窄屏生效，桌面端与 banner 视频均不受影响 */
+@media(max-width:860px){
+  .bn-desc,.bn-claim,.hero-desc{text-wrap:pretty}
+}
+@media(max-width:640px){
+  .bn-series-bar{display:none}
+}
+</style>
+<script data-page-node-id="Mjvsu04MDSn8hMnwbXS63F" data-pnid-children="UcekzKbKCjvB8rXd7yhsqA" data-patch="navq">
+/* NAVQ_V1_2026_10_29 发布短链防递归 + 返回链接纠正 */
+(function(){
+  if(window.__navq)return; window.__navq=1;
+  var INF=true; try{ INF = window.self!==window.top }catch(e){}
+  var RX=/^https?:\/\/(www\.)?workbuddy\.link\/p\/[A-Za-z0-9_-]+/i;
+  var SP=/^https?:\/\/(www\.)?workbuddy\.cn\/space\/d\/([A-Za-z0-9_-]+)/i;
+  var RR=/([?&])_r=[a-z0-9]+(&|$)/i;
+  function strip(u){ return String(u).replace(RR,function(m,a,b){return b?a:''}).replace(/[?&]$/,''); }
+  function q(u){
+    try{
+      if(typeof u!=='string')return u;
+      var m=SP.exec(u); if(m) u='https://workbuddy.link/p/'+m[2];
+      if(!INF||!RX.test(u)) return u;
+      u=strip(u);
+      return u+(u.indexOf('?')<0?'?':'&')+'_r='+(Date.now().toString(36)+Math.random().toString(36).slice(2,5));
+    }catch(e){ return u }
+  }
+  window.__navq_q=q;
+  function fix(a){
+    try{
+      var h=a.getAttribute('href')||'';
+      if(!SP.test(h)&&!RX.test(h))return;
+      var tg=(a.getAttribute('target')||'').toLowerCase();
+      if(tg==='_blank'&&!SP.test(h))return;
+      var n=q(h); if(n!==h) a.setAttribute('href',n);
+    }catch(e){}
+  }
+  window.addEventListener('click',function(e){
+    try{ var a=e.target&&e.target.closest?e.target.closest('a[href]'):null; if(a)fix(a); }catch(x){}
+  },true);
+  try{
+    if(INF&&window.navigation&&navigation.addEventListener){
+      navigation.addEventListener('navigate',function(e){
+        try{
+          var u=e.destination&&e.destination.url;
+          if(!u||!RX.test(u)||RR.test(u)||!e.cancelable||e.hashChange||e.downloadRequest)return;
+          e.preventDefault(); location.href=q(u);
+        }catch(x){}
+      });
+    }
+  }catch(e){}
+  function sweep(){
+    try{
+      var as=document.querySelectorAll('a[href*="workbuddy.cn/space/d/"]');
+      for(var i=0;i<as.length;i++){ var m=SP.exec(as[i].getAttribute('href')||''); if(m) as[i].setAttribute('href','https://workbuddy.link/p/'+m[2]); }
+    }catch(e){}
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',function(){ sweep(); setTimeout(sweep,400); setTimeout(sweep,1500); });
+  else { sweep(); setTimeout(sweep,400); }
+})();
+</script>
+<script data-page-node-id="svzktpdXmoImbIYdGvh4aQ" data-pnid-children="nw40AZv3BMQfGd0329kLbC" data-patch="tapfb">
+/* TAPFB_2026_10_28 点击即时反馈：点了要等的，先给一句回应 */
+(function(){
+  if(window.__tfb)return; window.__tfb=1;
+  var LEFT=false;
+  try{window.addEventListener('pagehide',function(){LEFT=true;},{once:true});}catch(e){}
+  var hideT=null,lastTip=0;
+  var BOX='position:fixed;left:0;top:0;right:0;bottom:0;z-index:2147483000;display:none;align-items:center;justify-content:center;pointer-events:none';
+  var PILL='background:rgba(10,14,35,.92);color:#EDF1FF;font-size:14px;font-weight:700;padding:10px 20px;border-radius:100px;border:1px solid rgba(150,175,255,.28)';
+  function ensureBox(){
+    var d=document.getElementById('__navLoad');
+    if(!d){
+      d=document.createElement('div'); d.id='__navLoad';
+      d.style.cssText=BOX;
+      (document.body||document.documentElement).appendChild(d);
+    }
+    return d;
+  }
+  /* 预先占位：页面自带的 navLoading 也用 #__navLoad，提前建好（透明容器），
+     它就会复用这个容器 —— 提示仍是居中「小药丸」，且不会和我们重复弹两个。 */
+  try{ if(document.body) ensureBox(); else document.addEventListener('DOMContentLoaded',function(){try{ensureBox();}catch(e){}}); }catch(e){}
+  function mask(txt){
+    try{
+      var d=ensureBox();
+      d.innerHTML='<span style="'+PILL+'">'+txt+'</span>';
+      clearTimeout(hideT); hideT=setTimeout(function(){try{d.style.display='none'}catch(e){}},3500);
+      setTimeout(function(){
+        try{
+          if(LEFT)return;
+          if(otherLoading())return;
+          d.style.display='flex';
+        }catch(e){}
+      },150);
+    }catch(e){}
+  }
+  function busyOn(){
+    try{ var d=document.getElementById('__navLoad'); if(!d)return false; var s=d.style.display; return !!(s&&s!=='none'); }catch(e){ return false; }
+  }
+  function otherLoading(){
+    try{
+      var all=document.querySelectorAll('span,div,a,button');
+      for(var i=0;i<all.length;i++){
+        var e=all[i];
+        if(e.id==='__navLoad'||(e.closest&&e.closest('#__navLoad')))continue;
+        var t=(e.textContent||'').trim();
+        if(t!=='正在打开…'&&t!=='正在加载…')continue;
+        if(isVisible(e))return true;
+      }
+    }catch(e){}
+    return false;
+  }
+  function toast(txt,ms){
+    try{
+      var e=document.getElementById('ts'),ok=false;
+      if(e&&!e.classList.contains('pep-hide')){
+        var cs=getComputedStyle(e); ok=cs.display!=='none'&&cs.visibility!=='hidden';
+      }
+      if(ok){
+        e.textContent=txt; e.classList.add('on');
+        clearTimeout(window.__tfbT);
+        window.__tfbT=setTimeout(function(){try{e.classList.remove('on')}catch(e){}},ms||1500);
+        return;
+      }
+      var d=document.getElementById('__tfbTip');
+      if(!d){ d=document.createElement('div'); d.id='__tfbTip';
+        d.style.cssText='position:fixed;left:50%;bottom:64px;transform:translateX(-50%);z-index:2147483001;background:rgba(10,14,35,.92);color:#EDF1FF;font-size:13px;font-weight:600;padding:9px 18px;border-radius:100px;border:1px solid rgba(150,175,255,.28);pointer-events:none;transition:opacity .18s;opacity:0';
+        (document.body||document.documentElement).appendChild(d); }
+      d.textContent=txt; d.style.opacity='1';
+      clearTimeout(window.__tfbT2);
+      window.__tfbT2=setTimeout(function(){try{d.style.opacity='0'}catch(e){}},ms||1500);
+    }catch(e){}
+  }
+  function isNav(h){ return /workbuddy\.link\/p\//i.test(h)||/codebuddy\.work\/page\//i.test(h); }
+  var ACT=[[/做同款|同款/,'正在准备同款…'],[/预览效果|体验一下/,'正在打开…'],[/灵感社区|社区/,'正在打开社区…'],[/专家/,'正在召唤专家…'],[/干货|资料|领取|下载/,'正在准备…']];
+  function watch(){
+    var moved=false,mo=null;
+    try{ mo=new MutationObserver(function(){moved=true;});
+      mo.observe(document.documentElement,{childList:true,subtree:true,attributes:true,characterData:true}); }catch(e){ moved=true; }
+    setTimeout(function(){
+      try{ if(mo)mo.disconnect(); }catch(e){}
+      if(moved||LEFT||busyOn())return;
+      var n=Date.now(); if(n-lastTip<2500)return; lastTip=n;
+      toast('处理中，请稍后…',1600);
+    },600);
+  }
+  function isVisible(el){
+    try{
+      if(el.classList.contains('pep-hide'))return false;
+      var cs=getComputedStyle(el);
+      if(cs.display==='none'||cs.visibility==='hidden')return false;
+      var r=el.getBoundingClientRect();
+      return r.width>4&&r.height>4;
+    }catch(e){ return true; }
+  }
+  document.addEventListener('click',function(e){
+    if(e.button!=null&&e.button!==0)return;
+    var t=e.target; if(!t||t.nodeType!==1||!t.closest)return;
+    if(window.__WBOV&&t.closest('a.track-card[href]'))return;   /* WBOV：通道卡交给覆盖层，避免双 pill */
+    var a=t.closest('a[href]');
+    if(a){
+      var h=a.getAttribute('href')||'';
+      var tg=(a.getAttribute('target')||'').toLowerCase();
+      if(isNav(h)&&tg!=='_blank'){ mask('正在打开…'); return; }
+    }
+    var el=t.closest('button,[onclick],[role="button"],.ac-b,.sk-b2');
+    if(!el||!isVisible(el))return;
+    if(/复制/.test(el.textContent||''))return;
+    var txt=(el.textContent||'').replace(/\s+/g,'');
+    for(var i=0;i<ACT.length;i++){ if(ACT[i][0].test(txt)){ if(!busyOn())toast(ACT[i][1],1500); return; } }
+    if(!txt)return;
+    watch();
+  },true);
+})();
+</script>
+<script data-page-node-id="MjEgOhIiexE3d3HM8PZ0d5" data-pnid-children="D8ax4n2ZJnKdNFD9tlaUOU" data-patch="wbstat">
+/* WBSTAT_V3_2026_10_30 访问统计（隐形）：加载即报，离开前补报 */
+(function(){
+  if(window.__wbstat)return; window.__wbstat=3; var sent=false;
+  try{ if(/HeadlessChrome/i.test(navigator.userAgent||''))return; }catch(e){}
+  var URL_='https://career-evo-stats.app-tencent.workbuddy.host/hit?sharecode=CDAWPZ4LHU';
+  function rid(){ return Date.now().toString(36)+Math.random().toString(36).slice(2,10); }
+  function go(){
+    if(sent)return; sent=true;
+    try{
+      var m=/\/page\/([A-Za-z0-9_-]{10,40})\//.exec(location.pathname); if(!m)return;
+      var v='',w=0,s='',e=0;
+      try{ v=localStorage.getItem('wbst_v')||''; }catch(x){}
+      if(!v){ v=rid(); w=1; try{ localStorage.setItem('wbst_v',v); }catch(x){} }
+      try{
+        var now=Date.now(), o=JSON.parse(sessionStorage.getItem('wbst_s')||'null');
+        if(!o||now-o.t>1800000){ o={id:rid(),t:now}; e=1; }
+        o.t=now; s=o.id; sessionStorage.setItem('wbst_s',JSON.stringify(o));
+      }catch(x){ s=rid(); e=1; }
+      var body=JSON.stringify({p:m[1],n:(document.title||'').slice(0,80),v:v,s:s,e:e,w:w});
+      var ok=false;
+      try{ if(navigator.sendBeacon) ok=navigator.sendBeacon(URL_, new Blob([body],{type:'text/plain'})); }catch(x){}
+      if(!ok){ try{ fetch(URL_,{method:'POST',mode:'no-cors',keepalive:true,credentials:'omit',body:body}); }catch(x){} }
+    }catch(err){}
+  }
+  try{ window.addEventListener('pagehide',go); document.addEventListener('visibilitychange',function(){ if(document.visibilityState==='hidden')go(); }); }catch(e){}
+  function soon(){ setTimeout(go,300); }
+  if(document.readyState!=='loading') soon(); else document.addEventListener('DOMContentLoaded',soon);
+})();
+</script>
+</head>
+<body data-page-node-id="yPaoGEgSjSOCflcpn2QtWh">
+<script data-page-node-id="WBOVJS20261103" data-pnid-children="RIdypXnKnYX0NhuEOFJxTc">
+/* WBOV_2026_11_03v7.1 通道卡「本页内层打开」（移动端性能修复）：
+   v7.1：goBack 撤层修复——history.back() 遍历联合会话历史，会先退掉 iframe 的导航
+        entry（子帧退回 about:blank）而非本页 pushState；改为先 doClose 再延时退栈。
+   v7：同源直连桥取代 postMessage 中继——壳注入的 workbench 脚本硬编码
+       targetOrigin=https://www.workbuddy.link，孙页发往本页（静态域）的数据消息
+       被浏览器静默丢弃，中继在数据通道上不可行；本页与子 iframe 同源，
+       直接把 __SMART_PAGE__ 各命名空间桥接进子页（子页 inject.js 的 set trap
+       会自动 drain 已入队调用，后续调用经 nsProxy 直达本页真实实现）。
+   v3：候选硬超时 4.5s→10s 且到点先补验一次（冷缓存 1.2MB 产物加载可达 5-8s，v2 误杀）。
+   v2：CSP frame-src 'self' 不允许短链进覆盖层；about:blank 首个 load 不算数。
+   旧链路点通道卡 = 整壳重载（壳 no-store）或 iframe 套娃壳 + 产物 1MB+，移动端 3-8s，
+   返回再重载一次且越套越深（用户实测反馈"跳转/返回特别慢特别卡"）。
+   新链路：通道产物作为同源子 iframe 覆盖在本页之上 ——
+     去程只加载产物单文档（无壳、无嵌套），URL 优先 TRACKS.art（发布工作流同步），
+     其次 localStorage 登记的最近产物 URL（2h 内），最后发布短链兜底；
+     返程直接撤掉覆盖层，本页文档不动 —— 瞬时返回；
+     产物 404/超时自动降级短链；pushState 让微信/系统返回键优先关闭覆盖层；
+     子页数据：同源直连桥（见下），不走 postMessage。
+   仅移动端/微信内启用；桌面端维持原生新标签行为不变。
+   ⚠ 本脚本必须保持为 body 第一个 script：document 捕获要先于 body 里
+     MBFB / blank转换器 / HRFORCE2 等旧导航脚本注册，才能拦得住旧链路。 */
+(function(){
+  var UA = navigator.userAgent || '';
+  var MOB = /Android|iPhone|iPad|iPod|HarmonyOS|Windows Phone|webOS|BlackBerry|Mobile|MicroMessenger|miniProgram|miniapp/i.test(UA);
+  if(!MOB) return;
+  window.__WBOV = 1;
+
+  var ov = null, ifr = null, pill = null, pushed = false, bridged = false;
+
+  function hidePill(){ try{ if(pill && pill.parentNode) pill.parentNode.removeChild(pill) }catch(e){} }
+  function doClose(){
+    if(!ov) return;
+    var o = ov; ov = null; ifr = null; pill = null; bridged = false;
+    try{ document.body.removeChild(o) }catch(e){}
+    try{ document.documentElement.style.overflow = '' }catch(e){}
+  }
+  window.__WBOV_CLOSE__ = function(){
+    if(!ov) return;
+    doClose();                                  /* v7.1：先直接撤层（不走联合历史）；iframe 移除即丢弃其 history 项 */
+    if(pushed){ pushed = false;
+      setTimeout(function(){ try{ history.back() }catch(e){} }, 80); }  /* 再退掉 pushState；popstate 幂等 */
+  };
+  window.addEventListener('popstate', function(){ if(ov) doClose(); });
+
+  /* v7 直连桥：本页与子 iframe 同源（同为产物静态域）。本页不再下传壳的
+     REQUEST_READY（v6 实测下传只会让壳往孙页注入硬编码 targetOrigin 的脚本，
+     数据消息全被静默丢弃，还引发消息风暴）。子页 loader 收不到握手不影响了：
+     本页把各命名空间的桥对象 set 进子页 __SMART_PAGE__，子页 inject.js 的
+     set trap 会存实现并 drain 已入队调用；之后子页调用经 nsProxy 直查
+     real（即桥）直达本页真实实现；本页实现内部 RPC 向本页 parent
+     （真壳，workbuddy.link）postMessage，origin 正确，数据链路天然通。 */
+  function wbBridgeNs(ns){
+    return new Proxy({}, {
+      get: function(_, m){
+        if(typeof m !== 'string') return undefined;
+        if(m === 'then' || m === 'toJSON' || m === 'valueOf' || m === 'toString') return undefined;
+        return function(){
+          var args = Array.prototype.slice.call(arguments);
+          try{
+            var t = window.__SMART_PAGE__[ns];
+            if(t && typeof t[m] === 'function') return t[m].apply(t, args);
+          }catch(e){}
+          return Promise.reject(new Error('WBOV bridge: ' + ns + '.' + m + ' 不可用'));
+        };
+      }
+    });
+  }
+  function bridgeChild(){
+    if(!ifr || !ov || bridged) return;
+    try{
+      var w = ifr.contentWindow;
+      if(!w || !w.__SMART_PAGE__) return;
+      var n = 0;
+      ['workbench','database','dm','presentation'].forEach(function(ns){
+        try{ w.__SMART_PAGE__[ns] = wbBridgeNs(ns); n++ }catch(e){}
+      });
+      if(n) bridged = true;
+    }catch(e){}
+  }
+  function wbRetry(){
+    [500, 1500, 3000].forEach(function(ms){
+      setTimeout(function(){ if(ov && ifr) bridgeChild() }, ms);
+    });
+  }
+
+  /* v2：CSP frame-src 'self' 只允许同源产物 URL 进覆盖层（短链 iframe 会被静默拦截），
+     改为候选链：TRACKS.art → localStorage 登记URL → 都没有/都失败 → 撤层走老式顶层导航。
+     about:blank 的首个 load 事件不算数（v1 误判提前兜底的根因）。 */
+  function legacyNav(u){
+    try{
+      var a = document.createElement('a');
+      a.href = u; a.target = '_top'; a.rel = 'noopener';
+      a.style.cssText = 'position:fixed;left:0;top:0;width:1px;height:1px;opacity:0';
+      document.body.appendChild(a); a.click();
+      setTimeout(function(){ try{ if(a.parentNode) a.parentNode.removeChild(a) }catch(e){} }, 1500);
+    }catch(e){}
+    setTimeout(function(){ try{ location.href = u }catch(e){} }, 400);
+  }
+
+  function open(cands, short){
+    if(ov) return;
+    cands = (cands || []).filter(Boolean);
+    if(!cands.length){ legacyNav(short); return; }   /* 没有产物 URL：不套覆盖层，走顶层导航 */
+    try{ document.documentElement.style.overflow = 'hidden' }catch(e){}
+    ov = document.createElement('div');
+    ov.id = 'wb-ov';
+    ov.style.cssText = 'position:fixed;left:0;top:0;right:0;bottom:0;z-index:2147483600;background:#F7F8FA;';
+    ifr = document.createElement('iframe');
+    ifr.style.cssText = 'position:absolute;left:0;top:0;width:100%;height:100%;border:0;background:#F7F8FA;';
+    pill = document.createElement('div');
+    pill.style.cssText = 'position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:3;background:rgba(10,14,35,.92);color:#EDF1FF;font-size:14px;font-weight:700;padding:10px 20px;border-radius:100px;border:1px solid rgba(150,175,255,.28)';
+    pill.textContent = '正在打开…';
+    ov.appendChild(ifr); ov.appendChild(pill);
+    document.body.appendChild(ov);
+
+    var ok = false, timer = null;
+    function verify(){                     /* 同源可读：产物页有多个 script；CDN 404 页没有 */
+      try{
+        var d = ifr.contentDocument;
+        return !!(d && d.querySelectorAll && d.querySelectorAll('script').length >= 2);
+      }catch(e){ return false }
+    }
+    function next(){
+      if(ok || !ov) return;
+      clearTimeout(timer);
+      if(cands.length){
+        bridged = false;                   /* 新候选 = 新文档，桥待 load 后重建 */
+        try{ ifr.src = cands.shift() }catch(e){}
+        /* v3：冷缓存加载 1.2MB 产物可达 5-8s，硬超时放宽到 10s；
+           到点先补验一次（load 事件可能刚到），404 则 load 事件会快速失败换下一个 */
+        timer = setTimeout(function(){ if(verify()){ ok = true; hidePill(); bridgeChild(); wbRetry(); return } next() }, 10000);
+        return;
+      }
+      doClose();                           /* 候选耗尽：撤层走老式导航（短链 iframe 会被 CSP 拦） */
+      legacyNav(short);
+    }
+    ifr.addEventListener('load', function(){
+      setTimeout(function(){
+        if(ok || !ov) return;
+        try{ if(ifr.contentWindow.location.href === 'about:blank') return }catch(e){}
+        if(verify()){ ok = true; clearTimeout(timer); hidePill(); bridgeChild(); wbRetry(); return; }
+        next();                            /* 载入完成但校验不过（404 等）→ 快速换下一个 */
+      }, 260);
+    });
+    try{ history.pushState({ wbov: 1 }, '', location.href); pushed = true }catch(e){}
+    next();
+  }
+
+  document.addEventListener('click', function(e){
+    try{
+      if(e.button != null && e.button !== 0) return;
+      var t = e.target;
+      if(!t || !t.closest) return;
+      var el = t.closest('a.track-card[href]');
+      if(!el) return;                       /* 只管通道卡；工具卡/杂项卡/普通链接不动 */
+      var href = el.getAttribute('href') || '';
+      var nid = (/workbuddy\.link\/p\/([A-Za-z0-9_-]+)/.exec(href) || [])[1]
+             || (/workbuddy-space-static\.codebuddy\.work\/page\/([A-Za-z0-9_-]+)\//.exec(href) || [])[1];
+      if(!nid) return;   /* 本地复刻：相对路径卡片不拦截，交浏览器原生导航 */
+      e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation();
+      var short = 'https://workbuddy.link/p/' + nid;
+      var cands = [];
+      try{ var t = (window.WB_TRACK_ART && window.WB_TRACK_ART[nid]) || ''; if(t) cands.push(t) }catch(e){}
+      try{
+        var v = JSON.parse(localStorage.getItem('WB_ART_' + nid) || 'null');
+        if(v && v.u && (Date.now() - (v.t || 0) < 7200000) && cands[0] !== v.u) cands.push(v.u);
+      }catch(e){}
+      open(cands, short);
+    }catch(err){}
+  }, true);
+})();
+</script>
+
+<div data-page-node-id="Dkb2DEACNO5DFD3rPW5sOg" aria-hidden="true" class="noise"></div>
+<div data-page-node-id="P0EfGaGB0v3vY7PNyrLL7m" class="dltop" id="dltop" onclick="copyTop()" role="note">
+  <div data-page-node-id="RDnxLQyOCyQTPQbaoac5C2" class="dltop-txt"><!--pnid:aQI3Iah4i4PYMFNrijwY7k-->完整功能，欢迎移步（WorkBuddy.cn）下载电脑客户端体验。</div>
+  <button data-page-node-id="f3yRekLafIPL3wlSPPQh14" class="dltop-cp" id="dltop-cp" onclick="event.stopPropagation();copyTop()" type="button"><!--pnid:ZHwjUGlZEQQbRDW9rgbF7y-->复制网址</button>
+</div>
+<div data-page-node-id="TQE9iGvcGqLtDkZaKu95ZG" class="dltop-tip" id="dltop-tip" style="display:none"></div>
+
+
+<header data-page-node-id="PwaBHIDaJ3W0n2xdYBk48z" class="site-header">
+  <div data-page-node-id="ZGaQZMEgmgDqjd1nvk0HPL" class="logo"><!--pnid:jfPPjwmgj59cSbYljRZ04u-->人类职业进化计划丨<span data-page-node-id="4klAJZ8rGqpjvVln8Jpc2X"><!--pnid:4w9FjcR5eWhKk0GNu1vJdV-->一键生成你的专属应用</span></div>
+</header>
+
+<div data-page-node-id="cTPAJBG3mx9Exdzz09b19M" class="hero-wrap">
+  <div data-page-node-id="qDxLmfOGTK9rY4plXXBzdg" aria-hidden="true" class="hero-bg">
+    <video data-page-node-id="njJcglRa1P8WoaIbWwUazl" loop muted playsinline poster="assets/banner-evolution.jpg" preload="none" src="assets/banner-evolution.mp4"></video>
+  </div>
+<section data-page-node-id="45XChyRhu2TcTBvvJbrQcu" class="hero">
+  <div data-page-node-id="zejhm8PKLSA3VVPJeoj6RS" class="hero-left">
+        <h1 data-page-node-id="a8jhnn26H9UNFGbln4vpCh"><!--pnid:sygxrQo6shMsdhGDQDBlYw-->本事放大，职业进化</h1>
+    <p data-page-node-id="tQy9ZgcNAZxMgdSfMfBYSW" class="hero-desc"><!--pnid:0dI0FE5CgvdzeNRFvb0Ai9-->
+      欢迎加入人类职业进化计划！<br data-page-node-id="0Jyl58jnYUXAHeTEpbKKxG"><!--pnid:yXaWC14bXCKcmuopd89BiN-->
+      这里收录了适配不同专业职能人群的实战方案与专家资源，<br data-page-node-id="U2iRXNAeb882fAaABBW2Mk"><!--pnid:WCwuCEPNTeSmzEuui6uq1k-->
+      让 AI 帮你承接重复琐碎的工作，把时间留给高价值思考与创造。
+    </p>
+  </div>
+</section>
+</div>
+
+<div data-page-node-id="6ift43S1CqUjQfmsUu2BAw" class="section" id="tracks-section">
+  <div data-page-node-id="IeWZbscD9VQv6HvmqLXo2y" class="search-wrap">
+    <p data-page-node-id="ZUrqRSx0RzzNI3Pm5Tmioo" class="search-intro"><!--pnid:cCA9bX3TOE8OD3v93TOjTu-->想给自己的专业职能搭建一个应用工具，但不知道怎么操作？不如试试<b data-page-node-id="1bwM9bXfWt40Gy4JjfSGEV"><!--pnid:b1Gk2eBjHm66sv0cfqpIP3-->「做同款」</b><!--pnid:FkkYVXS750GclD1YJirhvJ-->，直接下令 <b data-page-node-id="Jv8psTrnIeQsPPVyFnJ04E"><!--pnid:phXOUFKG8ueXyZLUhISlKq-->WorkBuddy</b><!--pnid:Pq4AKW9v8Ws0GgKONxpot0-->，一键复刻。</p>
+    <div data-page-node-id="ChO5l9RP6EiePycMJwm1As" class="search-box">
+      <svg data-page-node-id="2z2BE8PI4K8JM6kv9rcpCo" aria-hidden="true" class="search-icon" fill="none" viewBox="0 0 24 24">
+        <circle data-page-node-id="gnLWedKQfAB1ob2e6UYzq8" cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/>
+        <path data-page-node-id="MFwDJ8HE0G6jkyYGXxarWy" d="M20 20L16.65 16.65" stroke="currentColor" stroke-linecap="round" stroke-width="2"/>
+      </svg>
+      <input data-page-node-id="VFx1jodFgyipmckGVGTTkE" autocomplete="off" class="search-input" id="search-input" placeholder="搜索 Skill 名称、专业领域、职能组织或其他关键词..." type="text">
+      <button data-page-node-id="3mo7OPJ2hvKTPdgH97LISs" aria-label="清空" class="search-clear" id="search-clear"><!--pnid:RCJawsh5b4rUx1bqTId8Q3-->✕</button>
+    </div>
+    <div data-page-node-id="dJney4vVGMqPQR5Li3rcYZ" class="search-hint" id="search-hint"></div>
+  </div>
+  <div data-page-node-id="duNfgpyW1tqaqt0pW90Hxh" class="section-head">
+      <h2 data-page-node-id="BNgKFNaqr8IJTeeziwx0fI"><!--pnid:TWh6C3ni7tgpfObBu2R49v-->专业职能入口（持续更新ing）</h2>
+      <p data-page-node-id="ugkImpOZCu34bwwlLuGtV7"><!--pnid:3x3FC7UOs86p0tKsUekLlG-->选择你感兴趣的专业职能，一键生成同款能力模型</p>
+  </div>
+  <div data-page-node-id="73YT17A9pPWGhL7p8mAB0i" class="track-grid" id="track-grid" role="list"></div>
+  <div data-page-node-id="nJJayAD1tXLIsnZEwJaiX6" class="search-empty" id="search-empty">
+    <div data-page-node-id="Ws3kuklgHrN0z8XcMiSGQa" class="search-empty-icon"><!--pnid:oVJrCxnhmmFTGExIF2shYO-->🔍</div>
+    <p data-page-node-id="dWAoQeizde3TDq6jfrAntF"><!--pnid:Ts9K6RD5FtImEHaaeVizLY-->没找到匹配的 Skill。<br data-page-node-id="HLThwULDlwvZz1sxbdkbDI"><!--pnid:vzK9XXKO0UcFhtocUTknGA-->换个关键词试试。</p>
+  </div>
+</div>
+
+<div data-page-node-id="Q2kfILXx1H9DPaVZHCdfa7" aria-modal="true" class="modal-overlay" id="track-overlay" role="dialog">
+  <div data-page-node-id="nYjTWR2DjZx1jvipnXiSev" class="track-panel">
+    <div data-page-node-id="ixEcvvVXcpsy3EJ3Z1hBr5" class="panel-head">
+      <div data-page-node-id="JPq25sO7ROktSPEF6sqH2R" class="panel-head-top">
+        <span data-page-node-id="HnUcAWAtN53lAcu4l9By8O" class="panel-title" id="panel-title"><!--pnid:4FGpk3wbi04BbtlGaGRfSi-->Skill 库</span>
+        <button data-page-node-id="WBwAk4wVNEnpgcrPhMxTeZ" aria-label="关闭" class="panel-close" onclick="closePanel()"><!--pnid:yGf2WuxqeSebC8U1M3RVdi-->✕</button>
+      </div>
+      <div data-page-node-id="s8YXEspcE5SH8aG5MomeFi" class="panel-sub" id="panel-sub"></div>
+      <div data-page-node-id="NajoGD76HIL4Xwp48lu1ga" class="panel-sort">
+        <button data-page-node-id="XplMiTKmjAEFlHIdIr5zIS" class="sort-btn active" data-sort="likes" onclick="setSort('likes')"><!--pnid:4d35uYmMRr7pAyMJPlMoTR-->🔥 按点赞</button>
+        <button data-page-node-id="NpbPSgFDUnG7kw2KLIKBqa" class="sort-btn" data-sort="new" onclick="setSort('new')"><!--pnid:pHCOtf001b0C8fkxIibxt0-->🆕 按最新</button>
+      </div>
+    </div>
+    <div data-page-node-id="ZmjHD22g1mJeGtJq85SLQ1" class="panel-body" id="panel-body">
+      <div data-page-node-id="HtLWymKDwBMfULNbhnHsr9" class="panel-loading"><!--pnid:zF2pezhkYBqW678l0vwyj4-->加载中...</div>
+    </div>
+  </div>
+</div>
+
+<div data-page-node-id="ONVDYVOXFvU6B4UHWJnE6D" aria-live="polite" class="toast" id="toast" role="status"></div>
+
+<div data-page-node-id="MPSAMEOV20261027" aria-modal="true" class="mp-same-ov" id="mp-same-ov" role="dialog">
+  <div data-page-node-id="zGg1k2wYkMvADnLdiL1S6W" class="mp-same-box">
+    <button data-page-node-id="N0UfEmDZ9LOxlOcLLWK5VQ" aria-label="关闭" class="mp-same-x" onclick="closeMpSame()" type="button"><!--pnid:GW5v3scZtJXUGvuKlLHlRh-->✕</button>
+    <div data-page-node-id="IACPvvEBAU9BCNf81AoUSE" class="mp-same-ti"><!--pnid:SYs2LuR19fKkUbjxwZq4la-->一键做同款</div>
+    <div data-page-node-id="OSR0YqIjicInqp9ZiAZYMb" class="mp-same-ds"><!--pnid:ypWQ3S6I6mCDAHlUy2rAYm-->提示词已自动复制。微信里点「打开小程序」直接开跑；跳不动就回 WorkBuddy 粘贴使用。</div>
+    <button data-page-node-id="bSwsMwFfE1bMp3W0gpageb" class="mp-same-cp" id="mp-same-cp" onclick="copyMpSame()" type="button"><!--pnid:mFPtdcayylrtoKSHgCil27-->📋 复制提示词</button>
+    <button data-page-node-id="YGpyKUHJvAgxrQwhN1J96G" class="mp-same-go" onclick="backToWorkBuddy()" type="button"><!--pnid:J0ZhlLCGCFGkrxOkAULZct-->回到 WorkBuddy 继续聊</button>
+  </div>
+</div>
+
+<footer data-page-node-id="db7Yd2lPjl9LOuBMl7Dt5B" class="page-footer">
+  <p data-page-node-id="cOXhNGQSFxsTCzKmADnSHE"><!--pnid:towc0bosQFw2ccxSuUydNg-->人类职业进化计划丨一键生成你的专属应用 &nbsp;|&nbsp; 所有 Skill 由社区共建，使用时请结合实际场景调整</p>
+</footer>
+
+<script data-page-node-id="IsPM21U7JmFVHxysskQ74m" data-pnid-children="mbbSAfMkja8Y3R1PFAZp9v">
+(function() {
+  'use strict';
+
+  var SKILL_DB = '59N41lNPnQuwki8Pkm3unA';
+  var COMMENT_DB = '6gW4ZGWCCI7qGz67dbQm4e';
+  var MISC_ID = 'mr9t4uv6w8x2y5z7';   /* 「更多职业通道」兜底赛道 */
+  var LIKE_KEY = 'pep_liked_ids';
+  var NICK_KEY = 'pep_nick';
+
+  var TRACKS = [
+    { id:'hr4k9mz2x1a8b3c5', name:'HR', label:'人力资源', icon:'👥', color:'#F0875F', bg:'rgba(240,135,95,.14)', desc:'招聘、绩效、培训、员工关系一站打通', img:'assets/hr-robot.jpg', page:'通道页/01-HR主页/HR主页.html', sta:'通道页/01-HR主页/HR主页.html', art:'通道页/01-HR主页/HR主页.html' },
+    { id:'xz2a6cd9e4f7g1h3', name:'行政', label:'行政', icon:'🗂️', color:'#57C0CE', bg:'rgba(87,192,206,.14)', desc:'会议纪要、流程规范、跨部门协作提效', img:'assets/admin-robot.jpg', page:'通道页/02-行政/行政的AI工具库.html', sta:'通道页/02-行政/行政的AI工具库.html', art:'通道页/02-行政/行政的AI工具库.html' },
+    { id:'fl3r8st1u9v2w4x6', name:'法律', label:'法律', icon:'⚖️', color:'#7C93FF', bg:'rgba(124,147,255,.14)', desc:'合同审核、合规检查、法律研究提速', img:'assets/lawyer-robot.jpg', page:'通道页/03-法律/法律人的AI工具库.html', sta:'通道页/03-法律/法律人的AI工具库.html', art:'通道页/03-法律/法律人的AI工具库.html' },
+    { id:'lc8i5jk0l6m2n7p4', name:'理财投资', label:'理财投资', icon:'📈', color:'#E9B95A', bg:'rgba(233,185,90,.14)', desc:'市场分析、资产配置、风险评估辅助', img:'assets/invest-robot.jpg', page:'通道页/04-理财投资/理财投资者的AI工具库.html', sta:'通道页/04-理财投资/理财投资者的AI工具库.html', art:'通道页/04-理财投资/理财投资者的AI工具库.html' },
+    { id:'nc5j0kb7l3m1n9o2', name:'内容创作', label:'内容创作', icon:'✍️', color:'#AC8BF2', bg:'rgba(172,139,242,.14)', desc:'选题、文案、脚本、SEO，内容全链路', img:'assets/creator-robot.jpg', page:'通道页/05-内容创作/内容创作者的AI工具库.html', sta:'通道页/05-内容创作/内容创作者的AI工具库.html', art:'通道页/05-内容创作/内容创作者的AI工具库.html' },
+    { id:'cj3d8ef1g6h2i7j0', name:'创意设计', label:'创意设计', icon:'🎨', color:'#D478C4', bg:'rgba(212,120,196,.14)', desc:'创意提案、视觉描述、设计评审加速', img:'assets/designer-robot.jpg', page:'通道页/06-创意设计/创意设计师的AI工具库.html', sta:'通道页/06-创意设计/创意设计师的AI工具库.html', art:'通道页/06-创意设计/创意设计师的AI工具库.html' },
+    { id:'jy7k2m9x4q6a8b1c', name:'高校科研', label:'高校科研', icon:'🎓', color:'#5FD18C', bg:'rgba(95,209,140,.14)', img:'assets/teacher-robot.jpg', desc:'备课批改、学情数据、论文课题、学科建设', page:'通道页/07-高校科研/教研人群的AI工具库.html', sta:'通道页/07-高校科研/教研人群的AI工具库.html', art:'通道页/07-高校科研/教研人群的AI工具库.html' },
+    { id:'yx3n8p5r7t2u9w1e', name:'市场营销', label:'市场营销', icon:'📣', color:'#EE8A63', bg:'rgba(238,138,99,.14)', desc:'投放、内容种草、活动策划、线索复盘', img:'assets/sales-robot.jpg', page:'通道页/08-市场营销/市场营销人的AI工具库.html', sta:'通道页/08-市场营销/市场营销人的AI工具库.html', art:'通道页/08-市场营销/市场营销人的AI工具库.html' }
+  ];
+
+  /* WBOV_2026_11_03v4：通道产物直达 URL 表（重发通道页后必须跑 sync_hub_artifacts.py 同步更新）。
+     v4 修复键错配：同时以 data-tid 和 nodeId（从 page/sta 解析）双索引——
+     点击处理从卡片 href 解析的是 nodeId，v3 之前只按 t.id 索引导致永远查不到。 */
+  try{ window.WB_TRACK_ART = (function(){
+    var m = {};
+    TRACKS.forEach(function(t){
+      if(!t.art) return;
+      m[t.id] = t.art;
+      var n = (/workbuddy\.link\/p\/([A-Za-z0-9_-]+)/.exec(t.page || t.sta || '') || [])[1];
+      if(n) m[n] = t.art;
+    });
+    return m;
+  })() }catch(e){}
+
+  var allSkills = [];
+  var allComments = [];
+  var dataLoaded = false;
+  var commentsLoaded = false;
+  var currentTrack = null;
+  var currentSort = 'likes';
+  var likedSet = {};
+
+  var db = null;
+  try { db = window.__SMART_PAGE__ && window.__SMART_PAGE__.database; } catch(e) {}
+
+  /* ===== HELPERS ===== */
+  function getText(row, f) {
+    var v = row && row[f];
+    if (v === null || v === undefined) return '';
+    if (typeof v === 'string') return v;
+    if (typeof v === 'number') return String(v);
+    if (typeof v === 'object') {
+      if (v.text !== undefined) return v.text || '';
+      if (v.link !== undefined) return v.link || '';
+    }
+    return String(v);
+  }
+  function getNum(row, f) {
+    var v = row && row[f];
+    if (typeof v === 'number') return v;
+    var n = parseFloat(v);
+    return isNaN(n) ? 0 : n;
+  }
+  function getUrl(row, f) {
+    var v = row && row[f];
+    if (!v) return '';
+    if (typeof v === 'string') return v;
+    if (typeof v === 'object') return v.link || v.text || '';
+    return '';
+  }
+  function getRid(row) {
+    return row && (row.recordId || row.record_id || row.id || row._id || '');
+  }
+  function esc(s) {
+    return String(s === null || s === undefined ? '' : s)
+      .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+      .replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+  }
+  /* jsStr 只用于 onclick 里拼 JS 字面量：JSON.stringify 出来的双引号会把 HTML 属性提前截断，
+   导致按钮点了根本不执行。这里额外做 HTML 属性转义，浏览器解码后回到合法 JS 字符串。 */
+  function jsStr(s) { return JSON.stringify(String(s === null || s === undefined ? '' : s))
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+  function trackByName(n) {
+    for (var i=0;i<TRACKS.length;i++) if (TRACKS[i].name === n) return TRACKS[i];
+    return null;
+  }
+  function today() { return new Date().toISOString().slice(0,10); }
+  function debounce(fn, ms) { var t; return function(){ clearTimeout(t); t=setTimeout(fn,ms); }; }
+  function safeLS(fn, dflt) { try { return fn(); } catch(e) { return dflt; } }
+
+  function loadLiked() {
+    likedSet = safeLS(function() {
+      var raw = localStorage.getItem(LIKE_KEY);
+      return raw ? (JSON.parse(raw) || {}) : {};
+    }, {}) || {};
+  }
+  function saveLiked() {
+    safeLS(function() { localStorage.setItem(LIKE_KEY, JSON.stringify(likedSet)); });
+  }
+  function skillKey(row) {
+    return getRid(row) || (getText(row,'Skill名称') + '|' + getText(row,'提交者昵称'));
+  }
+
+  /* ===== TOAST ===== */
+  var toastTimer = null;
+  function showToast(msg, dur) {
+    var el = document.getElementById('toast');
+    el.textContent = msg; el.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ el.classList.remove('show'); }, dur || 2400);
+  }
+
+  /* ===== INIT ===== */
+  function init() {
+    loadLiked();
+    renderTrackGrid();
+    bindOverlayClose();
+    bindSearch();
+    loadSkills();
+    loadComments();
+  }
+
+  /* ===== SEARCH ===== */
+  var searchQ = '';
+
+  function bindSearch() {
+    var inp = document.getElementById('search-input');
+    var clr = document.getElementById('search-clear');
+    if (!inp) return;
+    inp.addEventListener('input', debounce(function() {
+      searchQ = (inp.value || '').trim().toLowerCase();
+      clr.classList.toggle('show', searchQ.length > 0);
+      applySearch();
+    }, 180));
+    inp.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') { inp.value = ''; searchQ = ''; clr.classList.remove('show'); applySearch(); }
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        var vis = document.querySelectorAll('.track-card:not(.hide)');
+        if (vis.length === 1) vis[0].click();
+      }
+    });
+    clr.addEventListener('click', function() {
+      inp.value = ''; searchQ = ''; clr.classList.remove('show'); applySearch(); inp.focus();
+    });
+  }
+
+  /* 一个赛道是否命中：赛道名/描述，或该赛道下任一 Skill 的名称/描述/Prompt/昵称 */
+  function trackMatches(t, q) {
+    if (!q) return { hit:true, skills:[] };
+    var base = (t.name + ' ' + t.label + ' ' + t.desc).toLowerCase();
+    var nameHit = base.indexOf(q) >= 0;
+    var hits = allSkills.filter(function(r) {
+      if (getText(r,'职业赛道') !== t.name) return false;
+      var blob = (getText(r,'Skill名称') + ' ' +
+                  getText(r,'Skill描述') + ' ' +
+                  getText(r,'关键词Prompt') + ' ' +
+                  getText(r,'提交者昵称')).toLowerCase();
+      return blob.indexOf(q) >= 0;
+    });
+    return { hit: nameHit || hits.length > 0, skills: hits };
+  }
+
+  function applySearch() {
+    var q = searchQ;
+    var hintEl = document.getElementById('search-hint');
+    var emptyEl = document.getElementById('search-empty');
+    var shown = 0, totalSkillHits = 0;
+
+    TRACKS.forEach(function(t) {
+      var card = document.querySelector('.track-card[data-tid="' + t.id + '"]');
+      if (!card) return;
+      var m = trackMatches(t, q);
+      card.classList.toggle('hide', !m.hit);
+      if (m.hit) shown++;
+      totalSkillHits += m.skills.length;
+
+      var hitEl = card.querySelector('.track-hit');
+      if (hitEl) hitEl.parentNode.removeChild(hitEl);
+      if (q && m.skills.length) {
+        var d = document.createElement('div');
+        d.className = 'track-hit';
+        var names = m.skills.slice(0,3).map(function(r){
+          return '<b>' + esc(getText(r,'Skill名称') || '未命名') + '</b>';
+        }).join('、');
+        d.innerHTML = '命中 ' + m.skills.length + ' 个：' + names +
+                      (m.skills.length > 3 ? ' 等' : '');
+        card.appendChild(d);
+      }
+    });
+
+    if (!q) {
+      hintEl.innerHTML = '';
+      emptyEl.classList.remove('show');
+      return;
+    }
+    emptyEl.classList.toggle('show', shown === 0);
+    hintEl.innerHTML = shown === 0
+      ? ''
+      : '找到 <b>' + shown + '</b> 个赛道' +
+        (totalSkillHits ? '、<b>' + totalSkillHits + '</b> 个 Skill' : '') +
+        ' 匹配「' + esc(q) + '」';
+  }
+
+  /* ===== LOAD SKILLS (full pagination) ===== */
+  function loadSkills(cursor, acc, guard) {
+    acc = acc || []; guard = guard || 0;
+    if (!db) { finishSkills(acc); return; }
+    if (guard > 100) { finishSkills(acc); return; }
+    try {
+      db.query({ databaseId: SKILL_DB, pageSize: 200, startCursor: cursor })
+        .then(function(r) {
+          var rows = r.results || [];
+          acc = acc.concat(rows);
+          var next = r.nextCursor;
+          if (r.hasMore && next && next !== cursor && rows.length) {
+            loadSkills(next, acc, guard + 1);
+          } else { finishSkills(acc); }
+        })
+        .catch(function(){ finishSkills(acc); });
+    } catch(e) { finishSkills(acc); }
+  }
+  function finishSkills(rows) {
+    allSkills = rows; dataLoaded = true;
+    applySearch();
+    if (currentTrack) renderPanel(currentTrack);
+  }
+
+  /* ===== LOAD COMMENTS (full pagination) ===== */
+  function loadComments(cursor, acc, guard) {
+    acc = acc || []; guard = guard || 0;
+    if (!db) { finishComments(acc); return; }
+    if (guard > 100) { finishComments(acc); return; }
+    try {
+      db.query({ databaseId: COMMENT_DB, pageSize: 200, startCursor: cursor })
+        .then(function(r) {
+          var rows = r.results || [];
+          acc = acc.concat(rows);
+          var next = r.nextCursor;
+          if (r.hasMore && next && next !== cursor && rows.length) {
+            loadComments(next, acc, guard + 1);
+          } else { finishComments(acc); }
+        })
+        .catch(function(){ finishComments(acc); });
+    } catch(e) { finishComments(acc); }
+  }
+  function finishComments(rows) {
+    allComments = rows; commentsLoaded = true;
+    if (currentTrack) renderPanel(currentTrack);
+  }
+
+  function commentsOf(sid) {
+    return allComments.filter(function(c){ return getText(c,'Skill标识') === sid; })
+      .sort(function(a,b){ return String(getText(b,'评论时间')).localeCompare(String(getText(a,'评论时间'))); });
+  }
+
+  /* ===== TRACK GRID ===== */
+  var POKER_IMG = 'assets/poker.jpg';
+  /* 中文按「、，；」切成小段，段内不换行 —— 避免「合规检 / 查」这种从半句劈开的断法 */
+  function nbSeg(s){
+    var parts=String(s==null?'':s).split(/([\u3001\uFF0C\uFF1B])/), out='', i;
+    for(i=0;i<parts.length;i+=2){
+      var seg=(parts[i]||'')+(parts[i+1]||'');
+      if(!seg) continue;
+      out+='<span class="nb">'+esc(seg)+'</span>';
+    }
+    return out||esc(s);
+  }
+  /* ===== 通道跳转兼容：安卓 / 鸿蒙 =====
+     iOS 端（WKWebView / 客户端）支持 target=_blank，点了交给系统浏览器接管 → 正常打开；
+     安卓 / 鸿蒙 WebView 默认 setSupportMultipleWindows=false，target=_blank 点击后没有
+     onCreateWindow 回调，表现为「点了完全没反应」（既不新开、也不跳当前页）。
+     兜底两条：① 非 iOS 移动端改用原生 target=_self 导航（一定能打开）；
+     ② 3D 翻牌（preserve-3d + backface-visibility）在部分 Chromium 内核上 hit-test 会落空
+        或偏移，点击没落到 <a> 上时按坐标重新定位卡片补跳。 */
+  var UA = navigator.userAgent || '';
+  var IS_IOS = /iP(hone|ad|od)/.test(UA) || (/Macintosh/.test(UA) && (navigator.maxTouchPoints || 0) > 1);
+  var NEW_TAB_OK = IS_IOS || !/Android|Harmony|Windows Phone|webOS|BlackBerry|Mobile/i.test(UA);
+  /* 页面是否运行在发布短链的 sandbox iframe 里：是→可走静态直链同标签导航；否（空间内直开/客户端顶层）→ 顶层导航静态直链会被平台安全限制拦截，必须回退短链 */
+  var IN_IFRAME = (function(){try{return window.self!==window.top}catch(e){return true}})();
+/* INPUB_2026_10_25：只在发布短链容器（祖先链含 workbuddy.link）里走静态直链；资料库预览/其它 iframe/顶层一律回退发布短链 */
+var IN_PUB=(function(){try{if(window.self===window.top)return false;var o=window.location.ancestorOrigins;if(o&&o.length){for(var i=0;i<o.length;i++){if(/workbuddy\.link/.test(o[i]))return true}}return /workbuddy\.link/.test(document.referrer||'')}catch(e){return false}})();
+  function cardAt(x, y) {
+    var cs = document.querySelectorAll('.track-card'), r, i;
+    for (i = 0; i < cs.length; i++) {
+      r = cs[i].getBoundingClientRect();
+      if (x >= r.left && x <= r.right && y >= r.top && y <= r.bottom) return cs[i];
+    }
+    return null;
+  }
+  function onGridClick(e) {
+    if (NEW_TAB_OK) return;                    /* PC / iOS：原生 <a target=_blank> 已生效，不插手 */
+    if (e.clientX == null) return;
+    var hit = (e.target && e.target.closest) ? e.target.closest('.track-card') : null;
+    var byPos = cardAt(e.clientX, e.clientY);  /* 3D hit-test 落空 / 偏移时按坐标兜底 */
+    if (!byPos) return;
+    if (hit && hit === byPos) return;          /* 命中正确：交给原生 target=_self 导航 */
+    var tid = byPos.getAttribute('data-tid'), t = null;
+    TRACKS.forEach(function(v){ if (v.id === tid) t = v; });
+    if (!t || !t.page) return;                 /* MISC 兜底卡无 page，走自己的面板 */
+    e.preventDefault();
+    location.href = (t.sta && IN_PUB) ? t.sta : t.page;
+  }
+  var __pgLeft = false;
+  try { window.addEventListener('pagehide', function(){ __pgLeft = true; }, {once:true}); } catch(e) {}
+  function navTo(u) {
+    try {
+      var a = document.createElement('a'); a.href = u; a.target = '_self'; a.rel = 'noopener';
+      a.style.display = 'none'; document.body.appendChild(a); a.click();
+      setTimeout(function(){ if (a.parentNode) a.parentNode.removeChild(a); }, 1000);
+    } catch(e) { try { location.href = u; } catch(e2) {} }
+  }
+  /* 按下反馈：立刻给视觉回应 + 「正在打开…」；滑动立刻撤销；1.2s 未离开再用原生 <a> 兜底一次 */
+  /* fb：是否允许 1.2s 后兜底导航。PC / iOS 走 target=_blank，点了当前页不动，
+     若也开兜底会在新标签打开的同时把当前页一起带走，所以只在降级 _self 时开。 */
+  function tapFeedback(card, page, fb) {
+    if (card.__tapCancel) return;
+    var lab = card.querySelector('.tc-tap-lab');
+    if (lab) lab.textContent = page ? '正在打开…' : '正在加载…';
+    card.classList.add('tapping');
+    clearTimeout(card.__tapT);
+    card.__tapT = setTimeout(function(){ card.classList.remove('tapping'); }, 2600);
+    if (page && fb && !window.__WBOV) {   /* WBOV：覆盖层模式下不起兜底导航定时器 */
+      clearTimeout(card.__navT);
+      card.__navT = setTimeout(function(){ if (!__pgLeft && !card.__tapCancel) navTo(page); }, 1200);
+    }
+  }
+  function cancelTap(card) {
+    card.__tapCancel = true;
+    card.classList.remove('tapping');
+    clearTimeout(card.__tapT); clearTimeout(card.__navT);
+    setTimeout(function(){ card.__tapCancel = false; }, 300);
+  }
+  function renderTrackGrid() {
+    var grid = document.getElementById('track-grid');
+    if (!grid.__jumpBound) { grid.__jumpBound = 1; grid.addEventListener('click', onGridClick); }
+    grid.innerHTML = '';
+    TRACKS.forEach(function(t) {
+      /* 有短链的通道卡用真 <a>：PC / iOS 走 target=_blank 原生新标签；安卓 / 鸿蒙 WebView 不开多窗口，降级 target=_self（NEW_TAB_OK） */
+      var card = document.createElement((t.page || t.sta) ? 'a' : 'div');
+      card.className = 'track-card';
+      if (t.sta && IN_PUB) {
+        /* 发布态 iframe 内：静态直链同标签导航（约 0.1s 到位，history 可回退） */
+        card.href = t.sta; card.target = '_self'; card.rel = 'noopener';
+      } else if (t.page) {
+        /* 顶层打开：静态直链顶层导航会被平台安全限制拦截，回退短链 */
+        card.href = t.page;
+        if (NEW_TAB_OK) { card.target = '_blank'; card.rel = 'noopener'; }
+        else { card.target = '_self'; }        /* 安卓 / 鸿蒙：新窗口不可用，改当前页原生导航 */
+      }
+      card.setAttribute('role','listitem');
+      card.setAttribute('tabindex','0');
+      card.setAttribute('data-tid', t.id);
+      card.style.setProperty('--track-color', t.color);
+      card.style.setProperty('--track-bg', t.bg);
+      card.innerHTML =
+        '<div class="tc-inner">' +
+          '<div class="tc-face tc-front">' +
+            '<span class="track-icon">' + t.icon + '</span>' +
+            '<div class="track-name">' + esc(t.label) + '</div>' +
+            '<div class="track-desc">' + nbSeg(t.desc) + '</div>' +
+          '</div>' +
+          '<div class="tc-face tc-back">' +
+            '<img class="tc-img" loading="lazy" src="' + (t.img || POKER_IMG) + '" alt="' + esc(t.label) + ' 角色牌">' +
+            '<span class="tc-go">点击进入 →</span>' +
+          '</div>' +
+        '</div>' +
+        '<div class="tc-tap"><span class="tc-tap-lab">正在打开…</span></div>';
+      /* 短链卡：<a target=_blank> 原生导航接管，不再用 JS location.href（内页/容器里会「跳转失败」）。
+         MISC 兜底卡无 page，保留点击打开面板；桌面 hover 翻牌由 CSS @media(hover:hover) 保留，不变。 */
+      if (!t.page) {
+        card.addEventListener('click', function(){ openTrack(t); });
+        card.addEventListener('keydown', function(e){
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openTrack(t); }
+        });
+      }
+      /* 全平台按下立刻反馈：跳转要等外层壳重启 + iframe 重载，白屏期间不给回应 = 以为没点上。 */
+      card.addEventListener('touchstart', function(){ tapFeedback(card, ((t.sta && IN_PUB) ? t.sta : t.page), (!NEW_TAB_OK || (!!t.sta && IN_PUB))); }, {passive:true});
+      card.addEventListener('mousedown', function(){ tapFeedback(card, ((t.sta && IN_PUB) ? t.sta : t.page), (!NEW_TAB_OK || (!!t.sta && IN_PUB))); });
+      card.addEventListener('touchmove', function(){ cancelTap(card); }, {passive:true});
+      card.addEventListener('touchcancel', function(){ cancelTap(card); });
+      grid.appendChild(card);
+    });
+  }
+
+  /* ===== HERO BOARD ===== */
+  function sortedByLikes(rows) {
+    return rows.slice().sort(function(a,b){
+      var d = getNum(b,'点赞数') - getNum(a,'点赞数');
+      if (d !== 0) return d;
+      return String(getText(b,'提交时间')).localeCompare(String(getText(a,'提交时间')));
+    });
+  }
+
+  /* ===== PANEL ===== */
+  function openTrack(t) {
+    currentTrack = t;
+    document.getElementById('panel-title').textContent = t.icon + ' ' + t.label;
+    document.getElementById('track-overlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+    renderPanel(t);
+  }
+  window.closePanel = function() {
+    document.getElementById('track-overlay').classList.remove('open');
+    document.body.style.overflow = '';
+  };
+  window.setSort = function(s) {
+    currentSort = s;
+    var bs = document.querySelectorAll('.sort-btn');
+    for (var i=0;i<bs.length;i++) bs[i].classList.toggle('active', bs[i].getAttribute('data-sort') === s);
+    if (currentTrack) renderPanel(currentTrack);
+  };
+
+  function renderPanel(t) {
+    var body = document.getElementById('panel-body');
+    if (!dataLoaded) { body.innerHTML = '<div class="panel-loading">🔄 加载中...</div>'; return; }
+    var rows = allSkills.filter(function(r){ return getText(r,'职业赛道') === t.name; });
+    var tot = 0; rows.forEach(function(r){ tot += getNum(r,'点赞数'); });
+
+    /* 带着搜索词进来时，面板内只展示命中的 Skill */
+    var filtered = rows, narrowed = false;
+    if (searchQ) {
+      var m = rows.filter(function(r) {
+        var blob = (getText(r,'Skill名称') + ' ' + getText(r,'Skill描述') + ' ' +
+                    getText(r,'关键词Prompt') + ' ' + getText(r,'提交者昵称')).toLowerCase();
+        return blob.indexOf(searchQ) >= 0;
+      });
+      if (m.length) { filtered = m; narrowed = true; }
+    }
+
+    document.getElementById('panel-sub').textContent = narrowed
+      ? ('匹配「' + searchQ + '」的 ' + filtered.length + ' 个 Skill（共 ' + rows.length + ' 个）')
+      : ('共 ' + rows.length + ' 个 Skill · ❤️ ' + tot + ' 次点赞');
+
+    if (!rows.length) {
+      var emptyTip = (t.id === MISC_ID)
+        ? '这条通道还在筹备中，<br>敬请期待。'
+        : '这条赛道还没有 Skill，<br>先看看别的赛道吧。';
+      body.innerHTML =
+        '<div class="panel-empty">' +
+          '<div class="panel-empty-icon">' + t.icon + '</div>' +
+          '<p>' + emptyTip + '</p>' +
+        '</div>';
+      return;
+    }
+    rows = filtered;
+    if (currentSort === 'likes') rows = sortedByLikes(rows);
+    else rows = rows.slice().sort(function(a,b){
+      return String(getText(b,'提交时间')).localeCompare(String(getText(a,'提交时间')));
+    });
+
+    var rankMap = {};
+    sortedByLikes(allSkills.filter(function(r){ return getText(r,'职业赛道') === t.name; }))
+      .forEach(function(r,i){ rankMap[skillKey(r)] = i + 1; });
+
+    var h = '';
+    rows.forEach(function(r) {
+      var sid = skillKey(r);
+      var rid = getRid(r);
+      var nm = getText(r,'Skill名称') || '未命名 Skill';
+      var desc = getText(r,'Skill描述');
+      var prompt = getText(r,'关键词Prompt');
+      var link = getUrl(r,'WorkBuddy Skill链接');
+      var nick = getText(r,'提交者昵称') || '匿名职场人';
+      var likes = getNum(r,'点赞数');
+      var liked = !!likedSet[sid];
+      var rank = rankMap[sid];
+      var cs = commentsOf(sid);
+
+      h += '<div class="skill-card" style="--track-color2:'+t.color+';--track-bg2:'+t.bg+'" data-sid="'+esc(sid)+'">' +
+        '<div class="skill-card-head">' +
+          '<div class="skill-name-wrap">' +
+            '<div class="skill-name">' + esc(nm) +
+              (rank && rank <= 3 ? '<span class="skill-rank-badge">赛道第 ' + rank + '</span>' : '') +
+            '</div>' +
+          '</div>' +
+          '<span class="skill-tag">' + t.icon + ' ' + esc(t.label) + '</span>' +
+        '</div>' +
+        (desc ? '<div class="skill-desc">' + esc(desc) + '</div>' : '') +
+        (prompt ?
+          '<div class="skill-prompt-box">' +
+            '<div class="skill-prompt-label">关键词 PROMPT</div>' +
+            '<div class="skill-prompt-text">' + esc(prompt) + '</div>' +
+          '</div>' : '') +
+        (link ?
+          '<div class="skill-link-row">' +
+            '<a class="skill-link" href="' + esc(link) + '" target="_blank" rel="noopener noreferrer">🔗 打开 WorkBuddy Skill</a>' +
+          '</div>' : '') +
+        '<div class="skill-actions">' +
+          (prompt
+            ? '<button class="btn-copy" onclick="copyPrompt(this,' + jsStr(prompt) + ')">📋 一键复制关键词</button>'
+            : (link
+                ? '<button class="btn-copy" onclick="copyPrompt(this,' + jsStr(link) + ')">🔗 复制 Skill 链接</button>'
+                : '')) +
+          '<button class="btn-dosame" onclick="doSame(' + jsStr(prompt) + ',' + jsStr(link) + ',' + jsStr(t.name) + ')">⚡ 一键做同款</button>' +
+        '</div>' +
+        '<div class="skill-social">' +
+          '<button class="btn-like' + (liked?' liked':'') + '" data-sid="'+esc(sid)+'" ' +
+            'onclick="toggleLike(this,' + jsStr(sid) + ',' + jsStr(rid) + ')">' +
+            '<span class="heart">' + (liked?'❤️':'🤍') + '</span><span class="n">' + likes + '</span>' +
+          '</button>' +
+          '<button class="btn-comment-toggle" onclick="toggleComments(this)">💬 评论 ' + (cs.length || '') + '</button>' +
+          '<span class="skill-submitter">由 ' + esc(nick) + ' 贡献</span>' +
+        '</div>' +
+        '<div class="comment-area">' +
+          '<div class="comment-list">' + renderCommentList(cs) + '</div>' +
+          '<div class="comment-form">' +
+            '<div class="comment-input-row">' +
+              '<input class="comment-nick" type="text" placeholder="你的昵称" maxlength="30" value="' + esc(savedNick()) + '">' +
+              '<textarea class="comment-input" placeholder="说说你用这个 Skill 的感受，写得好有机会上首页最佳评论" maxlength="300"></textarea>' +
+            '</div>' +
+            '<button class="comment-submit" onclick="submitComment(this,' + jsStr(sid) + ',' + jsStr(nm) + ',' + jsStr(t.name) + ')">发表评论</button>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
+    });
+    body.innerHTML = h;
+  }
+
+  function renderCommentList(cs) {
+    if (!commentsLoaded) return '<div class="comment-empty">评论加载中...</div>';
+    if (!cs.length) return '<div class="comment-empty">还没有评论，来抢沙发。</div>';
+    var h = '';
+    cs.forEach(function(c) {
+      h += '<div class="comment-item">' +
+        '<div class="comment-item-head">' +
+          '<span class="comment-author">' + esc(getText(c,'评论者') || '匿名职场人') + '</span>' +
+          '<span class="comment-time">' + esc(getText(c,'评论时间')) + '</span>' +
+        '</div>' +
+        '<div class="comment-text">' + esc(getText(c,'评论内容')) + '</div>' +
+      '</div>';
+    });
+    return h;
+  }
+
+  function savedNick() {
+    return safeLS(function(){ return localStorage.getItem(NICK_KEY) || ''; }, '') || '';
+  }
+
+  window.toggleComments = function(btn) {
+    var area = btn.parentNode.parentNode.querySelector('.comment-area');
+    if (area) area.classList.toggle('open');
+  };
+
+  /* ===== LIKE ===== */
+  window.toggleLike = function(btn, sid, rid) {
+    if (likedSet[sid]) { showToast('你已经点过赞了，换个 Skill 支持下？'); return; }
+    if (!db || !rid) { showToast('⚠️ 当前环境暂不支持点赞，请登录后重试'); return; }
+    var nEl = btn.querySelector('.n');
+    var hEl = btn.querySelector('.heart');
+    var cur = parseInt(nEl.textContent, 10) || 0;
+    btn.disabled = true;
+    try {
+      db.updateRecord({
+        databaseId: SKILL_DB, recordId: rid,
+        properties: { '点赞数': { number: cur + 1 } }
+      }).then(function() {
+        likedSet[sid] = 1; saveLiked();
+        nEl.textContent = cur + 1;
+        hEl.textContent = '❤️';
+        btn.classList.add('liked');
+        for (var i=0;i<allSkills.length;i++) {
+          if (skillKey(allSkills[i]) === sid) { allSkills[i]['点赞数'] = cur + 1; break; }
+        }
+        showToast('点赞成功，已计入榜单 ❤️');
+      }).catch(function(err) {
+        console.error('[db] like failed', err);
+        showToast('点赞失败，请稍后重试');
+      }).finally(function(){ btn.disabled = false; });
+    } catch(e) { btn.disabled = false; showToast('点赞失败，请刷新后重试'); }
+  };
+
+  /* ===== COMMENT SUBMIT ===== */
+  window.submitComment = function(btn, sid, skillName, trackName) {
+    var form = btn.parentNode;
+    var nickEl = form.querySelector('.comment-nick');
+    var textEl = form.querySelector('.comment-input');
+    var txt = (textEl.value || '').trim();
+    if (!txt) { showToast('评论内容不能为空'); textEl.focus(); return; }
+    if (!db) { showToast('⚠️ 当前环境暂不支持评论，请登录后重试'); return; }
+    var nick = (nickEl.value || '').trim() || '匿名职场人';
+    safeLS(function(){ localStorage.setItem(NICK_KEY, nick); });
+    btn.disabled = true; btn.textContent = '发送中...';
+    try {
+      db.addRecord({
+        databaseId: COMMENT_DB,
+        properties: {
+          'Skill标识': { text: sid },
+          'Skill名称': { text: skillName },
+          '职业赛道': { text: trackName },
+          '评论内容': { text: txt },
+          '评论者': { text: nick },
+          '评论时间': { date: today() },
+          '评论点赞': { number: 0 }
+        }
+      }).then(function() {
+        textEl.value = '';
+        showToast('评论已发布 💬');
+        commentsLoaded = false; allComments = [];
+        loadComments();
+      }).catch(function(err) {
+        console.error('[db] comment failed', err);
+        showToast('评论失败，请稍后重试');
+      }).finally(function(){ btn.disabled = false; btn.textContent = '发表评论'; });
+    } catch(e) { btn.disabled = false; btn.textContent = '发表评论'; showToast('评论失败，请刷新后重试'); }
+  };
+
+  /* ===== COPY / DO SAME ===== */
+  function doCopy(t) {
+    var el = document.createElement('textarea');
+    el.value = t; el.style.position='fixed'; el.style.opacity='0';
+    document.body.appendChild(el); el.select();
+    try { document.execCommand('copy'); } catch(e) {}
+    document.body.removeChild(el);
+  }
+  window.copyPrompt = function(btn, text) {
+    if (!text) { showToast('该 Skill 暂无可复制内容'); return; }
+    var label = btn.innerHTML;                       /* 记住原文案，复制链接时不会错回弹 */
+    var isLink = /^https?:\/\//i.test(String(text).trim());
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function(){ marked(btn, label, isLink); })
+        .catch(function(){ doCopy(text); marked(btn, label, isLink); });
+    } else { doCopy(text); marked(btn, label, isLink); }
+  };
+  function marked(btn, label, isLink) {
+    btn.classList.add('copied'); btn.textContent = '✓ 已复制！';
+    showToast(isLink ? '链接已复制，打开即可直接体验' : 'Prompt 已复制，粘贴到 AI 对话框即可用');
+    setTimeout(function(){ btn.classList.remove('copied'); btn.innerHTML = label; }, 2200);
+  }
+  /* ===== WBTASK_2026_11_02 一键做同款：workbuddy://task 深链唤起（与 8 个通道页同款机制） ===== */
+  /* 任务框不出现字面 \n：换行压成空格 */
+  function wbFlat(t) {
+    t = String(t == null ? '' : t).replace(/\r\n/g, '\n');
+    return t.replace(/\n+/g, ' ').replace(/ {2,}/g, ' ');
+  }
+  /* workbuddy://task 协议：action=start + promptContentBlocks（客户端收到后回首页、写入输入框草稿态） */
+  function wbTaskLink(text) {
+    try {
+      var q = new URLSearchParams();
+      q.set('action', 'start');
+      q.set('promptContentBlocks', JSON.stringify([{ type: 'text', text: String(text) }]));
+      return 'workbuddy://task?' + q.toString();
+    } catch (e) { return 'workbuddy://home'; }
+  }
+  /* 顶层空白页里执行的唤起逻辑（会被 toString 后写进弹出的空白页）：
+     被接住就关闭；4.5s 没被接走则给手动出口（提示词已复制 + 打开网页版）。 */
+  function wbJumpBody(scheme) {
+    try {
+      var taken = false, mark = function () { taken = true; try { window.__wbTaken = true } catch (e) {} };
+      window.addEventListener('visibilitychange', mark);
+      window.addEventListener('blur', mark);
+      document.title = '正在唤起 WorkBuddy';
+      if (scheme) setTimeout(function () { location.href = scheme }, 80);
+      setTimeout(function () {
+        if (taken) return;
+        try {
+          document.body.innerHTML = '<div style="font:15px/1.8 -apple-system,PingFang SC,sans-serif;padding:40px;'
+            + 'text-align:center;color:#8891a8">提示词已复制，进入网页版后按 ⌘V / Ctrl+V 粘贴'
+            + '<br><span style="font-size:13px;opacity:.7">正在打开 WorkBuddy 网页版…</span></div>';
+        } catch (e) {}
+        setTimeout(function () { location.href = 'https://workbuddy.cn/app' }, 900);
+      }, 4500);
+    } catch (e) {}
+  }
+  /* 唤起深链：发布态页面装在跨域 sandbox iframe 里（没有 allow-top-navigation），
+     直接把当前框架导航到 workbuddy:// 会被拦掉；sandbox 给了 allow-popups，
+     所以弹一个顶层空白页执行协议，由系统协议处理器交给 WorkBuddy 客户端。 */
+  function fireWbScheme(url) {
+    var inFrame = true;
+    try { inFrame = window.self !== window.top; } catch (e) { inFrame = true; }
+    if (!inFrame) { try { location.href = url; return true; } catch (e) {} }
+    try {
+      var w = window.open('', '_blank');
+      if (w) {
+        w.document.open();
+        w.document.write('<!DOCTYPE html><html><head><meta charset="utf-8"><title>正在唤起 WorkBuddy</title>'
+          + '</head><body style="margin:0"><script>(' + wbJumpBody.toString() + ')(' + JSON.stringify(url) + ');<\/script></body></html>');
+        w.document.close();
+        setTimeout(function () { try { if (w.__wbTaken) w.close() } catch (e) {} }, 5200);
+        setTimeout(function () { try { w.close() } catch (e) {} }, 9000);
+        return true;
+      }
+    } catch (e) {}
+    try { if (window.open(url, '_blank')) return true; } catch (e) {}
+    return false;
+  }
+  function fireWbTask(text) { return fireWbScheme(wbTaskLink(text)); }
+  window.doSame = function(prompt, link, track) {
+    /* track 供微信内 MPSAME 分流用（专家映射按通道选） */
+    var isMob = /Android|iPhone|iPad|iPod|HarmonyOS|Windows Phone|webOS|BlackBerry|Mobile/i.test(navigator.userAgent || '');
+    /* 桌面端：复制提示词 + 深链直填任务框（微信内会被 MPSAME 脚本接管，不会走到这里） */
+    if (!isMob && prompt) {
+      var body = wbFlat(prompt);
+      try { doCopy(body); } catch (e) {}
+      fireWbTask(body);
+      showToast('⚡ 已唤起 WorkBuddy，提示词已填入任务框，确认后即可发送', 3600);
+      return;
+    }
+    /* 手机非微信浏览器：维持原行为（复制 + 打开原版 Skill） */
+    if (link) {
+      if (prompt) {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(prompt).catch(function(){ doCopy(prompt); });
+        } else { doCopy(prompt); }
+      }
+      window.open(link, '_blank', 'noopener');
+      showToast(prompt ? '已打开原版 Skill，Prompt 也复制好了 ⚡' : '已打开原版 Skill，点「做同款」即可复用 ⚡', 3200);
+      return;
+    }
+    if (!prompt) { showToast('暂无内容，无法做同款'); return; }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(prompt).catch(function(){ doCopy(prompt); });
+    } else { doCopy(prompt); }
+    showToast('✓ Prompt 已复制，打开 WorkBuddy 粘贴即可做同款！', 3200);
+  };
+
+  function bindOverlayClose() {
+    document.getElementById('track-overlay').addEventListener('click', function(e){
+      if (e.target === this) closePanel();
+    });
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape') { closePanel(); }
+    });
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+<script data-page-node-id="U3WnNziTtoAHaWKPhUMZvg" data-pnid-children="pmbyWKm4JzOQFmpuiN90CR">/* SPEEDUP_2026_10_27 */(function(){var v=document.querySelector("video");if(!v)return;var started=false;function netOK(){try{var c=navigator.connection||navigator.webkitConnection||null;if(c&&c.saveData)return false;var t=c&&c.effectiveType;if(t&&/^(slow-2g|2g)$/.test(t))return false}catch(e){}return true}function p(){if(started)return;started=true;if(!netOK())return;try{var r=v.play();if(r&&r.catch)r.catch(function(){})}catch(e){}}function later(){try{if(window.requestIdleCallback)requestIdleCallback(function(){setTimeout(p,3500)},{timeout:6000});else setTimeout(p,3500)}catch(e){setTimeout(p,3500)}}if(document.readyState==="complete")later();else window.addEventListener("load",later);["touchstart","pointerdown"].forEach(function(e){document.addEventListener(e,function h(){p();document.removeEventListener(e,h)},{once:true,passive:true})})})();</script>
+<script data-page-node-id="byY05B91lG9hkW8GzSIks0" data-pnid-children="x7JuFCsjCcLqSHIBOGlJjQ">
+(function () {
+  var UA = navigator.userAgent || '';
+  var IS_MP = /miniprogram|miniapp(?!enable)/i.test(UA) ||
+              (typeof window.__wxjs_environment === 'string' && window.__wxjs_environment === 'miniprogram');
+  var IS_WX = /MicroMessenger/i.test(UA);
+  if (!IS_MP && !IS_WX) return;
+  /* window.open 在这两个环境里弹不出新窗口：改当前页跳 */
+  var _open = window.open;
+  window.open = function (u) {
+    if (typeof u === 'string' && /^https?:/i.test(u)) { location.href = u; return null; }
+    return _open ? _open.apply(window, arguments) : null;
+  };
+  /* a[target=_blank] 同样被忽略 */
+  document.addEventListener('click', function (e) {
+    var t = e.target, a = null;
+    while (t && t !== document) { if (t.tagName === 'A') { a = t; break } t = t.parentNode; }
+    if (!a || a.target !== '_blank') return;
+    var h = a.getAttribute('href');
+    if (!h || !/^https?:/i.test(h)) return;
+    e.preventDefault();
+    location.href = h;
+  }, true);
+})();
+</script>
+<script data-page-node-id="kkTJGW6kMAKkgdcZvFC421" data-pnid-children="3QGeTr0nBBaztBDWOKVnR5">
+/* 移动端跳转兜底 2026-10-25（MBFB_2026_10_25）：
+   手机容器（客户端 webview / 协作链接顶层打开 / 企业微信）里 window.open 弹不出新窗口、
+   a[target=_blank] 会被忽略，点击只剩「正在打开…」卡住。
+   做法：静态直链仍是首发（速度不变），1.2s 后若当前页没被换掉，自动改跳发布短链。
+   只作用于移动 UA，桌面端完全不介入。 */
+(function(){
+  var UA=navigator.userAgent||'';
+  if(!/Android|iPhone|iPad|iPod|HarmonyOS|Windows Phone|webOS|BlackBerry|Mobile/i.test(UA)) return;
+  function s2s(u){var m=/workbuddy-space-static\.codebuddy\.work\/page\/([A-Za-z0-9_-]+)\//.exec(u||'');return m?'https://workbuddy.link/p/'+m[1]:u}
+  function go(u){
+    if(!u) return;
+    var t=s2s(u);
+    var first=(typeof IN_PUB!=='undefined'&&IN_PUB&&/workbuddy-space-static\./.test(u))?u:t;
+    try{location.href=first}catch(e){}
+    setTimeout(function(){ try{location.href=t}catch(e){} },1200);
+  }
+  document.addEventListener('click',function(e){
+    var t=e.target;
+    while(t&&t!==document&&t.tagName!=='A') t=t.parentNode;
+    if(!t||t.tagName!=='A'||t.hasAttribute('download')) return;
+    var h=t.getAttribute('href')||'';
+    if(!/^https?:\/\//i.test(h)) return;
+    if(e.defaultPrevented) return;          /* 已有的小程序/顶层拦截已处理过，不抢 */
+    e.preventDefault(); e.stopPropagation();
+    go(h);
+  },true);
+  var _open=window.open;
+  window.open=function(u){
+    if(typeof u==='string'&&/^https?:\/\//i.test(u)){ go(u); return null }
+    return _open?_open.apply(window,arguments):null;
+  };
+})();
+</script>
+
+<script data-page-node-id="sPQKkidl8vEg7kRt6hnzv2" data-pnid-children="usQjDliGkjtqdYegsDT4hQ">
+/* MOBGUIDE_2026_10_26 手机端下载客户端指引：顶部条 + 灵感社区入口弹层（复制的都是 WorkBuddy.cn） */
+(function(){
+  var WBD='workbuddy.cn';
+  var ua=navigator.userAgent||'';
+  var IS_MOB=/iPhone|iPad|iPod|Android|Mobile|MicroMessenger|miniProgram/i.test(ua);
+
+  function doCopy(url,onDone,onFail){
+    var settled=false,guard=null;
+    var done=function(){ if(settled)return; settled=true; if(guard)clearTimeout(guard); onDone() };
+    var fb=function(){
+      if(settled)return; settled=true; if(guard)clearTimeout(guard);
+      try{
+        var ta=document.createElement('textarea');
+        ta.value=url; ta.style.position='fixed'; ta.style.opacity='0';
+        document.body.appendChild(ta); ta.focus(); ta.select();
+        var ok=document.execCommand('copy'); document.body.removeChild(ta);
+        if(ok){ settled=false; done(); return }
+      }catch(e){}
+      onFail(url);
+    };
+    try{
+      if(navigator.clipboard&&navigator.clipboard.writeText){
+        navigator.clipboard.writeText(url).then(done,fb);
+        guard=setTimeout(fb,800);   /* 剪贴板权限被拒时 Promise 会一直悬着 */
+        return;
+      }
+    }catch(e){}
+    fb();
+  }
+  function toastSafe(t,d){ try{ if(typeof toast==='function') toast(t,d||2800) }catch(e){} }
+
+  var bar=document.getElementById('dltop');
+  if(bar){
+    if(!IS_MOB){ bar.style.display='none' }
+    else{ try{ if(sessionStorage.getItem('dltopOff')==='1') bar.style.display='none' }catch(e){} }
+  }
+  window.copyTop=function(){
+    var btn=document.getElementById('dltop-cp'), tip=document.getElementById('dltop-tip');
+    doCopy(WBD,function(){
+      if(btn){ btn.textContent='已复制'; btn.classList.add('ok');
+        setTimeout(function(){ btn.textContent='复制网址'; btn.classList.remove('ok') },2600) }
+      toastSafe('已复制 WorkBuddy.cn，去浏览器粘贴打开');
+    },function(url){
+      if(tip){ tip.textContent='复制失败，请长按选中下面的网址：'+url; tip.style.display='block';
+        setTimeout(function(){ tip.style.display='none' },8000) }
+    });
+  };
+
+  window.showDlGuide=function(mode){
+    var ov=document.getElementById('dl-ov'); if(!ov) return;
+    var tip=document.getElementById('dl-tip'), cp=document.getElementById('dl-copy');
+    if(tip){ tip.textContent=(mode==='mp')?'小程序内不支持跳转，复制网址后到浏览器打开':'';
+             tip.style.display=(mode==='mp')?'block':'none' }
+    if(cp){ cp.textContent='📋 复制网址'; cp.classList.remove('ok') }
+    ov.classList.add('on');
+  };
+  window.closeDl=function(){ var ov=document.getElementById('dl-ov'); if(ov) ov.classList.remove('on') };
+  window.copyDl=function(){
+    var b=document.getElementById('dl-copy'), tip=document.getElementById('dl-tip');
+    doCopy(WBD,function(){
+      if(b){ b.textContent='✓ 已复制，去浏览器粘贴'; b.classList.add('ok');
+        setTimeout(function(){ b.textContent='📋 复制网址'; b.classList.remove('ok') },2600) }
+    },function(url){
+      if(tip){ tip.textContent='复制失败，请长按选中下面的网址：'+url; tip.style.display='block' }
+      toastSafe('复制失败，请手动记下：workbuddy.cn',3200);
+    });
+  };
+})();
+</script>
+
+<script data-page-node-id="MPSAMEJS20261027" data-pnid-children="eZciMD70BE8Bvr84YHq9eh">
+/* MPSAME_2026_11_03v4 微信内「一键做同款」：
+   点按钮弹窗同步先出（提示词可见 + 自动复制），不再出现「正在打开…」干等中间态。
+   微信 H5 —— 后台生成 URL Link，就绪后在弹窗点亮「打开小程序」锚点按钮（用户手势点击
+   才导航，只动 iframe 不动 top；自动导航 URL Link 会停在微信中转页，真机已实测卡死）。
+   小程序 web-view —— iframe 里 wx.miniProgram 会静默入队永不回调，不再调用；只发
+   WB_MP_NAVIGATE 消息给发布壳（壳支持后自动跳），弹窗即兜底。
+   workbuddy:// 自定义协议在微信内核内被屏蔽（此前已实测），微信内不再尝试。
+   桌面端与非微信端口行为完全不变（桌面端直填深链由 doSame 主逻辑负责）。 */
+(function(){
+  var UA = navigator.userAgent || '';
+  var IS_MP = /miniprogram|miniapp(?!enable)/i.test(UA) ||
+              (typeof window.__wxjs_environment === 'string' && window.__wxjs_environment === 'miniprogram');
+  var IS_WX = /MicroMessenger/i.test(UA);
+  if (!IS_MP && !IS_WX) return;
+
+  var curPrompt = '', curLink = '';
+
+  /* 主 IIFE 的 showToast 是闭包函数，这里自己维护一份轻量 toast（复用 #toast 节点） */
+  function mpToast(msg, dur) {
+    try {
+      var el = document.getElementById('toast');
+      if (!el) return;
+      el.textContent = msg; el.classList.add('show');
+      clearTimeout(window.__mpToastT);
+      window.__mpToastT = setTimeout(function(){ el.classList.remove('show'); }, dur || 2400);
+    } catch (e) {}
+  }
+
+  /* ===== 微信内跳转落点：小程序「专家会话页」（选专家 + 预填 prompt，不自动发送） ===== */
+  var MP_EXPERT_PATH = 'subpackages/secondary/expert-center/detail';
+  var DEFAULT_EXPERT = 'ex_h8ZJccs8KQJm';   /* 兜底：HR 效率专家 */
+  /* 8 个通道默认专家映射（专家市场真实 id，2026-11-02 查得，可随时替换） */
+  var EXPERT_MAP = {
+    'HR': 'ex_h8ZJccs8KQJm',
+    '行政': 'ex_xwdWgFggKDgP',
+    '法律': 'ex_vfSDi3nDqjp2',
+    '理财投资': 'ex_fvfGAOjK6pFH',
+    '内容创作': 'ex_BBee5zEfRBmm',
+    '创意设计': 'ex_pOeypVpLbBG1',
+    '高校科研': 'ex_d1jSEjFhO9je',
+    '市场营销': 'ex_ML7nSadhUG2J'
+  };
+  function expertOf(track) { return EXPERT_MAP[track] || DEFAULT_EXPERT; }
+
+  /* 小程序里真正跳得动吗：微信只给 web-view 主 frame 注入 JSBridge，
+     跨域 iframe 里 wx.miniProgram 看着在、调用却会静默入队永不执行 */
+  function mpNavReady() {
+    try {
+      var w = window.wx;
+      if (!(w && w.miniProgram && w.miniProgram.navigateTo)) return false;
+      /* v4：iframe 里 wx.miniProgram 即使看着在（含带 WeixinJSBridge 的内核）也会
+         静默入队永不回调，只有顶层窗口才调得动；iframe 一律走壳层桥/弹窗兜底 */
+      return window.top === window.self;
+    } catch (e) { return false; }
+  }
+  function wbFlat(t) {
+    t = String(t == null ? '' : t).replace(/\r\n/g, '\n');
+    return t.replace(/\n+/g, ' ').replace(/ {2,}/g, ' ');
+  }
+  /* navigateTo 的 url 总长上限 1024，prompt 按编码后预算裁尾（开头信息密度最高） */
+  function fitPrompt(t, max) {
+    t = String(t || '');
+    if (encodeURIComponent(t).length <= max) return t;
+    var s = t;
+    while (s.length > 10 && encodeURIComponent(s).length > max) s = s.slice(0, -20);
+    return s;
+  }
+  function mpExpertQuery(prompt, track) {
+    return 'id=' + encodeURIComponent(expertOf(track)) +
+           '&action=chat&prompt=' + encodeURIComponent(fitPrompt(wbFlat(prompt), 700));
+  }
+
+  function mpCopy(t, ok, fail){
+    try{
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(t).then(ok, fail); return;
+      }
+    }catch(e){}
+    try{
+      var ta=document.createElement('textarea');
+      ta.value=t; ta.style.position='fixed'; ta.style.opacity='0';
+      document.body.appendChild(ta); ta.focus(); ta.select();
+      var done=document.execCommand('copy'); document.body.removeChild(ta);
+      done ? ok() : fail();
+    }catch(e){ fail(); }
+  }
+
+  /* ===== 兜底弹窗（与原有交互一致） ===== */
+  function showDialog(prompt, link){
+    curPrompt = prompt || ''; curLink = link || '';
+    var ov = document.getElementById('mp-same-ov');
+    var cp = document.getElementById('mp-same-cp');
+    if(cp){ cp.textContent = '📋 复制提示词'; cp.classList.remove('ok'); }
+    /* v4：弹窗里没有正文区时动态补一个（复制失败也能长按复制，与通道页一致） */
+    var ta = document.getElementById('mp-same-txt');
+    if(!ta && ov){
+      try{
+        ta = document.createElement('textarea');
+        ta.id = 'mp-same-txt'; ta.readOnly = true;
+        ta.style.cssText = 'width:100%;min-height:110px;max-height:34vh;padding:12px;border:1.5px solid #E7E9EE;border-radius:12px;background:#F7F8FA;color:#111418;font-size:13px;line-height:1.6;font-family:inherit;box-sizing:border-box;resize:none;overflow:auto';
+        var ds = ov.querySelector('.mp-same-ds');
+        if(ds && ds.parentNode === ov.querySelector('.mp-same-box')) ds.parentNode.insertBefore(ta, ds.nextSibling);
+      }catch(e){}
+    }
+    if(ta){ ta.value = curPrompt; ta.scrollTop = 0; }
+    if(ov) ov.classList.add('on');
+  }
+  window.closeMpSame = function(){
+    var ov = document.getElementById('mp-same-ov');
+    if(ov) ov.classList.remove('on');
+  };
+  window.copyMpSame = function(){
+    if(!curPrompt){ mpToast('该 Skill 暂无可复制的提示词'); return; }
+    var b = document.getElementById('mp-same-cp');
+    mpCopy(curPrompt, function(){
+      if(b){ b.textContent = '✓ 已复制！'; b.classList.add('ok');
+        setTimeout(function(){ b.textContent = '📋 复制提示词'; b.classList.remove('ok'); }, 2400); }
+    }, function(){
+      mpToast('自动复制失败，请长按框内文字手动复制', 3200);
+      try{ var ta2 = document.getElementById('mp-same-txt'); if(ta2){ ta2.focus(); ta2.setSelectionRange(0, ta2.value.length); } }catch(e){}
+    });
+  };
+  window.backToWorkBuddy = function(){
+    closeMpSame();
+    location.href = 'https://workbuddy.cn/';
+  };
+
+  /* ===== 小程序 web-view：通知发布壳代跳（WB_MP_NAVIGATE 协议，壳支持后自动生效） ===== */
+  var WB_MP_NAVIGATE = 'WB_MP_NAVIGATE';
+  var WB_MP_NAVIGATE_RESULT = 'WB_MP_NAVIGATE_RESULT';
+  function hostNavigate(url, onFail){
+    if(mpNavReady()){
+      try{
+        window.wx.miniProgram.navigateTo({ url: url, fail: function(){ if(onFail) onFail(); } });
+        return;
+      }catch(e){}
+    }
+    if(!(window.parent && window.parent !== window)){ if(onFail) onFail(); return; }
+    var settled = false;
+    function finish(ok){
+      if(settled) return; settled = true;
+      window.removeEventListener('message', onResult);
+      if(!ok && onFail) onFail();
+    }
+    function onResult(e){
+      var d = e.data;
+      if(e.source !== window.parent || !d || d.type !== WB_MP_NAVIGATE_RESULT || d.url !== url) return;
+      finish(d.ok === true);
+    }
+    window.addEventListener('message', onResult);
+    try{ window.parent.postMessage({ type: WB_MP_NAVIGATE, url: url }, '*'); }
+    catch(e){ finish(false); return; }
+    setTimeout(function(){ finish(false) }, 1200);
+  }
+
+  /* ===== 微信 H5：生成 URL Link 直跳小程序（接口免登录、跨域已放开；明文 weixin:// 在微信里经常无效） ===== */
+  var URLLINK_API = 'https://www.workbuddy.cn/v2/as/wechatmp/urllink/generate';
+  function postJson(url, body, cb){
+    try{
+      var x = new XMLHttpRequest();
+      x.open('POST', url, true);
+      x.setRequestHeader('Content-Type', 'application/json');
+      x.timeout = 6000;
+      var done = false, ret = function(v){ if(done) return; done = true; cb(v || null); };
+      x.onreadystatechange = function(){
+        if(x.readyState !== 4) return;
+        try{ ret(JSON.parse(x.responseText || '{}')) }catch(e){ ret(null) }
+      };
+      x.send(JSON.stringify(body));
+    }catch(e){ try{ cb(null) }catch(e2){} }
+  }
+  function fetchMpLink(path, query, cb){
+    postJson(URLLINK_API, { path: '/' + String(path || '').replace(/^\/+/, ''), query: query || '', expire_days: 30 }, function(r){
+      cb(r && r.url_link ? r.url_link : '');
+    });
+  }
+  var mpLeft = false;
+  try{ window.addEventListener('pagehide', function(){ mpLeft = true; }, { once: true }); }catch(e){}
+
+  /* ===== 弹窗里的「打开小程序」锚点按钮（v4）=====
+     微信会拦截 wxaurl.cn 链接的点击直接拉起小程序；按钮用默认 target 只导航 iframe 自身，
+     绝不动 top——把页面自动导航到 URL Link 会停在微信「打开小程序」中转页（真机已实测卡死）。 */
+  function setMpGoBtn(u, pending){
+    try{
+      var box = document.querySelector('#mp-same-ov .mp-same-box'); if(!box) return;
+      var b = document.getElementById('mp-same-mp');
+      if(!u && !pending){ if(b && b.parentNode) b.parentNode.removeChild(b); return; }
+      if(!b){
+        b = document.createElement('a'); b.id = 'mp-same-mp';
+        b.style.cssText = 'display:block;width:100%;padding:14.5px;border:none;border-radius:14px;background:#111418;color:#FFFFFF;font-size:16.5px;font-weight:800;font-family:inherit;letter-spacing:.02em;text-align:center;text-decoration:none;box-sizing:border-box';
+        var cp = document.getElementById('mp-same-cp');
+        box.insertBefore(b, cp && cp.parentNode === box ? cp : null);
+      }
+      if(pending){ b.removeAttribute('href'); b.textContent = '正在获取打开链接…'; b.style.opacity = '.55'; return; }
+      b.setAttribute('href', u); b.textContent = '🚀 打开 WorkBuddy 小程序'; b.style.opacity = '1';
+    }catch(e){}
+  }
+
+  /* ===== 主入口：微信内点「做同款」（v4）=====
+     弹窗同步先出（提示词可见 + 自动复制），跳转能力后台就绪再点亮按钮，
+     不再出现只挂一句「正在打开…」的中间态。 */
+  window.openMpSame = function(prompt, link, track){
+    showDialog(prompt, link);
+    try{ window.copyMpSame(); }catch(e){}
+    if(!prompt) return;
+    var query = mpExpertQuery(prompt, track);
+    var url = '/' + MP_EXPERT_PATH + '?' + query;
+    if(IS_MP){
+      /* 小程序 web-view：iframe 里 wx.miniProgram 静默入队，不再调用；
+         只发 WB_MP_NAVIGATE 给发布壳（壳支持后自动跳），弹窗即兜底 */
+      hostNavigate(url, function(){});
+      return;
+    }
+    /* 微信内置浏览器：后台生成 URL Link，就绪后点亮「打开小程序」按钮（用户手势点击才导航） */
+    setMpGoBtn('', true);
+    fetchMpLink(MP_EXPERT_PATH, query, function(u){ setMpGoBtn(u, false); });
+  };
+
+  /* 从 onclick="doSame(...)" 属性里解析出提示词 / 链接 / 通道三个字符串参数 */
+  function parseArgs(btn){
+    var attr = btn.getAttribute('onclick') || '';
+    var m = /doSame\s*\(([\s\S]*)\)\s*;?\s*$/.exec(attr);
+    if (!m) return ['', '', ''];
+    try {
+      var parts = JSON.parse('[' + m[1] + ']');
+      return [String(parts[0] || ''), String(parts[1] || ''), String(parts[2] || '')];
+    } catch(e) { return ['', '', '']; }
+  }
+
+  /* 兜底拦截：捕获阶段截下「做同款」按钮点击，阻止原 onclick（跳转/覆盖原逻辑） */
+  document.addEventListener('click', function(e){
+    var t = e.target;
+    while (t && t !== document && !(t.classList && t.classList.contains('btn-dosame'))) t = t.parentNode;
+    if (!t || t === document) return;
+    e.preventDefault();
+    e.stopPropagation();
+    var args = parseArgs(t);
+    openMpSame(args[0], args[1], args[2]);
+  }, true);
+
+  /* 覆盖原 doSame：微信内不再跳转/新窗口，改走分流逻辑 */
+  window.doSame = function(prompt, link, track){
+    openMpSame(prompt, link, track);
+  };
+
+  /* 点遮罩空白处关闭 */
+  document.addEventListener('click', function(e){
+    if(e.target && e.target.id === 'mp-same-ov') closeMpSame();
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') closeMpSame();
+  });
+})();
+</script>
+
+<script data-page-node-id="speedup" data-pnid-children="rDZWJHdBn10qpHjOyB8CHe">/* SPEEDUP_2026_11_03：空闲预取通道产物直达文档（同源 fetch 可用；旧版跨域 fetch 短链实际全部失败） */
+(function(){
+  try{
+    try{ if(window.self===window.top) return; }catch(e){ return; }
+    var c=navigator.connection||navigator.webkitConnection||null;
+    if(c&&c.saveData)return;
+    var et=(c&&c.effectiveType)||"";
+    if(/^(slow-2g|2g)$/.test(et))return;
+    var max=/^3g$/.test(et)?4:8;
+    var list=[];
+    try{
+      if(window.WB_TRACK_ART){
+        Object.keys(window.WB_TRACK_ART).forEach(function(k){
+          var u=window.WB_TRACK_ART[k];
+          if(u)list.push(u);
+        });
+      }
+    }catch(e){}
+    var i=0;
+    function one(){
+      if(i>=Math.min(max,list.length))return;
+      var u=list[i++];
+      try{ fetch(u,{priority:"low"}).catch(function(){}) }catch(e){}
+      setTimeout(one,1200);
+    }
+    function start(){ setTimeout(one,600) }
+    if(window.requestIdleCallback)requestIdleCallback(start,{timeout:5000});else setTimeout(start,1800);
+  }catch(e){}
+})();
+</script>
+<!--pnid:Z2qxDD5VpWtCIcEtlaTRdk--><!--HRFORCE2_START--><script data-page-node-id="hrforce2" data-pnid-children="glVoj7nnJPq6YKl6idZZtz">/* HRFORCE2_2026_10_28：HR 通道卡点击强制进入 HR 主页。
+   移动端/小程序容器里 3D 翻牌 hit-test 落空，点击被坐标兜底转给相邻元素（工具卡），
+   结果「点 HR 通道却进了工具子页」。这里在捕获阶段先认 data-tid，命中就直奔 HR 主页。
+   v2：跳转用「手势内同步创建的 <a target=_top>」——发布短链是外壳 + iframe，
+       _self 只换内层、外壳不动，表现为点了没反应。 */
+(function(){
+  var UA=navigator.userAgent||'';
+  var IS_MOB=/Android|iPhone|iPad|iPod|HarmonyOS|Windows Phone|webOS|BlackBerry|Mobile|miniProgram|miniapp|MicroMessenger/i.test(UA);
+  if(!IS_MOB) return;                      /* 桌面端保持原生 target=_blank 新开标签 */
+  var HR='通道页/01-HR主页/HR主页.html';
+  var left=false;
+  try{ addEventListener('pagehide',function(){left=true}); }catch(e){}
+  document.addEventListener('click',function(e){
+    try{
+      var el=e.target&&e.target.closest?e.target.closest('[data-tid]'):null;
+      if(!el) return;
+      if(el.getAttribute('data-tid')!=='hr4k9mz2x1a8b3c5') return;
+      e.preventDefault();
+      if(e.stopImmediatePropagation) e.stopImmediatePropagation();
+      /* 手势上下文里同步点：_top 让整个壳一起走 */
+      try{
+        var a=document.createElement('a');
+        a.href=HR; a.target='_top'; a.rel='noopener';
+        a.style.cssText='position:fixed;left:0;top:0;width:1px;height:1px;opacity:0';
+        document.body.appendChild(a); a.click();
+        setTimeout(function(){ try{ if(a.parentNode) a.parentNode.removeChild(a); }catch(err){} },1500);
+      }catch(err){}
+      setTimeout(function(){ if(!left){ try{ location.href=HR; }catch(err){} } },260);
+      setTimeout(function(){ if(!left){ try{ location.replace(HR); }catch(err){} } },900);
+    }catch(err){}
+  },true);
+})();
+</script><!--pnid:X51j8MMTlUthW42G6aeHxB--><!--HRFORCE2_END--></body>
+</html>

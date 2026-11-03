@@ -1,0 +1,197 @@
+<!DOCTYPE html><html data-page-node-id="J6FglhzxpSxLJVvJjwU9g1" lang="zh-CN"><head data-page-node-id="jwlZ97HJ4ibmOj4xaizZFj">
+<!-- inject.js 已移除：离线本地版无平台 SDK --><meta data-page-node-id="mKDS9hePdsawU5cV46LY1y" charset="utf-8"><title data-page-node-id="Wo6XjoiGnf9rV7qfDYx6Ve" data-pnid-children="9oQ8O9O8Fr9eSkatWNeObO">跳转中…</title><script data-page-node-id="3XEIPeFxPzw1l9KxU6f4rU" data-pnid-children="nYg3SGVqV0oKoaVmaHA0zM">var t='教育教研工具论文撰写.html';try{location.replace(encodeURI(t));}catch(e){location.href=encodeURI(t);}</script><meta data-page-node-id="cyiHoAzM3fYtOdJ3MXnzc9" content="0;url=%E6%95%99%E8%82%B2%E6%95%99%E7%A0%94%E5%B7%A5%E5%85%B7%E8%AE%BA%E6%96%87%E6%92%B0%E5%86%99.html" http-equiv="refresh"><style data-page-node-id="aMq3OuM9BRx5Y7ZiJkwOq7" data-pnid-children="RXUDrnNY51BL8SDTRl97m8">body{background:#0A0E23;margin:0}</style><script data-page-node-id="Ij0HMO13BZqPOEaVlaFw2w" data-pnid-children="YjblqgOU6tAcfqDEdd5Sag" data-patch="navq">
+/* NAVQ_V1_2026_10_29 发布短链防递归 + 返回链接纠正 */
+(function(){
+  if(window.__navq)return; window.__navq=1;
+  var INF=true; try{ INF = window.self!==window.top }catch(e){}
+  var RX=/^https?:\/\/(www\.)?workbuddy\.link\/p\/[A-Za-z0-9_-]+/i;
+  var SP=/^https?:\/\/(www\.)?workbuddy\.cn\/space\/d\/([A-Za-z0-9_-]+)/i;
+  var RR=/([?&])_r=[a-z0-9]+(&|$)/i;
+  function strip(u){ return String(u).replace(RR,function(m,a,b){return b?a:''}).replace(/[?&]$/,''); }
+  function q(u){
+    try{
+      if(typeof u!=='string')return u;
+      var m=SP.exec(u); if(m) u='https://workbuddy.link/p/'+m[2];
+      if(!INF||!RX.test(u)) return u;
+      u=strip(u);
+      return u+(u.indexOf('?')<0?'?':'&')+'_r='+(Date.now().toString(36)+Math.random().toString(36).slice(2,5));
+    }catch(e){ return u }
+  }
+  window.__navq_q=q;
+  function fix(a){
+    try{
+      var h=a.getAttribute('href')||'';
+      if(!SP.test(h)&&!RX.test(h))return;
+      var tg=(a.getAttribute('target')||'').toLowerCase();
+      if(tg==='_blank'&&!SP.test(h))return;
+      var n=q(h); if(n!==h) a.setAttribute('href',n);
+    }catch(e){}
+  }
+  window.addEventListener('click',function(e){
+    try{ var a=e.target&&e.target.closest?e.target.closest('a[href]'):null; if(a)fix(a); }catch(x){}
+  },true);
+  try{
+    if(INF&&window.navigation&&navigation.addEventListener){
+      navigation.addEventListener('navigate',function(e){
+        try{
+          var u=e.destination&&e.destination.url;
+          if(!u||!RX.test(u)||RR.test(u)||!e.cancelable||e.hashChange||e.downloadRequest)return;
+          e.preventDefault(); location.href=q(u);
+        }catch(x){}
+      });
+    }
+  }catch(e){}
+  function sweep(){
+    try{
+      var as=document.querySelectorAll('a[href*="workbuddy.cn/space/d/"]');
+      for(var i=0;i<as.length;i++){ var m=SP.exec(as[i].getAttribute('href')||''); if(m) as[i].setAttribute('href','https://workbuddy.link/p/'+m[2]); }
+    }catch(e){}
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',function(){ sweep(); setTimeout(sweep,400); setTimeout(sweep,1500); });
+  else { sweep(); setTimeout(sweep,400); }
+})();
+</script>
+<script data-page-node-id="4GetrI9tpV0hkn9YZtx1mT" data-pnid-children="6SF7odoSEE2kBovQEzEU1i" data-patch="tapfb">
+/* TAPFB_2026_10_28 点击即时反馈：点了要等的，先给一句回应 */
+(function(){
+  if(window.__tfb)return; window.__tfb=1;
+  var LEFT=false;
+  try{window.addEventListener('pagehide',function(){LEFT=true;},{once:true});}catch(e){}
+  var hideT=null,lastTip=0;
+  var BOX='position:fixed;left:0;top:0;right:0;bottom:0;z-index:2147483000;display:none;align-items:center;justify-content:center;pointer-events:none';
+  var PILL='background:rgba(10,14,35,.92);color:#EDF1FF;font-size:14px;font-weight:700;padding:10px 20px;border-radius:100px;border:1px solid rgba(150,175,255,.28)';
+  function ensureBox(){
+    var d=document.getElementById('__navLoad');
+    if(!d){
+      d=document.createElement('div'); d.id='__navLoad';
+      d.style.cssText=BOX;
+      (document.body||document.documentElement).appendChild(d);
+    }
+    return d;
+  }
+  /* 预先占位：页面自带的 navLoading 也用 #__navLoad，提前建好（透明容器），
+     它就会复用这个容器 —— 提示仍是居中「小药丸」，且不会和我们重复弹两个。 */
+  try{ if(document.body) ensureBox(); else document.addEventListener('DOMContentLoaded',function(){try{ensureBox();}catch(e){}}); }catch(e){}
+  function mask(txt){
+    try{
+      var d=ensureBox();
+      d.innerHTML='<span style="'+PILL+'">'+txt+'</span>';
+      clearTimeout(hideT); hideT=setTimeout(function(){try{d.style.display='none'}catch(e){}},3500);
+      setTimeout(function(){
+        try{
+          if(LEFT)return;
+          if(otherLoading())return;
+          d.style.display='flex';
+        }catch(e){}
+      },150);
+    }catch(e){}
+  }
+  function busyOn(){
+    try{ var d=document.getElementById('__navLoad'); if(!d)return false; var s=d.style.display; return !!(s&&s!=='none'); }catch(e){ return false; }
+  }
+  function otherLoading(){
+    try{
+      var all=document.querySelectorAll('span,div,a,button');
+      for(var i=0;i<all.length;i++){
+        var e=all[i];
+        if(e.id==='__navLoad'||(e.closest&&e.closest('#__navLoad')))continue;
+        var t=(e.textContent||'').trim();
+        if(t!=='正在打开…'&&t!=='正在加载…')continue;
+        if(isVisible(e))return true;
+      }
+    }catch(e){}
+    return false;
+  }
+  function toast(txt,ms){
+    try{
+      var e=document.getElementById('ts'),ok=false;
+      if(e&&!e.classList.contains('pep-hide')){
+        var cs=getComputedStyle(e); ok=cs.display!=='none'&&cs.visibility!=='hidden';
+      }
+      if(ok){
+        e.textContent=txt; e.classList.add('on');
+        clearTimeout(window.__tfbT);
+        window.__tfbT=setTimeout(function(){try{e.classList.remove('on')}catch(e){}},ms||1500);
+        return;
+      }
+      var d=document.getElementById('__tfbTip');
+      if(!d){ d=document.createElement('div'); d.id='__tfbTip';
+        d.style.cssText='position:fixed;left:50%;bottom:64px;transform:translateX(-50%);z-index:2147483001;background:rgba(10,14,35,.92);color:#EDF1FF;font-size:13px;font-weight:600;padding:9px 18px;border-radius:100px;border:1px solid rgba(150,175,255,.28);pointer-events:none;transition:opacity .18s;opacity:0';
+        (document.body||document.documentElement).appendChild(d); }
+      d.textContent=txt; d.style.opacity='1';
+      clearTimeout(window.__tfbT2);
+      window.__tfbT2=setTimeout(function(){try{d.style.opacity='0'}catch(e){}},ms||1500);
+    }catch(e){}
+  }
+  function isNav(h){ return /workbuddy\.link\/p\//i.test(h)||/codebuddy\.work\/page\//i.test(h); }
+  var ACT=[[/做同款|同款/,'正在准备同款…'],[/预览效果|体验一下/,'正在打开…'],[/灵感社区|社区/,'正在打开社区…'],[/专家/,'正在召唤专家…'],[/干货|资料|领取|下载/,'正在准备…']];
+  function watch(){
+    var moved=false,mo=null;
+    try{ mo=new MutationObserver(function(){moved=true;});
+      mo.observe(document.documentElement,{childList:true,subtree:true,attributes:true,characterData:true}); }catch(e){ moved=true; }
+    setTimeout(function(){
+      try{ if(mo)mo.disconnect(); }catch(e){}
+      if(moved||LEFT||busyOn())return;
+      var n=Date.now(); if(n-lastTip<2500)return; lastTip=n;
+      toast('处理中，请稍后…',1600);
+    },600);
+  }
+  function isVisible(el){
+    try{
+      if(el.classList.contains('pep-hide'))return false;
+      var cs=getComputedStyle(el);
+      if(cs.display==='none'||cs.visibility==='hidden')return false;
+      var r=el.getBoundingClientRect();
+      return r.width>4&&r.height>4;
+    }catch(e){ return true; }
+  }
+  document.addEventListener('click',function(e){
+    if(e.button!=null&&e.button!==0)return;
+    var t=e.target; if(!t||t.nodeType!==1||!t.closest)return;
+    var a=t.closest('a[href]');
+    if(a){
+      var h=a.getAttribute('href')||'';
+      var tg=(a.getAttribute('target')||'').toLowerCase();
+      if(isNav(h)&&tg!=='_blank'){ mask('正在打开…'); return; }
+    }
+    var el=t.closest('button,[onclick],[role="button"],.ac-b,.sk-b2');
+    if(!el||!isVisible(el))return;
+    if(/复制/.test(el.textContent||''))return;
+    var txt=(el.textContent||'').replace(/\s+/g,'');
+    for(var i=0;i<ACT.length;i++){ if(ACT[i][0].test(txt)){ if(!busyOn())toast(ACT[i][1],1500); return; } }
+    if(!txt)return;
+    watch();
+  },true);
+})();
+</script>
+<script data-page-node-id="2AozrAiIeMdNY0eUOPxQis" data-pnid-children="l8cPZkjN2LHMWshhbZ2WmZ" data-patch="wbstat">
+/* WBSTAT_V3_2026_10_30 访问统计（隐形）：加载即报，离开前补报 */
+(function(){
+  if(window.__wbstat)return; window.__wbstat=3; var sent=false;
+  try{ if(/HeadlessChrome/i.test(navigator.userAgent||''))return; }catch(e){}
+  var URL_='https://career-evo-stats.app-tencent.workbuddy.host/hit?sharecode=CDAWPZ4LHU';
+  function rid(){ return Date.now().toString(36)+Math.random().toString(36).slice(2,10); }
+  function go(){
+    if(sent)return; sent=true;
+    try{
+      var m=/\/page\/([A-Za-z0-9_-]{10,40})\//.exec(location.pathname); if(!m)return;
+      var v='',w=0,s='',e=0;
+      try{ v=localStorage.getItem('wbst_v')||''; }catch(x){}
+      if(!v){ v=rid(); w=1; try{ localStorage.setItem('wbst_v',v); }catch(x){} }
+      try{
+        var now=Date.now(), o=JSON.parse(sessionStorage.getItem('wbst_s')||'null');
+        if(!o||now-o.t>1800000){ o={id:rid(),t:now}; e=1; }
+        o.t=now; s=o.id; sessionStorage.setItem('wbst_s',JSON.stringify(o));
+      }catch(x){ s=rid(); e=1; }
+      var body=JSON.stringify({p:m[1],n:(document.title||'').slice(0,80),v:v,s:s,e:e,w:w});
+      var ok=false;
+      try{ if(navigator.sendBeacon) ok=navigator.sendBeacon(URL_, new Blob([body],{type:'text/plain'})); }catch(x){}
+      if(!ok){ try{ fetch(URL_,{method:'POST',mode:'no-cors',keepalive:true,credentials:'omit',body:body}); }catch(x){} }
+    }catch(err){}
+  }
+  try{ window.addEventListener('pagehide',go); document.addEventListener('visibilitychange',function(){ if(document.visibilityState==='hidden')go(); }); }catch(e){}
+  function soon(){ setTimeout(go,300); }
+  if(document.readyState!=='loading') soon(); else document.addEventListener('DOMContentLoaded',soon);
+})();
+</script>
+</head><body data-page-node-id="XPL4oO1aG16r29CzKceRbo"></body></html>

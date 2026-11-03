@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html data-page-node-id="S8iBIs34LFeEvQ4gf6Rpka" lang="zh-CN">
+<head data-page-node-id="7k1vbtjVVpkgQJGtb27Ttv">
+<!-- inject.js 已移除：离线本地版无平台 SDK -->
+<meta data-page-node-id="jTYLyIdlGEuQA61DTQ618h" charset="UTF-8">
+<meta data-page-node-id="rfaX8m4yafnY1MOOwiyVrJ" content="width=device-width, initial-scale=1" name="viewport">
+<title data-page-node-id="Cmqt2FWRNwhaMaIvoWy71L" data-pnid-children="SZdYVe42pkFKaL0AlxCCXt">批量发送个性化面试邀约 · 发送任务报告</title>
+<style data-page-node-id="10u1fdIKQAVeGWZnW0j11R" data-pnid-children="HbBIr7UAcVb4JJbGt3brcW">
+:root{
+  --primary:#2563eb;
+  --primary-deep:#1d4ed8;
+  --primary-soft:#dbeafe;
+  --sky:#38bdf8;
+  --bg:#f0f5ff;
+  --card:#ffffff;
+  --border:#dbe7fb;
+  --text:#1e293b;
+  --text-soft:#64748b;
+  --success:#16a34a;
+  --success-soft:#dcfce7;
+  --slate:#94a3b8;
+  --slate-soft:#f1f5f9;
+  --code-bg:#f6f8fb;
+  --code-border:#e2e8f0;
+  --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"PingFang SC","Segoe UI","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+
+/* 语言切换（固定右上角） */
+.lang-bar{position:fixed;top:16px;right:16px;z-index:100;display:flex;gap:2px;background:var(--card);border:1px solid var(--border);border-radius:999px;padding:3px;box-shadow:0 2px 10px rgba(37,99,235,.10)}
+.lang-btn{border:0;background:transparent;font-family:inherit;font-size:13px;font-weight:600;color:var(--text-soft);padding:6px 14px;border-radius:999px;cursor:pointer}
+.lang-btn.active{background:var(--primary);color:#fff}
+
+/* 布局 */
+.page{max-width:1080px;margin:0 auto;padding:24px 24px 56px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;box-shadow:0 4px 16px rgba(37,99,235,.06)}
+section{margin-top:42px}
+
+/* 页头（NOBAN_2026_10_26：只留主题 + 简介，与通道页里其他应用一致） */
+.hero{margin-top:26px}
+.hero-inner{padding:0 2px}
+.hero-top{display:flex;gap:18px;align-items:flex-start}
+.hero-mark{width:56px;height:56px;flex:none;border-radius:14px;background:var(--primary-soft);color:var(--primary-deep);display:flex;align-items:center;justify-content:center}
+.hero-chip{display:inline-flex;align-items:center;gap:7px;background:var(--primary-soft);color:var(--primary-deep);font-size:12px;font-weight:600;padding:3px 12px;border-radius:999px;margin-bottom:10px;letter-spacing:.3px}
+.chip-dot{width:6px;height:6px;border-radius:50%;background:var(--primary);flex:none}
+h1{font-size:26px;font-weight:800;color:#0f172a;letter-spacing:.3px;line-height:1.3}
+.subtitle{margin-top:8px;font-size:14px;color:var(--text-soft);max-width:680px}
+.meta-bar{display:grid;grid-template-columns:repeat(4,1fr);margin-top:24px;border-top:1px solid var(--border);padding-top:18px}
+.meta-item{border-left:1px solid var(--border);padding:0 18px}
+.meta-item:first-child{border-left:0;padding-left:0}
+.meta-label{display:block;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--slate)}
+.meta-value{display:block;font-size:14px;font-weight:600;color:var(--text);margin-top:3px;word-break:break-all}
+
+/* 统计指标卡 */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:42px}
+.stat-card{position:relative;padding:20px 22px 18px;overflow:hidden}
+.stat-card::before{content:"";position:absolute;left:0;top:16px;bottom:16px;width:4px;border-radius:0 4px 4px 0;background:var(--primary)}
+.stat-card.st-success::before{background:var(--success)}
+.stat-card.st-fail::before{background:var(--slate)}
+.stat-card.st-time::before{background:var(--sky)}
+.stat-icon{width:38px;height:38px;border-radius:10px;background:var(--primary-soft);color:var(--primary-deep);display:flex;align-items:center;justify-content:center;margin-bottom:10px}
+.st-success .stat-icon{background:var(--success-soft);color:var(--success)}
+.st-fail .stat-icon{background:var(--slate-soft);color:var(--slate)}
+.st-time .stat-icon{background:#e0f2fe;color:#0284c7}
+.stat-num{font-size:34px;font-weight:800;line-height:1.1;color:var(--primary-deep);font-variant-numeric:tabular-nums}
+.st-success .stat-num{color:var(--success)}
+.st-fail .stat-num{color:var(--slate)}
+.stat-label{font-size:13px;color:var(--text-soft);font-weight:500;margin-top:4px}
+
+/* 区块标题 */
+.sec-head{display:flex;gap:12px;align-items:flex-start;margin-bottom:16px}
+.sec-icon{width:38px;height:38px;flex:none;border-radius:10px;background:var(--primary-soft);color:var(--primary-deep);display:flex;align-items:center;justify-content:center}
+.sec-head h2{font-size:19px;font-weight:700;color:#0f172a;line-height:1.35}
+.sec-head p{font-size:13.5px;color:var(--text-soft);margin-top:2px}
+
+/* 候选人表格 */
+.table-card{overflow:hidden}
+.table-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;min-width:780px}
+thead th{background:#eff6ff;color:var(--primary-deep);font-size:13px;font-weight:700;text-align:left;padding:12px 18px;border-bottom:1px solid var(--border);white-space:nowrap}
+tbody td{padding:13px 18px;border-bottom:1px solid #eef3fd;font-size:14px;vertical-align:middle}
+tbody tr:last-child td{border-bottom:0}
+tbody tr:nth-child(even){background:#f8fbff}
+.cand-name{font-weight:700;color:#0f172a;white-space:nowrap}
+.pos-tag{display:inline-block;background:var(--primary-soft);color:var(--primary-deep);border-radius:999px;padding:3px 11px;font-size:12.5px;font-weight:600;white-space:nowrap}
+.time-text{font-weight:600;color:#334155;white-space:nowrap;font-variant-numeric:tabular-nums}
+.salut-text{color:#334155;white-space:nowrap}
+.email-text{font-family:var(--mono);font-size:12.5px;color:var(--text-soft)}
+
+/* 逐封发送卡片 */
+.cards-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.mail-card{border-left:4px solid var(--success);padding:20px 22px;display:flex;flex-direction:column;gap:11px}
+.mail-head{display:flex;align-items:center;gap:12px}
+.avatar{width:40px;height:40px;flex:none;border-radius:50%;background:var(--primary-soft);color:var(--primary-deep);font-size:13px;font-weight:700;letter-spacing:.5px;display:flex;align-items:center;justify-content:center;font-family:var(--mono)}
+.mail-to{display:flex;flex-direction:column;line-height:1.35}
+.mail-name{font-size:15px;font-weight:700;color:#0f172a}
+.mail-email{font-family:var(--mono);font-size:12px;color:var(--text-soft)}
+.mail-idx{margin-left:auto;font-family:var(--mono);font-size:12px;font-weight:700;color:#a9c0ee}
+.mail-subject{font-size:14px;font-weight:700;color:var(--primary-deep);line-height:1.5}
+.mail-body{font-size:13px;color:#475569;background:#f8faff;border:1px solid #e8f0fe;border-radius:12px;padding:12px 14px;line-height:1.8}
+.cmd-label{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:#7b96cf}
+pre{background:var(--code-bg);border:1px solid var(--code-border);border-radius:12px;padding:12px 14px;overflow-x:auto}
+pre code{font-family:var(--mono);font-size:12px;line-height:1.7;color:#334155;white-space:pre-wrap;word-break:break-all}
+.mail-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;border-top:1px dashed var(--border);padding-top:12px;margin-top:2px}
+.badge{display:inline-flex;align-items:center;gap:7px;background:var(--success-soft);color:var(--success);border-radius:999px;padding:5px 13px;font-size:12.5px;font-weight:700}
+.smtp-info{font-family:var(--mono);font-size:12px;color:var(--text-soft)}
+.smtp-info b{color:var(--success);font-weight:700}
+
+/* 邮件模板区 */
+.template-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:18px}
+.tpl-card,.vars-card{padding:24px}
+.tpl-card h3,.vars-card h3{font-size:15px;font-weight:700;color:#0f172a;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.tpl-body{font-size:13.5px;line-height:2.1;color:#334155;background:#f8faff;border:1px solid #e8f0fe;border-radius:12px;padding:18px 20px}
+.var{font-family:var(--mono);background:var(--primary-soft);color:var(--primary-deep);border-radius:6px;padding:1px 7px;font-weight:600;font-size:12.5px;white-space:nowrap}
+.var-list{list-style:none}
+.var-row{padding:13px 0;border-bottom:1px dashed var(--border)}
+.var-row:last-child{border-bottom:0;padding-bottom:0}
+.var-desc{font-size:13px;color:var(--text-soft);margin-top:8px}
+.var-example{font-size:12.5px;color:var(--primary-deep);font-weight:600;margin-top:2px}
+
+/* 执行流程时间线 */
+.tl-card{padding:26px 30px}
+.tl-list{list-style:none}
+.tl-item{display:flex;gap:16px;position:relative;padding-bottom:24px}
+.tl-item:last-child{padding-bottom:0}
+.tl-item:not(:last-child)::before{content:"";position:absolute;left:15px;top:34px;bottom:2px;width:2px;background:#cfe0fd}
+.tl-num{width:32px;height:32px;flex:none;border-radius:50%;background:var(--primary);color:#fff;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center;position:relative;z-index:1;font-variant-numeric:tabular-nums}
+.tl-item:last-child .tl-num{background:var(--success)}
+.tl-content h3{font-size:15px;font-weight:700;color:#0f172a;line-height:1.4;margin-top:4px}
+.tl-content p{font-size:13px;color:var(--text-soft);margin-top:3px;max-width:780px}
+
+/* 页脚 */
+footer{margin-top:48px;border-top:1px solid var(--border);padding-top:22px;text-align:center}
+footer p{font-size:12.5px;color:var(--text-soft);line-height:1.9}
+.gen-val{margin-left:6px;font-weight:600;color:#475569}
+
+/* 响应式：≤768px 单栏堆叠 */
+@media (max-width:768px){
+  .page{padding:64px 14px 40px}
+  .hero{margin-top:0}
+  .hero-inner{padding:20px 18px}
+  h1{font-size:21px}
+  .subtitle{font-size:13px}
+  .meta-bar{grid-template-columns:1fr 1fr;row-gap:16px}
+  .meta-item{border-left:0;padding:0}
+  .stats{grid-template-columns:1fr}
+  .cards-grid{grid-template-columns:1fr}
+  .template-grid{grid-template-columns:1fr}
+  .tl-card{padding:20px 18px}
+  .tl-content h3{margin-top:2px}
+}
+.back-link{position:fixed;top:16px;left:16px;z-index:100;display:inline-flex;align-items:center;gap:6px;background:var(--card);border:1px solid var(--border);border-radius:999px;padding:8px 14px;font-size:13px;font-weight:600;color:var(--primary);text-decoration:none;box-shadow:0 2px 10px rgba(37,99,235,.10)}
+.back-link:hover{background:var(--primary-soft)}
+@media(max-width:640px){.back-link{top:12px;left:12px;padding:7px 12px;font-size:12px}}
+</style>
+<script data-page-node-id="zm8hzDeHx7kZh0DZjD2bpM" data-pnid-children="iEiqwrKn8x4aCFMYC6pmc7" data-patch="tapfb">
+/* TAPFB_2026_10_28 点击即时反馈：点了要等的，先给一句回应 */
+(function(){
+  if(window.__tfb)return; window.__tfb=1;
+  var LEFT=false;
+  try{window.addEventListener('pagehide',function(){LEFT=true;},{once:true});}catch(e){}
+  var hideT=null,lastTip=0;
+  function mask(txt){
+    try{
+      var d=document.getElementById('__navLoad');
+      if(!d){ d=document.createElement('div'); d.id='__navLoad';
+        d.style.cssText='position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);z-index:2147483000;display:none;background:rgba(10,14,35,.92);color:#EDF1FF;font-size:14px;font-weight:700;padding:10px 20px;border-radius:100px;border:1px solid rgba(150,175,255,.28);pointer-events:none;white-space:nowrap;box-shadow:0 6px 24px rgba(0,0,0,.35)';
+        (document.body||document.documentElement).appendChild(d); }
+      d.textContent=txt;
+      clearTimeout(hideT); hideT=setTimeout(function(){try{d.style.display='none'}catch(e){}},3500);
+      setTimeout(function(){
+        try{
+          if(LEFT)return;
+          if(otherLoading())return;
+          d.style.display='block';
+        }catch(e){}
+      },150);
+    }catch(e){}
+  }
+  function busyOn(){
+    try{ var d=document.getElementById('__navLoad'); return !!(d&&d.style.display==='block'); }catch(e){ return false; }
+  }
+  function otherLoading(){
+    try{
+      var all=document.querySelectorAll('span,div,a,button');
+      for(var i=0;i<all.length;i++){
+        var e=all[i];
+        if(e.id==='__navLoad')continue;
+        var t=(e.textContent||'').trim();
+        if(t!=='正在打开…'&&t!=='正在加载…')continue;
+        if(isVisible(e))return true;
+      }
+    }catch(e){}
+    return false;
+  }
+  function toast(txt,ms){
+    try{
+      var e=document.getElementById('ts'),ok=false;
+      if(e&&!e.classList.contains('pep-hide')){
+        var cs=getComputedStyle(e); ok=cs.display!=='none'&&cs.visibility!=='hidden';
+      }
+      if(ok){
+        e.textContent=txt; e.classList.add('on');
+        clearTimeout(window.__tfbT);
+        window.__tfbT=setTimeout(function(){try{e.classList.remove('on')}catch(e){}},ms||1500);
+        return;
+      }
+      var d=document.getElementById('__tfbTip');
+      if(!d){ d=document.createElement('div'); d.id='__tfbTip';
+        d.style.cssText='position:fixed;left:50%;bottom:64px;transform:translateX(-50%);z-index:2147483001;background:rgba(10,14,35,.92);color:#EDF1FF;font-size:13px;font-weight:600;padding:9px 18px;border-radius:100px;border:1px solid rgba(150,175,255,.28);pointer-events:none;transition:opacity .18s;opacity:0';
+        (document.body||document.documentElement).appendChild(d); }
+      d.textContent=txt; d.style.opacity='1';
+      clearTimeout(window.__tfbT2);
+      window.__tfbT2=setTimeout(function(){try{d.style.opacity='0'}catch(e){}},ms||1500);
+    }catch(e){}
+  }
+  function isNav(h){ return /workbuddy\.link\/p\//i.test(h)||/codebuddy\.work\/page\//i.test(h); }
+  var ACT=[[/做同款|同款/,'正在准备同款…'],[/预览效果|体验一下/,'正在打开…'],[/灵感社区|社区/,'正在打开社区…'],[/专家/,'正在召唤专家…'],[/干货|资料|领取|下载/,'正在准备…']];
+  function watch(){
+    var moved=false,mo=null;
+    try{ mo=new MutationObserver(function(){moved=true;});
+      mo.observe(document.documentElement,{childList:true,subtree:true,attributes:true,characterData:true}); }catch(e){ moved=true; }
+    setTimeout(function(){
+      try{ if(mo)mo.disconnect(); }catch(e){}
+      if(moved||LEFT||busyOn())return;
+      var n=Date.now(); if(n-lastTip<2500)return; lastTip=n;
+      toast('处理中，请稍后…',1600);
+    },600);
+  }
+  function isVisible(el){
+    try{
+      if(el.classList.contains('pep-hide'))return false;
+      var cs=getComputedStyle(el);
+      if(cs.display==='none'||cs.visibility==='hidden')return false;
+      var r=el.getBoundingClientRect();
+      return r.width>4&&r.height>4;
+    }catch(e){ return true; }
+  }
+  document.addEventListener('click',function(e){
+    if(e.button!=null&&e.button!==0)return;
+    var t=e.target; if(!t||t.nodeType!==1||!t.closest)return;
+    var a=t.closest('a[href]');
+    if(a){
+      var h=a.getAttribute('href')||'';
+      var tg=(a.getAttribute('target')||'').toLowerCase();
+      if(isNav(h)&&tg!=='_blank'){ mask('正在打开…'); return; }
+    }
+    var el=t.closest('button,[onclick],[role="button"],.ac-b,.sk-b2');
+    if(!el||!isVisible(el))return;
+    if(/复制/.test(el.textContent||''))return;
+    var txt=(el.textContent||'').replace(/\s+/g,'');
+    for(var i=0;i<ACT.length;i++){ if(ACT[i][0].test(txt)){ if(!busyOn())toast(ACT[i][1],1500); return; } }
+    if(!txt)return;
+    watch();
+  },true);
+})();
+</script>
+</head>
+<body data-page-node-id="eccA0IhfYismP7jZoebkk7">
+
+<a data-page-node-id="alYimYcHGgQvxxqLHUFUzu" class="back-link" href="javascript:void(0)" id="__backLink"><!--pnid:Fld6DZTBnDYERIDCaJw7Ej-->← 返回 HR 的 AI 工具库</a>
+
+<div data-page-node-id="hwTU5VAhuME8nZnLSsk29b" aria-label="Language" class="lang-bar" role="group">
+  <button data-page-node-id="LnIbai27buQQkokNgAi4iO" class="lang-btn" data-i18n="langZh" id="btnZh" type="button"></button>
+  <button data-page-node-id="dkEhFLvm3s9qg2Vp25YlJp" class="lang-btn" data-i18n="langEn" id="btnEn" type="button"></button>
+</div>
+
+<div data-page-node-id="teX53HTHoU6YKh5z9bTxKH" class="page">
+
+  <header data-page-node-id="aJHxfvuhe4XOxajVZKDQYO" class="hero">
+    <div data-page-node-id="QFcFB72wBsLhx9HAzVmTlK" class="hero-inner">
+      <h1 data-page-node-id="24yNPsEB9CxkM0HRuovp9D" data-i18n="headerTitle"></h1>
+      <p data-page-node-id="i96bhqoLkG2wXZElia7YKA" class="subtitle" data-i18n="headerSubtitle"></p>
+    </div>
+  </header>
+
+  <div data-page-node-id="KRXjUrjUz6KbRYJpPCYUEF" class="stats">
+    <div data-page-node-id="OTfxupNI8i3Q0icaHjvLZ3" class="card stat-card">
+      <div data-page-node-id="J2msgEVGw1oO7W2UzSTRuC" class="stat-icon">
+        <svg data-page-node-id="eEDr52aSuC7NhC0Q4irtbY" aria-hidden="true" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20"><line data-page-node-id="zuCl7vGFEQHriK1O5onQLF" x1="22" x2="11" y1="2" y2="13"></line><polygon data-page-node-id="yWUDtdRdbEjUDGTOu6AsLQ" points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+      </div>
+      <div data-page-node-id="BczzswYPSaMI5O5xhj6Hsz" class="stat-num" data-i18n="statTotalVal"></div>
+      <div data-page-node-id="Y76CKEBmKGubuI45XSN2YT" class="stat-label" data-i18n="statTotalLabel"></div>
+    </div>
+    <div data-page-node-id="H3nYOCRS9reTHcCdNgCnB1" class="card stat-card st-success">
+      <div data-page-node-id="sxBC59tDyzyQWiJtjBISYZ" class="stat-icon">
+        <svg data-page-node-id="XeWIclmrJFI9KNZknWLuMK" aria-hidden="true" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20"><circle data-page-node-id="ffE1fPAI5IZUgDboghGQEN" cx="12" cy="12" r="10"></circle><path data-page-node-id="0KrjAHJqKts2APNUHVb5ky" d="m8.5 12.2 2.4 2.4 4.6-5.2"></path></svg>
+      </div>
+      <div data-page-node-id="asr2Ioq58mr30hlZqYh9iC" class="stat-num" data-i18n="statSuccessVal"></div>
+      <div data-page-node-id="8aWAEcFEEIpISpStARyy1D" class="stat-label" data-i18n="statSuccessLabel"></div>
+    </div>
+    <div data-page-node-id="sUdmUGZHXOO0Of7hLruiO6" class="card stat-card st-fail">
+      <div data-page-node-id="n2rUHcG30B6YnsKiBBtLY0" class="stat-icon">
+        <svg data-page-node-id="d8IM5ntdULWWYdANKUKIKx" aria-hidden="true" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20"><circle data-page-node-id="2oeK50peewph3ttyyzgBze" cx="12" cy="12" r="10"></circle><path data-page-node-id="v3VMc8AklUbv45Ii2RpTjp" d="m15 9-6 6"></path><path data-page-node-id="IGwrAFAXqDJAgAgXcW04Op" d="m9 9 6 6"></path></svg>
+      </div>
+      <div data-page-node-id="O6oNZ2SyEwPzbk09VsdA2T" class="stat-num" data-i18n="statFailedVal"></div>
+      <div data-page-node-id="siPAGba0mOAKF5sxviOR57" class="stat-label" data-i18n="statFailedLabel"></div>
+    </div>
+    <div data-page-node-id="BneDqdQKaOB8XZYkWp8IUF" class="card stat-card st-time">
+      <div data-page-node-id="HJafYZPzRtUaTroWZhcOH0" class="stat-icon">
+        <svg data-page-node-id="IFisKR3DF3WTpFfWJmbaVg" aria-hidden="true" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20"><circle data-page-node-id="QzncSAfAfXbwHtzzHXgkFL" cx="12" cy="12" r="10"></circle><polyline data-page-node-id="NIGG5TF287nUrBT1mwiPSS" points="12 6 12 12 16 14"></polyline></svg>
+      </div>
+      <div data-page-node-id="wmFhk4WG8hnxXdAvnhp9Xl" class="stat-num" data-i18n="statTimeVal"></div>
+      <div data-page-node-id="HwgtvVOasI6jhaiLRRtcn1" class="stat-label" data-i18n="statTimeLabel"></div>
+    </div>
+  </div>
+
+  <section data-page-node-id="Ne7LX9q6h2ZXO15TGyn2Jh">
+    <div data-page-node-id="nR6hN1QoOjArZsYvxBKGOp" class="sec-head">
+      <div data-page-node-id="X4vrPzSSkNYTXK8ZPBhUzD" class="sec-icon">
+        <svg data-page-node-id="q8L76z6lXud8b6Q0g7Ta8L" aria-hidden="true" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20"><path data-page-node-id="jfDyAvtVmT7bt8aS18KwA5" d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle data-page-node-id="23k8XUf0nWxBdZhfhuTNed" cx="9" cy="7" r="4"></circle><path data-page-node-id="A28QGPvJzllt0NznUUjwiH" d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path data-page-node-id="SnaLJ5ECaaLuAF5RvSENmD" d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+      </div>
+      <div data-page-node-id="Yd3D2T15RVLlHkqtjwT2aB">
+        <h2 data-page-node-id="DBKQvLmyTjokFB39j5Rmzk" data-i18n="secCandTitle"></h2>
+        <p data-page-node-id="lbbhVNhAUGSDexVtzrTm5J" data-i18n="secCandDesc"></p>
+      </div>
+    </div>
+    <div data-page-node-id="JSxVffDrW5dQadG100pw9s" class="card table-card">
+      <div data-page-node-id="hMw8Dxvy5Ov7tMqJ2cAFT3" class="table-wrap">
+        <table data-page-node-id="Qmct4jiKPUSoZdCFEWIxDM">
+          <thead data-page-node-id="Naglla8baN4tEfRGJ52ee0">
+            <tr data-page-node-id="HuD506mQ4NwfnrW9uo0BRH">
+              <th data-page-node-id="r91WLqOYQKvkcZlsVPGy3j" data-i18n="thCandidate"></th>
+              <th data-page-node-id="n3hdqOpY8To4mpJaLhjJb1" data-i18n="thPosition"></th>
+              <th data-page-node-id="NMxg32aA9Ltae12czKSp1g" data-i18n="thTime"></th>
+              <th data-page-node-id="5omVsXYORUUUhevDoqWeNX" data-i18n="thSalutation"></th>
+              <th data-page-node-id="NvxtsliKBEZdXZfH8Oy1Vl" data-i18n="thEmail"></th>
+            </tr>
+          </thead>
+          <tbody data-page-node-id="ytSqXlPjm2BgNu2taUl339" id="candBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section data-page-node-id="FI39O8r5ysxgQPrkPLg68R">
+    <div data-page-node-id="kAyqb17wAyIO1sc662MVi5" class="sec-head">
+      <div data-page-node-id="CBJ3YBOAEosRfQHbwajeoz" class="sec-icon">
+        <svg data-page-node-id="dcnaZah2UozwibmjbgKEd9" aria-hidden="true" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20"><line data-page-node-id="7mUmq3sdiTW2H1JDdI2Xyz" x1="22" x2="11" y1="2" y2="13"></line><polygon data-page-node-id="yn17aJTDEEIhwWJmXCGmHQ" points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+      </div>
+      <div data-page-node-id="aafNEE03IDksob9RfLeNYG">
+        <h2 data-page-node-id="SbkLryVO5PBts2ez8IIWD7" data-i18n="secCardsTitle"></h2>
+        <p data-page-node-id="OhoxWtcGUWqx7WGilT01bc" data-i18n="secCardsDesc"></p>
+      </div>
+    </div>
+    <div data-page-node-id="sg4pgHZofTlWqL8shUklaf" class="cards-grid" id="sendCards"></div>
+  </section>
+
+  <section data-page-node-id="2XXtTncRWGY9pfwX5XgC5y">
+    <div data-page-node-id="faW1JTa4uLHxPomPNrNCit" class="sec-head">
+      <div data-page-node-id="Lm2kdGFdf1RYiSseryieMx" class="sec-icon">
+        <svg data-page-node-id="DC1Gp2RqgsQAK2dPBeDnGm" aria-hidden="true" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20"><path data-page-node-id="7Ez3UzomRgi3pckrNr6lXq" d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"></path><path data-page-node-id="ywaUYSvQ3CvxMmo6t2oFII" d="M14 2v6h6"></path><path data-page-node-id="dJDTBhWHaaWGxdnLWV663z" d="M16 13H8"></path><path data-page-node-id="r6UG5jI5ERh4VmwBljJ5Qw" d="M16 17H8"></path></svg>
+      </div>
+      <div data-page-node-id="6gymCDMCvM7j3PpNhJFHu9">
+        <h2 data-page-node-id="blo53vaD54ThLxWXIHWBMa" data-i18n="secTplTitle"></h2>
+        <p data-page-node-id="5TB3NwrLbcevo9opH9npDF" data-i18n="secTplDesc"></p>
+      </div>
+    </div>
+    <div data-page-node-id="ryCIFSykavLmf7zKMJHToL" class="template-grid">
+      <div data-page-node-id="e6K1a0M9ZKnm2smoXnTbu5" class="card tpl-card">
+        <h3 data-page-node-id="uXaZocToKH1DEHyRIKhHkq">
+          <svg data-page-node-id="4turz5XxAnteMW6HUIi3a0" aria-hidden="true" fill="none" height="15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="15"><path data-page-node-id="2ziFEs35M2WWZIHj6irut0" d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"></path><path data-page-node-id="qD033jGUmMiBgIeiuaDBCW" d="M14 2v6h6"></path><path data-page-node-id="yvimUdlptKLnmfEfD3RahK" d="M16 13H8"></path><path data-page-node-id="xQhIbkxiIHOqTKHrPEVnyY" d="M16 17H8"></path></svg>
+          <span data-page-node-id="r1oWf4vZQJKwV45pPTlRL2" data-i18n="tplCardTitle"></span>
+        </h3>
+        <p data-page-node-id="ToSj5AtJ6BZDX9MpeuTTsr" class="tpl-body" data-i18n-html="templateBody"></p>
+      </div>
+      <div data-page-node-id="Cmjjf4rbBRDI2wLlmOLnEm" class="card vars-card">
+        <h3 data-page-node-id="Toy2MOcoUiRXSCmHR8hLUQ">
+          <svg data-page-node-id="ax4oG2F39m2VyFDVs0Aq39" aria-hidden="true" fill="none" height="15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="15"><path data-page-node-id="Jl4fYUoIBva1R6DZ1mK8uW" d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.83z"></path><line data-page-node-id="BQO9adCUQIUXCPb6GQSHnm" x1="7" x2="7.01" y1="7" y2="7"></line></svg>
+          <span data-page-node-id="M4S0DTNFcDzDpDwndjycjt" data-i18n="varCardTitle"></span>
+        </h3>
+        <ul data-page-node-id="lKIHyWi0HjzTERGNc32brd" class="var-list" id="varList"></ul>
+      </div>
+    </div>
+  </section>
+
+  <section data-page-node-id="92puG7tDAAkMacV4WkOJ8W">
+    <div data-page-node-id="uw7yKeTaJfdDKH4nG2PJv4" class="sec-head">
+      <div data-page-node-id="7Cr7yTbWEvnuMnvIkkz46m" class="sec-icon">
+        <svg data-page-node-id="ZS8b94n2QzBeXoPh9WsxPx" aria-hidden="true" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20"><line data-page-node-id="Tk7HxdBqNnLqPGDLQWDACo" x1="9" x2="20" y1="6" y2="6"></line><line data-page-node-id="V35dihJJpbmsJUNIcTOJR3" x1="9" x2="20" y1="12" y2="12"></line><line data-page-node-id="NDTb0A7A5QJmCKWcndEZwf" x1="9" x2="20" y1="18" y2="18"></line><circle data-page-node-id="H5iV2wOtjcw0bZ6mxSD3be" cx="4.5" cy="6" r="1.5"></circle><circle data-page-node-id="VDSl8BJZAmE6AuR8acnfv7" cx="4.5" cy="12" r="1.5"></circle><circle data-page-node-id="QMgSlYqJBVr9tqaj5mx6pC" cx="4.5" cy="18" r="1.5"></circle></svg>
+      </div>
+      <div data-page-node-id="vGNdUNptMgXpAKOQ0u01Gy">
+        <h2 data-page-node-id="w3LC9jkiffb8zZuzmlnWOe" data-i18n="secTlTitle"></h2>
+        <p data-page-node-id="V9hpe5GYEF6gG3mXi7COAX" data-i18n="secTlDesc"></p>
+      </div>
+    </div>
+    <div data-page-node-id="eDwv69cCOMXf4lVvskbiWb" class="card tl-card">
+      <ol data-page-node-id="LpWrC5qh7oGrOaDWLK9PJ3" class="tl-list" id="tlList"></ol>
+    </div>
+  </section>
+
+  <footer data-page-node-id="ZMPtukghmuM0vmTRzL3Jon">
+    <p data-page-node-id="mn6VYp2vig0PW6G92qlbQ6" data-i18n="footerNote"></p>
+    <p data-page-node-id="2mp7R8wZVZe3Bg9yF0XC31"><span data-page-node-id="UWVjnX7leLtCnHnsF0vhUt" data-i18n="footerGenPrefix"></span><span data-page-node-id="1ANx9PePYV91XV4lKfeSYs" class="gen-val" data-i18n="footerGenVal"></span></p>
+  </footer>
+
+</div>
+
+<script data-page-node-id="Hrb2wMf6E7Vnfklhwlg4wT" data-pnid-children="Wgr3hYdehll7Z1UiFgNYpT">
+(function () {
+'use strict';
+
+/* 双语字典：页面所有可见文案均由本字典驱动渲染 */
+var I18N = {
+  zh: {
+    pageTitle: '面试邀约 · 批量发送任务报告',
+    chipText: 'QQ邮箱 skill · Playbook 案例',
+    headerTitle: '面试邀约 · 批量发送任务报告',
+    headerSubtitle: '通过 QQ邮箱 skill 的 SMTP 通道，一次性为 5 位通过初筛的候选人批量发送个性化面试邀约，并逐封记录发送状态与回执。',
+    metaDateLabel: '执行日期', metaDateVal: '2026-08-27',
+    metaBatchLabel: '批次号', metaBatchVal: 'INV-20260827-01',
+    metaOwnerLabel: '发起人', metaOwnerVal: 'HR·招聘组',
+    metaChannelLabel: '通道', metaChannelVal: 'SMTP smtp.qq.com:465 SSL',
+    statTotalLabel: '发送总数', statTotalVal: '5',
+    statSuccessLabel: '发送成功', statSuccessVal: '5',
+    statFailedLabel: '发送失败', statFailedVal: '0',
+    statTimeLabel: '总耗时', statTimeVal: '约 42s',
+    secCandTitle: '候选人名单与个性化变量',
+    secCandDesc: '本批次共 5 位候选人，下表汇总各自的个性化变量与收件地址。',
+    thCandidate: '候选人', thPosition: '应聘岗位', thTime: '面试时间', thSalutation: '个性化称呼', thEmail: '收件地址',
+    secCardsTitle: '逐封发送详情',
+    secCardsDesc: '每封邮件的收件人、主题、正文预览、发送命令与 SMTP 回执如下。',
+    lblCommand: '发送命令',
+    badgeA: '已发送', badgeB: '发送成功',
+    smtpLabel: 'SMTP 返回', smtpVal: '250 Ok Queued',
+    cmdEllipsis: '……（正文略）',
+    secTplTitle: '邮件模板与个性化变量',
+    secTplDesc: '所有邮件基于同一套基础模板生成，仅替换三个个性化变量。',
+    tplCardTitle: '基础模板',
+    varCardTitle: '变量说明',
+    templateBody: '<span class="var">{称呼}</span>您好！感谢您应聘「<span class="var">{岗位}</span>」岗位并顺利通过初筛。现诚邀您参加面试：时间为<span class="var">{面试时间}</span>，形式为腾讯会议，会议链接将另行发送。请您提前 10 分钟入场候场；如该时段不便，请直接回复本邮件确认或调整。期待与您见面！—— HR·招聘组',
+    secTlTitle: '执行流程时间线',
+    secTlDesc: '从名单准备到状态汇总的完整执行链路。',
+    footerNote: '本页面为 QQ邮箱 skill 功能演示，候选人信息与发送回执均为演示数据，未真实发送邮件。',
+    footerGenPrefix: '生成时间', footerGenVal: '2026-08-27 16:47',
+    langZh: '中文', langEn: 'EN',
+    varRows: [
+      { token: '{称呼}', desc: '候选人姓名，随收件人自动替换', example: '示例：张明远' },
+      { token: '{岗位}', desc: '候选人应聘的岗位名称', example: '示例：产品经理' },
+      { token: '{面试时间}', desc: '与候选人约定的面试时段', example: '示例：周三 14:00' }
+    ],
+    timeline: [
+      { title: '准备名单', desc: '从初筛通过名单中确认 5 位候选人，整理岗位、面试时间、收件地址等个性化变量。' },
+      { title: '环境校验', desc: '检测环境变量 QQ_EMAIL_ACCOUNT 与 QQ_EMAIL_AUTH_CODE 是否就绪，确认 SMTP smtp.qq.com:465 SSL 通道可用。' },
+      { title: '逐封生成个性化正文', desc: '将 {称呼}、{岗位}、{面试时间} 逐一代入邮件模板，为每位候选人生成专属正文。' },
+      { title: '逐封调用 SMTP 发送', desc: '依次执行 node scripts/send.js 命令逐封发送，共 5 封，平均单封耗时约 8 秒。' },
+      { title: '汇总状态', desc: '收集各封 SMTP 返回（250 Ok Queued），核对成功与失败数量，生成本任务报告。' }
+    ],
+    candidates: [
+      { name: '张明远', position: '产品经理', time: '周三 14:00', salutation: '张明远您好', subject: '【面试邀约】张明远-产品经理 周三 14:00', body: '张明远您好！感谢您应聘「产品经理」岗位并顺利通过初筛。现诚邀您参加面试：时间为周三 14:00，形式为腾讯会议，会议链接将另行发送。请您提前 10 分钟入场候场；如该时段不便，请直接回复本邮件确认或调整。期待与您见面！—— HR·招聘组' },
+      { name: '李思雨', position: '运营专员', time: '周三 16:00', salutation: '李思雨您好', subject: '【面试邀约】李思雨-运营专员 周三 16:00', body: '李思雨您好！感谢您应聘「运营专员」岗位并顺利通过初筛。现诚邀您参加面试：时间为周三 16:00，形式为腾讯会议，会议链接将另行发送。请您提前 10 分钟入场候场；如该时段不便，请直接回复本邮件确认或调整。期待与您见面！—— HR·招聘组' },
+      { name: '王浩然', position: '前端工程师', time: '周四 10:00', salutation: '王浩然您好', subject: '【面试邀约】王浩然-前端工程师 周四 10:00', body: '王浩然您好！感谢您应聘「前端工程师」岗位并顺利通过初筛。现诚邀您参加面试：时间为周四 10:00，形式为腾讯会议，会议链接将另行发送。请您提前 10 分钟入场候场；如该时段不便，请直接回复本邮件确认或调整。期待与您见面！—— HR·招聘组' },
+      { name: '陈嘉怡', position: '数据分析师', time: '周四 15:00', salutation: '陈嘉怡您好', subject: '【面试邀约】陈嘉怡-数据分析师 周四 15:00', body: '陈嘉怡您好！感谢您应聘「数据分析师」岗位并顺利通过初筛。现诚邀您参加面试：时间为周四 15:00，形式为腾讯会议，会议链接将另行发送。请您提前 10 分钟入场候场；如该时段不便，请直接回复本邮件确认或调整。期待与您见面！—— HR·招聘组' },
+      { name: '刘子墨', position: '产品经理', time: '周五 11:00', salutation: '刘子墨您好', subject: '【面试邀约】刘子墨-产品经理 周五 11:00', body: '刘子墨您好！感谢您应聘「产品经理」岗位并顺利通过初筛。现诚邀您参加面试：时间为周五 11:00，形式为腾讯会议，会议链接将另行发送。请您提前 10 分钟入场候场；如该时段不便，请直接回复本邮件确认或调整。期待与您见面！—— HR·招聘组' }
+    ]
+  },
+  en: {
+    pageTitle: 'Interview Invitations · Batch Send Task Report',
+    chipText: 'QQ Email skill · Playbook Case',
+    headerTitle: 'Interview Invitations · Batch Send Task Report',
+    headerSubtitle: 'Batch-sending personalized interview invitations to 5 shortlisted candidates in one run via the QQ Email skill SMTP channel, with per-message status and receipts.',
+    metaDateLabel: 'Execution Date', metaDateVal: '2026-08-27',
+    metaBatchLabel: 'Batch No.', metaBatchVal: 'INV-20260827-01',
+    metaOwnerLabel: 'Initiator', metaOwnerVal: 'HR · Recruiting Team',
+    metaChannelLabel: 'Channel', metaChannelVal: 'SMTP smtp.qq.com:465 SSL',
+    statTotalLabel: 'Total Sent', statTotalVal: '5',
+    statSuccessLabel: 'Succeeded', statSuccessVal: '5',
+    statFailedLabel: 'Failed', statFailedVal: '0',
+    statTimeLabel: 'Total Time', statTimeVal: '~42s',
+    secCandTitle: 'Candidate List & Personalization Variables',
+    secCandDesc: '5 candidates in this batch. The table below summarizes their personalization variables and recipient addresses.',
+    thCandidate: 'Candidate', thPosition: 'Position', thTime: 'Interview Time', thSalutation: 'Salutation', thEmail: 'Recipient Address',
+    secCardsTitle: 'Per-Email Send Details',
+    secCardsDesc: 'Recipient, subject, body preview, send command and SMTP receipt of each message.',
+    lblCommand: 'Send Command',
+    badgeA: 'Sent', badgeB: 'Delivered',
+    smtpLabel: 'SMTP Response', smtpVal: '250 Ok Queued',
+    cmdEllipsis: '... (body truncated)',
+    secTplTitle: 'Email Template & Personalization Variables',
+    secTplDesc: 'All messages are generated from the same base template, replacing only three personalization variables.',
+    tplCardTitle: 'Base Template',
+    varCardTitle: 'Variable Mapping',
+    templateBody: 'Dear <span class="var">{Name}</span>, thank you for applying for the <span class="var">{Position}</span> position and passing our initial screening. We are pleased to invite you to an interview on <span class="var">{Time}</span> via Tencent Meeting; the meeting link will be sent separately. Please join 10 minutes early, and reply to this email to confirm or reschedule if needed. We look forward to meeting you! — HR Recruiting Team',
+    secTlTitle: 'Execution Timeline',
+    secTlDesc: 'The complete pipeline from list preparation to status summary.',
+    footerNote: 'This page is a feature demo of the QQ Email skill. Candidate information and delivery receipts are demo data; no real emails were sent.',
+    footerGenPrefix: 'Generated at', footerGenVal: '2026-08-27 16:47',
+    langZh: '中文', langEn: 'EN',
+    varRows: [
+      { token: '{Name}', desc: 'Candidate full name, replaced per recipient', example: 'e.g. Zhang Mingyuan' },
+      { token: '{Position}', desc: 'The position applied for', example: 'e.g. Product Manager' },
+      { token: '{Time}', desc: 'The agreed interview slot', example: 'e.g. Wed 14:00' }
+    ],
+    timeline: [
+      { title: 'Prepare the List', desc: 'Confirm 5 shortlisted candidates and collect personalization variables such as position, interview slot and recipient address.' },
+      { title: 'Environment Check', desc: 'Verify the QQ_EMAIL_ACCOUNT and QQ_EMAIL_AUTH_CODE environment variables and confirm the SMTP smtp.qq.com:465 SSL channel is reachable.' },
+      { title: 'Generate Personalized Bodies', desc: 'Substitute {Name}, {Position} and {Time} into the email template to generate a dedicated body for each candidate.' },
+      { title: 'Send One by One via SMTP', desc: 'Run the node scripts/send.js command for each message — 5 in total, about 8 seconds per message on average.' },
+      { title: 'Summarize Status', desc: 'Collect SMTP responses (250 Ok Queued) for all messages, verify success and failure counts, and generate this task report.' }
+    ],
+    candidates: [
+      { name: 'Zhang Mingyuan', position: 'Product Manager', time: 'Wed 14:00', salutation: 'Dear Zhang Mingyuan', subject: '[Interview Invitation] Zhang Mingyuan - Product Manager, Wed 14:00', body: 'Dear Zhang Mingyuan, thank you for applying for the Product Manager position and passing our initial screening. We are pleased to invite you to an interview on Wed 14:00 via Tencent Meeting; the meeting link will be sent separately. Please join 10 minutes early, and reply to this email to confirm or reschedule if the slot is not convenient. We look forward to meeting you! — HR Recruiting Team' },
+      { name: 'Li Siyu', position: 'Operations Specialist', time: 'Wed 16:00', salutation: 'Dear Li Siyu', subject: '[Interview Invitation] Li Siyu - Operations Specialist, Wed 16:00', body: 'Dear Li Siyu, thank you for applying for the Operations Specialist position and passing our initial screening. We are pleased to invite you to an interview on Wed 16:00 via Tencent Meeting; the meeting link will be sent separately. Please join 10 minutes early, and reply to this email to confirm or reschedule if the slot is not convenient. We look forward to meeting you! — HR Recruiting Team' },
+      { name: 'Wang Haoran', position: 'Frontend Engineer', time: 'Thu 10:00', salutation: 'Dear Wang Haoran', subject: '[Interview Invitation] Wang Haoran - Frontend Engineer, Thu 10:00', body: 'Dear Wang Haoran, thank you for applying for the Frontend Engineer position and passing our initial screening. We are pleased to invite you to an interview on Thu 10:00 via Tencent Meeting; the meeting link will be sent separately. Please join 10 minutes early, and reply to this email to confirm or reschedule if the slot is not convenient. We look forward to meeting you! — HR Recruiting Team' },
+      { name: 'Chen Jiayi', position: 'Data Analyst', time: 'Thu 15:00', salutation: 'Dear Chen Jiayi', subject: '[Interview Invitation] Chen Jiayi - Data Analyst, Thu 15:00', body: 'Dear Chen Jiayi, thank you for applying for the Data Analyst position and passing our initial screening. We are pleased to invite you to an interview on Thu 15:00 via Tencent Meeting; the meeting link will be sent separately. Please join 10 minutes early, and reply to this email to confirm or reschedule if the slot is not convenient. We look forward to meeting you! — HR Recruiting Team' },
+      { name: 'Liu Zimo', position: 'Product Manager', time: 'Fri 11:00', salutation: 'Dear Liu Zimo', subject: '[Interview Invitation] Liu Zimo - Product Manager, Fri 11:00', body: 'Dear Liu Zimo, thank you for applying for the Product Manager position and passing our initial screening. We are pleased to invite you to an interview on Fri 11:00 via Tencent Meeting; the meeting link will be sent separately. Please join 10 minutes early, and reply to this email to confirm or reschedule if the slot is not convenient. We look forward to meeting you! — HR Recruiting Team' }
+    ]
+  }
+};
+
+/* 与语言无关的基础数据 */
+var BASE = [
+  { email: 'zhangmy@example.com', initials: 'ZM' },
+  { email: 'lisy@example.com', initials: 'LS' },
+  { email: 'wanghr@example.com', initials: 'WH' },
+  { email: 'chenjy@example.com', initials: 'CJ' },
+  { email: 'liuzm@example.com', initials: 'LZ' }
+];
+
+var ICONS = {
+  check: '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>',
+  terminal: '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>'
+};
+
+function esc(s) {
+  return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+function pad2(n) { return (n < 10 ? '0' : '') + n; }
+
+function renderTable(t) {
+  var rows = '';
+  for (var i = 0; i < t.candidates.length; i++) {
+    var c = t.candidates[i], b = BASE[i];
+    rows += '<tr>' +
+      '<td class="cand-name">' + esc(c.name) + '</td>' +
+      '<td><span class="pos-tag">' + esc(c.position) + '</span></td>' +
+      '<td class="time-text">' + esc(c.time) + '</td>' +
+      '<td class="salut-text">' + esc(c.salutation) + '</td>' +
+      '<td class="email-text">' + esc(b.email) + '</td>' +
+      '</tr>';
+  }
+  document.getElementById('candBody').innerHTML = rows;
+}
+
+function buildCommand(t, c, b) {
+  return 'node scripts/send.js "' + b.email + '" "' + c.subject + '" "' + c.body.slice(0, 18) + t.cmdEllipsis + '"';
+}
+
+function renderCards(t) {
+  var out = '';
+  for (var i = 0; i < t.candidates.length; i++) {
+    var c = t.candidates[i], b = BASE[i];
+    var cmd = buildCommand(t, c, b);
+    out += '<article class="card mail-card">' +
+      '<div class="mail-head">' +
+        '<div class="avatar">' + b.initials + '</div>' +
+        '<div class="mail-to"><span class="mail-name">' + esc(c.name) + '</span><span class="mail-email">' + esc(b.email) + '</span></div>' +
+        '<span class="mail-idx">' + pad2(i + 1) + '</span>' +
+      '</div>' +
+      '<div class="mail-subject">' + esc(c.subject) + '</div>' +
+      '<p class="mail-body">' + esc(c.body) + '</p>' +
+      '<div class="mail-cmd">' +
+        '<div class="cmd-label">' + ICONS.terminal + '<span>' + esc(t.lblCommand) + '</span></div>' +
+        '<pre><code>' + esc(cmd) + '</code></pre>' +
+      '</div>' +
+      '<div class="mail-foot">' +
+        '<span class="badge"><span>' + esc(t.badgeA) + '</span>' + ICONS.check + '<span>' + esc(t.badgeB) + '</span></span>' +
+        '<span class="smtp-info">' + esc(t.smtpLabel) + ': <b>' + esc(t.smtpVal) + '</b></span>' +
+      '</div>' +
+    '</article>';
+  }
+  document.getElementById('sendCards').innerHTML = out;
+}
+
+function renderVars(t) {
+  var out = '';
+  for (var i = 0; i < t.varRows.length; i++) {
+    var v = t.varRows[i];
+    out += '<li class="var-row">' +
+      '<span class="var">' + esc(v.token) + '</span>' +
+      '<p class="var-desc">' + esc(v.desc) + '</p>' +
+      '<p class="var-example">' + esc(v.example) + '</p>' +
+      '</li>';
+  }
+  document.getElementById('varList').innerHTML = out;
+}
+
+function renderTimeline(t) {
+  var out = '';
+  for (var i = 0; i < t.timeline.length; i++) {
+    var s = t.timeline[i];
+    out += '<li class="tl-item">' +
+      '<span class="tl-num">' + (i + 1) + '</span>' +
+      '<div class="tl-content"><h3>' + esc(s.title) + '</h3><p>' + esc(s.desc) + '</p></div>' +
+      '</li>';
+  }
+  document.getElementById('tlList').innerHTML = out;
+}
+
+function updateLangButtons() {
+  var zhBtn = document.getElementById('btnZh');
+  var enBtn = document.getElementById('btnEn');
+  zhBtn.className = 'lang-btn' + (lang === 'zh' ? ' active' : '');
+  enBtn.className = 'lang-btn' + (lang === 'en' ? ' active' : '');
+  zhBtn.setAttribute('aria-pressed', lang === 'zh' ? 'true' : 'false');
+  enBtn.setAttribute('aria-pressed', lang === 'en' ? 'true' : 'false');
+}
+
+function applyLang() {
+  var t = I18N[lang];
+  document.documentElement.lang = (lang === 'zh') ? 'zh-CN' : 'en';
+  document.title = t.pageTitle;
+  var nodes = document.querySelectorAll('[data-i18n]');
+  for (var i = 0; i < nodes.length; i++) {
+    var key = nodes[i].getAttribute('data-i18n');
+    if (Object.prototype.hasOwnProperty.call(t, key)) nodes[i].textContent = t[key];
+  }
+  var hnodes = document.querySelectorAll('[data-i18n-html]');
+  for (var j = 0; j < hnodes.length; j++) {
+    var hkey = hnodes[j].getAttribute('data-i18n-html');
+    if (Object.prototype.hasOwnProperty.call(t, hkey)) hnodes[j].innerHTML = t[hkey];
+  }
+  renderTable(t);
+  renderCards(t);
+  renderVars(t);
+  renderTimeline(t);
+  updateLangButtons();
+}
+
+function switchTo(l) {
+  lang = l;
+  try {
+    history.replaceState(null, '', location.pathname + '?lang=' + l);
+  } catch (e) { /* file:// 协议下部分浏览器限制时静默忽略 */ }
+  applyLang();
+}
+
+var lang = (function () {
+  var m = location.search.match(/[?&]lang=(zh|en)/);
+  return m ? m[1] : 'zh';
+})();
+
+document.getElementById('btnZh').addEventListener('click', function () { switchTo('zh'); });
+document.getElementById('btnEn').addEventListener('click', function () { switchTo('en'); });
+
+applyLang();
+})();
+</script>
+<script data-page-node-id="1EmwzwBHYxTXIl0QvbfC1d" data-pnid-children="VXiGxTeOo5OE165gcDlVPs">
+/* 返回逻辑（BACKFIX_2026_10_26 / LIBBK_2026_10_26）：
+   - 静态域（/page/<节点>/<版本>/）环境：跨域 iframe 里 history.back() 不生效 → 原生 <a target=_self> 走同域相对路径。
+   - 其他宿主（资料库预览等，页面被宿主以 srcdoc/blob 承载、基础 URL 不可靠）：
+     不拦截点击，把 href 恢复成真实文件名，交给宿主按打开正向链接同样的方式解析；
+     点击仍给「正在返回」遮罩反馈。 */
+(function(){
+  'use strict';
+  var HR_REL='https://workbuddy.link/p/8ONdY2NLcDOH7mOL1HMcso';
+  var HR_SHORT='https://workbuddy.link/p/8ONdY2NLcDOH7mOL1HMcso';
+  var u=''; try{ u=location.href; }catch(e){}
+  var IS_STATIC=/^https?:/i.test(u)&&u.indexOf('/page/')>=0;
+  function navTo(u){
+    try{
+      var a=document.createElement('a'); a.href=u; a.target='_self'; a.rel='noopener';
+      a.style.display='none'; document.body.appendChild(a); a.click();
+      setTimeout(function(){ if(a.parentNode) a.parentNode.removeChild(a); },1000);
+      return true;
+    }catch(e){ try{ location.href=u; return true; }catch(e2){} }
+    return false;
+  }
+  var __pgLeft=false;
+  try{ window.addEventListener('pagehide',function(){ __pgLeft=true; },{once:true}); }catch(e){}
+  function navLoading(txt){
+    try{
+      var d=document.getElementById('__navLoad');
+      if(!d){
+        d=document.createElement('div'); d.id='__navLoad';
+        d.style.cssText='position:fixed;left:0;top:0;right:0;bottom:0;z-index:2147483000;display:flex;align-items:center;justify-content:center;background:rgba(10,14,35,.86)';
+        document.body.appendChild(d);
+      }
+      d.innerHTML='<span style="background:rgba(10,14,35,.92);color:#EDF1FF;font-size:14px;font-weight:700;padding:10px 20px;border-radius:100px;border:1px solid rgba(150,175,255,.28)">'+txt+'</span>';
+      d.style.display='flex';
+      setTimeout(function(){ try{ d.style.display='none'; }catch(e){} },3500);
+    }catch(e){}
+  }
+  var el=document.getElementById('__backLink');
+  if(!el) return;
+  if(IS_STATIC){
+    el.addEventListener('click',function(e){
+      if(e&&e.preventDefault) e.preventDefault();
+      navLoading('← 正在返回…');
+      navTo(HR_REL);
+    });
+  }else{
+    /* 未知宿主：不 preventDefault，恢复真实 href 让宿主/浏览器自己解析 */
+    el.setAttribute('href',HR_REL);
+    el.addEventListener('click',function(){ navLoading('← 正在返回…'); });
+  }
+  try{ window.__hrBackShort=HR_SHORT; }catch(e){}
+})();
+</script>
+<!--pnid:pUEYTPNzVh01HEY4abPcAt--><!--ENTRYTIP_START--><script data-page-node-id="entrytip" data-pnid-children="fD9KTBhEjZT5wdvYbckZrK">
+</script><!--pnid:WtLRfTAZJhJ7FmLcFq5hkw--><!--ENTRYTIP_END--><!--pnid:wmhgGPoT0ikMOgUptcQ30n--><!--NAVFIX8_START--><script data-page-node-id="navfix5" data-pnid-children="S6nc7pOO6PwS4668zglbx6">/* NAVFIX8_2026_10_29：返回链路。
+   手势内同步改顶层（能成就成）；1.5s 后仍在本页，只在本 frame 跳一次、且跳最快的目标
+   （HR 主页自己的静态地址，缓存在 localStorage），不重试、不互相打断。 */
+(function(){
+  var BACK='../../../../通道页/01-HR主页/HR主页.html', HOME='../../../../index.html', SELF='index.html', ISMAIN=0, LSK='hr_main_static', left=false, seq=0;
+  /* HR 主页：把自己的静态地址记下来，工具页返回时直跳（比走短链快一个数量级） */
+  try{ if(ISMAIN && /\/page\//.test(location.href) && /^https?:/i.test(location.href)) localStorage.setItem(LSK, JSON.stringify({u:location.href,t:Date.now()})); }catch(e){}
+  function fast(u){ try{ if(u===BACK && !ISMAIN){ var o=JSON.parse(localStorage.getItem(LSK)||'null'); if(o&&o.u&&(Date.now()-o.t)<6*3600*1000) return o.u; } }catch(e){} return u; }
+  try{ addEventListener('pagehide',function(){ left=true; }); }catch(e){}
+  function box(){
+    try{ var d=document.getElementById('__navLoad');
+      if(!d){ d=document.createElement('div'); d.id='__navLoad';
+        d.style.cssText='position:fixed;left:0;top:0;right:0;bottom:0;z-index:2147483000;display:flex;align-items:center;justify-content:center;background:rgba(10,14,35,.86)';
+        d.addEventListener('click',function(e){ if(e.target===d) d.style.display='none'; });
+        (document.body||document.documentElement).appendChild(d); }
+      return d;
+    }catch(e){ return null; }
+  }
+  function tip(t){
+    try{ var d=box(); if(!d) return;
+      d.innerHTML='<span style="background:rgba(10,14,35,.92);color:#EDF1FF;font-size:14px;font-weight:700;padding:10px 20px;border-radius:100px;border:1px solid rgba(150,175,255,.28)">'+t+'</span>';
+      d.style.display='flex';
+    }catch(e){}
+  }
+  function tipLink(u){
+    try{ var d=box(); if(!d) return;
+      d.innerHTML='<div style="text-align:center"><div style="color:#EDF1FF;font-size:14px;font-weight:700;margin-bottom:14px">'
+        +'\u8fd4\u56de\u6bd4\u5e73\u65f6\u6162\uff0c\u70b9\u4e0b\u9762\u518d\u8d70\u4e00\u6b21\uff08\u70b9\u7a7a\u767d\u5904\u53ef\u5173\u95ed\uff09</div>'
+        +'<a href="'+u+'" style="display:inline-block;background:#7C93FF;color:#0A0E23;font-size:15px;font-weight:700;padding:12px 26px;border-radius:100px;text-decoration:none">'
+        +'\u2190 \u70b9\u8fd9\u91cc\u8fd4\u56de</a></div>';
+      d.style.display='flex';
+    }catch(e){}
+  }
+  function go(u){
+    left=false; var my=++seq, f=fast(u);
+    tip('\u2039 \u6b63\u5728\u8fd4\u56de\u2026');
+    /* 1) 手势内同步改顶层（微信有效；被沙箱拦就是无副作用空操作） */
+    try{ if(window.top&&window.top!==window.self){ window.top.location.href=u; } }catch(e){}
+    /* 2) 1.5s 还在本页：本 frame 只跳一次，且走最快目标 */
+    setTimeout(function(){ if(my===seq&&!left){ try{ location.href=f; }catch(e){} } },1500);
+    /* 3) 9s 还在本页才给链接 */
+    setTimeout(function(){ if(my===seq&&!left) tipLink(f); },9000);
+    return true;
+  }
+  window.goBack=function(){ return go(BACK); };
+  window.goChan=window.goBack;
+  window.mpBack=window.goBack;
+  window.goHome=function(){ return go(HOME); };
+  try{ window.PAGE_URL=SELF; }catch(e){}
+  function isHomeEl(el){
+    if(!el||!el.getAttribute||el.tagName==='BODY') return false;
+    if(/crumb-home/.test(el.getAttribute('class')||'')) return true;
+    var t=String(el.textContent||'').replace(/\s/g,'');
+    return /\u56de\u9996\u9875|^\u9996\u9875$/.test(t) && t.length<=8;
+  }
+  function isBackEl(el){
+    if(!el||!el.getAttribute||el.tagName==='BODY') return false;
+    if(/crumb-back|mp-back/.test(el.getAttribute('class')||'')) return true;
+    if(/goBack|goChan|mpBack|history\.back/.test(el.getAttribute('onclick')||'')) return true;
+    if(el.id==='hrBackBtn'||el.id==='__backLink') return true;
+    var t=String(el.textContent||'').replace(/\s/g,'');
+    return /^[\u2039\u2190<]?\u8fd4\u56de(\u4e0a\u4e00\u9875|\u4e0a\u9875|HR\u7684AI\u5de5\u5177\u5e93)?$/.test(t);
+  }
+  function bindOne(el){
+    if(!el||el.__nv8) return;
+    el.__nv8=1;
+    var home=isHomeEl(el);
+    el.onclick=function(e){
+      if(e){ try{ e.preventDefault(); if(e.stopImmediatePropagation) e.stopImmediatePropagation(); }catch(err){} }
+      go(home?HOME:BACK); return false;
+    };
+  }
+  function bindAll(){
+    try{
+      var list=document.querySelectorAll('a,button,[onclick]'), i, el;
+      for(i=0;i<list.length;i++){ el=list[i]; if(isBackEl(el)||isHomeEl(el)) bindOne(el); }
+    }catch(e){}
+  }
+  document.addEventListener('click',function(e){
+    try{
+      var t=e.target;
+      if(t&&t.closest&&t.closest('#xqr-ov,#__navLoad')) return;
+      var el=t&&t.closest?t.closest('a,button,[onclick]'):null;
+      if(!el) return;
+      if(isHomeEl(el)){
+        e.preventDefault(); if(e.stopImmediatePropagation) e.stopImmediatePropagation();
+        go(HOME); return;
+      }
+      if(isBackEl(el)){
+        e.preventDefault(); if(e.stopImmediatePropagation) e.stopImmediatePropagation();
+        go(BACK);
+      }
+    }catch(err){}
+  },true);
+  bindAll();
+  setTimeout(bindAll,600); setTimeout(bindAll,2000); setTimeout(bindAll,4000);
+})();
+</script><!--pnid:16yCcAh0AaIpEmR4xyNPe8--><!--NAVFIX8_END--></body>
+</html>
