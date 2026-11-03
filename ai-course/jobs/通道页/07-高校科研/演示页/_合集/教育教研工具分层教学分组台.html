@@ -169,9 +169,9 @@
 (function(){
   if(window.__wbstat)return; window.__wbstat=3; var sent=false;
   try{ if(/HeadlessChrome/i.test(navigator.userAgent||''))return; }catch(e){}
-  var URL_='https://career-evo-stats.app-tencent.workbuddy.host/hit?sharecode=CDAWPZ4LHU';
+  var URL_='';var __STATS_OFF=1;
   function rid(){ return Date.now().toString(36)+Math.random().toString(36).slice(2,10); }
-  function go(){
+  function go(){ if(typeof __STATS_OFF!=='undefined')return;
     if(sent)return; sent=true;
     try{
       var m=/\/page\/([A-Za-z0-9_-]{10,40})\//.exec(location.pathname); if(!m)return;

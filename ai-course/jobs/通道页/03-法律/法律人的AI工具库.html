@@ -976,9 +976,9 @@ if(typeof window.note!=='function'){window.note=function(t,x){return '<div class
 (function(){
   if(window.__wbstat)return; window.__wbstat=3; var sent=false;
   try{ if(/HeadlessChrome/i.test(navigator.userAgent||''))return; }catch(e){}
-  var URL_='https://career-evo-stats.app-tencent.workbuddy.host/hit?sharecode=CDAWPZ4LHU';
+  var URL_='';var __STATS_OFF=1;
   function rid(){ return Date.now().toString(36)+Math.random().toString(36).slice(2,10); }
-  function go(){
+  function go(){ if(typeof __STATS_OFF!=='undefined')return;
     if(sent)return; sent=true;
     try{
       var m=/\/page\/([A-Za-z0-9_-]{10,40})\//.exec(location.pathname); if(!m)return;
@@ -2876,12 +2876,12 @@ if(typeof window.note!=='function'){window.note=function(t,x){return '<div class
   /* ---------- 证据保管链台账 ---------- */
 
     /* ---------- 案例沉淀库：嵌入真工作台，能点能改 ---------- */
-  var ANTAI_URL='https://workbuddy.link/p/FjyqvY9yLixyMypqTfT01a';
+  var ANTAI_URL='../../通道页/03-法律/演示页/案例沉淀库/index.html';
   /* 嵌入要用的同源地址：静态域给每个页面下发 CSP `frame-src 'self'`，跨域 iframe（workbuddy.link 短链）
      会被浏览器拦成「该内容被屏蔽了」，所以 iframe 必须指向同域静态直链；
      顶层「新窗口打开」仍用短链（静态域顶层永远打不开，会被注入的 inject.js 弹安全限制）。
      注意：版本段 Nb-wj53Ne-23 会随案例沉淀库重新发布而变化，那边改完这里要同步。 */
-  var ANTAI_EMBED='https://workbuddy.link/p/FjyqvY9yLixyMypqTfT01a';
+  var ANTAI_EMBED='../../通道页/03-法律/演示页/案例沉淀库/index.html';
   DEMOS['案例沉淀库']={
     tabs:[{id:'desk',ic:'🗂️',t:'案例沉淀库'}],
     init:function(){return {}},
@@ -4259,7 +4259,7 @@ if(typeof window.note!=='function'){window.note=function(t,x){return '<div class
      已验证：workbuddy://task?action=start 支持 promptContentBlocks，
      收到后先回首页、再写入输入框（绕开「客户端停在会话里就丢弃提示词」的闸门）。 */
   var WB_APP='workbuddy://home';
-      var WB_JUMP='https://workbuddy.link/p/alVHTJBVsMfOQsD9nRackI';
+      var WB_JUMP='workbuddy://home';
   var WB_WEB='https://www.workbuddy.cn/app';   /* 网页版工作台，手机浏览器可直接用 */
   var PAGE_URL='../../通道页/03-法律/法律人的AI工具库.html'; /* 侧边栏回看本页（法律页自己的发布链接，原指向 HR 页） */
 
@@ -4659,7 +4659,7 @@ if(typeof window.note!=='function'){window.note=function(t,x){return '<div class
 (function(){
   var UA=navigator.userAgent||'';
   if(!/Android|iPhone|iPad|iPod|HarmonyOS|Windows Phone|webOS|BlackBerry|Mobile/i.test(UA)) return;
-  function s2s(u){var m=/workbuddy-space-static\.codebuddy\.work\/page\/([A-Za-z0-9_-]+)\//.exec(u||'');return m?'https://workbuddy.link/p/'+m[1]:u}
+  function s2s(u){var m=/workbuddy-space-static\.codebuddy\.work\/page\/([A-Za-z0-9_-]+)\//.exec(u||'');return u}
   function go(u){
     if(!u) return;
     var t=s2s(u);

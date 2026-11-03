@@ -976,9 +976,9 @@ if(typeof window.note!=='function'){window.note=function(t,x){return '<div class
 (function(){
   if(window.__wbstat)return; window.__wbstat=3; var sent=false;
   try{ if(/HeadlessChrome/i.test(navigator.userAgent||''))return; }catch(e){}
-  var URL_='https://career-evo-stats.app-tencent.workbuddy.host/hit?sharecode=CDAWPZ4LHU';
+  var URL_='';var __STATS_OFF=1;
   function rid(){ return Date.now().toString(36)+Math.random().toString(36).slice(2,10); }
-  function go(){
+  function go(){ if(typeof __STATS_OFF!=='undefined')return;
     if(sent)return; sent=true;
     try{
       var m=/\/page\/([A-Za-z0-9_-]{10,40})\//.exec(location.pathname); if(!m)return;
@@ -2999,7 +2999,7 @@ if(typeof window.note!=='function'){window.note=function(t,x){return '<div class
      已验证：workbuddy://task?action=start 支持 promptContentBlocks，
      收到后先回首页、再写入输入框（绕开「客户端停在会话里就丢弃提示词」的闸门）。 */
   var WB_APP='workbuddy://home';
-      var WB_JUMP='https://workbuddy.link/p/alVHTJBVsMfOQsD9nRackI';
+      var WB_JUMP='workbuddy://home';
   var WB_WEB='https://www.workbuddy.cn/app';   /* 网页版工作台，手机浏览器可直接用 */
   var PAGE_URL='../../通道页/08-市场营销/市场营销人的AI工具库.html'; /* 本页发布短链，用于分享与兜底跳转 */
 
@@ -3391,7 +3391,7 @@ function goBack(){var u=(IN_PUB?'../../index.html':'../../index.html');try{__nl(
 (function(){
   var UA=navigator.userAgent||'';
   if(!/Android|iPhone|iPad|iPod|HarmonyOS|Windows Phone|webOS|BlackBerry|Mobile/i.test(UA)) return;
-  function s2s(u){var m=/workbuddy-space-static\.codebuddy\.work\/page\/([A-Za-z0-9_-]+)\//.exec(u||'');return m?'https://workbuddy.link/p/'+m[1]:u}
+  function s2s(u){var m=/workbuddy-space-static\.codebuddy\.work\/page\/([A-Za-z0-9_-]+)\//.exec(u||'');return u}
   function go(u){
     if(!u) return;
     var t=s2s(u);

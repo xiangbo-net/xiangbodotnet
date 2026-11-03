@@ -953,9 +953,9 @@ if(typeof window.note!=='function'){window.note=function(t,x){return '<div class
 (function(){
   if(window.__wbstat)return; window.__wbstat=3; var sent=false;
   try{ if(/HeadlessChrome/i.test(navigator.userAgent||''))return; }catch(e){}
-  var URL_='https://career-evo-stats.app-tencent.workbuddy.host/hit?sharecode=CDAWPZ4LHU';
+  var URL_='';var __STATS_OFF=1;
   function rid(){ return Date.now().toString(36)+Math.random().toString(36).slice(2,10); }
-  function go(){
+  function go(){ if(typeof __STATS_OFF!=='undefined')return;
     if(sent)return; sent=true;
     try{
       var m=/\/page\/([A-Za-z0-9_-]{10,40})\//.exec(location.pathname); if(!m)return;
@@ -984,7 +984,7 @@ if(typeof window.note!=='function'){window.note=function(t,x){return '<div class
 
 <!--pnid:mPoGVrFyZtIh8MDEBLRLkN--><!-- 返回导航 -->
 <div data-page-node-id="BCpimE1v7YC3PONFcToN89" class="crumb-bar" id="crumb-bar">
-  <button data-page-node-id="Lpgssj6YPnnXvQBJKQ1NU2" class="crumb-back" onclick="try{goBack()}catch(e){location.href=(IN_IFRAME?'https://workbuddy.link/p/TeRZt3BHuGAUw280qyxEOP':'https://workbuddy.link/p/TeRZt3BHuGAUw280qyxEOP')}" type="button"><!--pnid:cXmUzmokiHFpRKyZ6cOMcx-->‹ 返回上一页</button>
+  <button data-page-node-id="Lpgssj6YPnnXvQBJKQ1NU2" class="crumb-back" onclick="try{goBack()}catch(e){location.href=('../../../../index.html')}" type="button"><!--pnid:cXmUzmokiHFpRKyZ6cOMcx-->‹ 返回上一页</button>
   <span data-page-node-id="2O0JtuEdS8APXhE5sao83L" class="crumb-path"><!--pnid:pdqGGIAVbU5Ss7FHFYDOjE-->首页 › <b data-page-node-id="cxf9jgaN5Kw8NRrz2XmNMU"><!--pnid:Scq22jscZLGQXoqCo1LZf4-->行政的 AI 工具库</b></span>
 </div>
 <div data-page-node-id="EANfE2TBO8FLm3f2PIGmdi" class="bn-wrap">
@@ -2717,9 +2717,9 @@ if(typeof window.note!=='function'){window.note=function(t,x){return '<div class
      可用 host：home / chat/<会话id> / experts / skills / channels / genie / my-files。
      已验证：workbuddy://conversation/open 支持 promptContentBlocks，可直接预填对话框。 */
   var WB_APP='workbuddy://home';
-      var WB_JUMP='https://workbuddy.link/p/alVHTJBVsMfOQsD9nRackI';
+      var WB_JUMP='workbuddy://home';
   var WB_WEB='https://www.workbuddy.cn/app';   /* 网页版工作台，手机浏览器可直接用 */
-  var PAGE_URL='https://workbuddy.link/p/zaGcEnkiesWqVgBqqPvoEY'; /* 侧边栏回看本页 */
+  var PAGE_URL=location.href.split('#')[0]; /* 侧边栏回看本页 */
 
   /* 把提示词直接送进 WorkBuddy 对话框。
      协议：workbuddy://conversation/open
@@ -2889,7 +2889,7 @@ if(typeof window.note!=='function'){window.note=function(t,x){return '<div class
     toast(ok?'本页链接已复制 ✓\n发到电脑上打开，一键调用就能用了'
             :'复制失败，请手动记下：workbuddy.link/p/zaGcEnkiesWqVgBqqPvoEY',4600);
   };
-  var HOME_URL=(IN_IFRAME?'https://workbuddy.link/p/TeRZt3BHuGAUw280qyxEOP':'https://workbuddy.link/p/TeRZt3BHuGAUw280qyxEOP');
+  var HOME_URL=('../../../../index.html');
   /* 容器内 JS location.href 不一定生效：跳转统一走原生 <a target=_self> 导航（与首页 8 通道同法），失败再回落 location.href */
   function navTo(u){
     try{
@@ -3142,7 +3142,7 @@ if(typeof window.note!=='function'){window.note=function(t,x){return '<div class
 
 <script data-page-node-id="navfix" data-pnid-children="BuxwbdSVgRpE1cChqkZMub">/* NAVFIX_2026_10_27：「返回上一页」固定回所属通道页，不再落到首页 */
 (function(){
-  var ST="../../../../通道页/02-行政/行政的AI工具库.html", SH="https://workbuddy.link/p/zaGcEnkiesWqVgBqqPvoEY";
+  var ST="../../../../通道页/02-行政/行政的AI工具库.html", SH=location.href.split('#')[0];
   var IN=false;
   try{ IN = (typeof IN_PUB!=='undefined'&&IN_PUB) || (typeof IN_IFRAME!=='undefined'&&IN_IFRAME); }catch(e){}
   var URL = IN?ST:SH;

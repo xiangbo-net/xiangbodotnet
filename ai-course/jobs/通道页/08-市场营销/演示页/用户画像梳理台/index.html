@@ -953,9 +953,9 @@ if(typeof window.note!=='function'){window.note=function(t,x){return '<div class
 (function(){
   if(window.__wbstat)return; window.__wbstat=3; var sent=false;
   try{ if(/HeadlessChrome/i.test(navigator.userAgent||''))return; }catch(e){}
-  var URL_='https://career-evo-stats.app-tencent.workbuddy.host/hit?sharecode=CDAWPZ4LHU';
+  var URL_='';var __STATS_OFF=1;
   function rid(){ return Date.now().toString(36)+Math.random().toString(36).slice(2,10); }
-  function go(){
+  function go(){ if(typeof __STATS_OFF!=='undefined')return;
     if(sent)return; sent=true;
     try{
       var m=/\/page\/([A-Za-z0-9_-]{10,40})\//.exec(location.pathname); if(!m)return;
@@ -984,7 +984,7 @@ if(typeof window.note!=='function'){window.note=function(t,x){return '<div class
 
 <!--pnid:fZZTRSrlwasDN1540UpvdL--><!-- 返回导航 -->
 <div data-page-node-id="GJ30NGgOMFqJOs1votIYQV" class="crumb-bar" id="crumb-bar">
-  <button data-page-node-id="P0Cruj3uyh7NXSGd4JwF5T" class="crumb-back" onclick="try{goBack()}catch(e){location.href=(IN_IFRAME?'https://workbuddy.link/p/TeRZt3BHuGAUw280qyxEOP':'https://workbuddy.link/p/TeRZt3BHuGAUw280qyxEOP')}" type="button"><!--pnid:atNvgydMADvhSK0StTiLuq-->‹ 返回上一页</button>
+  <button data-page-node-id="P0Cruj3uyh7NXSGd4JwF5T" class="crumb-back" onclick="try{goBack()}catch(e){location.href=('../../../../index.html')}" type="button"><!--pnid:atNvgydMADvhSK0StTiLuq-->‹ 返回上一页</button>
   <span data-page-node-id="JswPJlVyVFTwZpW81tQQno" class="crumb-path"><!--pnid:tKDXpNdxakVKANWQaJEJC5-->首页 › <b data-page-node-id="0Is3eSJtHOJiNWOga5mT0e"><!--pnid:DkvchR134BF9imvncI6n9e-->市场营销人的 AI 工具库</b></span>
 </div>
 <div data-page-node-id="EANfE2TBO8FLm3f2PIGmdi" class="bn-wrap">
@@ -2965,9 +2965,9 @@ if(typeof window.note!=='function'){window.note=function(t,x){return '<div class
      可用 host：home / chat/<会话id> / experts / skills / channels / genie / my-files。
      已验证：workbuddy://conversation/open 支持 promptContentBlocks，可直接预填对话框。 */
   var WB_APP='workbuddy://home';
-      var WB_JUMP='https://workbuddy.link/p/alVHTJBVsMfOQsD9nRackI';
+      var WB_JUMP='workbuddy://home';
   var WB_WEB='https://www.workbuddy.cn/app';   /* 网页版工作台，手机浏览器可直接用 */
-  var PAGE_URL='https://workbuddy.link/p/vSHgIBnlPJJKNGWWb935Ei'; /* 侧边栏回看本页 */
+  var PAGE_URL=location.href.split('#')[0]; /* 侧边栏回看本页 */
 
   /* 把提示词直接送进 WorkBuddy 对话框。
      协议：workbuddy://conversation/open
@@ -3137,7 +3137,7 @@ if(typeof window.note!=='function'){window.note=function(t,x){return '<div class
     toast(ok?'本页链接已复制 ✓\n发到电脑上打开，一键调用就能用了'
             :'复制失败，请手动记下：workbuddy.link/p/vSHgIBnlPJJKNGWWb935Ei',4600);
   };
-  var HOME_URL=(IN_IFRAME?'https://workbuddy.link/p/TeRZt3BHuGAUw280qyxEOP':'https://workbuddy.link/p/TeRZt3BHuGAUw280qyxEOP');
+  var HOME_URL=('../../../../index.html');
   /* 容器内 JS location.href 不一定生效：跳转统一走原生 <a target=_self> 导航（与首页 8 通道同法），失败再回落 location.href */
   function navTo(u){
     try{
@@ -3310,9 +3310,9 @@ if(typeof window.note!=='function'){window.note=function(t,x){return '<div class
   window.claimDoc=claimDoc;window.closeWxmp=closeWxmp;window.initRes=initRes;
   initRes();
 </script>
-<script data-page-node-id="1RPXZdN7Zftd7EcxNQ91RC" data-pnid-children="oHC2RM2bN9gFFQFPmp49Sa">function goHome(){try{location.href=(IN_IFRAME?'https://workbuddy.link/p/TeRZt3BHuGAUw280qyxEOP':'https://workbuddy.link/p/TeRZt3BHuGAUw280qyxEOP')}catch(e){}}
+<script data-page-node-id="1RPXZdN7Zftd7EcxNQ91RC" data-pnid-children="oHC2RM2bN9gFFQFPmp49Sa">function goHome(){try{location.href=('../../../../index.html')}catch(e){}}
 function __nl(t){try{var d=document.getElementById('__navLoad');if(!d){d=document.createElement('div');d.id='__navLoad';d.style.cssText='position:fixed;left:0;top:0;right:0;bottom:0;z-index:2147483000;display:flex;align-items:center;justify-content:center;background:rgba(10,14,35,.86)';document.body.appendChild(d)}d.innerHTML='<span style="background:rgba(10,14,35,.92);color:#EDF1FF;font-size:14px;font-weight:700;padding:10px 20px;border-radius:100px;border:1px solid rgba(150,175,255,.28)">'+t+'</span>';d.style.display='flex';setTimeout(function(){try{d.style.display='none'}catch(e){}},3500)}catch(e){}}
-function goBack(){var u=(IN_IFRAME?'https://workbuddy.link/p/TeRZt3BHuGAUw280qyxEOP':'https://workbuddy.link/p/TeRZt3BHuGAUw280qyxEOP'),left=false,canBack=false;try{window.addEventListener('pagehide',function(){left=true},{once:true})}catch(e){}try{canBack=!!(window.history&&window.history.length>1)}catch(e){}__nl('‹ 正在返回…');try{if(canBack){window.history.back()}}catch(e){}setTimeout(function(){if(left)return;try{var a=document.createElement('a');a.href=u;a.target='_self';a.rel='noopener';a.style.display='none';document.body.appendChild(a);a.click()}catch(e){location.href=u}},canBack?260:0)}window.goHome=function(){try{__nl('⌂ 正在回首页…')}catch(e){}try{var a=document.createElement('a');a.href=(IN_IFRAME?'https://workbuddy.link/p/TeRZt3BHuGAUw280qyxEOP':'https://workbuddy.link/p/TeRZt3BHuGAUw280qyxEOP');a.target='_self';a.rel='noopener';a.style.display='none';document.body.appendChild(a);a.click()}catch(e){location.href=(IN_IFRAME?'https://workbuddy.link/p/TeRZt3BHuGAUw280qyxEOP':'https://workbuddy.link/p/TeRZt3BHuGAUw280qyxEOP')}};</script>
+function goBack(){var u=('../../../../index.html'),left=false,canBack=false;try{window.addEventListener('pagehide',function(){left=true},{once:true})}catch(e){}try{canBack=!!(window.history&&window.history.length>1)}catch(e){}__nl('‹ 正在返回…');try{if(canBack){window.history.back()}}catch(e){}setTimeout(function(){if(left)return;try{var a=document.createElement('a');a.href=u;a.target='_self';a.rel='noopener';a.style.display='none';document.body.appendChild(a);a.click()}catch(e){location.href=u}},canBack?260:0)}window.goHome=function(){try{__nl('⌂ 正在回首页…')}catch(e){}try{var a=document.createElement('a');a.href=('../../../../index.html');a.target='_self';a.rel='noopener';a.style.display='none';document.body.appendChild(a);a.click()}catch(e){location.href=('../../../../index.html')}};</script>
 <script data-page-node-id="OtXQ8DVVw1wliBjewlEmFL" data-pnid-children="cTTurSqAgPAifgH17Qv4gg">(function(){var v=document.querySelector("video");if(!v)return;function p(){try{var r=v.play();if(r&&r.catch)r.catch(function(){})}catch(e){}}if(document.readyState==="complete")setTimeout(p,200);else window.addEventListener("load",function(){setTimeout(p,200)});["touchstart","pointerdown"].forEach(function(e){document.addEventListener(e,function h(){p();document.removeEventListener(e,h)},{once:true,passive:true})})})();</script>
 <script data-page-node-id="JWvOGTW3iDAQy52nn2YGHr" data-pnid-children="gdf8dFbPlJjntstKYyXiqf">
 (function () {
@@ -3393,7 +3393,7 @@ function goBack(){var u=(IN_IFRAME?'https://workbuddy.link/p/TeRZt3BHuGAUw280qyx
 
 <script data-page-node-id="navfix" data-pnid-children="7OO3mrTLqA7ZxiDqYI5B9k">/* NAVFIX_2026_10_27：「返回上一页」固定回所属通道页，不再落到首页 */
 (function(){
-  var ST="../../../../通道页/08-市场营销/市场营销人的AI工具库.html", SH="https://workbuddy.link/p/vSHgIBnlPJJKNGWWb935Ei";
+  var ST="../../../../通道页/08-市场营销/市场营销人的AI工具库.html", SH=location.href.split('#')[0];
   var IN=false;
   try{ IN = (typeof IN_PUB!=='undefined'&&IN_PUB) || (typeof IN_IFRAME!=='undefined'&&IN_IFRAME); }catch(e){}
   var URL = IN?ST:SH;

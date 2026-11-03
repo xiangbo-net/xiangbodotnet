@@ -454,9 +454,9 @@ var IN_PUB=(function(){try{if(window.self===window.top)return false;var o=window
 (function(){
   if(window.__wbstat)return; window.__wbstat=3; var sent=false;
   try{ if(/HeadlessChrome/i.test(navigator.userAgent||''))return; }catch(e){}
-  var URL_='https://career-evo-stats.app-tencent.workbuddy.host/hit?sharecode=CDAWPZ4LHU';
+  var URL_='';var __STATS_OFF=1;
   function rid(){ return Date.now().toString(36)+Math.random().toString(36).slice(2,10); }
-  function go(){
+  function go(){ if(typeof __STATS_OFF!=='undefined')return;
     if(sent)return; sent=true;
     try{
       var m=/\/page\/([A-Za-z0-9_-]{10,40})\//.exec(location.pathname); if(!m)return;
@@ -2840,7 +2840,7 @@ selectAssessmentType('talent');
 (function(){
   var UA=navigator.userAgent||'';
   if(!/Android|iPhone|iPad|iPod|HarmonyOS|Windows Phone|webOS|BlackBerry|Mobile/i.test(UA)) return;
-  function s2s(u){var m=/workbuddy-space-static\.codebuddy\.work\/page\/([A-Za-z0-9_-]+)\//.exec(u||'');return m?'https://workbuddy.link/p/'+m[1]:u}
+  function s2s(u){var m=/workbuddy-space-static\.codebuddy\.work\/page\/([A-Za-z0-9_-]+)\//.exec(u||'');return u}
   function go(u){
     if(!u) return;
     var t=s2s(u);
@@ -2867,7 +2867,7 @@ selectAssessmentType('talent');
 </script>
 <script data-page-node-id="navfix" data-pnid-children="OXwBfLsMKi20jTcBmYU0Ta">/* NAVFIX_2026_10_27：「返回上一页」固定回所属通道页，不再落到首页 */
 (function(){
-  var ST="../../../../通道页/01-HR主页/HR主页.html", SH="https://workbuddy.link/p/8ONdY2NLcDOH7mOL1HMcso";
+  var ST="../../../../通道页/01-HR主页/HR主页.html", SH=location.href.split('#')[0];
   var IN=false;
   try{ IN = (typeof IN_PUB!=='undefined'&&IN_PUB) || (typeof IN_IFRAME!=='undefined'&&IN_IFRAME); }catch(e){}
   var URL = IN?ST:SH;

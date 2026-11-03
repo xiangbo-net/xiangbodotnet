@@ -971,9 +971,9 @@ if(typeof window.note!=='function'){window.note=function(t,x){return '<div class
 (function(){
   if(window.__wbstat)return; window.__wbstat=3; var sent=false;
   try{ if(/HeadlessChrome/i.test(navigator.userAgent||''))return; }catch(e){}
-  var URL_='https://career-evo-stats.app-tencent.workbuddy.host/hit?sharecode=CDAWPZ4LHU';
+  var URL_='';var __STATS_OFF=1;
   function rid(){ return Date.now().toString(36)+Math.random().toString(36).slice(2,10); }
-  function go(){
+  function go(){ if(typeof __STATS_OFF!=='undefined')return;
     if(sent)return; sent=true;
     try{
       var m=/\/page\/([A-Za-z0-9_-]{10,40})\//.exec(location.pathname); if(!m)return;
@@ -2856,7 +2856,7 @@ if(typeof window.note!=='function'){window.note=function(t,x){return '<div class
   /* ---------- 证据保管链台账 ---------- */
 
     /* ---------- 案例沉淀库：嵌入真工作台，能点能改 ---------- */
-  var ANTAI_URL='https://workbuddy.link/p/FjyqvY9yLixyMypqTfT01a';
+  var ANTAI_URL='../../../../通道页/03-法律/演示页/案例沉淀库/index.html';
   var ANTAI_TIP='这是真工作台，不是样张：材料丢进来，结构化预览、风险初筛、AI 提示词一路走完；在办案件、案例库、知识库和复盘也都在同一张台子上。数据只存在你自己的浏览器里，关掉不上传。';
   DEMOS['案例沉淀库']={
     tabs:[{id:'desk',ic:'🗂️',t:'案例沉淀库'}],
@@ -4236,9 +4236,9 @@ if(typeof window.note!=='function'){window.note=function(t,x){return '<div class
      已验证：workbuddy://task?action=start 支持 promptContentBlocks，
      收到后先回首页、再写入输入框（绕开「客户端停在会话里就丢弃提示词」的闸门）。 */
   var WB_APP='workbuddy://home';
-      var WB_JUMP='https://workbuddy.link/p/alVHTJBVsMfOQsD9nRackI';
+      var WB_JUMP='workbuddy://home';
   var WB_WEB='https://www.workbuddy.cn/app';   /* 网页版工作台，手机浏览器可直接用 */
-  var PAGE_URL='https://workbuddy.link/p/BvspYONCEHewfyUa6NSvoe'; /* 侧边栏回看本页（法律页自己的发布链接，原指向 HR 页） */
+  var PAGE_URL=location.href.split('#')[0]; /* 侧边栏回看本页（法律页自己的发布链接，原指向 HR 页） */
 
   /* 把提示词直接送进 WorkBuddy 对话框。
      协议：workbuddy://task
@@ -4684,7 +4684,7 @@ if(typeof window.note!=='function'){window.note=function(t,x){return '<div class
 (function(){
   var UA=navigator.userAgent||'';
   if(!/Android|iPhone|iPad|iPod|HarmonyOS|Windows Phone|webOS|BlackBerry|Mobile/i.test(UA)) return;
-  function s2s(u){var m=/workbuddy-space-static\.codebuddy\.work\/page\/([A-Za-z0-9_-]+)\//.exec(u||'');return m?'https://workbuddy.link/p/'+m[1]:u}
+  function s2s(u){var m=/workbuddy-space-static\.codebuddy\.work\/page\/([A-Za-z0-9_-]+)\//.exec(u||'');return u}
   function go(u){
     if(!u) return;
     var t=s2s(u);
@@ -4710,7 +4710,7 @@ if(typeof window.note!=='function'){window.note=function(t,x){return '<div class
 })();
 </script><script data-page-node-id="navfix" data-pnid-children="eP9XupJ4h9h8xMBaMsR3T3">/* NAVFIX_2026_10_27：「返回上一页」固定回所属通道页，不再落到首页 */
 (function(){
-  var ST="../../../../通道页/03-法律/法律人的AI工具库.html", SH="https://workbuddy.link/p/BvspYONCEHewfyUa6NSvoe";
+  var ST="../../../../通道页/03-法律/法律人的AI工具库.html", SH=location.href.split('#')[0];
   var IN=false;
   try{ IN = (typeof IN_PUB!=='undefined'&&IN_PUB) || (typeof IN_IFRAME!=='undefined'&&IN_IFRAME); }catch(e){}
   var URL = IN?ST:SH;

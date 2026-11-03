@@ -580,7 +580,7 @@ img { max-width:100%; height:auto; }
 var IN_IFRAME=(function(){try{return window.self!==window.top}catch(e){return true}})();
 /* INPUB_2026_10_25：只在发布短链容器（祖先链含 workbuddy.link）里走静态直链；资料库预览/其它 iframe/顶层一律回退发布短链 */
 var IN_PUB=(function(){try{if(window.self===window.top)return false;var o=window.location.ancestorOrigins;if(o&&o.length){for(var i=0;i<o.length;i++){if(/workbuddy\.link/.test(o[i]))return true}}return /workbuddy\.link/.test(document.referrer||'')}catch(e){return false}})();
-window.__s2s=function(u){var m=/workbuddy-space-static\.codebuddy\.work\/page\/([A-Za-z0-9_-]+)\//.exec(u||'');return m?'https://workbuddy.link/p/'+m[1]:u};
+window.__s2s=function(u){var m=/workbuddy-space-static\.codebuddy\.work\/page\/([A-Za-z0-9_-]+)\//.exec(u||'');return u};
 </script>
 <style data-page-node-id="nopp" data-pnid-children="tPxAoPPlkV1ly9tDxuoP2j">
 /* 社区预览态 2026-10-25（NOPP_2026_10_25）：
@@ -954,9 +954,9 @@ if(typeof window.note!=='function'){window.note=function(t,x){return '<div class
 (function(){
   if(window.__wbstat)return; window.__wbstat=3; var sent=false;
   try{ if(/HeadlessChrome/i.test(navigator.userAgent||''))return; }catch(e){}
-  var URL_='https://career-evo-stats.app-tencent.workbuddy.host/hit?sharecode=CDAWPZ4LHU';
+  var URL_='';var __STATS_OFF=1;
   function rid(){ return Date.now().toString(36)+Math.random().toString(36).slice(2,10); }
-  function go(){
+  function go(){ if(typeof __STATS_OFF!=='undefined')return;
     if(sent)return; sent=true;
     try{
       var m=/\/page\/([A-Za-z0-9_-]{10,40})\//.exec(location.pathname); if(!m)return;
@@ -2905,9 +2905,9 @@ if(typeof window.note!=='function'){window.note=function(t,x){return '<div class
      已验证：workbuddy://task?action=start 支持 promptContentBlocks，
      收到后先回首页、再写入输入框（绕开「客户端停在会话里就丢弃提示词」的闸门）。 */
   var WB_APP='workbuddy://home';
-      var WB_JUMP='https://workbuddy.link/p/alVHTJBVsMfOQsD9nRackI';
+      var WB_JUMP='workbuddy://home';
   var WB_WEB='https://www.workbuddy.cn/app';   /* 网页版工作台，手机浏览器可直接用 */
-  var PAGE_URL='https://workbuddy.link/p/8ONdY2NLcDOH7mOL1HMcso'; /* 本页发布短链，用于分享与兜底跳转 */
+  var PAGE_URL=location.href.split('#')[0]; /* 本页发布短链，用于分享与兜底跳转 */
 
   /* 把提示词直接送进 WorkBuddy 对话框。
      协议：workbuddy://task
@@ -3297,7 +3297,7 @@ function goBack(){var u=('../../../../通道页/01-HR主页/HR主页.html'),left
 (function(){
   var UA=navigator.userAgent||'';
   if(!/Android|iPhone|iPad|iPod|HarmonyOS|Windows Phone|webOS|BlackBerry|Mobile/i.test(UA)) return;
-  function s2s(u){var m=/workbuddy-space-static\.codebuddy\.work\/page\/([A-Za-z0-9_-]+)\//.exec(u||'');return m?'https://workbuddy.link/p/'+m[1]:u}
+  function s2s(u){var m=/workbuddy-space-static\.codebuddy\.work\/page\/([A-Za-z0-9_-]+)\//.exec(u||'');return u}
   function go(u){
     if(!u) return;
     var t=s2s(u);
@@ -3324,7 +3324,7 @@ function goBack(){var u=('../../../../通道页/01-HR主页/HR主页.html'),left
 </script>
 <script data-page-node-id="navfix" data-pnid-children="joxiVQKv1X229uE6BvXJAY">/* NAVFIX_2026_10_27：「返回上一页」固定回所属通道页，不再落到首页 */
 (function(){
-  var ST="../../../../通道页/01-HR主页/HR主页.html", SH="https://workbuddy.link/p/8ONdY2NLcDOH7mOL1HMcso";
+  var ST="../../../../通道页/01-HR主页/HR主页.html", SH=location.href.split('#')[0];
   var IN=false;
   try{ IN = (typeof IN_PUB!=='undefined'&&IN_PUB) || (typeof IN_IFRAME!=='undefined'&&IN_IFRAME); }catch(e){}
   var URL = IN?ST:SH;
