@@ -3544,5 +3544,34 @@ var DOMHTML="<div class=\"xqr-ov\" id=\"xqr-ov\" role=\"dialog\" aria-modal=\"tr
   bindAll();
   setTimeout(bindAll,600); setTimeout(bindAll,2000); setTimeout(bindAll,4000);
 })();
-</script><!--pnid:tK6TUN6kmbVS65kg2oOmVI--><!--NAVFIX8_END--></body>
+</script><!--pnid:tK6TUN6kmbVS65kg2oOmVI--><!--NAVFIX8_END--><script>/*__LOCALFIX_HOME__: 左上角「首页」面包屑可点回主页 */
+(function(){
+  function home(){
+    try{ if(typeof window.goHome==='function'){ window.goHome(); return; } }catch(e){}
+    try{ if(typeof navTo==='function'&&typeof HOME_URL!=='undefined'){ navTo(HOME_URL); return; } }catch(e){}
+    location.href='../../../../index.html';
+  }
+  function bind(){
+    var bars=document.querySelectorAll('.crumb-bar,.crumb-path,.crumb,.topbar,.nav');
+    Array.prototype.forEach.call(bars,function(root){
+      var tw=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,null),hits=[],n;
+      while((n=tw.nextNode())){ if(n.nodeValue&&n.nodeValue.indexOf('\u9996\u9875')>-1) hits.push(n); }
+      hits.forEach(function(t){
+        if(t.__homeFixed) return;
+        var i=t.nodeValue.indexOf('\u9996\u9875');
+        if(i<0) return;
+        var r=document.createRange(); r.setStart(t,i); r.setEnd(t,i+2);
+        var s=document.createElement('span'); s.className='crumb-home';
+        try{ r.surroundContents(s); }catch(e){ return; }
+        t.__homeFixed=true;
+        s.style.cssText='cursor:pointer;opacity:.9';
+        s.title='\u56de\u9996\u9875';
+        s.addEventListener('click',function(ev){ ev.stopPropagation(); ev.preventDefault(); home(); });
+      });
+    });
+  }
+  if(document.readyState==='loading'){ document.addEventListener('DOMContentLoaded',bind); } else { bind(); }
+  setTimeout(bind,800);
+})();
+</script></body>
 </html>
