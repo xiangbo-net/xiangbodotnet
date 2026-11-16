@@ -9,7 +9,7 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--bg:#fbfcfe;--bg-elev:#ffffff;--bg-soft:#eaf2ff;--border:#d8e3f5;--border-strong:#a8bde0;--text:#001533;--text-mute:#4a5b78;--text-dim:#8fa3c2;--accent:#0052D9;--accent-2:#006EFF;--accent-soft:rgba(0,82,217,0.08);--serif:"Arial","Helvetica Neue","Noto Serif SC","Songti SC","Source Han Serif",STSong,SimSun,serif;--sans:"Arial","Helvetica Neue",-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;--mono:ui-monospace,"SF Mono",Menlo,monospace;--num:"Arial","Helvetica Neue",sans-serif}
 .mod-workbuddy-course{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:15.5px;line-height:1.85;-webkit-font-smoothing:antialiased}
-.mod-workbuddy-course .layout{display:grid;grid-template-columns:300px 1fr;max-width:1320px;margin:0 auto}
+.mod-workbuddy-course .layout{display:grid;grid-template-columns:300px 1fr;width:100%;max-width:none;margin:0 auto}
 .mod-workbuddy-course .sidebar{position:sticky;top:0;height:100vh;padding:0;border-right:1px solid var(--border);background:linear-gradient(180deg, rgba(0,110,255,0.10) 0%, rgba(0,110,255,0.05) 8%, rgba(241,213,140,0.10) 22%, rgba(241,213,140,0.04) 32%, rgba(255,255,255,0) 44%), #ffffff;display:flex;flex-direction:column;overflow:hidden}
 .mod-workbuddy-course .sidebar-head{flex:0 0 auto;padding:36px 18px 18px 32px;background:transparent}
 .mod-workbuddy-course .sidebar-scroll{flex:1 1 auto;overflow-y:auto;padding:4px 18px 36px 32px;background:linear-gradient(180deg, rgba(255,255,255,0) 0%, #ffffff 28px);scrollbar-width:thin;scrollbar-color:transparent transparent}
@@ -40,7 +40,7 @@
 .mod-workbuddy-course .toc-check.done{background:var(--accent);border-color:var(--accent);box-shadow:0 2px 6px rgba(0,82,217,0.28)}
 .mod-workbuddy-course .toc-check.done::after{content:"";width:8px;height:4px;border-left:1.8px solid #fff;border-bottom:1.8px solid #fff;transform:rotate(-45deg) translate(1px,-1px);transform-origin:center}
 .mod-workbuddy-course .toc-l2-text{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.mod-workbuddy-course .content{padding:64px 80px 0;max-width:920px;height:100vh;overflow-y:auto;background:radial-gradient(circle at 0% 0%, rgba(0,110,255,0.10) 0%, rgba(0,110,255,0) 9%);background-repeat:no-repeat}
+.mod-workbuddy-course .content{padding:64px 80px 0;max-width:none;height:100vh;overflow-y:auto;background:radial-gradient(circle at 0% 0%, rgba(0,110,255,0.10) 0%, rgba(0,110,255,0) 9%);background-repeat:no-repeat}
 .mod-workbuddy-course .kicker-group{display:flex;align-items:center;gap:14px;margin-bottom:24px;padding-left:14px;border-left:3px solid var(--accent)}
 .mod-workbuddy-course .kicker{font-family:"Microsoft YaHei","微软雅黑","PingFang SC","Helvetica Neue",sans-serif;font-size:18px;letter-spacing:0.3em;color:var(--text);font-weight:700;margin:0}
 .mod-workbuddy-course .kicker-meta{display:none}
