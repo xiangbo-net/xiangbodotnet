@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html data-page-node-id="akxLkdw8NNxXXPYZSxwaCJ" lang="zh-CN"><head data-page-node-id="XUXP7yl9cH5fWboILpvOkP">
+<meta data-page-node-id="x7zBmLivmgVtIR3HbiJEEz" charset="UTF-8">
+<meta data-page-node-id="ex6X49eNXFHkAJhmmhAE9Q" name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-page-node-id="OZ5Hq2CWLyzlcFrUbONfTX" data-pnid-children="SWL7hebFyrEmrxp37aF0V6">WorkBuddy 90 天陪跑服务方案</title>
+<link data-page-node-id="cYnm84U53AMc3uAVuTSPP4" rel="preconnect" href="https://fonts.googleapis.com">
+<link data-page-node-id="DCgOzRlZJOgCaSD71UbCxM" rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link data-page-node-id="Vz3b9z55RJRpl0s0575qYt" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style data-page-node-id="itNNP2YcGPp3bVRnXTSuNL" data-pnid-children="l8st5STd9LKWqKEBTMO4EJ">
+  :root{
+    /* 仅三种主色：克莱红 / 孔雀青 / 橘色；其余为中性色 */
+    --claret:#990F3D;
+    --teal:#0D7680;
+    --mandarin:#FF8833;
+    --mandarin-ink:#C25E00;
+    --slate:#262A33;
+    --paper:#FFF1E5;
+    --card:#FFFDF9;
+    --wheat:#F2DFCE;
+    --ink:#262A33;
+    --ink-soft:#6B6059;
+    --line:#EBD9C8;
+    --shadow:0 10px 30px rgba(96,64,35,.10);
+    --radius:14px;
+    --serif:"Financier Display","Source Serif 4",Georgia,"Songti SC","Noto Serif SC",serif;
+    --sans:"MetricWeb","IBM Plex Sans","Helvetica Neue",Arial,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:var(--sans);
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.85;
+    font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--wheat);color:var(--slate);}
+
+  /* ---------- 顶部进度条 ---------- */
+  #progressBar{
+    position:fixed;top:0;left:0;height:3px;width:0;
+    background:var(--claret);
+    z-index:1001;transition:width .1s linear;
+  }
+
+  /* ---------- 右侧固定动态目录 ---------- */
+  #toc{
+    position:fixed;right:20px;top:50%;transform:translateY(-50%);
+    z-index:1000;background:var(--slate);border-radius:16px;
+    padding:12px 10px;display:flex;flex-direction:column;gap:2px;
+    box-shadow:0 14px 34px rgba(38,42,51,.35);min-width:150px;
+  }
+  #toc .toc-head{
+    font-family:var(--serif);font-size:11px;letter-spacing:3px;
+    color:rgba(255,255,255,.45);padding:4px 12px 8px;
+    border-bottom:1px solid rgba(255,255,255,.12);margin-bottom:6px;
+  }
+  #toc a{
+    display:flex;align-items:center;gap:9px;
+    color:rgba(255,255,255,.72);text-decoration:none;
+    font-size:12.5px;padding:7px 12px;border-radius:9px;
+    transition:all .25s ease;letter-spacing:.5px;white-space:nowrap;
+  }
+  #toc a .toc-num{font-family:var(--serif);font-size:11px;color:var(--mandarin);width:20px;flex-shrink:0;}
+  #toc a:hover{color:#fff;background:rgba(255,255,255,.08);}
+  #toc a.active{background:var(--claret);color:#fff;font-weight:600;}
+  #toc a.active .toc-num{color:var(--wheat);}
+  @media(max-width:1240px){#toc{display:none;}}
+
+  /* ---------- 封面 ---------- */
+  header.hero{
+    background:var(--slate);
+    color:#fff;padding:110px 24px 90px;
+    position:relative;overflow:hidden;
+  }
+  .hero::before{
+    content:"";position:absolute;inset:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);
+    background-size:56px 56px;
+    mask-image:radial-gradient(ellipse at center,black 30%,transparent 75%);
+    -webkit-mask-image:radial-gradient(ellipse at center,black 30%,transparent 75%);
+  }
+  .hero-inner{max-width:1080px;margin:0 auto;position:relative;z-index:1;}
+  .hero-tag{
+    display:inline-flex;align-items:center;gap:8px;
+    border:1px solid rgba(255,255,255,.3);color:var(--wheat);
+    font-size:13px;letter-spacing:3px;padding:6px 18px;border-radius:999px;
+    margin-bottom:28px;
+  }
+  .hero-tag::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--mandarin);}
+  .hero h1{
+    font-family:var(--serif);font-size:clamp(34px,5.4vw,56px);
+    font-weight:700;letter-spacing:2px;line-height:1.3;
+  }
+  .hero h1 em{font-style:normal;color:var(--mandarin);}
+  .hero .slogan{
+    margin-top:18px;font-family:var(--serif);
+    font-size:clamp(17px,2.4vw,24px);color:rgba(255,255,255,.85);letter-spacing:6px;
+  }
+  .hero .slogan b{color:var(--mandarin);font-weight:600;}
+  .hero-meta{margin-top:44px;display:flex;flex-wrap:wrap;gap:14px;}
+  .hero-meta .chip{
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.14);
+    border-radius:10px;padding:12px 20px;min-width:150px;
+  }
+  .hero-meta .chip .k{font-size:12px;color:rgba(255,255,255,.55);letter-spacing:1px;}
+  .hero-meta .chip .v{font-size:17px;font-weight:600;color:#fff;margin-top:2px;}
+  .hero-meta .chip .v .num{font-family:var(--serif);color:var(--mandarin);font-size:22px;margin-right:2px;}
+  .hero-meta .chip-sub{
+    display:block;font-size:12px;font-weight:400;
+    color:rgba(255,255,255,.6);letter-spacing:.5px;margin-top:3px;line-height:1.5;
+  }
+  .hero-scroll{
+    position:absolute;bottom:26px;left:50%;transform:translateX(-50%);
+    color:rgba(255,255,255,.55);font-size:12px;letter-spacing:2px;text-align:center;
+    animation:bob 2s ease-in-out infinite;z-index:1;
+  }
+  @keyframes bob{0%,100%{transform:translate(-50%,0);}50%{transform:translate(-50%,8px);}}
+
+  /* ---------- 版式骨架 ---------- */
+  main{max-width:1080px;margin:0 auto;padding:0 24px;}
+  section.block{
+    padding:72px 0 8px;
+    opacity:.1;transform:translateY(36px) scale(.99);
+    transition:opacity .7s ease,transform .7s ease;
+  }
+  section.block.vis{opacity:1;transform:none;}
+
+  /* 一级标题：醒目深色横带 */
+  .sec-head{
+    display:flex;align-items:center;gap:18px;margin-bottom:32px;
+    background:var(--slate);color:#fff;border-radius:12px;
+    padding:16px 26px;box-shadow:var(--shadow);
+  }
+  .sec-num{
+    font-family:var(--serif);font-size:38px;font-weight:700;line-height:1;letter-spacing:1px;
+    background:#fff;border-radius:8px;padding:2px 8px;
+  }
+  .sec-title{font-family:var(--serif);font-size:26px;font-weight:700;letter-spacing:2px;}
+  .sec-sub{font-size:12px;color:rgba(255,255,255,.5);letter-spacing:3px;margin-left:auto;white-space:nowrap;}
+  section#s1 .sec-head{border-left:6px solid var(--claret);}
+  section#s1 .sec-num{color:var(--claret);}
+  section#s2 .sec-head{border-left:6px solid var(--mandarin);}
+  section#s2 .sec-num{color:var(--mandarin-ink);}
+  section#s3 .sec-head{border-left:6px solid var(--teal);}
+  section#s3 .sec-num{color:var(--teal);}
+  section#s4 .sec-head{border-left:6px solid var(--claret);}
+  section#s4 .sec-num{color:var(--claret);}
+  section#s5 .sec-head{border-left:6px solid var(--mandarin);}
+  section#s5 .sec-num{color:var(--mandarin-ink);}
+  section#s6 .sec-head{border-left:6px solid var(--teal);}
+  section#s6 .sec-num{color:var(--teal);}
+  section#s7 .sec-head{border-left:6px solid var(--claret);}
+  section#s7 .sec-num{color:var(--claret);}
+  section#s8 .sec-head{border-left:6px solid var(--mandarin);}
+  section#s8 .sec-num{color:var(--mandarin-ink);}
+
+  .card{
+    background:var(--card);border-radius:var(--radius);
+    box-shadow:var(--shadow);border:1px solid var(--line);
+    padding:30px 32px;
+  }
+
+  /* ---------- 摘要 ---------- */
+  .abstract-card{position:relative;padding:38px 42px;}
+  .abstract-card::before{
+    content:"“";position:absolute;top:-6px;left:22px;
+    font-family:var(--serif);font-size:80px;color:var(--wheat);line-height:1;
+  }
+  .abstract-card p{font-size:16.5px;color:var(--ink);text-align:justify;}
+  .abstract-card p+p{margin-top:16px;}
+  .abstract-card strong{color:var(--claret);}
+  .quote-banner{
+    margin-top:26px;padding:22px 34px;border-radius:var(--radius);
+    background:var(--claret);
+    color:#fff;font-family:var(--serif);font-size:19px;letter-spacing:1px;
+    text-align:center;box-shadow:var(--shadow);position:relative;
+  }
+  .quote-banner::before,.quote-banner::after{
+    content:"";position:absolute;width:44px;height:44px;
+    border:2px solid rgba(255,255,255,.3);border-radius:8px;
+  }
+  .quote-banner::before{top:10px;left:10px;border-right:none;border-bottom:none;}
+  .quote-banner::after{bottom:10px;right:10px;border-left:none;border-top:none;}
+  .quote-banner b{color:var(--wheat);font-weight:700;}
+
+  /* ---------- 三道坎 ---------- */
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .pain{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:26px 26px 24px;box-shadow:var(--shadow);
+    transition:transform .3s ease,box-shadow .3s ease;
+    position:relative;overflow:hidden;
+  }
+  .pain:hover{transform:translateY(-5px);box-shadow:0 16px 38px rgba(96,64,35,.16);}
+  .pain::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;}
+  .pain:nth-child(1)::before{background:var(--claret);}
+  .pain:nth-child(2)::before{background:var(--mandarin);}
+  .pain:nth-child(3)::before{background:var(--teal);}
+  .pain-icon{
+    width:46px;height:46px;border-radius:12px;
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:14px;
+  }
+  .pain-icon svg{width:24px;height:24px;display:block;}
+  .pain:nth-child(1) .pain-icon{background:#F5DEE3;color:var(--claret);}
+  .pain:nth-child(2) .pain-icon{background:#FDEBDB;color:var(--mandarin-ink);}
+  .pain:nth-child(3) .pain-icon{background:#DFEEEF;color:var(--teal);}
+  .pain h3{font-size:18px;color:var(--slate);margin-bottom:10px;font-family:var(--serif);letter-spacing:1px;}
+  .pain .symptom{font-size:13.5px;color:var(--ink-soft);margin-bottom:12px;padding-bottom:12px;border-bottom:1px dashed var(--line);}
+  .pain .symptom b{color:var(--claret);font-weight:600;}
+  .pain .fix{font-size:14px;}
+  .pain .fix b{color:var(--slate);}
+  .pain .fix-tag{
+    display:inline-block;font-size:11px;color:var(--claret);
+    border:1px solid var(--line);background:var(--wheat);
+    padding:1px 10px;border-radius:999px;margin-bottom:8px;letter-spacing:1px;
+  }
+
+  /* ---------- 总体目标 ---------- */
+  .goals{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;}
+  .goal{
+    background:var(--card);border:1px solid var(--line);border-radius:12px;
+    padding:20px 16px;text-align:center;box-shadow:var(--shadow);
+    transition:all .3s ease;position:relative;overflow:hidden;
+  }
+  .goal::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;}
+  .goal:nth-child(1)::before{background:var(--claret);}
+  .goal:nth-child(2)::before{background:var(--teal);}
+  .goal:nth-child(3)::before{background:var(--mandarin);}
+  .goal:nth-child(4)::before{background:var(--claret);}
+  .goal:nth-child(5)::before{background:var(--teal);}
+  .goal:hover{transform:translateY(-4px);}
+  .goal:nth-child(1):hover{border-color:var(--claret);}
+  .goal:nth-child(2):hover{border-color:var(--teal);}
+  .goal:nth-child(3):hover{border-color:var(--mandarin);}
+  .goal:nth-child(4):hover{border-color:var(--claret);}
+  .goal:nth-child(5):hover{border-color:var(--teal);}
+  .g-icon{margin-bottom:8px;display:flex;justify-content:center;}
+  .g-icon svg{width:26px;height:26px;display:block;}
+  .goal:nth-child(1) .g-icon{color:var(--claret);}
+  .goal:nth-child(2) .g-icon{color:var(--teal);}
+  .goal:nth-child(3) .g-icon{color:var(--mandarin-ink);}
+  .goal:nth-child(4) .g-icon{color:var(--claret);}
+  .goal:nth-child(5) .g-icon{color:var(--teal);}
+  .goal h4{font-family:var(--serif);font-size:15.5px;color:var(--slate);margin-bottom:6px;letter-spacing:1px;}
+  .goal p{font-size:12.5px;color:var(--ink-soft);line-height:1.7;text-align:justify;}
+  @media(max-width:900px){.goals{grid-template-columns:repeat(2,1fr);}}
+
+  /* ---------- 设计原则 ---------- */
+  .principles{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;}
+  @media(max-width:900px){.principles{grid-template-columns:repeat(2,1fr);}}
+  .principle{
+    background:var(--wheat);border:1px solid var(--line);border-radius:12px;
+    padding:22px 18px;transition:transform .3s ease;
+  }
+  .principle:hover{transform:translateY(-4px);}
+  .principle h4{font-family:var(--serif);font-size:16px;margin-bottom:8px;letter-spacing:1px;}
+  .principle:nth-child(1) h4{color:var(--claret);}
+  .principle:nth-child(2) h4{color:var(--teal);}
+  .principle:nth-child(3) h4{color:var(--mandarin-ink);}
+  .principle:nth-child(4) h4{color:var(--claret);}
+  .principle:nth-child(5) h4{color:var(--teal);}
+  .principle p{font-size:12.5px;color:var(--ink-soft);line-height:1.75;text-align:justify;}
+
+  /* ---------- 关键要素（FT 事实面板） ---------- */
+  .facts{
+    background:var(--card);border:1px solid var(--line);border-left:4px solid var(--mandarin);
+    border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);
+  }
+  .facts .fact{
+    display:grid;grid-template-columns:150px 1fr;gap:20px;
+    padding:15px 28px;align-items:baseline;
+  }
+  .facts .fact+.fact{border-top:1px solid var(--line);}
+  .facts .f-k{font-size:13px;font-weight:700;color:var(--mandarin-ink);letter-spacing:2px;}
+  .facts .f-v{font-size:14.5px;color:var(--ink);line-height:1.8;text-align:justify;}
+  .facts .f-v .hl{color:var(--claret);font-weight:600;}
+  @media(max-width:640px){
+    .facts .fact{grid-template-columns:1fr;gap:4px;padding:13px 20px;}
+  }
+
+  /* ---------- 三阶段切换 ---------- */
+  .stage-tabs{display:flex;gap:10px;margin-bottom:24px;flex-wrap:wrap;}
+  .stage-tab{
+    flex:1;min-width:200px;cursor:pointer;
+    border:1px solid var(--line);background:var(--card);
+    border-radius:12px;padding:16px 20px;
+    transition:all .3s ease;position:relative;box-shadow:var(--shadow);
+  }
+  .stage-tab .st-month{font-size:12px;color:var(--mandarin-ink);letter-spacing:2px;font-weight:600;}
+  .stage-tab .st-name{font-size:16.5px;font-weight:700;color:var(--slate);margin-top:4px;font-family:var(--serif);}
+  .stage-tab .st-line{font-size:12.5px;color:var(--ink-soft);margin-top:6px;}
+  .stage-tab[data-stage="0"].active{background:var(--claret);border-color:var(--claret);}
+  .stage-tab[data-stage="1"].active{background:var(--teal);border-color:var(--teal);}
+  .stage-tab[data-stage="2"].active{background:var(--mandarin);border-color:var(--mandarin);}
+  .stage-tab.active .st-name{color:#fff;}
+  .stage-tab.active .st-line{color:rgba(255,255,255,.85);}
+  .stage-tab.active .st-month{color:var(--wheat);}
+  .stage-tab[data-stage="0"].active::after{border-top-color:var(--claret);}
+  .stage-tab[data-stage="1"].active::after{border-top-color:var(--teal);}
+  .stage-tab[data-stage="2"].active::after{border-top-color:var(--mandarin);}
+  .stage-tab.active::after{
+    content:"";position:absolute;bottom:-11px;left:50%;transform:translateX(-50%);
+    border:9px solid transparent;
+  }
+  .stage-panel{
+    display:none;background:var(--card);border:1px solid var(--line);
+    border-radius:var(--radius);box-shadow:var(--shadow);
+    padding:34px 36px;animation:fadeUp .45s ease;
+  }
+  .stage-panel.active{display:block;}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:none;}}
+  .stage-panel h3{color:var(--slate);font-size:19px;margin-bottom:14px;font-family:var(--serif);}
+  .stage-panel p{text-align:justify;font-size:15px;}
+  .stage-goal{
+    margin-top:20px;padding:16px 22px;border-radius:10px;
+    background:var(--wheat);border-left:3px solid var(--teal);
+    font-size:14px;color:var(--slate);
+  }
+  .stage-goal b{letter-spacing:1px;}
+
+  /* ---------- 四大板块 ---------- */
+  .blocks{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
+  @media(max-width:800px){.blocks{grid-template-columns:1fr;}}
+  .blk{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:26px 28px;box-shadow:var(--shadow);transition:all .3s ease;position:relative;
+  }
+  .blk:hover{transform:translateY(-4px);}
+  .blocks .blk:nth-child(1) .blk-badge{background:var(--claret);}
+  .blocks .blk:nth-child(2) .blk-badge{background:var(--teal);}
+  .blocks .blk:nth-child(3) .blk-badge{background:var(--mandarin);}
+  .blocks .blk:nth-child(4) .blk-badge{background:var(--claret);}
+  .blocks .blk:nth-child(1):hover{border-color:var(--claret);}
+  .blocks .blk:nth-child(2):hover{border-color:var(--teal);}
+  .blocks .blk:nth-child(3):hover{border-color:var(--mandarin);}
+  .blocks .blk:nth-child(4):hover{border-color:var(--claret);}
+  .blk .blk-head{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
+  .blk .blk-badge{
+    width:40px;height:40px;border-radius:10px;flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;color:#fff;
+  }
+  .blk .blk-badge svg{width:20px;height:20px;display:block;}
+  .blk h3{font-size:17.5px;color:var(--slate);font-family:var(--serif);letter-spacing:1px;}
+  .blk .blk-body{font-size:13.8px;color:var(--ink-soft);text-align:justify;}
+  .blk .blk-body b{color:var(--slate);}
+  .blk .blk-out{
+    margin-top:14px;padding-top:12px;border-top:1px dashed var(--line);
+    font-size:13px;color:var(--slate);
+  }
+  .blk .blk-out b{color:var(--mandarin-ink);font-size:12px;letter-spacing:1px;margin-right:6px;}
+
+  /* ---------- 节奏：垂直时间轴 ---------- */
+  .tl{position:relative;margin-left:4px;}
+  .tl::before{
+    content:"";position:absolute;left:15px;top:18px;bottom:18px;width:2px;
+    background:var(--claret);
+  }
+  .tl-item{position:relative;padding:0 0 18px 56px;}
+  .tl-item:last-child{padding-bottom:0;}
+  .tl-dot{
+    position:absolute;left:0;top:0;width:32px;height:32px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    color:#fff;font-family:var(--serif);font-weight:700;font-size:15px;
+    border:3px solid var(--paper);box-shadow:0 4px 10px rgba(96,64,35,.25);z-index:1;
+  }
+  .tl-item:nth-child(1) .tl-dot{background:var(--claret);}
+  .tl-item:nth-child(2) .tl-dot{background:var(--teal);}
+  .tl-item:nth-child(3) .tl-dot{background:var(--mandarin);}
+  .tl-card{
+    background:var(--card);border:1px solid var(--line);border-radius:12px;
+    box-shadow:var(--shadow);padding:18px 24px;
+  }
+  .tl-month{font-family:var(--serif);font-size:16.5px;font-weight:700;color:var(--slate);}
+  .tl-acts{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;}
+  .tl-acts li{
+    font-size:13px;color:var(--slate);background:var(--wheat);
+    border:1px solid var(--line);padding:3px 13px;border-radius:999px;
+  }
+  .tl-out{
+    margin-top:12px;padding:10px 16px;border-radius:8px;
+    background:var(--wheat);border-left:3px solid var(--claret);
+    font-size:13.5px;color:var(--slate);line-height:1.75;
+  }
+  .tl-out span{font-size:11px;font-weight:700;letter-spacing:2px;color:var(--claret);margin-right:8px;}
+
+  /* ---------- 交付物卡片 ---------- */
+  .dgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
+  @media(max-width:820px){.dgrid{grid-template-columns:1fr;}}
+  .dcard{
+    background:var(--card);border:1px solid var(--line);border-radius:12px;
+    box-shadow:var(--shadow);padding:22px 26px;display:flex;flex-direction:column;
+    position:relative;overflow:hidden;transition:all .3s ease;
+  }
+  .dcard:hover{transform:translateY(-4px);}
+  .dcard::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;}
+  .dcard:nth-child(1)::before{background:var(--teal);}
+  .dcard:nth-child(2)::before{background:var(--mandarin);}
+  .dcard:nth-child(3)::before{background:var(--claret);}
+  .dcard:nth-child(4)::before{background:var(--teal);}
+  .d-stage{
+    display:inline-block;align-self:flex-start;font-size:12px;font-weight:700;letter-spacing:1px;
+    color:#fff;padding:3px 14px;border-radius:999px;margin-bottom:12px;
+  }
+  .dcard:nth-child(1) .d-stage{background:var(--teal);}
+  .dcard:nth-child(2) .d-stage{background:var(--mandarin);}
+  .dcard:nth-child(3) .d-stage{background:var(--claret);}
+  .dcard:nth-child(4) .d-stage{background:var(--teal);}
+  .dcard ul{list-style:none;margin-bottom:4px;}
+  .dcard li{position:relative;padding-left:18px;margin-bottom:7px;font-size:14px;color:var(--ink);line-height:1.7;}
+  .dcard li::before{
+    content:"";position:absolute;left:2px;top:.68em;width:6px;height:6px;
+    background:var(--claret);transform:rotate(45deg);
+  }
+  .d-value{
+    margin-top:auto;padding-top:12px;border-top:1px dashed var(--line);
+    font-size:13px;color:var(--ink-soft);line-height:1.7;
+  }
+  .d-value span{font-size:11px;font-weight:700;letter-spacing:2px;color:var(--claret);margin-right:8px;}
+
+  /* ---------- 双方职责：对照台账 ---------- */
+  .ledger{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    box-shadow:var(--shadow);overflow:hidden;
+  }
+  .lg-head,.lg-row{
+    display:grid;grid-template-columns:180px 1fr 1fr;gap:0 24px;
+    padding:13px 28px;align-items:start;
+  }
+  .lg-head{
+    background:var(--wheat);
+    border-bottom:2px solid var(--claret);padding:14px 28px;
+  }
+  .lg-row{border-top:1px solid var(--line);}
+  .lg-row:nth-of-type(2){border-top:none;}
+  .lg-item{font-weight:700;color:var(--slate);font-size:14px;padding-top:2px;}
+  .lg-col{font-size:13.8px;color:var(--ink);line-height:1.75;}
+  .lg-badge{
+    display:inline-block;font-size:12px;font-weight:700;letter-spacing:1px;
+    color:#fff;padding:3px 16px;border-radius:999px;
+  }
+  .lg-badge.us{background:var(--teal);}
+  .lg-badge.them{background:var(--claret);}
+  .no-hand{color:var(--claret);}
+  .lg-final{background:var(--wheat);}
+  @media(max-width:700px){
+    .lg-head,.lg-row{grid-template-columns:1fr;gap:4px;padding:12px 20px;}
+    .lg-blank{display:none;}
+  }
+
+  /* ---------- 执行：阶段折叠面板 ---------- */
+  .acc{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);background:var(--card);}
+  .acc-item+.acc-item{border-top:1px solid var(--line);}
+  .acc-btn{
+    width:100%;display:flex;align-items:center;gap:16px;
+    padding:20px 26px;background:none;border:none;cursor:pointer;
+    text-align:left;font-family:var(--sans);transition:background .25s;
+  }
+  .acc-btn:hover{background:var(--wheat);}
+  .acc-btn .acc-idx{
+    font-family:var(--serif);font-size:22px;font-weight:700;color:var(--claret);
+    min-width:44px;
+  }
+  .acc-btn .acc-t{flex:1;}
+  .acc-btn .acc-t h3{font-family:var(--serif);font-size:17px;color:var(--slate);font-weight:700;letter-spacing:1px;}
+  .acc-btn .acc-t span{font-size:12.5px;color:var(--ink-soft);}
+  .acc-btn .arrow{
+    width:30px;height:30px;border-radius:50%;border:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;
+    font-size:14px;color:var(--slate);transition:all .3s;flex-shrink:0;
+  }
+  .acc-item.open .acc-btn .arrow{transform:rotate(180deg);background:var(--claret);color:#fff;border-color:var(--claret);}
+  .acc-body{max-height:0;overflow:hidden;transition:max-height .45s ease;}
+  .acc-inner{padding:4px 30px 30px 86px;}
+  @media(max-width:700px){.acc-inner{padding:4px 22px 24px 22px;}}
+  .acc-inner h4{
+    font-family:var(--serif);font-size:14px;color:var(--claret);letter-spacing:2px;margin:16px 0 10px;
+    display:flex;align-items:center;gap:8px;
+  }
+  .acc-inner h4::before{content:"";width:16px;height:2px;background:var(--claret);}
+  .acc-inner ul{list-style:none;}
+  .acc-inner ul li{
+    position:relative;padding-left:20px;margin-bottom:9px;font-size:14.5px;text-align:justify;
+  }
+  .acc-inner ul li::before{
+    content:"";position:absolute;left:2px;top:.72em;width:7px;height:7px;
+    border-radius:2px;background:var(--claret);transform:rotate(45deg);
+  }
+  .acc-inner ul li b{color:var(--slate);}
+  .deliver-box{
+    margin-top:8px;padding:16px 20px;border-radius:10px;
+    background:var(--wheat);
+    border:1px dashed var(--line);
+  }
+  .deliver-box .d-tag{
+    font-size:11px;letter-spacing:2px;color:var(--claret);font-weight:700;margin-bottom:6px;
+  }
+  .deliver-box p{font-size:13.5px;color:var(--ink);}
+  .note-callout{
+    margin-top:18px;padding:16px 22px;border-radius:10px;
+    background:var(--wheat);border-left:3px solid var(--claret);
+    font-size:13.8px;color:var(--ink-soft);text-align:justify;
+  }
+  .note-callout b{color:var(--claret);}
+
+  /* ---------- 职责标签 ---------- */
+  .own{display:inline-block;font-size:12px;padding:2px 12px;border-radius:999px;white-space:nowrap;}
+  .own.a{background:#DFEEEF;color:var(--teal);border:1px solid #BFDCDD;}
+  .own.b{background:var(--wheat);color:var(--claret);border:1px solid var(--line);}
+
+  /* ---------- 费用 ---------- */
+  .fee-wrap{display:grid;grid-template-columns:340px 1fr;gap:22px;align-items:stretch;}
+  @media(max-width:820px){.fee-wrap{grid-template-columns:1fr;}}
+  .fee-card{
+    background:var(--claret);
+    border-radius:var(--radius);color:#fff;padding:36px 32px;
+    display:flex;flex-direction:column;justify-content:center;
+    box-shadow:var(--shadow);position:relative;overflow:hidden;
+  }
+  .fee-card::after{
+    content:"¥";position:absolute;right:-18px;bottom:-42px;
+    font-family:var(--serif);font-size:180px;color:rgba(255,255,255,.08);line-height:1;
+  }
+  .fee-card .f-label{font-size:13px;color:rgba(255,255,255,.65);letter-spacing:2px;}
+  .fee-card .f-price{
+    font-family:var(--serif);font-size:52px;font-weight:700;color:#fff;
+    line-height:1.2;margin:6px 0 2px;
+  }
+  .fee-card .f-price small{font-size:18px;color:rgba(255,255,255,.75);font-weight:400;}
+  .fee-card .f-cap{font-size:14px;color:rgba(255,255,255,.85);}
+  .fee-card .f-cap b{color:var(--wheat);}
+  .fee-card .f-row{
+    display:flex;justify-content:space-between;font-size:13.5px;
+    padding:10px 0;border-top:1px solid rgba(255,255,255,.18);margin-top:8px;color:rgba(255,255,255,.85);
+  }
+  .fee-card .f-row b{color:#fff;}
+  .fee-list{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:28px 32px;}
+  .fee-list h4{font-family:var(--serif);font-size:15.5px;color:var(--slate);margin-bottom:12px;letter-spacing:1px;}
+  .fee-list ul{list-style:none;}
+  .fee-list li{position:relative;padding-left:22px;margin-bottom:10px;font-size:14.5px;text-align:justify;}
+  .fee-list li::before{content:"✓";position:absolute;left:0;color:var(--teal);font-weight:700;}
+  .fee-list li.ex::before{content:"✕";color:var(--claret);}
+  .fee-list li.ex{color:var(--ink-soft);}
+  .fee-list li b{color:var(--slate);}
+  .disclaimer{
+    margin-top:22px;padding:14px 22px;border-radius:10px;
+    background:var(--wheat);border:1px dashed var(--line);
+    font-size:13px;color:var(--ink-soft);text-align:center;letter-spacing:.5px;
+  }
+
+  /* ---------- 页脚 ---------- */
+  footer{
+    margin-top:80px;background:var(--slate);color:rgba(255,255,255,.55);
+    padding:34px 24px;text-align:center;font-size:13px;letter-spacing:1px;
+  }
+  footer .f-brand{font-family:var(--serif);color:#fff;font-size:16px;margin-bottom:6px;}
+  footer .f-brand .dot{color:var(--mandarin);}
+
+  /* ---------- 返回顶部 ---------- */
+  #toTop{
+    position:fixed;right:26px;bottom:30px;width:44px;height:44px;
+    border-radius:50%;border:none;cursor:pointer;z-index:999;
+    background:var(--claret);color:#fff;font-size:17px;
+    box-shadow:0 8px 20px rgba(96,64,35,.3);
+    opacity:0;pointer-events:none;transition:all .35s;
+  }
+  #toTop.show{opacity:1;pointer-events:auto;}
+  #toTop:hover{background:var(--mandarin);color:var(--slate);}
+
+  @media(max-width:760px){
+    .grid-3{grid-template-columns:1fr;}
+    section.block{padding-top:56px;}
+    .sec-sub{display:none;}
+    .abstract-card{padding:28px 24px;}
+  }
+  @media print{
+    #toc,#toTop,#progressBar,.hero-scroll{display:none!important;}
+    section.block{opacity:1!important;transform:none!important;page-break-inside:avoid;}
+    body{background:#fff;}
+  }
+</style>
+</head>
+<body data-page-node-id="MNHMGIpXi4DNvQTKtnFg4y">
+
+<div data-page-node-id="JFQ173dmDBDKcRI9Tx7VJY" id="progressBar"></div>
+
+<aside data-page-node-id="cpmthCCojFd08H61kDDNVV" id="toc">
+  <div data-page-node-id="yDTf1SHNyuWmadrf6EFAN1" class="toc-head">CONTENTS</div>
+  <a data-page-node-id="voBdti6hz9R1Jt3NmTRscB" href="#s1"><span data-page-node-id="yJRkKX2ZPBlHVGGVfE12aT" class="toc-num">01</span>摘要</a>
+  <a data-page-node-id="jbWHkTiHAxUD1Mv36kHnXg" href="#s2"><span data-page-node-id="JRmeTCksirb6ZUxokg9I3N" class="toc-num">02</span>背景与目标</a>
+  <a data-page-node-id="rmae1aMuy4jnqsiwBb8fm6" href="#s3"><span data-page-node-id="J77zn5VyHnY8Tcg1Fs1Fo7" class="toc-num">03</span>总体设计</a>
+  <a data-page-node-id="SgplZtIRwBMmKMrT9zoFMl" href="#s4"><span data-page-node-id="RArzBsJIh0YB7tSeKANX6w" class="toc-num">04</span>项目执行</a>
+  <a data-page-node-id="WOMK8pnmhCI41T5B4OpOjk" href="#s5"><span data-page-node-id="QqLRv5nZJiXupwXq3Itsl0" class="toc-num">05</span>交付物清单</a>
+  <a data-page-node-id="T5zvPzEVrb2Wdq4VUp4lxV" href="#s6"><span data-page-node-id="n247DVzuBj2K1rkHGOqO5l" class="toc-num">06</span>服务机制</a>
+  <a data-page-node-id="PcHujzbKO4pKEt1YKHgz7f" href="#s7"><span data-page-node-id="6ihH9mMQjlvAvTSldtkhAG" class="toc-num">07</span>职责分工</a>
+  <a data-page-node-id="CzOLsgCI4eEDY7YYfXnLS0" href="#s8"><span data-page-node-id="iNqFsmm6lJg3iMwnuUHej0" class="toc-num">08</span>费用与付款</a>
+</aside>
+
+<header data-page-node-id="RZNL8LCl6k0Bl8JR6zlpAQ" class="hero">
+  <div data-page-node-id="seDvJigYp5Vt1aaMnNeM3k" class="hero-inner">
+    <div data-page-node-id="zpSA2q3nRHDGydFP5uuhk8" class="hero-tag">陪跑业务说明文件</div>
+    <h1 data-page-node-id="ZBiwkDWckmYRcNMA8k95xC">WorkBuddy <em data-page-node-id="USWC1k47DeyCKDUfg9EcmH">90 天</em>陪跑服务方案</h1>
+    <div data-page-node-id="U0JnDRohDsoAflKDUkeI4C" class="slogan">赋能团队 <b data-page-node-id="s71v1yCA48XHTFoXULmV1l">·</b> 沉淀资产 <b data-page-node-id="Id0af8K5UQxvrq4StpuDZy">·</b> 形成机制</div>
+    <div data-page-node-id="ppG8etegA8eioykCBS4bK5" class="hero-meta">
+      <div data-page-node-id="7otHOlEAUPuAiZMANiMV68" class="chip">
+        <div data-page-node-id="552OiZmCtP8MN96WvsX15r" class="k">服务周期</div>
+        <div data-page-node-id="AjwjehtL2UghNSb0LhHNAw" class="v"><span data-page-node-id="Hyl1lYH6gx9CehlNlvOtpT" class="num" data-count="3">0</span>个月 · 三阶段</div>
+      </div>
+      <div data-page-node-id="gSfSUODFUrTWq858KclfG2" class="chip"><div data-page-node-id="vnyH5swNOIYr3zxIFZud7t" class="k">培训</div><div data-page-node-id="NxLg7rQtEJRoe3PjjdZUBT" class="v">每月一场<span data-page-node-id="mq8G9yodhkncEZxk8gPE5D" class="chip-sub">随阶段递进</span></div></div>
+      <div data-page-node-id="AUlk0Dh5tPzX8SmPOMjUEZ" class="chip"><div data-page-node-id="LUw74WUcbOwRQYBBviGT3F" class="k">辅导</div><div data-page-node-id="Mu5oRy5NgCyCiLAxjGcqfo" class="v">每周报告<span data-page-node-id="Cdi8NJjKAbKq1fNCxFnX9h" class="chip-sub">双周复盘 · 全程跟进</span></div></div>
+      <div data-page-node-id="m9PAHn9KJMmJYy2lAqrUql" class="chip"><div data-page-node-id="fDz4dFhNuUHQQDYYQFx3Vy" class="k">最终产出</div><div data-page-node-id="OePynNefOEmwjdccOkKBux" class="v">每组 ≥<span data-page-node-id="EXMu63QWCiDQ7FkWaNDdzB" class="num" data-count="1">1</span> 个专家</div></div>
+      <div data-page-node-id="8fXWfeuuj9XZDV9rLUTHz8" class="chip"><div data-page-node-id="Bm8emXCtH5pogDaHRCl43W" class="k">提效点</div><div data-page-node-id="2gTaPCGaIM6IQiZbo0rer7" class="v">每用户 ≥<span data-page-node-id="e6PSQYa4g2PuPkDyCv868s" class="num" data-count="1">0</span> 个提效场景</div></div>
+      <div data-page-node-id="LcrVQY690cDpkf1y2LWCZn" class="chip"><div data-page-node-id="opBXewxnpTcUj3TcYc35tC" class="k">共创工作坊</div><div data-page-node-id="t5wM1RXhMfLBbz6c7obHWV" class="v"><span data-page-node-id="CaGMeHEzABO9EyyXM4TEun" class="num" data-count="2">0</span>次线下深度共创</div></div>
+    </div>
+  </div>
+  <div data-page-node-id="SEUcM3aldjlM55rn3e2cHy" class="hero-scroll">向下滚动阅读<br data-page-node-id="Uq5FFrnrmdDyfUCCUac3k0">▼</div>
+</header>
+
+<main data-page-node-id="7DIdDjEGu528w0aftXWAKj">
+
+  <!-- 一、摘要 -->
+  <section data-page-node-id="2ez1FNqlEnmVQTqnNoC7Yr" class="block" id="s1">
+    <div data-page-node-id="szeCKBVoE3SWfwVU2iVWE3" class="sec-head"><span data-page-node-id="UugM7sHZBXvELt4ztsze3U" class="sec-num">01</span><span data-page-node-id="Hkle7WvGKgbfLNKhAqOpCD" class="sec-title">摘要</span><span data-page-node-id="XnbyrXJW3kT7MYwry6yT0e" class="sec-sub">EXECUTIVE SUMMARY</span></div>
+    <div data-page-node-id="HcljQ2QaYV6l5Apr83K5Kc" class="card abstract-card">
+      <p data-page-node-id="ECD0C2uw2hLNmMaZlok3y3">本方案面向服务对象企业（以下简称<strong data-page-node-id="If6Ie3Oa8OMMW69SYv7ESA">"甲方"</strong>）WorkBuddy 账号使用人员，提供为期三个月的落地陪跑服务。本服务不是简单的培训，而是以<strong data-page-node-id="IIUVV1BxF1RgwHvKqP8BMd">"赋能团队、沉淀资产、形成机制"</strong>为目标：三个月内，先让全部用户用起来，再以任务场景为主线组织共创改造，最终沉淀出可复用的专家资产，让企业具备脱离辅导、持续进化的内生能力。</p>
+      <p data-page-node-id="OvyWTGQMmP7NmKJUwWWJh3">陪跑采用<strong data-page-node-id="0XtejTYHkh80QRaLixFVT9">"以赛代练、逐级收敛"</strong>的组织方式，与甲方内部 AI 竞赛互为表里：竞赛提供目标感与参与动机，陪跑提供方法、节奏与产出保障。贯穿三个月的主线，是让 AI 能力长在甲方的岗位流程上，而不是长在少数人的机器上。</p>
+    </div>
+    <div data-page-node-id="PGZtEhTAg6g1eBZWypxfXH" class="quote-banner" style="white-space:pre-wrap">陪跑的核心命题，不是"学会用 WorkBuddy"，
+而是<b data-page-node-id="qAFY42XrHTMJAeNiIK71jS">"把 WorkBuddy 用成岗位能力，并把能力沉淀为组织资产"</b>。</div>
+  </section>
+
+  <!-- 二、背景与目标 -->
+  <section data-page-node-id="p9ucC4tnl7BmdNvRBYJAvU" class="block" id="s2">
+    <div data-page-node-id="GrSdOtuG6daMpDN054Z9eS" class="sec-head"><span data-page-node-id="IBCMLKGZEUKbUvAZPGh9uT" class="sec-num">02</span><span data-page-node-id="pMKOiO4ppz9p3SIdJng0Pl" class="sec-title">背景与目标</span><span data-page-node-id="FSxc0MvXnaw81OmrIZIiF4" class="sec-sub">BACKGROUND &amp; GOALS</span></div>
+
+    <h3 data-page-node-id="ZSpXflsHooXsH3FgkR0Qjo" style="font-family:var(--serif);color:var(--slate);font-size:20px;margin-bottom:6px">2.1 背景：三道坎与针对性解法</h3>
+    <p data-page-node-id="mRRjXJv5hsr1izGECi1kCF" style="color:var(--ink-soft);font-size:14.5px;margin-bottom:20px">AI 工具在企业内部推广普遍面临三道坎，本方案逐一给出针对性应对：</p>
+    <div data-page-node-id="uLtv7PuZU3IYEuwGwKjR6G" class="grid-3">
+      <div data-page-node-id="MykIeflRkecQmBSDEAn7b2" class="pain">
+        <div data-page-node-id="zTS4IwVDvg5i4DZBtFaWDt" class="pain-icon"><svg data-page-node-id="xLbb9JcAv2L7xc3UHa07WB" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path data-page-node-id="HBL6MMMd34sQ70TKhOYFni" d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><polyline data-page-node-id="YpArNEwRPRwcpxAX7NX8jn" points="10 17 15 12 10 7"></polyline><line data-page-node-id="ATMrGD0qF01wCNXozqxmMY" x1="15" y1="12" x2="3" y2="12"></line></svg></div>
+        <h3 data-page-node-id="JLoYmqawgzdUSIvnU2kEip">用不起来</h3>
+        <div data-page-node-id="orP0DIIL87jVrAGe20rRo9" class="symptom"><b data-page-node-id="h9tyB02NLdAGWtdu3UVJ9Q">典型表现：</b>账号开通后活跃度低，多数人停留在"知道但不用"。</div>
+        <div data-page-node-id="197w7fMpWG7rCQbMZ0GQVk" class="fix"><span data-page-node-id="SYi1msPtIabfvgYKHWMdiV" class="fix-tag">本方案应对</span><br data-page-node-id="lzqydE3lIVRKJbt6xE01oC"><b data-page-node-id="z8PvTAoPqUUHEH77ytVh2I">内部竞赛 + 教练式运营 + 奖惩机制</b>，把使用变成有积分、有排名、有荣誉的竞赛行为。</div>
+      </div>
+      <div data-page-node-id="6EDyTQUJps8X2jXG9U5VHl" class="pain">
+        <div data-page-node-id="EZE0mNFNFiFwGxZfiIA5Gz" class="pain-icon"><svg data-page-node-id="xxNZYiizunkPTRNbNivqZ9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon data-page-node-id="8sbpD5JlRX9ecYyFddvvYA" points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline data-page-node-id="0qDGdCCnAJrdXtvyDUfEBm" points="2 17 12 22 22 17"></polyline><polyline data-page-node-id="312kuR3aIkg2RavG6WqekM" points="2 12 12 17 22 12"></polyline></svg></div>
+        <h3 data-page-node-id="xlROEm1qeJYg3GvPLHDlGT">用不深入</h3>
+        <div data-page-node-id="M9HFM4lHGSgk3kgRylVxjR" class="symptom"><b data-page-node-id="wpL9Bm6JztNiL9jFefRolS">典型表现：</b>少数人把工具当单点效率工具，未与岗位流程结合。</div>
+        <div data-page-node-id="V9TJRR6HM0SIWLizPVHcYG" class="fix"><span data-page-node-id="zh0nM7Agli6kovLve3XY0s" class="fix-tag">本方案应对</span><br data-page-node-id="LmmrTCoT7d6TpzsNvGytht"><b data-page-node-id="zendsNjT0cRbCsV9wgjE4S">以任务场景提效为主线</b>，同岗位小组共创，深挖岗位真实提效点。</div>
+      </div>
+      <div data-page-node-id="cjeSuO6FUC47yn4HGvK64b" class="pain">
+        <div data-page-node-id="vavPltiHS8znKWBjCOaAp5" class="pain-icon"><svg data-page-node-id="d9Gud6qAShPKLn4KA3OFp1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect data-page-node-id="az1lqTZlzCN4UTvCMVOQcH" x="2" y="3" width="20" height="5" rx="1"></rect><path data-page-node-id="VhkudRqL86SjzLOlB42Dde" d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8"></path><path data-page-node-id="kb5Kb2Usv8pmpmhFLMtIiF" d="M10 12h4"></path></svg></div>
+        <h3 data-page-node-id="LzpBSmEb08lnriQapomyE2">留不下来</h3>
+        <div data-page-node-id="7dxe7wdjsEcZhbtge0cTnF" class="symptom"><b data-page-node-id="dGCsJiZ2Agb9O9g5wcnciq">典型表现：</b>好用法散落在个人经验里，人一走能力归零。</div>
+        <div data-page-node-id="FD9LJmNAUZyoGTnQ0Lrc1e" class="fix"><span data-page-node-id="sugiuSjYg869uJ8tPOpTTy" class="fix-tag">本方案应对</span><br data-page-node-id="vHe89Bpj8KLbNgpK4RaLDc">成果反向封装为<b data-page-node-id="97ZOpjjGzy9rAZyAgwDIoD">可复用专家</b>，统一上报、统一下发、版本化管理，沉淀为组织资产。</div>
+      </div>
+    </div>
+
+    <h3 data-page-node-id="DbSpazbjfGitc91RFu3giT" style="font-family:var(--serif);color:var(--slate);font-size:20px;margin:44px 0 6px">2.2 总体目标：以成果为导向</h3>
+    <p data-page-node-id="PdzBEl2GITwYRFsHqbtj5E" style="color:var(--ink-soft);font-size:14.5px;margin-bottom:20px">总体目标聚焦于人的能力、团队组织、改造场景、实践成果与组织机制五个方面的成果：</p>
+    <div data-page-node-id="WWqU9r4OVl0yoMt6nSU96a" class="goals">
+      <div data-page-node-id="UQYwMGQA37mohKGOhz6sM9" class="goal"><div data-page-node-id="pLpi9LDI3ecLLDnCgGXkkD" class="g-icon"><svg data-page-node-id="5uQF7dBIE3RHIH4lthJejA" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline data-page-node-id="SKTcjOhZEvRewQIz1RF9F7" points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline><polyline data-page-node-id="qR9U5MvNnmzOyKBGtkIRb3" points="16 7 22 7 22 13"></polyline></svg></div><h4 data-page-node-id="AmzJAA42n7OiNdChu5BqWI">能力提升</h4><p data-page-node-id="kDrRRFni7YfdsmSEUZfB4D">所有使用人员具备基本的 AI 提效工作能力，部分骨干具备改造工作场景的能力。</p></div>
+      <div data-page-node-id="32SJNFyhOzJ3V5o3SxrHS1" class="goal"><div data-page-node-id="xjW8XliWPp4v9aocvA3wWi" class="g-icon"><svg data-page-node-id="mNwA0u3T9SgAVGBwy1pnLo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path data-page-node-id="VaP5wDJtTkmJ9ATz88FnEw" d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle data-page-node-id="Yv0ZM6lNBYOpXhIbGTN6HP" cx="9" cy="7" r="4"></circle><path data-page-node-id="joGu0bIVoI0A3Tbkbz9Tj6" d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path data-page-node-id="HCiF6GeaL1qS2e2Wz652WF" d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div><h4 data-page-node-id="fLk9HoPufvEA80YtPcLuNH">梯级带动</h4><p data-page-node-id="POSI7a94FrNWkiekf209kB">形成"种子选手 → 相似岗位 → 工作场景小组"的梯级自组织，涌现 AI 提效组织中的新管理人才。</p></div>
+      <div data-page-node-id="Z31bQn9aMCJUTvbz3R5xMg" class="goal"><div data-page-node-id="rro53BxK32JAnBuQ6aWHma" class="g-icon"><svg data-page-node-id="9bgW2CQj4RIbDFuqPqG2Ls" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon data-page-node-id="EYeY2n8Ekvkbbpds24w3We" points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon><line data-page-node-id="9W0BEBFIZ7Dfxfw7utm6KH" x1="8" y1="2" x2="8" y2="18"></line><line data-page-node-id="orhMDuFyY8tNEtVCpas5Tk" x1="16" y1="6" x2="16" y2="22"></line></svg></div><h4 data-page-node-id="13OVRx6IL8PTuVeYFaeaXm">改造场景</h4><p data-page-node-id="WCPKCMsyzXDoGuJXQeDHW1">形成覆盖岗位真实场景的改造完整清单。</p></div>
+      <div data-page-node-id="KpbAbZLqHgtmeQcobHtFXV" class="goal"><div data-page-node-id="ch7lcBDqgcBzrEzjhRfxJz" class="g-icon"><svg data-page-node-id="8S482Eq7jK9jbVWIkX8wh6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle data-page-node-id="fZ8XVyDDlcjPvB0n57JoUC" cx="12" cy="8" r="7"></circle><polyline data-page-node-id="7c2HrbF7ED3stcaKqnC4m4" points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg></div><h4 data-page-node-id="WHvgX0IpU7mBnbQMzu6vFQ">实践成果</h4><p data-page-node-id="vjK00iuB0rArdOrtRDEdTo">完成第一批工作场景改造，为每个场景提供至少一个可复用的专家/技能。</p></div>
+      <div data-page-node-id="T2KalhuJ3OgeeGIz6IYK3c" class="goal"><div data-page-node-id="PE4jNg4MHRu6GGnOIgcxcH" class="g-icon"><svg data-page-node-id="9RxFHGlio1P4YJZjdkkuIp" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line data-page-node-id="KebmOH8WsshmD450uV7cAu" x1="4" y1="21" x2="4" y2="14"></line><line data-page-node-id="Qg0SeNYWKA85FBiTcEi5YU" x1="4" y1="10" x2="4" y2="3"></line><line data-page-node-id="bBAVm4ucmYY4LFE5VRsC6I" x1="12" y1="21" x2="12" y2="12"></line><line data-page-node-id="zuRBf9RzrPCVuS4EpzAYJY" x1="12" y1="8" x2="12" y2="3"></line><line data-page-node-id="HG8Hqu8LhJNNeWLmvLSfZC" x1="20" y1="21" x2="20" y2="16"></line><line data-page-node-id="WlUCaMCizRqOCY1CF3QNIN" x1="20" y1="12" x2="20" y2="3"></line><line data-page-node-id="bFWywH1hBFyS1HB91a9q18" x1="1" y1="14" x2="7" y2="14"></line><line data-page-node-id="f4qtYoU4oQUgiQEqAf96L0" x1="9" y1="8" x2="15" y2="8"></line><line data-page-node-id="XdlH7suTqIgYwWB1qJGBor" x1="17" y1="16" x2="23" y2="16"></line></svg></div><h4 data-page-node-id="tv3I4IiU3MSxuZYEhHnGma">组织机制</h4><p data-page-node-id="KmMppQC4BB7zQsN5wnjnAE">帮助甲方建立与 AI 应用配套的奖惩、组长任命与成果复用机制，使进化可持续、不依赖外部辅导。</p></div>
+    </div>
+
+    <h3 data-page-node-id="zJHQF435VUyVC34pwHwE7s" style="font-family:var(--serif);color:var(--slate);font-size:20px;margin:44px 0 20px">2.3 核心设计原则</h3>
+    <div data-page-node-id="rPnOlg4TfjBcbwNDAYZUy5" class="principles">
+      <div data-page-node-id="UCotj8RQFlWGF1YPiQhu48" class="principle"><h4 data-page-node-id="wlTgzMBI2dVpCzPwwyVaCF">以赛代练</h4><p data-page-node-id="PG1TLhgU9YhOTk9QFWmoJV">竞赛贯穿三个月，把培训、使用、共创、产出都转化为可积分、可公示、可激励的竞赛行为。</p></div>
+      <div data-page-node-id="FESG6GmQCWVSnyCZ4vC7y1" class="principle"><h4 data-page-node-id="mdN3QfNeIJy53AempShVFD">逐级收敛</h4><p data-page-node-id="OBFrOPY2x8A4gEgrhxxS9d">从第一批用户普及 → 种子选手 → 同岗位/相似岗位 → 重点任务/工作场景小组，人群逐层聚焦、投入逐层加深。</p></div>
+      <div data-page-node-id="H1KZKa1QRokS8ZlHqgzAXw" class="principle"><h4 data-page-node-id="yJGBoECgaHBmH2vpZERQYZ">工作场景成组</h4><p data-page-node-id="CkrGUbcRBnXanc27XDUTFq">共创小组由岗位人员构成，讨论的是真实、共性的业务流程，产出可被同岗位直接复用。</p></div>
+      <div data-page-node-id="uQECvExra2ADD3rY3Ah0ki" class="principle"><h4 data-page-node-id="UJYmahf9lTAXZoprLppPr3">教练式打法</h4><p data-page-node-id="EAdGZJd5avUACBbhwodI44">以教练方式组织小组 PK、积分、奖励、研讨与成果汇报。</p></div>
+      <div data-page-node-id="VacsweypWSC0Tno2Ftv1vs" class="principle"><h4 data-page-node-id="CgsRw4Xpt8wUszN0sGuhpb">赋能不代劳</h4><p data-page-node-id="AFn7pADb9MKL9DE4JuUw0F">专家与改造成果由甲方小组在引导下自行产出，服务方只做组织、引导、方法示范与点评，能力必须长在甲方组织内。</p></div>
+    </div>
+
+    <div data-page-node-id="QmdvOaEUTlgsXbkOI1kDDL" style="margin-top:26px">
+      <div data-page-node-id="cABhiURl3PsPeQEa0pFEOa" class="facts">
+        <div data-page-node-id="nJi17jMpqVuCWPEnLdB049" class="fact"><div data-page-node-id="9IxbCufruHi0iJ4pLs0BHx" class="f-k">服务对象</div><div data-page-node-id="6HwzDIiNWJUJqtnQ8pSC5F" class="f-v">服务对象企业的所有 WorkBuddy 账号使用人员</div></div>
+        <div data-page-node-id="9GYuxbjVBfeLcz8t7Bmk6V" class="fact"><div data-page-node-id="pBU1ieFDeBAGFzHPZIleqt" class="f-k">服务周期</div><div data-page-node-id="1UrYZKad7vuRzYFx68sgal" class="f-v">3 个月，按月划分为三个阶段</div></div>
+        <div data-page-node-id="PHntbFtuvbIr4ABRtM43MA" class="fact"><div data-page-node-id="QFX16hDWzOAeMDuDX7OQJX" class="f-k">推进载体</div><div data-page-node-id="1kephsJeZlLU6Mc16JX0OW" class="f-v">与甲方共同策划并组织为期三个月的<span data-page-node-id="9AF1uvQltdnIB0TVlgzw1o" class="hl">内部 AI 竞赛</span></div></div>
+        <div data-page-node-id="hYKQFtvJwG2GoWLCEnGLKK" class="fact"><div data-page-node-id="dCpQpQXsC5EC8hg6hLI3Lr" class="f-k">阶段主线</div><div data-page-node-id="YpGSy0wPcul8ykIufLsXVY" class="f-v">全面普及与标杆选拔 → 任务场景共创与提效点沉淀 → 标杆工作场景改造与成果汇报</div></div>
+        <div data-page-node-id="gQstX4EKWn33E5Ju45k89Y" class="fact"><div data-page-node-id="MHebBMnYeA8DQZ831EfxgC" class="f-k">最终产出</div><div data-page-node-id="fJCvBZJnMmKpV2mVciQkNb" class="f-v">各小组产出的可在岗位复用的 WorkBuddy 专家（<span data-page-node-id="YFBXlyHoxRhDfUhURVlj4l" class="hl">每个小组至少产出 1 个主场景专家</span>），每个用户至少产出 1 个提效场景</div></div>
+        <div data-page-node-id="YFTqfvmiGqWbxEEYUzoASX" class="fact"><div data-page-node-id="m8p2LGtgq6iusE5YpyHJEK" class="f-k">服务方角色</div><div data-page-node-id="4EMRNKMuMI9Wp1CaBEGHI4" class="f-v">培训者、答疑者、组织者、引导者；第三阶段不代替甲方动手</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 三、总体设计 -->
+  <section data-page-node-id="LinidQvPO20QoFAfkvOqmq" class="block" id="s3">
+    <div data-page-node-id="yV5e8MeSVF0Px7fVKnWh6n" class="sec-head"><span data-page-node-id="PwZoesE2oZj0IhCVmlbdLX" class="sec-num">03</span><span data-page-node-id="I8Vm7a9jfewrRhGniyEcvg" class="sec-title">总体设计</span><span data-page-node-id="jwH8swzDAQDguFubVKqJG8" class="sec-sub">OVERALL DESIGN</span></div>
+
+    <h3 data-page-node-id="RxpFXsnjtWBqm5zKaM6tGx" style="font-family:var(--serif);color:var(--slate);font-size:20px;margin-bottom:20px">3.1 三个阶段（点击切换查看）</h3>
+    <div data-page-node-id="z6vIbd0xbsatBoVKcr1E2v" class="stage-tabs">
+      <div data-page-node-id="Xah16Nm2JfBZFPhvvxxOGx" class="stage-tab active" data-stage="0">
+        <div data-page-node-id="WLK7ewzTEcUAdQFOuBhfpb" class="st-month">第一阶段 · 第 1 月</div>
+        <div data-page-node-id="kiZB5BSvXviDp4yJZrMsTV" class="st-name">全面普及与标杆选拔</div>
+        <div data-page-node-id="O5WDruBLS2IWjxqEOHQqWM" class="st-line">让员工用起来</div>
+      </div>
+      <div data-page-node-id="PpcGdDM7km8xelLjxUqkyz" class="stage-tab" data-stage="1">
+        <div data-page-node-id="j5rNGAQtKJFoOqVdGEDOkD" class="st-month">第二阶段 · 第 2 月</div>
+        <div data-page-node-id="YpCJ18Q3AnnWq3lajlVZ1f" class="st-name">任务共创与提效点沉淀</div>
+        <div data-page-node-id="3IpmSZ4G3TFLG1tUGRlRSY" class="st-line">同岗位小组共创</div>
+      </div>
+      <div data-page-node-id="KdbJ3p7oQNjXVlPuoMzZ1N" class="stage-tab" data-stage="2">
+        <div data-page-node-id="42QvaRowGFyYLgFWetL9yI" class="st-month">第三阶段 · 第 3 月</div>
+        <div data-page-node-id="HiKDx4iwt1yQQD7lEyHrKh" class="st-name">标杆改造与成果汇报</div>
+        <div data-page-node-id="sfhvH7Hc20c1dwKFoq0Y4J" class="st-line">深度改造 · 沉淀方法与人才</div>
+      </div>
+    </div>
+    <div data-page-node-id="2eHspfXRr2WKUzeqNPCpOR" class="stage-panel active" data-stage="0">
+      <h3 data-page-node-id="hPM7khbQ5J7xpGQ5oc5sMj">第一阶段：全面普及，让员工用起来</h3>
+      <p data-page-node-id="kUGdyCMJruRb9GD0rAeNEV">完成全部用户基础培训与使用激活，发掘优秀标杆用户与标杆场景，让种子用户在容易出结果的场景先做出结果、带动更多人；本阶段只教基础使用，不追求改造成果。</p>
+      <div data-page-node-id="fBOk2dhlIHbMmxGpbMP34A" class="stage-goal"><b data-page-node-id="YLLCbQjyf7RJfgwcUVArps">阶段要点：</b>覆盖全部用户 · 发掘标杆 · 只教基础使用</div>
+    </div>
+    <div data-page-node-id="TjfIF4EFdpwPMhoMcDdrlF" class="stage-panel" data-stage="1">
+      <h3 data-page-node-id="oYMjnJWVuDW4jB98GQJBXv">第二阶段：梯级自组织，共创提效点</h3>
+      <p data-page-node-id="3lF2WroPGKU1OMN27YUoKo">员工以任务和工作场景为主线形成同岗位共创小组，开展两天专项研讨与工作场景提效梳理，形成初步成果：初步的专家技能、部分工作场景的改造，以及计划改造场景的完整清单。</p>
+      <div data-page-node-id="iJmuScLVmzs7Gz2oCSbar7" class="stage-goal"><b data-page-node-id="zoYPBjttweRpHPwgsKeWkl">阶段要点：</b>同岗位共创小组 · 两天专项研讨 · 提效点清单</div>
+    </div>
+    <div data-page-node-id="hXARZCIHPUJ32MpC1iYRfZ" class="stage-panel" data-stage="2">
+      <h3 data-page-node-id="kATnWVGrJzjRlib2gevGhb">第三阶段：改造第一批工作场景，沉淀方法与人才</h3>
+      <p data-page-node-id="gMs4hCSe7Cj7BTBY4G6zPh">遴选重点小组，通过两次线下共创完成标杆工作场景的深度改造，产生可复用的专家技能，沉淀工作场景改造方法，并在此过程中涌现新的管理人才。</p>
+      <div data-page-node-id="WBHEfzyZbbujrbMZxtMpXh" class="stage-goal"><b data-page-node-id="CrRYi3ZMmfFkKgat2mIpmI">阶段要点：</b>重点小组 · 两次线下共创 · 可复用专家与管理人才</div>
+    </div>
+    <div data-page-node-id="uLjxLQNlTpuzzjGbqbMIJx" class="quote-banner" style="margin-top:26px">三个阶段严格递进、不可跳步：第一阶段的标杆岗位和优先场景的选拔<b data-page-node-id="3LFuhfcxgQwhJZlGQiAIic">决定</b>第二阶段的小组构成，第二阶段的提效点清单<b data-page-node-id="VMcPrlk73AL2eyZQBzBktL">决定</b>第三阶段的共创内容。</div>
+
+    <h3 data-page-node-id="Otm7gdfCDBYOEHre7OXoCo" style="font-family:var(--serif);color:var(--slate);font-size:20px;margin:44px 0 20px">3.2 交付成果：四大板块</h3>
+    <div data-page-node-id="LvXe44LJaicEyWxVwdX9Zv" class="blocks">
+      <div data-page-node-id="uxIJr16kw5wmxuAMROXoHV" class="blk">
+        <div data-page-node-id="bkuPVB3kFsTHjTWyDJfNEA" class="blk-head"><div data-page-node-id="pZkZSuAm2onTEoDG1I8zNF" class="blk-badge"><svg data-page-node-id="fG5bfrSxNfIEUUS1PyGesd" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path data-page-node-id="RIHHIqySjupFYuSlNP7z4J" d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path data-page-node-id="A7b2Exf3MORArgh6Or0xO2" d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg></div><h3 data-page-node-id="xp5h2mFLq9549U0EdZW4xy">梯级培训</h3></div>
+        <div data-page-node-id="GbYznEdroDlgqrArmKOS5X" class="blk-body"><b data-page-node-id="QOuO2LKrrioIKca9Cna1q4">基础培训</b>：以 WorkBuddy 进入工作场景、能够用起来为目标；<b data-page-node-id="LPDdUFuxqjfrOSa9X3opGh">深度培训</b>：以任务和工作场景深度提效为目标，覆盖系统对接、数据抓取比对、MCP 等进阶能力，并推动同类岗位能力复制；<b data-page-node-id="ImFkRYUTOTrRYTk7zxLUqo">共创工作坊</b> 2 次。</div>
+        <div data-page-node-id="kBjmszPt7EkKgGp7lNpJO5" class="blk-out"><b data-page-node-id="9KbCN02luCzo3NQXFdJOlS">成果</b>全部用户具备基本 AI 提效能力；部分员工具备改造工作场景的能力；涌现 AI 提效组织中的新管理人才。</div>
+      </div>
+      <div data-page-node-id="zghDk5MBPkgLRAo6tLBbQu" class="blk">
+        <div data-page-node-id="8cyGcQnUQhHvSZOZF8ACKu" class="blk-head"><div data-page-node-id="ADiDdMHleInz3tDzJ7e3kc" class="blk-badge"><svg data-page-node-id="SRKDFlGQvO8IAfGOhEax0W" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path data-page-node-id="5RBfSM6YkFOScSlxeWD5jr" d="M3 11l18-5v12L3 13v-2z"></path><path data-page-node-id="KpOq7aGANb1WLgli2WI00F" d="M11.6 16.8a3 3 0 1 1-5.8-1.6"></path></svg></div><h3 data-page-node-id="uWSdwRU8AYm2tCtGPhHpFu">活动运营</h3></div>
+        <div data-page-node-id="nMjyZoCIF5X1HWJ1zjtwe1" class="blk-body"><b data-page-node-id="vJv8ncbK9BMRFCBDz1Hs5D">标杆分享</b>；<b data-page-node-id="XHHDS08CkrMTixowpaFhSB">周报告 / 双周总结</b>：每周提供书面报告与建议，每两周一次线下总结分享；<b data-page-node-id="GhkYe9ITZq6p8aGuH6KkQ4">任务/工作场景小组制</b>推动工作改造与提效。</div>
+        <div data-page-node-id="3X0HnlWYBFTCmfONxhzpBO" class="blk-out"><b data-page-node-id="vOP2VuSQZVJwTz2yz0rV05">成果</b>通过教练辅导与竞赛运营，企业出现适应 AI 时代任务的跨职能协作新变化，具备脱离辅导持续进化的组织能力。</div>
+      </div>
+      <div data-page-node-id="BxmwvF8EgcFtgvxrmbbOZr" class="blk">
+        <div data-page-node-id="WbtmhO0Hk7irIfTIZbP7sR" class="blk-head"><div data-page-node-id="praHR4HTNMd2JDeEpmEW3K" class="blk-badge"><svg data-page-node-id="IvoSp1YukUfqFMeP40yXAi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path data-page-node-id="baCEUBfmdztXibeJIYKMh4" d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline data-page-node-id="5I1HXPO7Izeqtj8cwmGWhm" points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line data-page-node-id="bpk1U8hFthXMNMmoBjn7vR" x1="12" y1="22.08" x2="12" y2="12"></line></svg></div><h3 data-page-node-id="BkT1EtXM6eRUUGnDreKMFg">成果共创</h3></div>
+        <div data-page-node-id="TQ1XeFCWNkFfmlSfZykTMl" class="blk-body">以同岗位小组为单元开展工作场景共创，成果反向封装为<b data-page-node-id="aoTQMqL9OnFswZbaWZnBbW">专家 / Skill</b>，先出 1.0 版本再持续迭代。</div>
+        <div data-page-node-id="6w9c4wGWaxfYriQbDPAP9v" class="blk-out"><b data-page-node-id="03J20EFk42Szl0uvzeXKZp">成果</b>沉淀岗位级、团队级、企业级数字资产：提效点清单、专家资产、工作场景改造成果。</div>
+      </div>
+      <div data-page-node-id="ZLl9NjLnABF4hiX7aTEFK8" class="blk">
+        <div data-page-node-id="jBwSlJHPBMVcjViSgxmvwD" class="blk-head"><div data-page-node-id="uLX81HMcNydQNV3NvSb2HA" class="blk-badge"><svg data-page-node-id="Dk50PTJqY9MbkI8yznPJVh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path data-page-node-id="IdyfAzxhGUhBvvDNeNUhYW" d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg></div><h3 data-page-node-id="x1iCttY97ZXQhzsgY8zZIj">辅导支持</h3></div>
+        <div data-page-node-id="rmLgPKS7ugtpBWKxPeez6a" class="blk-body">固定渠道线上答疑，工作日响应，沉淀高频问题问答库。</div>
+        <div data-page-node-id="hBc6bmlwAGyu9WsZYmDW9D" class="blk-out"><b data-page-node-id="NUqW78xkFClLWD5bdF1GNt">成果</b>问题当日响应不过夜，共性问题转化为培训材料，减少重复答疑。</div>
+      </div>
+    </div>
+
+    <h3 data-page-node-id="6YJj41tYnXSkVzRYuo0OVp" style="font-family:var(--serif);color:var(--slate);font-size:20px;margin:44px 0 24px">3.3 总体节奏安排</h3>
+    <div data-page-node-id="TLhFTT6iDXX9quve5Lxczh" class="tl">
+      <div data-page-node-id="ZSykzV21GEo3de6gzPhDVB" class="tl-item">
+        <div data-page-node-id="6hvFrL7XQRstM5R58AA0T6" class="tl-dot">1</div>
+        <div data-page-node-id="KNs7zQlKHfLjSg6GM9oqug" class="tl-card">
+          <div data-page-node-id="aABfKEQxuApjZZzmPgrsJC" class="tl-month">第 1 月 · 全面普及与标杆选拔</div>
+          <ul data-page-node-id="ljLfO7RNj1Wh9suKySI07U" class="tl-acts">
+            <li data-page-node-id="xJco9TuVWVmWi7jEcCs699">启动会 + 全部用户基础培训</li>
+            <li data-page-node-id="Hwj11EOnDmvMGQah87lrgc">使用激活 · 周总结激励</li>
+            <li data-page-node-id="Bajv0lAkLanHIIgzNhPny3">双周标杆分享 · 标杆场景重点辅导</li>
+            <li data-page-node-id="B7pBLCp0bE7JkDmiX78LxC">种子选拔与组队</li>
+          </ul>
+          <div data-page-node-id="y1P7TBapJiJ82QHw0iDBSF" class="tl-out"><span data-page-node-id="Ft088P6KqC5wCio7iKu4eb">阶段成果</span>全部用户形成活跃使用习惯；产出标杆案例集；种子选手名单与岗位小组组建完成</div>
+        </div>
+      </div>
+      <div data-page-node-id="5Q5aqfDf8FD5qy9NWHVZjc" class="tl-item">
+        <div data-page-node-id="g8mIK71ovz8I50OOA2x7wq" class="tl-dot">2</div>
+        <div data-page-node-id="vy7KqAmtgMqZ81adNFyAxj" class="tl-card">
+          <div data-page-node-id="buLgGYTfrlH1Qcnn6Ojg3q" class="tl-month">第 2 月 · 任务共创与提效点沉淀</div>
+          <ul data-page-node-id="YfJYu5BfjxkkS8Hh4LxAHw" class="tl-acts">
+            <li data-page-node-id="VBdAbtaNQEnBSCxCQ80UnV">深度培训</li>
+            <li data-page-node-id="d3DLg79vrU1itPBYD3SbAr">工作小组成立</li>
+            <li data-page-node-id="g8bbu3oxR8DFiEO9Ch5ex7">两天专项研讨</li>
+            <li data-page-node-id="Z74TkeyEB5or1XHwzdGUWS">工作场景提效梳理 · 专家雏形搭建</li>
+          </ul>
+          <div data-page-node-id="8w3YzQKTc7JoEvLNr9auFc" class="tl-out"><span data-page-node-id="8dZAeO6wsxTbgoLTn7XxVX">阶段成果</span>各小组形成 L2/L3 级可提效点清单；形成未来 3–12 个月的改造场景完整清单与内部共识</div>
+        </div>
+      </div>
+      <div data-page-node-id="p3Cb0OvUSOv2AoHthWXkAX" class="tl-item">
+        <div data-page-node-id="wY6yQEz2rCjBt1kCVsQmGF" class="tl-dot">3</div>
+        <div data-page-node-id="V1uH11tJBaPVUQsAlqD4Ju" class="tl-card">
+          <div data-page-node-id="GzzElKLmQEPOQyf1IA1JXE" class="tl-month">第 3 月 · 标杆工作场景改造与成果汇报</div>
+          <ul data-page-node-id="ClzhMKl9rxyh0Q2YBFB79Q" class="tl-acts">
+            <li data-page-node-id="38m4MIgHPInMWW39HPbia6">线下共创工作坊 ①：改造与沉淀</li>
+            <li data-page-node-id="oc9rqkp6DIXSFNvVUt4lbN">线下共创工作坊 ②：验证与优化</li>
+            <li data-page-node-id="RCrQpkLNWv8IjuwLv14iFK">成果汇报与评审</li>
+          </ul>
+          <div data-page-node-id="rEeuuAZHIDPP7hHVB0UD7n" class="tl-out"><span data-page-node-id="qx4dRHmU7NqoYmsnNlFIXv">阶段成果</span>各重点小组产出改造成果，每个小组至少产出 1 个主场景专家；形成工作场景改造方法论</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 四、项目执行 -->
+  <section data-page-node-id="wwboVdGuqRAegcKJcmwPiz" class="block" id="s4">
+    <div data-page-node-id="4vVckRoxp9QnCDHgViKaAZ" class="sec-head"><span data-page-node-id="NePm4PZ7LnAHuZlNKefmTq" class="sec-num">04</span><span data-page-node-id="2qJo49NkF3RbUEF62HwEUv" class="sec-title">项目执行</span><span data-page-node-id="luwbQwVNUtPgWxDfICGWeo" class="sec-sub">EXECUTION</span></div>
+
+    <div data-page-node-id="efO1CeRmZVRnJG52b18WqU" class="acc" id="acc">
+      <!-- 筹备 -->
+      <div data-page-node-id="TWCZr1UsAJLXE56RkN4ROu" class="acc-item open">
+        <button data-page-node-id="nAKGgcb9qy6OulgWrV4qto" class="acc-btn">
+          <span data-page-node-id="2Pi6NBnZsQ8d732ARjzlNG" class="acc-idx">4.1</span>
+          <span data-page-node-id="5RQZb8Itx8ZE9RXWcpU0Dm" class="acc-t"><h3 data-page-node-id="9GA4V7QcBSkJ00qHtkD4ot">筹备工作</h3><span data-page-node-id="qchBy2cCoN6TbojzDx3G0y">启动前完成</span></span>
+          <span data-page-node-id="WERIeHZ6c5U62S6JreEu4K" class="arrow">▾</span>
+        </button>
+        <div data-page-node-id="GqAi9xii6uZvAI6lAFiEaU" class="acc-body">
+          <div data-page-node-id="oCSv00HdA6VqVBjvdGegtM" class="acc-inner">
+            <h4 data-page-node-id="YZaMcHJmEPx6ncj0xxzvuw">执行方案研讨</h4>
+            <ul data-page-node-id="vtrt2Q5pYfrndfH5toVcjG"><li data-page-node-id="Sf9s7IRj29c5ezwjJRYNkw">与甲方共同确定活动方案、培训方案、人员组织，并对甲方工作场景进行诊断与筛选——<b data-page-node-id="RdsTD9FR3weKN6nz3tG2wV">甲方管理层已提出的重点场景将转化为员工共创承接的任务</b>，纳入第二阶段研讨议题。</li></ul>
+            <h4 data-page-node-id="5DT8qFuxcMFtmk2axXQp5L">执行配套资源安排</h4>
+            <ul data-page-node-id="nYRJSIbeJEHtNUEZ6sfcEf"><li data-page-node-id="9KRhLREcVJXNZAc6XNt8hL">确定活动奖惩机制、评审委员会、组长任命方式、宣发渠道与场地等配套资源，形成<b data-page-node-id="Fk48oCSK5DeDmbnHhtQkD4">《内部 AI 竞赛活动方案》</b>并由甲方正式下发。</li></ul>
+            <div data-page-node-id="CkPfoT7AQEraCjKGPACJhH" class="deliver-box"><div data-page-node-id="Gtstex80RxeBUn6scLDGRw" class="d-tag">阶段交付物</div><p data-page-node-id="bYE4dS2ic0g4jYQVgB72UA">《内部 AI 竞赛活动方案》（赛程、积分、奖惩、评审全案）——竞赛规则先行，全部用户动员有抓手。</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 第一阶段 -->
+      <div data-page-node-id="irX7K7HAbQo5YLizVKqb0b" class="acc-item">
+        <button data-page-node-id="chYVMmsyAB3b0aPdpaYmFI" class="acc-btn">
+          <span data-page-node-id="9EbQNewklS1s4GW5zLcwlV" class="acc-idx">4.2</span>
+          <span data-page-node-id="RxhNY41LsdhMC9epwLnLAX" class="acc-t"><h3 data-page-node-id="F45wFKpSiAhbPIR9y0FSR6">第一阶段：全面普及与标杆选拔</h3><span data-page-node-id="Rg3bz3EAdF2yAASO2Dy5Wg">让员工用起来 · 全部用户普及与标杆挖掘</span></span>
+          <span data-page-node-id="Gigm9efD6HnTaFtZnpApB7" class="arrow">▾</span>
+        </button>
+        <div data-page-node-id="B1CyBiTFqbizi4yukMVZ0G" class="acc-body">
+          <div data-page-node-id="kdv4yn4tT6zTxY03IR96Rc" class="acc-inner">
+            <h4 data-page-node-id="ikte6oGIFRjbHJ4zLR10N9">主要工作</h4>
+            <ul data-page-node-id="9XVPHheH5CpFJaWT75M8Ou">
+              <li data-page-node-id="vGGpkcHvGS0TxYSxS6MCRm"><b data-page-node-id="mJztywjBjiWCLnaSGMvrif">启动会 + 全部用户基础培训</b>：覆盖账号与界面、核心功能、典型岗位场景、操作规范，以"能上手、能完成一个真实小任务"为验收标准。</li>
+              <li data-page-node-id="vzslSGIONPAYSIybazf874"><b data-page-node-id="Ni8V2YJxVOgp9Jnj9HKOjj">全部用户普及与使用激活</b>：公示竞赛积分，督促低活跃人员；对长期不用、提醒无改善的人员执行淘汰，由同岗位补员。</li>
+              <li data-page-node-id="fFSAVOv9LA5CDmZKWXhtKU"><b data-page-node-id="vYGrtT1S8jDGnWZshoL9OI">周总结激励与双周标杆分享</b>：每周提供书面进展报告与建议；每两周一次线下总结分享，会议固定包含"数据总结 + 亮点分享"两个环节——盯住用得好的员工做访谈、挖掘亮点，每次安排数人上台分享，种子在分享中自然涌现。</li>
+              <li data-page-node-id="UeiT1SjGWCqZWm1iuZQBR7"><b data-page-node-id="rnvX8ejctPl6wrPGBjN4wI">标杆场景重点辅导</b>：对容易出结果的场景重点辅导，让种子先做出结果"发光"，带动更多人。</li>
+              <li data-page-node-id="lFaVETSyVPKXUn74MZStyi"><b data-page-node-id="mB96atdVyllXkBsIb7PARt">种子用户选拔</b>：以使用数据、培训完成情况、场景任务质量为依据，结合亮点分享表现综合评估，宁缺毋滥。</li>
+            </ul>
+            <div data-page-node-id="hgIX9oaIKd4wDapnka0HHj" class="deliver-box">
+              <div data-page-node-id="DEHOvrVCxV5T3WtnBr3EaU" class="d-tag">阶段交付物</div>
+              <p data-page-node-id="SLgUGDFDGeOhCQ9L1EfqYj">基础培训材料、每周进展报告（分期次）、标杆案例集、种子选手名单与小组组建方案、甲方奖惩机制文件。</p>
+              <div data-page-node-id="TBa9ri0pVDPb4C3srH7zGx" class="d-tag" style="margin-top:12px">阶段成果</div>
+              <p data-page-node-id="GDUM0qcAqkKsGCHBMfKHXx">让全部用户熟练掌握 AI 基本使用并形成活跃使用习惯，产出第一批标杆用户与标杆场景，组建同岗位共创小组。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 第二阶段 -->
+      <div data-page-node-id="J9EXFNDQtYHHYGu341wrrA" class="acc-item">
+        <button data-page-node-id="jCzC7yySPkXeatpBOCBu34" class="acc-btn">
+          <span data-page-node-id="0JsJfbp9WNwjcHfiXXTG7Q" class="acc-idx">4.3</span>
+          <span data-page-node-id="lBbtUeW9i24PhjATEnIAZp" class="acc-t"><h3 data-page-node-id="25XLyS4EmLCDSf5S4EDzMk">第二阶段：任务共创与提效点沉淀</h3><span data-page-node-id="gBTSTEDZqM0RUA2tO7Hqsb">以任务和工作场景为主线推动小组共创</span></span>
+          <span data-page-node-id="EqEYNHqjopXUE4KmT9kfYQ" class="arrow">▾</span>
+        </button>
+        <div data-page-node-id="kZohfJ3uS7MFGEHrs0Hfx6" class="acc-body">
+          <div data-page-node-id="1x3Iil0ej222prO3fOE4MV" class="acc-inner">
+            <h4 data-page-node-id="USJwLlwMYkYZJMNOQhBvar">主要工作</h4>
+            <ul data-page-node-id="VT5iat8v5l8COgip0VPbTS">
+              <li data-page-node-id="0EWOR8ZlSIgA7I88GLrHh7"><b data-page-node-id="Ahi8pkdsDAlCZfLeCp4ujD">深度培训</b>：面向种子与小组骨干，围绕上下文管理、系统对接、数据抓取比对、MCP 等深度能力开展培训，支撑任务与工作场景改造。</li>
+              <li data-page-node-id="SJ5YdmC1tnKeVWTT2X3Dmi"><b data-page-node-id="Ves9E1EhnkOeWbCFkXbrBj">工作小组成立</b>：种子牵头人根据使用用户数及岗位涉及工作场景、按岗位相关性组建小组，具体数量以实际情况而定；组长为业务高手或 AI 能力强者，靠影响力带队；小组以同岗位为原则构成。</li>
+              <li data-page-node-id="f3gFs6pqt31Oz1dpdV2Gag"><b data-page-node-id="p8J1XGYQoSz4mpRe4aS5I7">两天专项研讨</b>：服务方讲要求，小组围绕本岗位工作场景讨论智能体可提效点，现场分享研讨成果；甲方管理层已提出的重点场景纳入研讨议题。</li>
+              <li data-page-node-id="C5h6xcCGy2LdFCuxAGfP3o"><b data-page-node-id="FDvxKVOEekFaZI9vH3KA1y">工作场景提效梳理</b>：各小组按"梳理岗位流程 → 识别高频高耗时环节 → 确定 AI 提效点 → 搭建专家雏形"推进，每周书面报告进展，每两周一次线下总结纠偏。</li>
+            </ul>
+            <div data-page-node-id="vjIJz1pPIGAWUwGqEXG2xa" class="deliver-box">
+              <div data-page-node-id="uMQrZbj39XUAQb3UR3TgpP" class="d-tag">阶段交付物</div>
+              <p data-page-node-id="peaThGV4PHJQWe4yJZGjCe">深度培训材料、工作场景提效建议报告（含提效点清单与流程梳理图）、每周进展报告、专家雏形、重点小组遴选建议。</p>
+              <div data-page-node-id="V1MQ0E4nNz3kwmtNGgT9B9" class="d-tag" style="margin-top:12px">阶段成果</div>
+              <p data-page-node-id="rJC41Grp2svxDkp0lEp7lO">形成覆盖全部参与用户、每个用户至少产出 1 个提效场景的提效点完整清单——这是未来 3–12 个月可解决问题、形成公司短中长期需求的内部共识，并直接决定第三阶段共创内容。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 第三阶段 -->
+      <div data-page-node-id="ZU9Eoj8ZDf8EY0CPNrlDlQ" class="acc-item">
+        <button data-page-node-id="qCvqUKAz8zaEE1hAyC5U8H" class="acc-btn">
+          <span data-page-node-id="N2xolVgpCWSod6BSgDEBnK" class="acc-idx">4.4</span>
+          <span data-page-node-id="A03T1xb8Yh7TWpGav8gCYw" class="acc-t"><h3 data-page-node-id="Fz3X7Cxa8eqSUUJWsxNv0a">第三阶段：标杆工作场景改造与成果汇报</h3><span data-page-node-id="2DhEkRWC6EfzAb6HawNgFS">标杆场景深度改造与成果收口</span></span>
+          <span data-page-node-id="UvOzpC0eJR1X7E693dE1Vq" class="arrow">▾</span>
+        </button>
+        <div data-page-node-id="zlPkbWeD97ZGLlEMXmUXkU" class="acc-body">
+          <div data-page-node-id="SAax23sDgQ6lGxnT1824YB" class="acc-inner">
+            <h4 data-page-node-id="fPrQvKFKzKrMRfLFLpzlN1">两次线下共创工作坊</h4>
+            <ul data-page-node-id="6yYuHRM1uitx21MYLsO7r4">
+              <li data-page-node-id="CA4nnp5RCVJf8IGQLVnKlA"><b data-page-node-id="VBrmG3Ah2dbQj4WDZQCu6s">第一次 · 标杆工作场景深度改造与成果沉淀</b>：小组长带头研讨本岗位工作场景，确定改造方案，用对话形式做出案例后反向封装为专家/技能，先出 1.0 版本。<span data-page-node-id="WEb8OCweQIkqyN06trxbHE" style="color:var(--ink-soft)">（服务方角色：组织、引导、提问、方法示范）</span></li>
+              <li data-page-node-id="XVsWdhypBxkfEujVFrr4i8"><b data-page-node-id="SQdyr4OjYFx3HvmoKgvI8Q">第二次 · 成果验证与持续优化</b>：验证改造效果，从 1.0 持续迭代完善，准备正式成果汇报。<span data-page-node-id="pprnM4KWRjjeWm4b3RcEFj" style="color:var(--ink-soft)">（服务方角色：组织、引导、点评、验收把关）</span></li>
+              <li data-page-node-id="c5fNAERbHcx5NqyUcuLeAH">重点小组参加，具体数量以实际情况而定，<b data-page-node-id="yZbqALddvK9BDV0mBdIatP">半个月一次</b>。</li>
+            </ul>
+            <h4 data-page-node-id="TCelRhTKEula5SjErw3kWR">正式成果汇报</h4>
+            <ul data-page-node-id="Rr16ZCHwe9U0bsHEJpQWi3"><li data-page-node-id="sB5Nfl8t7eEtyt6KvPHeaO">改造成果包含<b data-page-node-id="hp8t5yYcCcfR4wo6DIMPqh">流程优化、工具优化、岗位分工优化</b>等，形成正式汇报与评审。</li></ul>
+            <h4 data-page-node-id="5RAhM2i2uOZ8jxzV61tWU0">机制保障</h4>
+            <ul data-page-node-id="umcUOaCB6GSjgCxTMaKu5R"><li data-page-node-id="7UmTHisnNDx1bvTPQDgqwq">产出的专家统一上报甲方项目负责人，经后台<b data-page-node-id="xCJzDl54w1nOkjM8z6o02Y">统一下发全岗位使用，以版本管理替代人传人</b>，使专家成为可分发、可迭代的组织资产。</li></ul>
+            <h4 data-page-node-id="87ZKGUFeiYsk4yWERHm03q">服务方边界</h4>
+            <ul data-page-node-id="xHawGDjzCK8YkcS87UgyEH"><li data-page-node-id="PvAzb8NNpWIDEIxkzOOkBq">服务方<b data-page-node-id="bwtMLhMlwpYqKGMJobmCqK">不代搭建、不代写配置</b>，动作限定为组织、提问、启发、方法示范和点评——只有甲方小组亲自梳理流程、亲自验证，成果才贴合岗位实际、可被理解维护、可在相同岗位推广。</li></ul>
+            <div data-page-node-id="AtfL5Vlj7pc5HnoDXoeEF1" class="note-callout"><b data-page-node-id="h3V5pEY3HvNt8PR6oGB34E">成果归属：</b>全部成果归甲方所有。</div>
+            <div data-page-node-id="ADJBQUpCAopMvRM5c9ErGQ" class="deliver-box">
+              <div data-page-node-id="lSGpwGQhq0zQyjgMNnOZNH" class="d-tag">阶段交付物</div>
+              <p data-page-node-id="9XPyZVGyxDSaZPRlATE1U1">2 次共创工作坊记录、各重点小组改造成果（每个小组至少产出 1 个主场景专家）、专家清单与复用说明、成果汇报与评审结果。</p>
+              <div data-page-node-id="EHHYApnCPFhh9Hyacgl9eQ" class="d-tag" style="margin-top:12px">阶段成果</div>
+              <p data-page-node-id="34GCt0cxfaMj8t9bSkMS43">为甲方培养一支自己的 AI 骨干队伍，沉淀可直接分发给全岗位使用的组织级专家资产与工作场景改造方法论。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 五、交付物总清单 -->
+  <section data-page-node-id="2GTAWe9t9dtFtYUGLcl0Jc" class="block" id="s5">
+    <div data-page-node-id="Ddp2HtnShTa2VjsPByg9kk" class="sec-head"><span data-page-node-id="OoFUCVg6AK08pEGj14NlPB" class="sec-num">05</span><span data-page-node-id="ejF6XHoIgezBRi8Umq17jj" class="sec-title">交付物总清单</span><span data-page-node-id="LaDkximuxaDlu5KBlVlQ6n" class="sec-sub">DELIVERABLES</span></div>
+    <div data-page-node-id="PiBqRDfjdI8SHwOI3rB0Yp" class="dgrid">
+      <div data-page-node-id="qHuz2ECKm6S5DEuK8rbbo2" class="dcard">
+        <div data-page-node-id="vEymbMYXj0Yy2LZuKZJ02Z" class="d-stage">筹备期</div>
+        <ul data-page-node-id="kB3Zq0AoYyIc8qTFsfWzSc">
+          <li data-page-node-id="ymSJTMw47VgFydQQmS3dnD">《内部 AI 竞赛活动方案》全案</li>
+          <li data-page-node-id="7HSe5Lk0Fyf7EgD3xTZKjs">赛程、积分、奖惩、评审设计</li>
+        </ul>
+        <div data-page-node-id="dLryjPr3ritUX1zEJRvoPM" class="d-value"><span data-page-node-id="96U9VP5qcln3zbrt4yL00X">价值</span>竞赛规则先行，全部用户动员有抓手</div>
+      </div>
+      <div data-page-node-id="GkuYMMWcnyL4sneVtEpChB" class="dcard">
+        <div data-page-node-id="3CHFAepM9GpbKgrhLFzS04" class="d-stage">第一阶段</div>
+        <ul data-page-node-id="dwgParXhyTnBuFNA1uI79E">
+          <li data-page-node-id="Di4Nz7Hl2CGfwjxydSflqp">基础培训材料</li>
+          <li data-page-node-id="Tmix6rFJHOLzbHx5jJYWLI">每周进展报告</li>
+          <li data-page-node-id="YMlbzk2c6cg9ree3MHATHL">标杆案例集</li>
+          <li data-page-node-id="V0ECSApMcDhLRHnwBMRLsm">种子选手名单与小组组建方案</li>
+        </ul>
+        <div data-page-node-id="usb7jeA3RQSXdCpHAATrux" class="d-value"><span data-page-node-id="0eCon7oPsSzOJV0CJE4Hew">价值</span>全部用户熟练掌握 AI 基本使用，标杆带动氛围成型</div>
+      </div>
+      <div data-page-node-id="H7hlzbBFGzuS6lGuOlAjMx" class="dcard">
+        <div data-page-node-id="88WqCHwP6bW7WPvl5g79sD" class="d-stage">第二阶段</div>
+        <ul data-page-node-id="1AEbdKk3WA2EZr6sxBCe7u">
+          <li data-page-node-id="LxR71MI3aJ4lvWRVvD2YFL">深度培训材料</li>
+          <li data-page-node-id="EKRjw9qOi8GyUNrRaPzGkP">工作场景提效建议报告</li>
+          <li data-page-node-id="E2fuDFz1bza9a0GJi3p4ZG">每周进展报告</li>
+          <li data-page-node-id="E7TVBxGUfZXEKQgNHeAmfZ">专家雏形</li>
+        </ul>
+        <div data-page-node-id="XZzmPS7KzXBt7gz85SXEAV" class="d-value"><span data-page-node-id="zM8pzOWRdTLs44wqBvg9nC">价值</span>每个用户至少产出 1 个提效场景的岗位提效点清单，形成短中长期改造共识</div>
+      </div>
+      <div data-page-node-id="f8EUMx4qAyQHFsWizFHNiA" class="dcard">
+        <div data-page-node-id="516bQgQJcDsJKrYQJi6Lp7" class="d-stage">第三阶段</div>
+        <ul data-page-node-id="0S4mwtxurbsiJ47PN9V9Ci">
+          <li data-page-node-id="CAVfY7Vaab8wuI69LrtXWb">2 次共创工作坊记录</li>
+          <li data-page-node-id="enbvZzHIjEusOtmqaD3dbe">小组改造成果与专家清单</li>
+          <li data-page-node-id="8jLfXvIlUtxHI1GSI7X1xS">复用说明</li>
+          <li data-page-node-id="QF9rsiZANFqinno005m9XB">成果汇报评审结果</li>
+        </ul>
+        <div data-page-node-id="zoB1JspkCtojnZ86e3rkxp" class="d-value"><span data-page-node-id="hprM6m1gboaC0shAKGS5aX">价值</span>培养甲方自己的 AI 骨干队伍，沉淀可复用组织资产</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 六、服务机制与保障 -->
+  <section data-page-node-id="pijnYFjpJQzUSEHB0P2c4V" class="block" id="s6">
+    <div data-page-node-id="1y2qPOYoBr3DWWeY124yKB" class="sec-head"><span data-page-node-id="JhTqbYPUDevA2ZkQRaf8BV" class="sec-num">06</span><span data-page-node-id="VIrnwFQ7iUDUexvCJw9WuY" class="sec-title">服务机制与保障</span><span data-page-node-id="ivluq6wjCi5nxhBht0Guqk" class="sec-sub">SERVICE MECHANISM</span></div>
+    <div data-page-node-id="WQgk8KO504FsFcYSmix4OG" class="blocks">
+      <div data-page-node-id="sJFgNNZJoulfjG3NJ9xFbR" class="blk">
+        <div data-page-node-id="27K4TFoHrEGI7EkN9qdYZM" class="blk-head"><div data-page-node-id="DlQmG8OsJzWKACNHI6jtm1" class="blk-badge"><svg data-page-node-id="hTq7ZukwlFLxEZDyvopqWI" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path data-page-node-id="654DjAxe3dSK5K1kpYQC5m" d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path data-page-node-id="fMJDvtZF7nCa0qRQpxtz6Q" d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg></div><h3 data-page-node-id="OW9aqaF6HzlsmmJxuo1qzB">梯级培训体系</h3></div>
+        <div data-page-node-id="Xnl4BEBVFkAMdS3zJz61w2" class="blk-body">基础培训（全部用户，第一阶段）→ 深度培训（种子与骨干，第二阶段）→ 共创工作坊（重点小组，第三阶段）。</div>
+      </div>
+      <div data-page-node-id="j7MXwrMO7qZHlsXBDnGbB3" class="blk">
+        <div data-page-node-id="cpSEwxFeuEqrpp0yZLjSik" class="blk-head"><div data-page-node-id="aHc1sQMSdUU2htnKRovAxj" class="blk-badge"><svg data-page-node-id="jhbb8def2AG2Z1vnEct9q1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path data-page-node-id="yXGIG6n6eZBHqFrqk8CFAa" d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg></div><h3 data-page-node-id="Gj4UVBAseaDjjKXYqIc7vp">在线答疑</h3></div>
+        <div data-page-node-id="uVt6un3K0JD6YVWqIo0kYX" class="blk-body">固定答疑渠道，工作日响应；沉淀高频问题问答库，典型问题转化为培训补充材料。</div>
+      </div>
+      <div data-page-node-id="oWIw0XFQVgiQcq8wRXz0r7" class="blk">
+        <div data-page-node-id="kLrYbW8prL98R2PYrxmciN" class="blk-head"><div data-page-node-id="rUi9OCOht78nvwroxoVGAD" class="blk-badge"><svg data-page-node-id="DYTv9miC9OtDFkDEVkuSCZ" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect data-page-node-id="kW8RZyPKlrWijoEdD1sgvA" x="3" y="4" width="18" height="18" rx="2"></rect><line data-page-node-id="zM2c7NtB5HRO4O8lgLZdmt" x1="16" y1="2" x2="16" y2="6"></line><line data-page-node-id="qM3sFxK2nGG0dQSHOqXHpB" x1="8" y1="2" x2="8" y2="6"></line><line data-page-node-id="jI6Z3HyYQzaXxylRQ102Vt" x1="3" y1="10" x2="21" y2="10"></line></svg></div><h3 data-page-node-id="LxQcO6QrFz0iz6fX9Ug4lp">总结机制</h3></div>
+        <div data-page-node-id="hgksE5RfPVJDTOdOu7fRcy" class="blk-body">每周一次书面进展报告；每两周一次线下总结分享；第三阶段两次线下共创工作坊。</div>
+      </div>
+      <div data-page-node-id="aYjapUaLmW92yhSKaa6wJX" class="blk">
+        <div data-page-node-id="0zPlISm0mGcXQz7opCQWzD" class="blk-head"><div data-page-node-id="DM53zMuEf46HbAgs39iGi4" class="blk-badge"><svg data-page-node-id="rV3l7HWNuR7E9llHBA2jQU" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path data-page-node-id="5ZBMEzlnTXEMrPj9JwpifG" d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></div><h3 data-page-node-id="b7zBQQmVtu66biAFMvzGKj">项目沟通</h3></div>
+        <div data-page-node-id="XBoBEHnEK2vXRlRWF62QUG" class="blk-body">双方各设 1 名项目对接人；每阶段启动与收口各开一次对齐会；重大问题由双方负责人决策。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 七、双方职责分工 -->
+  <section data-page-node-id="6vElCKDNMDf5H1W9ZkbP9p" class="block" id="s7">
+    <div data-page-node-id="g8Q84EGx5I0Zz9oMNzSDaX" class="sec-head"><span data-page-node-id="1eHWtIZ6MzXmGHP0tHJgjQ" class="sec-num">07</span><span data-page-node-id="caJ93Yg2yWnCblhfL4UlC2" class="sec-title">双方职责分工</span><span data-page-node-id="FZuR8vsBH8yDViR4bHAXz7" class="sec-sub">RESPONSIBILITIES</span></div>
+    <div data-page-node-id="l8DGX03ZsWvIx9gDh5LmBk" class="ledger">
+      <div data-page-node-id="eMmNDOzXatOnURZhkD1GYP" class="lg-head">
+        <div data-page-node-id="90UAwO7HcbTMOuBw9rLBZO" class="lg-item lg-blank">事项</div>
+        <div data-page-node-id="t15FnYImMFy2c0VjL9arEc" class="lg-col"><span data-page-node-id="YDdXWa2OOfyzkWEgmvt3yp" class="lg-badge us">服务方</span></div>
+        <div data-page-node-id="VAI12znAJBvBS3UPK5UA28" class="lg-col"><span data-page-node-id="wCLR96DAL3cywPgFlbEe4Y" class="lg-badge them">甲方</span></div>
+      </div>
+      <div data-page-node-id="n0lHLsVaMKx7YVXOyECozA" class="lg-row">
+        <div data-page-node-id="cdN7dXnEDvkmecKUFgr64Y" class="lg-item">竞赛方案策划</div>
+        <div data-page-node-id="nV6kURsexK8l6PC8wVARnQ" class="lg-col">主导框架、赛程、积分规则建议</div>
+        <div data-page-node-id="HodZ6FM8foUKq9jg1O5Dhe" class="lg-col">确认主题、奖惩、奖项、宣发并正式下发</div>
+      </div>
+      <div data-page-node-id="soUJwzpuWHirDY0qLocBu6" class="lg-row">
+        <div data-page-node-id="n6I0Sut6UwEHreXEMRf7lG" class="lg-item">基础 / 深度培训</div>
+        <div data-page-node-id="UuRq6AiSp3stOoYXMu2Cun" class="lg-col">主讲与材料</div>
+        <div data-page-node-id="tTcgHTmziNvcmHzSnCkJUK" class="lg-col">组织人员、保障场地与时间</div>
+      </div>
+      <div data-page-node-id="Onitf0L0I0ZgHiTxxSztpA" class="lg-row">
+        <div data-page-node-id="uc9x4iXwdPmGFVQMzOs3XM" class="lg-item">在线答疑</div>
+        <div data-page-node-id="9VCYO8yEb77VbfaLiwfFcS" class="lg-col">响应与问题库沉淀</div>
+        <div data-page-node-id="YDGaobtqHJMCArSSJecPAM" class="lg-col">推动人员提问与应用</div>
+      </div>
+      <div data-page-node-id="lDlGCw2eOiiS6aYCDoDDcG" class="lg-row">
+        <div data-page-node-id="VsbqdwHGtT4hNxQHRH6vFg" class="lg-item">总结与共创组织</div>
+        <div data-page-node-id="eYwat58s4eWjBWaD8HxDMg" class="lg-col">组织、引导、点评</div>
+        <div data-page-node-id="tr0mlvZ63rpB3BeXqP49YN" class="lg-col">组长组织、成员参与</div>
+      </div>
+      <div data-page-node-id="9aCBKpkvHzCfppLZgOWHUO" class="lg-row">
+        <div data-page-node-id="BSH3zCl3yJcUsK5BFeNCyc" class="lg-item">种子选拔与补员</div>
+        <div data-page-node-id="2lgQUuIlryxK2bDDsjopQd" class="lg-col">数据评估与建议</div>
+        <div data-page-node-id="C1GekrrxYb3OdT38FKkbQx" class="lg-col">确认名单、执行淘汰与同岗位补员</div>
+      </div>
+      <div data-page-node-id="QYhqJ6DJHkN6ZhBrQbFNsX" class="lg-row">
+        <div data-page-node-id="i5cGNQYGfGC2LrRqID0vPv" class="lg-item">奖惩机制与组长任命</div>
+        <div data-page-node-id="dZdGAVwEluWfebrUMxH0qT" class="lg-col">规则建议、数据支持</div>
+        <div data-page-node-id="1xS1r1VVxFse6nJRp3kpcA" class="lg-col">主导制定、任命与授权</div>
+      </div>
+      <div data-page-node-id="iNluiBeKYD7fNmmXw9pjxr" class="lg-row">
+        <div data-page-node-id="frNggFc99RSgPNeiZ1k8X3" class="lg-item">专家与改造成果</div>
+        <div data-page-node-id="mDs2ugor7LbRrSi6ZEiXYC" class="lg-col">组织与引导，<b data-page-node-id="nx7vDo7LosLegFkgcVsbdG" class="no-hand">不动手</b></div>
+        <div data-page-node-id="xEWmO3QMvuBRceSVKQB9Yy" class="lg-col">小组自行产出、验收、复用</div>
+      </div>
+      <div data-page-node-id="sFR8HRWBcuhOHIXJPP6eUV" class="lg-row lg-final">
+        <div data-page-node-id="3Hd6RrRcV5gbI2400TbZAw" class="lg-item">成果归属</div>
+        <div data-page-node-id="0CsrcYvOzGH7Ez6lz2j42e" class="lg-col">—</div>
+        <div data-page-node-id="lHNV0lu4ht8FVI70KXJfe0" class="lg-col"><span data-page-node-id="9HjF7roNTsC7B0WYPLKOQn" class="own b">全部成果归甲方所有</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 八、费用与付款 -->
+  <section data-page-node-id="AGeSTLFd6xhnBAgJ9hXnPk" class="block" id="s8">
+    <div data-page-node-id="3KBROXzi3ccCd2dXHs1A7N" class="sec-head"><span data-page-node-id="5Wq74ibM49mLFQwnf6KoTb" class="sec-num">08</span><span data-page-node-id="tXxRMioKFR4mSgD9KVLdG2" class="sec-title">费用与付款</span><span data-page-node-id="mBdDqzq3SCM83AEzdO9CT0" class="sec-sub">FEES &amp; PAYMENT</span></div>
+    <div data-page-node-id="5I9IzZBzTn6N19wvfACzbB" class="fee-wrap">
+      <div data-page-node-id="spCtfA6JdhdhwGPvBi0Bpo" class="fee-card">
+        <div data-page-node-id="AEd273YLG0okXy7R88EyXC" class="f-label">陪跑服务费</div>
+        <div data-page-node-id="x3zro6upxBHowY9mRaBRac" class="f-price">¥ 50,000<small data-page-node-id="mXE6pfSOeigV30tU2QNcWP"> / 月</small></div>
+        <div data-page-node-id="RhCJdcEcTZt2gvtMlbZvEs" class="f-cap">3 个月 · 合计 <b data-page-node-id="eo32aZDyCCilEVlYTbxqHw">15 万元</b></div>
+        <div data-page-node-id="V4cIjJ6alF5uZstaLANndR" class="f-row"><span data-page-node-id="TCohghn2c8u4uLt10o74ks">预付款</span><b data-page-node-id="xsCzYd2lD5YNJTeOu9vYfg">签署并启动后 · 50%</b></div>
+        <div data-page-node-id="knZYdTftEYGBeEBazTZSsY" class="f-row"><span data-page-node-id="sWfTT3hOfCExMGdY0oyTdc">尾款</span><b data-page-node-id="fx2nw28sLWfWkAA7jYixhE">三阶段验收评审后</b></div>
+      </div>
+      <div data-page-node-id="ryAIndM61XELBzg5DJJWLI" class="fee-list">
+        <h4 data-page-node-id="hrDBsJ0Vm6qV8EaBl5VtZH">付款节奏建议</h4>
+        <ul data-page-node-id="9m37M9ySwjf5cMAg72JAck">
+          <li data-page-node-id="NsaQ5PdyTsLdfRVdJSKZ7B"><b data-page-node-id="USw0dxTZTlL5rhOsrm3Gzi">预付款</b>：协议签署并正式启动后，支付服务费的 50%；</li>
+          <li data-page-node-id="eDXI3m1l3DfadWh7EfZFgw"><b data-page-node-id="cb8ZUTJ0XKyTLZj06hDgLN">尾款</b>：第三阶段成果通过验收评审后，支付剩余款项。</li>
+        </ul>
+        <h4 data-page-node-id="Mh9qf1L1rlaW9pQk8e4gKE" style="margin-top:18px">费用范围</h4>
+        <ul data-page-node-id="l4jvYzyEUZQKxHSDLmi9uU">
+          <li data-page-node-id="ehrJWjkiATPPYOXbVgqxDm"><b data-page-node-id="tXHuNDVM40Dbdk3zJwfkQt">包含</b>：方案策划、培训、在线答疑、总结与共创组织、过程材料与成果评审等服务；</li>
+          <li data-page-node-id="td0N3hzosSCCMDQeFoxIfo" class="ex"><b data-page-node-id="YBbOgJhqHmAyPQzd5b040T">不含</b>：线下活动产生的场地、差旅、住宿等第三方费用（如需，由甲方承担或双方另行约定）。</li>
+        </ul>
+      </div>
+    </div>
+    <div data-page-node-id="BLexepvQrWdGmsSE4eE0sq" class="disclaimer">本方案为框架性服务方案，具体内容以双方签署的正式合同及确认的执行计划为准。</div>
+  </section>
+
+</main>
+
+<footer data-page-node-id="ZcjaxBrC0Bnmtzy6oBLeLi">
+  <div data-page-node-id="VJHZEe9gJDlBORQ9bz7ve0" class="f-brand">WorkBuddy<span data-page-node-id="BANevi39YMYaYVY2jnq2fH" class="dot"> · </span>90 天陪跑服务方案</div>
+  <div data-page-node-id="XaGn8ab7qoPRS6Fjg4gyUg">赋能团队 · 沉淀资产 · 形成机制 &nbsp;|&nbsp; 通用版 V3.0 · 2026-11-20</div>
+</footer>
+
+<button data-page-node-id="LmNmc030usG5YUtQONp0NI" id="toTop" title="返回顶部">↑</button>
+
+<script data-page-node-id="FYn4nV3wMHKG9lRdX9UA4k" data-pnid-children="bPe0Fm20V60kVSGbnz92mB">
+  // 阅读进度条
+  const bar=document.getElementById('progressBar');
+  const toTop=document.getElementById('toTop');
+  window.addEventListener('scroll',()=>{
+    const h=document.documentElement;
+    const p=h.scrollTop/(h.scrollHeight-h.clientHeight)*100;
+    bar.style.width=p+'%';
+    toTop.classList.toggle('show',h.scrollTop>600);
+  },{passive:true});
+  toTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+  // 章节幻灯片式切换：进入视口淡入上浮，离开视口淡出下沉
+  const io=new IntersectionObserver(es=>{
+    es.forEach(e=>e.target.classList.toggle('vis',e.isIntersecting));
+  },{threshold:.12});
+  document.querySelectorAll('section.block').forEach(s=>io.observe(s));
+
+  // 右侧动态目录 scrollspy
+  const links=[...document.querySelectorAll('#toc a')];
+  const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+  const spy=new IntersectionObserver(es=>{
+    es.forEach(e=>{
+      if(e.isIntersecting){
+        const i=secs.indexOf(e.target);
+        links.forEach(l=>l.classList.remove('active'));
+        if(i>-1)links[i].classList.add('active');
+      }
+    });
+  },{rootMargin:'-35% 0px -55% 0px'});
+  secs.forEach(s=>s&&spy.observe(s));
+
+  // 封面数字滚动
+  const cio=new IntersectionObserver(es=>{
+    es.forEach(e=>{
+      if(!e.isIntersecting)return;
+      const el=e.target,target=+el.dataset.count,dur=1100,t0=performance.now();
+      const tick=t=>{
+        const k=Math.min((t-t0)/dur,1);
+        el.textContent=Math.round(target*(1-Math.pow(1-k,3)));
+        if(k<1)requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+      cio.unobserve(el);
+    });
+  },{threshold:.4});
+  document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
+
+  // 三阶段切换
+  document.querySelectorAll('.stage-tab').forEach(tab=>{
+    tab.addEventListener('click',()=>{
+      const i=tab.dataset.stage;
+      document.querySelectorAll('.stage-tab').forEach(t=>t.classList.toggle('active',t===tab));
+      document.querySelectorAll('.stage-panel').forEach(p=>p.classList.toggle('active',p.dataset.stage===i));
+    });
+  });
+
+  // 执行阶段手风琴
+  document.querySelectorAll('.acc-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const item=btn.parentElement,body=item.querySelector('.acc-body');
+      const open=item.classList.contains('open');
+      if(open){body.style.maxHeight='0';item.classList.remove('open');}
+      else{
+        item.classList.add('open');
+        body.style.maxHeight=body.scrollHeight+'px';
+        // 关闭其它
+        document.querySelectorAll('.acc-item').forEach(o=>{
+          if(o!==item){o.classList.remove('open');o.querySelector('.acc-body').style.maxHeight='0';}
+        });
+      }
+    });
+  });
+  // 初始展开第一项
+  const first=document.querySelector('.acc-item.open .acc-body');
+  if(first)first.style.maxHeight=first.scrollHeight+'px';
+</script>
+
+
+</body></html>
