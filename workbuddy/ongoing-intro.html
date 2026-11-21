@@ -9,7 +9,7 @@
 <style data-page-node-id="itNNP2YcGPp3bVRnXTSuNL" data-pnid-children="l8st5STd9LKWqKEBTMO4EJ">
   :root{
     /* 仅三种主色：克莱红 / 孔雀青 / 橘色；其余为中性色 */
-    --claret:#990F3D;
+    --claret:#7A0C30;
     --teal:#0D7680;
     --mandarin:#FF8833;
     --mandarin-ink:#C25E00;
@@ -70,9 +70,10 @@
 
   /* ---------- 封面 ---------- */
   header.hero{
-    background:var(--slate);
-    color:#fff;padding:110px 24px 90px;
-    position:relative;overflow:hidden;
+    background:var(--claret);
+    color:#fff;padding:110px 24px 0;
+    position:relative;overflow:visible;
+    border-bottom:6px solid #000;
   }
   .hero::before{
     content:"";position:absolute;inset:0;
@@ -101,26 +102,23 @@
     font-size:clamp(17px,2.4vw,24px);color:rgba(255,255,255,.85);letter-spacing:6px;
   }
   .hero .slogan b{color:var(--mandarin);font-weight:600;}
-  .hero-meta{margin-top:44px;display:flex;flex-wrap:wrap;gap:14px;}
-  .hero-meta .chip{
-    background:rgba(255,255,255,.06);
-    border:1px solid rgba(255,255,255,.14);
-    border-radius:10px;padding:12px 20px;min-width:150px;
+  .hero-meta{
+    margin-top:60px;transform:translateY(calc(50% + 3px));
+    display:flex;flex-wrap:wrap;gap:14px;
   }
-  .hero-meta .chip .k{font-size:12px;color:rgba(255,255,255,.55);letter-spacing:1px;}
-  .hero-meta .chip .v{font-size:17px;font-weight:600;color:#fff;margin-top:2px;}
-  .hero-meta .chip .v .num{font-family:var(--serif);color:var(--mandarin);font-size:22px;margin-right:2px;}
+  .hero-meta .chip{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:10px;padding:16px 20px;min-width:150px;flex:1 1 150px;
+    box-shadow:0 10px 26px rgba(0,0,0,.18);
+  }
+  .hero-meta .chip .k{font-size:12px;color:var(--claret);letter-spacing:1px;font-weight:600;}
+  .hero-meta .chip .v{font-size:17px;font-weight:600;color:var(--slate);margin-top:3px;}
+  .hero-meta .chip .v .num{font-family:var(--serif);color:var(--claret);font-size:22px;margin-right:2px;}
   .hero-meta .chip-sub{
     display:block;font-size:12px;font-weight:400;
-    color:rgba(255,255,255,.6);letter-spacing:.5px;margin-top:3px;line-height:1.5;
+    color:var(--ink-soft);letter-spacing:.5px;margin-top:3px;line-height:1.5;
   }
-  .hero-scroll{
-    position:absolute;bottom:26px;left:50%;transform:translateX(-50%);
-    color:rgba(255,255,255,.55);font-size:12px;letter-spacing:2px;text-align:center;
-    animation:bob 2s ease-in-out infinite;z-index:1;
-  }
-  @keyframes bob{0%,100%{transform:translate(-50%,0);}50%{transform:translate(-50%,8px);}}
-
   /* ---------- 版式骨架 ---------- */
   main{max-width:1080px;margin:0 auto;padding:0 24px;}
   section.block{
@@ -573,13 +571,35 @@
   #toTop:hover{background:var(--mandarin);color:var(--slate);}
 
   @media(max-width:760px){
+    html,body{overflow-x:hidden;}
     .grid-3{grid-template-columns:1fr;}
-    section.block{padding-top:56px;}
+    section.block{padding-top:48px;}
     .sec-sub{display:none;}
     .abstract-card{padding:28px 24px;}
+    main{padding:0 20px;}
+    /* 封面：窄屏取消骑线，要点卡改为两列收进头部 */
+    header.hero{padding:56px 20px 40px;}
+    .hero .slogan{font-size:15px;letter-spacing:3px;}
+    .hero-meta{transform:none;margin-top:28px;gap:12px;}
+    .hero-meta .chip{padding:13px 16px;min-width:0;flex:1 1 calc(50% - 6px);}
+    .hero-meta .chip .v{font-size:15.5px;}
+    .hero-meta .chip .v .num{font-size:19px;}
+    /* 章节标题与横幅收紧 */
+    .sec-head{padding:13px 18px;gap:12px;}
+    .sec-num{font-size:28px;padding:2px 6px;}
+    .sec-title{font-size:20px;letter-spacing:1px;}
+    .quote-banner{font-size:16.5px;padding:18px 22px;letter-spacing:0;}
+    .quote-banner::before,.quote-banner::after{width:28px;height:28px;}
+    .acc-btn{padding:16px 18px;gap:12px;}
+    .fee-card{padding:28px 22px;}
+    .fee-card .f-price{font-size:42px;}
+  }
+  @media(max-width:480px){
+    .hero h1{font-size:30px;}
+    .goals,.principles{grid-template-columns:1fr;}
   }
   @media print{
-    #toc,#toTop,#progressBar,.hero-scroll{display:none!important;}
+    #toc,#toTop,#progressBar{display:none!important;}
     section.block{opacity:1!important;transform:none!important;page-break-inside:avoid;}
     body{background:#fff;}
   }
@@ -604,7 +624,7 @@
 <header data-page-node-id="RZNL8LCl6k0Bl8JR6zlpAQ" class="hero">
   <div data-page-node-id="seDvJigYp5Vt1aaMnNeM3k" class="hero-inner">
     <div data-page-node-id="zpSA2q3nRHDGydFP5uuhk8" class="hero-tag">陪跑业务说明文件</div>
-    <h1 data-page-node-id="ZBiwkDWckmYRcNMA8k95xC">WorkBuddy <em data-page-node-id="USWC1k47DeyCKDUfg9EcmH">90 天</em>陪跑服务方案</h1>
+    <h1 data-page-node-id="ZBiwkDWckmYRcNMA8k95xC">WorkBuddy<br><em data-page-node-id="USWC1k47DeyCKDUfg9EcmH">90 天</em>陪跑服务方案</h1>
     <div data-page-node-id="U0JnDRohDsoAflKDUkeI4C" class="slogan">赋能团队 <b data-page-node-id="s71v1yCA48XHTFoXULmV1l">·</b> 沉淀资产 <b data-page-node-id="Id0af8K5UQxvrq4StpuDZy">·</b> 形成机制</div>
     <div data-page-node-id="ppG8etegA8eioykCBS4bK5" class="hero-meta">
       <div data-page-node-id="7otHOlEAUPuAiZMANiMV68" class="chip">
@@ -618,7 +638,6 @@
       <div data-page-node-id="LcrVQY690cDpkf1y2LWCZn" class="chip"><div data-page-node-id="opBXewxnpTcUj3TcYc35tC" class="k">共创工作坊</div><div data-page-node-id="t5wM1RXhMfLBbz6c7obHWV" class="v"><span data-page-node-id="CaGMeHEzABO9EyyXM4TEun" class="num" data-count="2">0</span>次线下深度共创</div></div>
     </div>
   </div>
-  <div data-page-node-id="SEUcM3aldjlM55rn3e2cHy" class="hero-scroll">向下滚动阅读<br data-page-node-id="Uq5FFrnrmdDyfUCCUac3k0">▼</div>
 </header>
 
 <main data-page-node-id="7DIdDjEGu528w0aftXWAKj">
