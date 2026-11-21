@@ -2,7 +2,7 @@
 <html lang="zh-CN"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>新用户关联励拓的操作步骤</title>
+<title>购买 WorkBuddy 的操作步骤（注册登记 · 下单购买 · 分配席位）</title>
 <style>
   :root{
     --blue:#0052d9;
@@ -178,6 +178,69 @@
   }
   .lb-caption b{color:#fff;font-weight:600}
 
+  /* ===== 阶段 Tab 卡 ===== */
+  .tabs{
+    display:flex;gap:12px;
+    margin:2px 0 22px;
+  }
+  .tab{
+    flex:1 1 0;
+    display:flex;align-items:center;gap:12px;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:14px 18px;
+    cursor:pointer;
+    text-align:left;
+    font-family:inherit;
+    color:var(--ink);
+    transition:border-color .18s,box-shadow .18s,background .18s,transform .18s;
+    position:relative;
+  }
+  .tab:hover{border-color:#b9d1ff;box-shadow:0 6px 16px rgba(0,82,217,.10);transform:translateY(-1px)}
+  .tab .tab-num{
+    flex:0 0 auto;width:34px;height:34px;border-radius:10px;
+    background:var(--bg);color:var(--ink-3);
+    display:flex;align-items:center;justify-content:center;
+    font-weight:700;font-size:15px;
+    transition:background .18s,color .18s;
+  }
+  .tab .tab-txt{display:flex;flex-direction:column;gap:2px;min-width:0}
+  .tab .tab-kicker{font-size:12px;font-weight:700;letter-spacing:.05em;color:var(--blue)}
+  .tab .tab-name{font-size:15.5px;font-weight:650;line-height:1.3}
+  .tab .tab-desc{font-size:12px;color:var(--ink-3);line-height:1.4}
+  .tab.active{
+    border-color:var(--blue);background:var(--blue-light);
+    box-shadow:0 6px 18px rgba(0,82,217,.14);
+  }
+  .tab.active .tab-num{background:var(--blue);color:#fff}
+  .tab.active .tab-name{color:var(--blue)}
+
+  .tab-panel{display:none}
+  .tab-panel.active{display:block;animation:fade .32s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+  /* ===== 付款/发票信息卡 ===== */
+  .notice{
+    background:linear-gradient(135deg,#eef4ff 0%,#f5f9ff 100%);
+    border:1px solid #d6e4ff;border-radius:var(--radius);
+    padding:20px 26px;margin:6px 0 4px;
+  }
+  .notice h3{
+    font-size:15px;font-weight:700;color:var(--blue);
+    display:flex;align-items:center;gap:8px;margin-bottom:10px;
+  }
+  .notice ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+  .notice li{
+    font-size:14.5px;color:var(--ink-2);
+    padding-left:24px;position:relative;line-height:1.6;
+  }
+  .notice li::before{
+    content:"";position:absolute;left:6px;top:.62em;
+    width:7px;height:7px;border-radius:50%;background:var(--blue);
+  }
+  .notice strong{color:var(--ink);font-weight:650}
+
   footer.foot{
     text-align:center;color:var(--ink-3);font-size:13px;margin-top:44px;
   }
@@ -191,6 +254,14 @@
     .thumb img{height:104px}
     .lb-prev{left:8px}.lb-next{right:8px}
   }
+  @media (max-width:640px){
+    .tabs{gap:8px;margin-bottom:16px}
+    .tab{padding:10px 12px;gap:9px;flex-direction:column;align-items:flex-start}
+    .tab .tab-num{width:28px;height:28px;font-size:13px}
+    .tab .tab-desc{display:none}
+    .tab .tab-name{font-size:13.5px}
+    .tab .tab-kicker{font-size:11px}
+  }
   @media print{
     body{background:#fff}
     .step{box-shadow:none;break-inside:avoid}
@@ -203,15 +274,38 @@
 
   <header class="hero">
     <span class="kicker">操作指南</span>
-    <h1>新用户关联励拓的操作步骤</h1>
-    <p>通过邀请链接注册腾讯云账号并完成企业实名认证，即可关联励拓咨询（深圳）有限公司。</p>
+    <h1>购买 WorkBuddy 的操作步骤</h1>
+    <p>先注册登记 → 再下单购买 → 购买后由管理员分配席位。付款直达腾讯云，发票由腾讯云开具。</p>
   </header>
 
-  <div class="meta">
-    <span>共 6 步 · 9 张示意图</span>
-    <span>·</span>
-    <span>图片可点击放大，左右方向键翻页</span>
+  <div class="tabs" role="tablist" aria-label="操作阶段">
+    <button class="tab active" role="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" data-panel="panel-1">
+      <span class="tab-num">1</span>
+      <span class="tab-txt">
+        <span class="tab-kicker">阶段一</span>
+        <span class="tab-name">注册登记</span>
+        <span class="tab-desc">注册腾讯云账号并关联励拓</span>
+      </span>
+    </button>
+    <button class="tab" role="tab" aria-selected="false" aria-controls="panel-2" id="tab-2" data-panel="panel-2">
+      <span class="tab-num">2</span>
+      <span class="tab-txt">
+        <span class="tab-kicker">阶段二</span>
+        <span class="tab-name">下单购买</span>
+        <span class="tab-desc">用登记的账号下单</span>
+      </span>
+    </button>
+    <button class="tab" role="tab" aria-selected="false" aria-controls="panel-3" id="tab-3" data-panel="panel-3">
+      <span class="tab-num">3</span>
+      <span class="tab-txt">
+        <span class="tab-kicker">阶段三</span>
+        <span class="tab-name">分配席位</span>
+        <span class="tab-desc">管理员为成员分配席位</span>
+      </span>
+    </button>
   </div>
+
+  <div class="tab-panel active" id="panel-1" role="tabpanel" aria-labelledby="tab-1">
 
   <section class="step">
     <div class="step-head"><span class="step-num">1</span><h2>打开邀请链接</h2></div>
@@ -259,13 +353,57 @@
 
   <section class="step">
     <div class="step-head"><span class="step-num">6</span><h2>认证完成</h2></div>
-    <p>完成认证后，可以看到类似以下内容的界面，至此账户注册、认证完成。</p>
+    <p>完成认证后，可以看到类似以下内容的界面，至此账户注册、认证完成，并已关联励拓咨询（深圳）有限公司。</p>
     <div class="thumbs">
       <figure class="thumb"><img src="img/step-09.webp" width="1635" height="640" alt="企业实名认证完成" loading="lazy"></figure>
     </div>
   </section>
 
-  <footer class="foot">如有疑问，请联系励拓咨询对接人协助处理。</footer>
+  </div><!-- /panel-1 -->
+
+  <div class="tab-panel" id="panel-2" role="tabpanel" aria-labelledby="tab-2">
+
+  <section class="step">
+    <div class="step-head"><span class="step-num">7</span><h2>进入 WorkBuddy 产品页</h2></div>
+    <p>使用<strong>上一步完成注册登记、实名认证的同一腾讯云账号</strong>，访问 WorkBuddy 产品页：<a class="invite-link" href="https://cloud.tencent.com/product/workbuddy" target="_blank" rel="noopener noreferrer">https://cloud.tencent.com/product/workbuddy</a><a class="link-btn" href="https://cloud.tencent.com/product/workbuddy" target="_blank" rel="noopener noreferrer">打开产品页<span>↗</span></a></p>
+    <p>在页面中点击 <code class="inline">立即选购</code> 进入下单页。请务必用同一账号下单，才能将订单关联到励拓。</p>
+    <div class="thumbs">
+      <figure class="thumb"><img src="img/step-10.webp" width="849" height="635" alt="WorkBuddy 产品页，点击立即选购" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <section class="step">
+    <div class="step-head"><span class="step-num">8</span><h2>选择套餐并提交订单</h2></div>
+    <p>在「腾讯云 WorkBuddy Enterprise」下单页，阅读购买须知后选择<strong>套餐类型</strong>和<strong>权益类型</strong>（如 Buddy One 智能体套装），按需选择套餐后提交订单并完成支付。</p>
+    <div class="thumbs">
+      <figure class="thumb"><img src="img/step-11.webp" width="808" height="691" alt="选择套餐类型与权益类型" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <div class="notice">
+    <h3>💳 付款与发票说明</h3>
+    <ul>
+      <li><strong>付款对象：</strong>款项直接支付给<strong>腾讯云</strong>。</li>
+      <li><strong>发票开具：</strong>发票由<strong>腾讯云</strong>开具。</li>
+    </ul>
+  </div>
+
+  </div><!-- /panel-2 -->
+
+  <div class="tab-panel" id="panel-3" role="tabpanel" aria-labelledby="tab-3">
+
+  <section class="step">
+    <div class="step-head"><span class="step-num">9</span><h2>管理员分配席位</h2></div>
+    <p>购买完成后，请由公司<strong>管理员账号</strong>登录 WorkBuddy <strong>企业控制台</strong>（企业版登录入口），进入「组织与成员 / 席位管理」，按成员或部门为需要使用 WorkBuddy 的成员<strong>分配席位</strong>。</p>
+    <p>该步骤由管理员统一操作，普通成员无需操作；成员被分配席位后即可使用对应账号登录 WorkBuddy。</p>
+    <div class="thumbs">
+      <figure class="thumb"><img src="img/step-12.webp" width="762" height="442" alt="企业控制台席位管理" loading="lazy"></figure>
+    </div>
+  </section>
+
+  </div><!-- /panel-3 -->
+
+  <footer class="foot">付款直达腾讯云、发票由腾讯云开具。如有疑问，请联系对接人协助处理。</footer>
 </div>
 
 <!-- 灯箱 -->
@@ -278,6 +416,34 @@
 </div>
 
 <script>
+/* ===== 阶段 Tab 切换 ===== */
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('.tab'));
+  var panels=[].slice.call(document.querySelectorAll('.tab-panel'));
+  function activate(id){
+    tabs.forEach(function(t){
+      var on=t.getAttribute('data-panel')===id;
+      t.classList.toggle('active',on);
+      t.setAttribute('aria-selected',on?'true':'false');
+    });
+    panels.forEach(function(pn){
+      pn.classList.toggle('active',pn.id===id);
+    });
+  }
+  tabs.forEach(function(t){
+    t.addEventListener('click',function(){activate(t.getAttribute('data-panel'));});
+    t.addEventListener('keydown',function(e){
+      var i=tabs.indexOf(t);
+      if(e.key==='ArrowRight'||e.key==='ArrowLeft'){
+        e.preventDefault();
+        var ni=(i+(e.key==='ArrowRight'?1:-1)+tabs.length)%tabs.length;
+        tabs[ni].focus();
+      }
+    });
+  });
+})();
+
+/* ===== 灯箱 ===== */
 (function(){
   var thumbs=[].slice.call(document.querySelectorAll('.thumb img'));
   var lb=document.getElementById('lightbox');
