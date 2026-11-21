@@ -1,106 +1,502 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>了解 WorkBuddy · 企业级 AI 办公工作台</title>
-<meta name="description" content="了解 WorkBuddy 企业级 AI 办公工作台：统一任务入口、企业资产沉淀、组织治理与业务场景落地。">
-<link rel="stylesheet" href="style.css">
-</head><body>
-<header class="nav"><div class="wrap nav-inner">
-<a class="brand" href="index.html" aria-label="WorkBuddy 首页"><img src="assets/wb-logo.svg" alt="WorkBuddy"></a>
-<nav class="nav-links"><a class="active" href="index.html">了解 WorkBuddy</a><a href="pricing.html">价格与选型</a><a href="faq.html">常见问题</a></nav>
-<div class="nav-cta" style="margin-left:auto"><a class="btn btn-primary" href="buy.html">立即购买</a></div>
-</div></header>
+<html lang="zh-CN"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>购买 WorkBuddy 的操作步骤（注册登记 · 下单购买 · 分配席位）</title>
+<style>
+  :root{
+    --blue:#0052d9;
+    --blue-light:#eaf1ff;
+    --ink:#1f2329;
+    --ink-2:#51565d;
+    --ink-3:#8f959e;
+    --line:#e5e6eb;
+    --bg:#f5f6f7;
+    --card:#ffffff;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.75;
+    font-size:16px;
+  }
+  .page{max-width:860px;margin:0 auto;padding:48px 20px 80px}
 
-<section class="hero"><div class="wrap">
-<span class="eyebrow">腾讯出品 · 企业级 AI 办公工作台</span>
-<h1>把分散的 AI 使用，升级为<br><span class="hl">可管理的企业工作能力</span></h1>
-<p class="sub">WorkBuddy 以统一工作台承接任务，组织数字员工完成执行，并将知识、技能与流程沉淀为企业可复用的资产。企业获得的不只是单次回答，而是可验收、可治理、可持续运营的工作结果。</p>
-<div class="cta"><a class="btn btn-primary btn-lg" href="pricing.html">了解价格与购买方案</a><a class="btn btn-ghost btn-lg" href="#scenarios">查看适用场景</a></div>
-<div class="trust"><span>组织与权限管理</span><span>企业积分共享</span><span>操作过程可审计</span><span>企业微信深度协同</span></div>
-<div class="hero-stage" aria-label="企业任务执行示意">
-  <div class="stage-panel stage-input"><span class="stage-label">任务输入</span><h3>季度经营分析</h3><div class="stage-file">销售数据.xlsx</div><div class="stage-file">业务目标.docx</div><div class="stage-file">历史报告.pptx</div></div>
-  <div class="stage-main"><div class="stage-top"><span>WorkBuddy 企业工作台</span><span class="stage-status">执行中</span></div><div class="stage-flow"><span>读取资料</span><i></i><span>分析数据</span><i></i><span>生成报告</span></div><div class="stage-progress"><b></b></div><div class="stage-result"><span>可验收交付物</span><strong>经营分析报告.pptx</strong><small>数据表 · 图表 · 结论 · 后续建议</small></div></div>
-  <div class="stage-panel stage-output"><span class="stage-label">企业治理</span><ul><li>按组织分配权限</li><li>按席位管理用量</li><li>保留操作记录</li><li>沉淀企业资产</li></ul></div>
+  /* ===== 头部 ===== */
+  header.hero{
+    background:linear-gradient(135deg,#0052d9 0%,#2b7bff 60%,#4e97ff 100%);
+    border-radius:20px;
+    color:#fff;
+    padding:44px 44px 40px;
+    margin-bottom:36px;
+    box-shadow:0 12px 32px rgba(0,82,217,.18);
+    position:relative;
+    overflow:hidden;
+  }
+  header.hero::after{
+    content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;
+    border-radius:50%;background:rgba(255,255,255,.10);
+  }
+  header.hero::before{
+    content:"";position:absolute;right:40px;bottom:-90px;width:160px;height:160px;
+    border-radius:50%;background:rgba(255,255,255,.08);
+  }
+  .hero .kicker{
+    display:inline-block;font-size:13px;letter-spacing:.12em;
+    background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.28);
+    padding:3px 12px;border-radius:999px;margin-bottom:16px;
+  }
+  .hero h1{font-size:30px;font-weight:700;letter-spacing:.01em;margin-bottom:10px}
+  .hero p{font-size:15px;opacity:.92;max-width:100%;white-space:nowrap}
+
+  .meta{
+    display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+    font-size:13px;color:var(--ink-3);margin:-14px 0 28px 8px;
+  }
+  .meta a{color:var(--blue);text-decoration:none}
+  .meta a:hover{text-decoration:underline}
+
+  /* ===== 步骤卡片 ===== */
+  .step{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:28px 32px 26px;
+    margin-bottom:22px;
+    box-shadow:0 1px 3px rgba(31,35,41,.04);
+  }
+  .step-head{display:flex;align-items:center;gap:14px;margin-bottom:12px}
+  .step-num{
+    flex:0 0 auto;width:34px;height:34px;border-radius:10px;
+    background:var(--blue);color:#fff;font-weight:700;font-size:16px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .step-head h2{font-size:19px;font-weight:650;letter-spacing:.01em}
+  .step p{color:var(--ink-2);margin-bottom:6px}
+  .step p + p{margin-top:6px}
+  code.inline{
+    background:var(--blue-light);color:var(--blue);
+    border:1px solid #d6e4ff;border-radius:6px;
+    padding:1px 7px;font-size:14px;
+    font-family:"SF Mono",ui-monospace,Menlo,Consolas,monospace;
+    word-break:break-all;
+  }
+  a.invite-link{
+    color:var(--blue);text-decoration:none;
+    border-bottom:1px solid #a9c6ff;
+    padding:1px 2px;
+    font-family:"SF Mono",ui-monospace,Menlo,Consolas,monospace;
+    font-size:14.5px;
+    transition:background .15s,border-color .15s;
+  }
+  a.invite-link:hover{background:var(--blue-light);border-bottom-color:var(--blue)}
+  a.invite-link::after{content:"↗";font-size:11px;margin-left:3px;vertical-align:1px}
+  .link-btn{
+    display:inline-flex;align-items:center;gap:6px;
+    font-size:13px;color:#fff;background:var(--blue);
+    border:1px solid var(--blue);border-radius:7px;
+    padding:3px 12px;margin-left:10px;
+    text-decoration:none;
+    transition:background .15s,box-shadow .15s;
+    vertical-align:1px;white-space:nowrap;
+  }
+  .link-btn:hover{background:#0043b3;border-color:#0043b3;box-shadow:0 3px 10px rgba(0,82,217,.28)}
+  .link-btn span{font-size:11px}
+
+  .hint{
+    display:inline-flex;align-items:center;gap:6px;
+    font-size:12.5px;color:var(--ink-3);
+    background:#fafbfc;border:1px dashed var(--line);
+    border-radius:8px;padding:3px 10px;margin-top:10px;
+  }
+
+  /* ===== 缩略图 ===== */
+  .thumbs{display:flex;flex-wrap:wrap;gap:14px;margin-top:16px}
+  .thumb{
+    position:relative;cursor:zoom-in;
+    border:1px solid var(--line);border-radius:10px;overflow:hidden;
+    background:#fbfcfd;
+    transition:transform .18s ease,box-shadow .18s ease;
+  }
+  .thumb:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(31,35,41,.12)}
+  .thumb img{display:block;height:132px;width:auto;max-width:300px;object-fit:cover}
+  .thumb::after{
+    content:"⤢";position:absolute;right:6px;bottom:6px;
+    width:22px;height:22px;border-radius:6px;
+    background:rgba(0,0,0,.55);color:#fff;font-size:12px;
+    display:flex;align-items:center;justify-content:center;
+    opacity:0;transition:opacity .18s;
+  }
+  .thumb:hover::after{opacity:1}
+
+  /* ===== 灯箱 ===== */
+  .lightbox{
+    position:fixed;inset:0;z-index:100;
+    background:rgba(17,20,24,.92);
+    display:none;align-items:center;justify-content:center;
+    backdrop-filter:blur(4px);
+  }
+  .lightbox.open{display:flex}
+  .lb-stage{
+    position:relative;max-width:92vw;max-height:88vh;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .lb-stage img{
+    max-width:92vw;max-height:88vh;
+    border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,.5);
+    user-select:none;-webkit-user-drag:none;
+  }
+  .lb-btn{
+    position:fixed;top:50%;transform:translateY(-50%);
+    width:46px;height:46px;border-radius:50%;
+    background:rgba(255,255,255,.12);color:#fff;
+    border:1px solid rgba(255,255,255,.25);
+    font-size:20px;line-height:1;cursor:pointer;
+    display:flex;align-items:center;justify-content:center;
+    transition:background .15s;
+  }
+  .lb-btn:hover{background:rgba(255,255,255,.28)}
+  .lb-prev{left:22px}
+  .lb-next{right:22px}
+  .lb-close{
+    position:fixed;top:20px;right:22px;
+    width:40px;height:40px;border-radius:50%;
+    background:rgba(255,255,255,.12);color:#fff;
+    border:1px solid rgba(255,255,255,.25);
+    font-size:17px;cursor:pointer;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .lb-close:hover{background:rgba(255,255,255,.28)}
+  .lb-caption{
+    position:fixed;left:0;right:0;bottom:22px;text-align:center;
+    color:rgba(255,255,255,.85);font-size:13.5px;letter-spacing:.05em;
+    pointer-events:none;
+  }
+  .lb-caption b{color:#fff;font-weight:600}
+
+  /* ===== 阶段 Tab 卡 ===== */
+  .tabs{
+    display:flex;gap:12px;
+    margin:2px 0 22px;
+  }
+  .tab{
+    flex:1 1 0;
+    display:flex;align-items:center;gap:12px;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:14px 18px;
+    cursor:pointer;
+    text-align:left;
+    font-family:inherit;
+    color:var(--ink);
+    transition:border-color .18s,box-shadow .18s,background .18s,transform .18s;
+    position:relative;
+  }
+  .tab:hover{border-color:#b9d1ff;box-shadow:0 6px 16px rgba(0,82,217,.10);transform:translateY(-1px)}
+  .tab .tab-num{
+    flex:0 0 auto;width:34px;height:34px;border-radius:10px;
+    background:var(--bg);color:var(--ink-3);
+    display:flex;align-items:center;justify-content:center;
+    font-weight:700;font-size:15px;
+    transition:background .18s,color .18s;
+  }
+  .tab .tab-txt{display:flex;flex-direction:column;gap:2px;min-width:0}
+  .tab .tab-kicker{font-size:12px;font-weight:700;letter-spacing:.05em;color:var(--blue)}
+  .tab .tab-name{font-size:15.5px;font-weight:650;line-height:1.3}
+  .tab .tab-desc{font-size:12px;color:var(--ink-3);line-height:1.4}
+  .tab.active{
+    border-color:var(--blue);background:var(--blue-light);
+    box-shadow:0 6px 18px rgba(0,82,217,.14);
+  }
+  .tab.active .tab-num{background:var(--blue);color:#fff}
+  .tab.active .tab-name{color:var(--blue)}
+
+  .tab-panel{display:none}
+  .tab-panel.active{display:block;animation:fade .32s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+  /* ===== 付款/发票信息卡 ===== */
+  .notice{
+    background:linear-gradient(135deg,#eef4ff 0%,#f5f9ff 100%);
+    border:1px solid #d6e4ff;border-radius:var(--radius);
+    padding:20px 26px;margin:6px 0 4px;
+  }
+  .notice h3{
+    font-size:15px;font-weight:700;color:var(--blue);
+    display:flex;align-items:center;gap:8px;margin-bottom:10px;
+  }
+  .notice ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+  .notice li{
+    font-size:14.5px;color:var(--ink-2);
+    padding-left:24px;position:relative;line-height:1.6;
+  }
+  .notice li::before{
+    content:"";position:absolute;left:6px;top:.62em;
+    width:7px;height:7px;border-radius:50%;background:var(--blue);
+  }
+  .notice strong{color:var(--ink);font-weight:650}
+
+  footer.foot{
+    text-align:center;color:var(--ink-3);font-size:13px;margin-top:44px;
+  }
+
+  @media (max-width:640px){
+    .page{padding:24px 14px 60px}
+    header.hero{padding:30px 24px}
+    .hero h1{font-size:23px}
+    .hero p{font-size:14px;white-space:normal}
+    .step{padding:22px 20px}
+    .thumb img{height:104px}
+    .lb-prev{left:8px}.lb-next{right:8px}
+  }
+  @media (max-width:640px){
+    .tabs{gap:8px;margin-bottom:16px}
+    .tab{padding:10px 12px;gap:9px;flex-direction:column;align-items:flex-start}
+    .tab .tab-num{width:28px;height:28px;font-size:13px}
+    .tab .tab-desc{display:none}
+    .tab .tab-name{font-size:13.5px}
+    .tab .tab-kicker{font-size:11px}
+  }
+  @media print{
+    body{background:#fff}
+    .step{box-shadow:none;break-inside:avoid}
+    .hint,.link-btn{display:none}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="hero">
+    <span class="kicker">操作指南</span>
+    <h1>购买 WorkBuddy 的操作步骤</h1>
+    <p>先注册登记 → 再下单购买 → 购买后由管理员分配席位。付款直达腾讯云，发票由腾讯云开具。</p>
+  </header>
+
+  <div class="tabs" role="tablist" aria-label="操作阶段">
+    <button class="tab active" role="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" data-panel="panel-1">
+      <span class="tab-num">1</span>
+      <span class="tab-txt">
+        <span class="tab-kicker">阶段一</span>
+        <span class="tab-name">注册登记</span>
+        <span class="tab-desc">注册腾讯云账号并关联励拓</span>
+      </span>
+    </button>
+    <button class="tab" role="tab" aria-selected="false" aria-controls="panel-2" id="tab-2" data-panel="panel-2">
+      <span class="tab-num">2</span>
+      <span class="tab-txt">
+        <span class="tab-kicker">阶段二</span>
+        <span class="tab-name">下单购买</span>
+        <span class="tab-desc">用登记的账号下单</span>
+      </span>
+    </button>
+    <button class="tab" role="tab" aria-selected="false" aria-controls="panel-3" id="tab-3" data-panel="panel-3">
+      <span class="tab-num">3</span>
+      <span class="tab-txt">
+        <span class="tab-kicker">阶段三</span>
+        <span class="tab-name">分配席位</span>
+        <span class="tab-desc">管理员为成员分配席位</span>
+      </span>
+    </button>
+  </div>
+
+  <div class="tab-panel active" id="panel-1" role="tabpanel" aria-labelledby="tab-1">
+
+  <section class="step">
+    <div class="step-head"><span class="step-num">1</span><h2>打开邀请链接</h2></div>
+    <p>打开邀请链接：<a class="invite-link" id="invite-url" href="https://xiangbo.net/invite" target="_blank" rel="noopener noreferrer">https://xiangbo.net/invite</a><a class="link-btn" href="https://xiangbo.net/invite" target="_blank" rel="noopener noreferrer">打开邀请链接<span>↗</span></a></p>
+    <div class="thumbs">
+      <figure class="thumb"><img src="img/step-01.webp" width="2048" height="1402" alt="邀请链接页面" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <section class="step">
+    <div class="step-head"><span class="step-num">2</span><h2>选择注册或登录入口</h2></div>
+    <p>如果已经注册过腾讯云账号，请选择 <code class="inline">我已经有腾讯云账号，登录后关联</code>，请转到第 3 步。</p>
+    <p>如果尚未注册腾讯云账号，请点击右侧的 <code class="inline">还没有腾讯云账号，注册后在关联</code>。以下界面为无账号、新注册的界面。</p>
+    <div class="thumbs">
+      <figure class="thumb"><img src="img/step-02.webp" width="2048" height="1109" alt="关联入口选择界面" loading="lazy"></figure>
+      <figure class="thumb"><img src="img/step-03.webp" width="1610" height="890" alt="新用户注册界面" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <section class="step">
+    <div class="step-head"><span class="step-num">3</span><h2>注册并登录账号</h2></div>
+    <p>注册后，登录账号，可以微信扫码，也可以用企业微信等其他方式登录。</p>
+    <div class="thumbs">
+      <figure class="thumb"><img src="img/step-04.webp" width="2048" height="1259" alt="登录方式选择" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <section class="step">
+    <div class="step-head"><span class="step-num">4</span><h2>完成实名认证（选择企业认证）</h2></div>
+    <p>登录后，请先完成实名认证，认证时请选择企业认证。</p>
+    <div class="thumbs">
+      <figure class="thumb"><img src="img/step-05.webp" width="2048" height="1246" alt="实名认证入口" loading="lazy"></figure>
+      <figure class="thumb"><img src="img/step-06.webp" width="2000" height="906" alt="选择企业认证" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <section class="step">
+    <div class="step-head"><span class="step-num">5</span><h2>填写企业认证资料并选择认证方式</h2></div>
+    <p>填写企业认证的相关资料，填写认证资料后选择认证方式；认证方式有多种，请选择一个最方便的认证方式。<strong>推荐用企业法定代表人微信扫码认证。</strong></p>
+    <div class="thumbs">
+      <figure class="thumb"><img src="img/step-07.webp" width="1732" height="1506" alt="填写企业认证资料" loading="lazy"></figure>
+      <figure class="thumb"><img src="img/step-08.webp" width="1822" height="1634" alt="选择认证方式" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <section class="step">
+    <div class="step-head"><span class="step-num">6</span><h2>认证完成</h2></div>
+    <p>完成认证后，可以看到类似以下内容的界面，至此账户注册、认证完成，并已关联励拓咨询（深圳）有限公司。</p>
+    <div class="thumbs">
+      <figure class="thumb"><img src="img/step-09.webp" width="1635" height="640" alt="企业实名认证完成" loading="lazy"></figure>
+    </div>
+  </section>
+
+  </div><!-- /panel-1 -->
+
+  <div class="tab-panel" id="panel-2" role="tabpanel" aria-labelledby="tab-2">
+
+  <section class="step">
+    <div class="step-head"><span class="step-num">7</span><h2>进入 WorkBuddy 产品页</h2></div>
+    <p>使用<strong>上一步完成注册登记、实名认证的同一腾讯云账号</strong>，访问 WorkBuddy 产品页：<a class="invite-link" href="https://cloud.tencent.com/product/workbuddy" target="_blank" rel="noopener noreferrer">https://cloud.tencent.com/product/workbuddy</a><a class="link-btn" href="https://cloud.tencent.com/product/workbuddy" target="_blank" rel="noopener noreferrer">打开产品页<span>↗</span></a></p>
+    <p>在页面中点击 <code class="inline">立即选购</code> 进入下单页。请务必用同一账号下单，才能将订单关联到励拓。</p>
+    <div class="thumbs">
+      <figure class="thumb"><img src="img/step-10.webp" width="849" height="635" alt="WorkBuddy 产品页，点击立即选购" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <section class="step">
+    <div class="step-head"><span class="step-num">8</span><h2>选择套餐并提交订单</h2></div>
+    <p>在「腾讯云 WorkBuddy Enterprise」下单页，阅读购买须知后选择<strong>套餐类型</strong>和<strong>权益类型</strong>（如 Buddy One 智能体套装），按需选择套餐后提交订单并完成支付。</p>
+    <div class="thumbs">
+      <figure class="thumb"><img src="img/step-11.webp" width="808" height="691" alt="选择套餐类型与权益类型" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <div class="notice">
+    <h3>💳 付款与发票说明</h3>
+    <ul>
+      <li><strong>付款对象：</strong>款项直接支付给<strong>腾讯云</strong>。</li>
+      <li><strong>发票开具：</strong>发票由<strong>腾讯云</strong>开具。</li>
+    </ul>
+  </div>
+
+  </div><!-- /panel-2 -->
+
+  <div class="tab-panel" id="panel-3" role="tabpanel" aria-labelledby="tab-3">
+
+  <section class="step">
+    <div class="step-head"><span class="step-num">9</span><h2>管理员分配席位</h2></div>
+    <p>购买完成后，请由公司<strong>管理员账号</strong>登录 WorkBuddy <strong>企业控制台</strong>（企业版登录入口），进入「组织与成员 / 席位管理」，按成员或部门为需要使用 WorkBuddy 的成员<strong>分配席位</strong>。</p>
+    <p>该步骤由管理员统一操作，普通成员无需操作；成员被分配席位后即可使用对应账号登录 WorkBuddy。</p>
+    <div class="thumbs">
+      <figure class="thumb"><img src="img/step-12.webp" width="762" height="442" alt="企业控制台席位管理" loading="lazy"></figure>
+    </div>
+  </section>
+
+  </div><!-- /panel-3 -->
+
+  <footer class="foot">付款直达腾讯云、发票由腾讯云开具。如有疑问，请联系对接人协助处理。</footer>
 </div>
-</div></section>
 
-<section class="sec" id="decision"><div class="wrap">
-<div class="sec-head"><div class="kicker">采购评估起点</div><h2>先判断它能否进入企业工作流，再比较功能数量</h2><p>企业引入 AI 的关键，不是增加一个工具，而是让任务、知识、权限和结果形成统一管理。</p></div>
-<div class="grid g-4">
-<div class="card"><div class="num">任务入口</div><h3>能否统一承接工作</h3><p>员工在同一入口发起、跟踪和验收任务，减少聊天工具、知识库与业务系统之间的切换。</p></div>
-<div class="card"><div class="num">经验复用</div><h3>能否沉淀为企业资产</h3><p>将有效提示词、技能、知识和专家经验统一沉淀与分发，降低经验只掌握在个人手中的风险。</p></div>
-<div class="card"><div class="num">结果交付</div><h3>能否完成完整任务</h3><p>不止生成文字建议，还能读取资料、调用工具、生成文件并推进流程，交付可复核的成果。</p></div>
-<div class="card"><div class="num">组织治理</div><h3>能否管理权限与风险</h3><p>围绕组织、成员、权限、用量、发布与操作日志建立管理机制，满足规模化使用要求。</p></div>
-</div></div></section>
-
-<section class="sec sec-soft" id="capabilities"><div class="wrap">
-<div class="sec-head"><div class="kicker">企业能力构成</div><h2>六项能力，覆盖从任务执行到持续运营</h2><p>这些能力共同决定 AI 能否从个人试用走向组织级使用。</p></div>
-<div class="grid g-3">
-<div class="card"><div class="num">01 · 工作台</div><h3>统一任务入口</h3><p>集中发起和管理任务，展示进度、待办、产物与文件变更，便于过程跟踪和结果验收。</p><div class="cap-art art-task"><div><i></i><span>任务接收</span><b>已创建</b></div><div><i></i><span>任务执行</span><b>进行中</b></div><div><i></i><span>结果验收</span><b>可复核</b></div></div></div>
-<div class="card"><div class="num">02 · 执行能力</div><h3>覆盖多类岗位任务</h3><p>面向研发、内容、设计、运营、行政、销售等岗位，提供可直接投入工作的执行能力。</p><div class="cap-art art-roles"><span>研发</span><span>内容</span><span>设计</span><span>运营</span><span>行政</span><span>销售</span></div></div>
-<div class="card"><div class="num">03 · 企业资产</div><h3>知识与技能持续沉淀</h3><p>将知识库、Skill、专家经验、连接器、模型与规则统一接入，形成企业可复用的能力底座。</p><div class="cap-art art-assets"><span>知识</span><span>技能</span><b>企业资产</b><span>经验</span><span>规则</span></div></div>
-<div class="card"><div class="num">04 · 构建与评测</div><h3>能力可构建、可验证</h3><p>支持创建、调试、评测、发布与迭代，让企业能够验证能力质量后再扩大使用范围。</p><div class="cap-art art-build"><span>创建</span><i>→</i><span>调试</span><i>→</i><span>评测</span><i>→</i><span>发布</span></div></div>
-<div class="card"><div class="num">05 · 组织治理</div><h3>权限、资源与运营可管</h3><p>通过企业管理后台管理成员、角色、席位、用量与发布过程，保留必要的操作记录。</p><div class="cap-art art-govern"><b>企业</b><div><span>部门与角色</span><span>成员与席位</span><span>权限与用量</span></div></div></div>
-<div class="card"><div class="num">06 · 团队协同</div><h3>复杂任务分工推进</h3><p>多个数字员工与不同角色围绕同一目标协作，成熟流程可在项目空间和跨部门场景中复用。</p><div class="cap-art art-team"><span>业务</span><span>研发</span><b>共同目标</b><span>设计</span><span>运营</span></div></div>
+<!-- 灯箱 -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="图片查看器">
+  <button class="lb-btn lb-prev" id="lbPrev" aria-label="上一张">‹</button>
+  <div class="lb-stage"><img id="lbImg" src="" alt=""></div>
+  <button class="lb-btn lb-next" id="lbNext" aria-label="下一张">›</button>
+  <button class="lb-close" id="lbClose" aria-label="关闭">✕</button>
+  <div class="lb-caption" id="lbCaption"></div>
 </div>
-<div class="role-grid">
-<div class="role-card"><span class="role-tag">企业管理者</span><h3>关注投入、成果与长期资产</h3><p><b>决策问题</b>投入是否可控、成果是否可见</p><p><b>对应价值</b>席位与用量统一管理，任务成果可验收，企业资产持续沉淀。</p></div>
-<div class="role-card"><span class="role-tag">IT / 信息化负责人</span><h3>关注组织接入与运营治理</h3><p><b>决策问题</b>能否接入组织与现有系统</p><p><b>对应价值</b>组织、权限、连接器与运营管理集中配置，过程可审计。</p></div>
-<div class="role-card"><span class="role-tag">业务负责人</span><h3>关注具体流程的交付改善</h3><p><b>决策问题</b>能否改善具体流程的交付</p><p><b>对应价值</b>围绕实际业务场景执行任务，形成可复用、可复制的流程。</p></div>
-</div>
-</div></section>
 
-<section class="sec" id="scenarios"><div class="wrap">
-<div class="sec-head"><div class="kicker">业务场景</div><h2>优先从高频、可量化、可复核的流程切入</h2><p>每个场景都应明确输入、执行步骤、交付物与验收方式，而不是停留在概念展示。</p></div>
-<div class="grid g-3">
-<div class="case"><div class="case-top"><span class="cat">法务 · 销售 · 采购</span><span class="case-index">01</span></div><h3>合同与报价处理</h3><div class="flow"><b>执行流程</b><span>读取资料 → 条款比对 → 风险提示 → 文档归档</span></div><div class="case-output"><b>交付物</b><span>差异清单、风险项与修订稿</span></div><div class="res"><b>验收指标</b><span>条款准确性 · 复核耗时 · 版本追溯</span></div></div>
-<div class="case"><div class="case-top"><span class="cat">管理层 · 财务 · 运营</span><span class="case-index">02</span></div><h3>经营数据分析</h3><div class="flow"><b>执行流程</b><span>多表汇总 → 指标计算 → 图表生成 → 结论输出</span></div><div class="case-output"><b>交付物</b><span>数据表、可视化图表与分析结论</span></div><div class="res"><b>验收指标</b><span>口径一致性 · 整理耗时 · 定期复用</span></div></div>
-<div class="case"><div class="case-top"><span class="cat">市场 · 销售 · 项目</span><span class="case-index">03</span></div><h3>方案与汇报材料生产</h3><div class="flow"><b>执行流程</b><span>资料检索 → 结构生成 → 内容撰写 → 文件输出</span></div><div class="case-output"><b>交付物</b><span>方案文档、演示文稿与项目汇报</span></div><div class="res"><b>验收指标</b><span>事实准确性 · 修改轮次 · 交付周期</span></div></div>
-<div class="case"><div class="case-top"><span class="cat">研发 · 产品 · 测试</span><span class="case-index">04</span></div><h3>研发与需求协同</h3><div class="flow"><b>执行流程</b><span>需求理解 → 开发辅助 → 测试定位 → 评审整理</span></div><div class="case-output"><b>交付物</b><span>需求说明、测试结果与评审材料</span></div><div class="res"><b>验收指标</b><span>交付质量 · 协同效率 · 统一管理</span></div></div>
-<div class="case"><div class="case-top"><span class="cat">客服 · 新员工 · 全员</span><span class="case-index">05</span></div><h3>企业知识服务</h3><div class="flow"><b>执行流程</b><span>知识入库 → 权限检索 → 带出处答复 → 成果回存</span></div><div class="case-output"><b>交付物</b><span>可溯源答案、业务指引与知识资产</span></div><div class="res"><b>验收指标</b><span>答案可溯源 · 权限继承 · 内容维护</span></div></div>
-<div class="case"><div class="case-top"><span class="cat">制造 · 供应链 · 交付</span><span class="case-index">06</span></div><h3>跨系统异常处置</h3><div class="flow"><b>执行流程</b><span>数据汇总 → 异常分析 → 原因定位 → 任务跟踪</span></div><div class="case-output"><b>交付物</b><span>异常诊断、责任分派与处置记录</span></div><div class="res"><b>验收指标</b><span>处置时效 · 协同质量 · 闭环完整性</span></div></div>
-</div></div></section>
+<script>
+/* ===== 阶段 Tab 切换 ===== */
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('.tab'));
+  var panels=[].slice.call(document.querySelectorAll('.tab-panel'));
+  function activate(id){
+    tabs.forEach(function(t){
+      var on=t.getAttribute('data-panel')===id;
+      t.classList.toggle('active',on);
+      t.setAttribute('aria-selected',on?'true':'false');
+    });
+    panels.forEach(function(pn){
+      pn.classList.toggle('active',pn.id===id);
+    });
+  }
+  tabs.forEach(function(t){
+    t.addEventListener('click',function(){activate(t.getAttribute('data-panel'));});
+    t.addEventListener('keydown',function(e){
+      var i=tabs.indexOf(t);
+      if(e.key==='ArrowRight'||e.key==='ArrowLeft'){
+        e.preventDefault();
+        var ni=(i+(e.key==='ArrowRight'?1:-1)+tabs.length)%tabs.length;
+        tabs[ni].focus();
+      }
+    });
+  });
+})();
 
-<section class="sec sec-soft" id="compare"><div class="wrap">
-<div class="sec-head"><div class="kicker">对比竞品</div><h2>按企业采用成本比较，而不是罗列功能</h2><p>重点比较组织接入、资产沉淀、结果交付和持续运营四个方面。</p></div>
-<div class="table-wrap"><table class="cmp"><thead><tr><th>评估维度</th><th>通用 AI 对话工具</th><th>传统办公软件 + AI 插件</th><th class="col-hot">WorkBuddy 企业版</th></tr></thead><tbody>
-<tr><td>任务交付</td><td>以文字回答为主</td><td>增强单个应用内的功能</td><td class="col-hot">跨资料、文件与工具执行，输出可验收成果</td></tr>
-<tr><td>企业资产</td><td>经验多留在个人会话</td><td>知识与技能分散在不同应用</td><td class="col-hot">知识、技能、专家经验与连接器统一沉淀和复用</td></tr>
-<tr><td>组织管理</td><td>以账号使用为主</td><td>依赖原办公软件的管理边界</td><td class="col-hot">组织、成员、席位、权限、用量与日志统一管理</td></tr>
-<tr><td>工作流协同</td><td>需手动搬运上下文</td><td>多在单个应用内完成</td><td class="col-hot">与企业微信及腾讯办公产品协同，成果可回传</td></tr>
-<tr><td>持续运营</td><td>侧重单次使用效果</td><td>侧重局部效率提升</td><td class="col-hot">构建、评测、发布、运营形成持续迭代闭环</td></tr>
-</tbody></table></div>
-</div></section>
+/* ===== 灯箱 ===== */
+(function(){
+  var thumbs=[].slice.call(document.querySelectorAll('.thumb img'));
+  var lb=document.getElementById('lightbox');
+  var lbImg=document.getElementById('lbImg');
+  var lbCaption=document.getElementById('lbCaption');
+  var cur=0,lastFocus=null;
 
-<section class="sec" id="fit"><div class="wrap">
-<div class="sec-head"><div class="kicker">企业适配与效果评估</div><h2>判断是否适合，再用少量账号验证业务价值</h2><p>先明确企业适配条件，再用少量企业账号覆盖不同岗位与场景，以真实结果决定后续采购规模。</p></div>
-<div class="fit-grid">
-<div class="fit-panel fit-a"><span class="fit-label">什么样的企业适合优先引入</span><h3>存在明确流程、复用和治理需求</h3><ul class="check-list"><li>文档、表格、内容或资料处理工作量大且重复</li><li>希望把个人经验沉淀为组织可复用的流程与资产</li><li>需要统一管理成员权限、使用规模与操作过程</li><li>已使用企业微信或腾讯办公产品，希望减少系统切换</li></ul></div>
-<div class="fit-panel fit-b"><span class="fit-label">如何评估是否值得扩大采购</span><h3>建议先用 3–5 个企业账号开展小范围验证</h3><p>选择 2–3 个岗位和业务场景，使用同一批真实资料进行对照，重点记录以下指标：</p><div class="fit-metrics"><span>交付耗时</span><span>修改轮次</span><span>错误率</span><span>成果复用率</span><span>权限完整性</span><span>审计完整性</span></div><p class="fit-note">达到业务验收标准后，再按部门和实际使用人数逐步增加账号。</p><a class="btn btn-ghost" href="pricing.html#validate">查看验证与采购建议</a></div>
-</div></div></section>
+  function show(i){
+    cur=(i+thumbs.length)%thumbs.length;
+    var im=thumbs[cur];
+    lbImg.src=im.src;
+    lbImg.alt=im.alt||'';
+    lbCaption.innerHTML='<b>'+(cur+1)+' / '+thumbs.length+'</b>&ensp;·&ensp;'+(im.alt||'');
+  }
+  function open(i){
+    lastFocus=document.activeElement;
+    show(i);
+    lb.classList.add('open');
+    document.body.style.overflow='hidden';
+  }
+  function close(){
+    lb.classList.remove('open');
+    document.body.style.overflow='';
+    lbImg.src='';
+    if(lastFocus&&lastFocus.focus)lastFocus.focus();
+  }
 
-<section class="sec" id="product-faq"><div class="wrap">
-<div class="sec-head"><div class="kicker">了解 WorkBuddy · 常见问题</div><h2>产品能力与企业适配</h2><p>价格、套件与下单问题集中在「价格与选型」页。</p></div>
-<div class="faq-static">
-<div class="faq-block"><h3>WorkBuddy 与通用 AI 对话工具的核心区别是什么？</h3><p>通用对话工具主要提供内容建议；WorkBuddy 面向完整任务，能够读取授权资料、拆解步骤、调用工具并输出文件或业务结果，更适合需要实际交付的企业工作流。</p></div>
-<div class="faq-block"><h3>WorkBuddy 与 CodeBuddy 是什么关系？</h3><p>CodeBuddy 侧重研发编码，WorkBuddy 侧重通用办公与组织任务执行。企业可在统一账号、组织和管理体系下覆盖研发与非研发岗位，具体产品范围取决于所选套件。</p></div>
-<div class="faq-block"><h3>非技术岗位是否需要学习提示词？</h3><p>日常任务可用自然语言描述目标、输入资料、期望产出与约束条件。企业还可将成熟方法封装为技能或专家能力，统一分发给成员，降低使用门槛。</p></div>
-<div class="faq-block"><h3>能否接入企业现有业务系统和资料？</h3><p>可通过连接器与 MCP 等方式接入企业现有系统、知识库和服务；实际接入范围取决于系统接口、权限配置和所需业务动作，建议在采购前明确接入清单。</p></div>
-<div class="faq-block"><h3>与企业微信可以协同到什么程度？</h3><p>在企业授权和成员权限范围内，可处理企业微信中的消息、文档、表格、邮件、会议与微盘等资料，并将成果回传。选择企业微信联合套件后，成员还可在企业微信中直接使用 WorkBuddy。</p></div>
-</div></div></section>
+  thumbs.forEach(function(im,i){
+    im.parentElement.addEventListener('click',function(){open(i);});
+  });
 
-<section class="sec" style="padding-top:0"><div class="wrap"><div class="cta-band"><h2>明确版本与套件后，再进入购买流程</h2><p>查看 SaaS 企业旗舰版的订阅内容、两种套件差异和采购前检查项。</p><a class="btn btn-primary btn-lg" href="pricing.html">进入价格与选型</a></div></div></section>
+  document.getElementById('lbPrev').addEventListener('click',function(e){e.stopPropagation();show(cur-1);});
+  document.getElementById('lbNext').addEventListener('click',function(e){e.stopPropagation();show(cur+1);});
+  document.getElementById('lbClose').addEventListener('click',close);
+  lb.addEventListener('click',function(e){if(e.target===lb)close();});
 
-<aside class="contact-dock" aria-label="购买咨询入口">
-<a class="dock-main" href="buy.html#contact">购买咨询</a>
-<div class="contact-pop"><b>获取购买方案与报价</b><img src="assets/wechat-contact.jpg" alt="企业微信咨询二维码"><span>企业微信扫码沟通</span></div>
-</aside>
+  document.addEventListener('keydown',function(e){
+    if(!lb.classList.contains('open'))return;
+    if(e.key==='ArrowLeft')show(cur-1);
+    else if(e.key==='ArrowRight')show(cur+1);
+    else if(e.key==='Escape'||e.key==='Esc')close();
+  });
 
-<footer><div class="wrap"><div class="cols">
-<div><a class="brand" href="index.html"><img src="assets/wb-logo.svg" alt="WorkBuddy" style="width:96px;height:32px"></a><p style="color:#9fb0c4;font-size:13.5px;margin-top:12px">企业级 AI 办公工作台，支持任务执行、企业资产沉淀与组织治理。</p></div>
-<div><h4>网站导航</h4><a href="index.html">了解 WorkBuddy</a><a href="pricing.html">价格与选型</a><a href="buy.html">立即购买</a><a href="faq.html">常见问题</a></div>
-<div><h4>官方资料</h4><a href="https://cloud.tencent.com/product/workbuddy" target="_blank" rel="noopener">产品官网</a><a href="https://www.workbuddy.cn/docs/enterprise/215235277250076672" target="_blank" rel="noopener">官方购买文档</a></div>
-<div><h4>购买咨询</h4><a href="buy.html#contact">扫码沟通方案</a><a href="pricing.html#suite">查看套件对比</a></div>
-</div><div class="note">本网站用于产品信息与购买选型参考。价格、权益与产品能力以 WorkBuddy / 腾讯云官方最新页面和正式合同为准。</div></div></footer>
+  /* 触摸滑动翻页 */
+  var tx=null;
+  lb.addEventListener('touchstart',function(e){tx=e.touches[0].clientX;},{passive:true});
+  lb.addEventListener('touchend',function(e){
+    if(tx===null)return;
+    var dx=e.changedTouches[0].clientX-tx;
+    if(Math.abs(dx)>50)show(cur+(dx<0?1:-1));
+    tx=null;
+  },{passive:true});
+
+})();
+</script>
 </body></html>

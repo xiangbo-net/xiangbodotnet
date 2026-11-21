@@ -336,8 +336,8 @@ footer::after{content:"WORKBUDDY";display:block;max-width:var(--maxw);margin:48p
 .page-hero{padding:78px 0 54px;background:radial-gradient(850px 400px at 15% 0,rgba(234,250,243,.75),transparent 65%),radial-gradient(900px 430px at 85% 0,rgba(237,245,255,.9),transparent 70%)}
 .page-hero h1{font-size:46px;color:#202124;font-weight:800;letter-spacing:-.8px}
 .page-hero p{color:#68727c;max-width:850px;line-height:1.85}
-@media(max-width:1080px){.nav-links a{padding:8px 10px;font-size:13px}.hero-stage{grid-template-columns:1fr 1.5fr}.stage-output{display:none}.hero h1{font-size:46px}.contact-dock{right:12px}}
-@media(max-width:900px){.nav-links{display:none}.nav .brand::after{display:inline}.hero-stage{grid-template-columns:1fr}.stage-input{display:none}.hero h1{font-size:40px}.sec{padding:66px 0}.sec-head h2{font-size:32px}.page-hero h1{font-size:36px}.contact-dock{display:none}.card{min-height:auto}#capabilities .card{min-height:250px}}
+@media(max-width:1080px){.nav-links a{padding:8px 10px;font-size:13px}.hero-stage{grid-template-columns:1fr 1.5fr}.hero h1{font-size:46px}.contact-dock{right:12px}}
+@media(max-width:900px){.nav-links{display:none}.nav .brand::after{display:inline}.hero-stage{grid-template-columns:1fr}.hero h1{font-size:40px}.sec{padding:66px 0}.sec-head h2{font-size:32px}.page-hero h1{font-size:36px}.contact-dock{display:none}.card{min-height:auto}#capabilities .card{min-height:250px}}
 @media(max-width:600px){.wrap{padding:0 20px}.nav{top:8px;padding:0 8px}.nav-inner{height:60px;padding:0 12px}.nav .brand img{width:86px}.nav .brand::after{font-size:12px;margin-left:8px;padding-left:8px}.nav-cta .btn-primary{padding:8px 15px;font-size:12px}.hero{padding-top:58px}.hero h1{font-size:34px}.hero .sub{font-size:15px}.hero-stage{margin-top:40px}.stage-main{padding:22px}.stage-flow{font-size:11px}.sec-head h2{font-size:27px}.sec-head p{font-size:14px}.page-hero h1{font-size:29px}.price-hero{padding:28px 24px}.price-hero .big-price{font-size:43px}.contact-card{padding:26px}.contact-card img{width:210px;height:210px}.cta-band{padding:40px 24px}footer::after{font-size:58px;letter-spacing:-3px;margin-top:35px}footer .cols{grid-template-columns:1fr 1fr}.card,.case{padding:24px}}
 
 
@@ -652,22 +652,347 @@ footer::after{color:transparent;-webkit-text-stroke:1px #2a3654;opacity:.55}
 .suite-decision-head h3{font-size:22px;color:#131c28;margin-bottom:10px}
 .suite-decision-head p{font-size:14px;color:#6a7482}
 .suite-decision-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.suite-dcard{border-radius:18px;padding:26px;display:flex;flex-direction:column;border:1px solid var(--line)}
-.suite-dcard-a{background:linear-gradient(150deg,#f0f6ff,#f6faff);border-top:4px solid var(--brand)}
-.suite-dcard-b{background:linear-gradient(150deg,#f0fdf7,#f6fffb);border-top:4px solid var(--accent)}
-.suite-dtag{display:inline-block;font-size:12.5px;font-weight:750;padding:6px 13px;border-radius:999px;width:fit-content}
-.suite-dcard-a .suite-dtag{background:var(--brand);color:#fff}
-.suite-dcard-b .suite-dtag{background:var(--accent);color:#fff}
-.suite-dcard h4{font-size:17px;color:#16263a;margin:15px 0 14px;line-height:1.5}
-.suite-dcard ul{list-style:none;display:flex;flex-direction:column;gap:11px;margin-bottom:22px;flex:1}
-.suite-dcard li{font-size:13.5px;color:#4f5a68;padding-left:18px;position:relative;line-height:1.7}
+/* 移动抽屉菜单：默认完全隐藏，避免泄漏占位 */
+.mobile-menu{display:none}
+.mobile-menu.open{display:block;transform:translateY(0);visibility:visible}
+@media(min-width:901px){.mobile-menu{display:none!important}}
+
+
+/* ================= 移动端横向滑动卡片 ================= */
+@media(max-width:600px){
+  /* 容器变为横向滚动条 */
+  .m-hscroll{
+    display:flex!important;
+    flex-wrap:nowrap!important;
+    gap:14px!important;
+    overflow-x:auto!important;
+    overflow-y:hidden;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+    scroll-padding-left:16px;
+    /* 让卡片可以滑到贴边，视觉更自然 */
+    padding:2px 16px 14px 16px!important;
+    margin-left:-16px!important;
+    margin-right:-16px!important;
+    /* 隐藏滚动条（保留滑动） */
+    scrollbar-width:none;
+  }
+  .m-hscroll::-webkit-scrollbar{display:none}
+  /* 每张卡片固定宽度、吸附 */
+  .m-hscroll > *{
+    flex:0 0 auto;
+    width:78vw;
+    max-width:320px;
+    scroll-snap-align:start;
+    margin:0!important;
+  }
+  /* role-grid 卡片窄一点 */
+  .role-grid.m-hscroll > *{width:80vw;max-width:300px}
+  /* 指标条卡片更窄，一屏能露 2.5 个 */
+  .metric-strip.m-hscroll > *{width:44vw;max-width:180px}
+  /* 准备步骤卡 */
+  .prep-grid.m-hscroll > *{width:78vw;max-width:320px}
+  /* 卡片内高度自适应，避免长短不一 */
+  .m-hscroll > *{height:auto}
+  /* 加一条“可左右滑动”提示（页面用 .m-hscroll-wrap 包裹时显示） */
+}
+/* 滑动提示小圆点条（可选，纯装饰）*/
+.m-swipe-hint{display:none}
+@media(max-width:600px){
+  .m-hscroll-wrap{position:relative}
+  .m-swipe-hint{display:flex;gap:5px;justify-content:center;margin-top:2px}
+  .m-swipe-hint i{width:5px;height:5px;border-radius:50%;background:#cfd8e3}
+}
+
+
+/* 图四：怎么选 two-column -> 移动端单栏、加大行距与间距 */
+@media(max-width:640px){
+  .suite-decision{padding:22px 18px!important}
+  .suite-decision-head h3{font-size:19px;line-height:1.4}
+  .suite-decision-head p{font-size:13px;line-height:1.8}
+  .suite-decision-grid{grid-template-columns:1fr!important;gap:18px}
+  .suite-dcard{padding:22px 20px}
+  .suite-dcard h4{font-size:16px;line-height:1.5;margin:12px 0 14px}
+  .suite-dcard ul{gap:14px;margin-bottom:20px}
+  .suite-dcard li{font-size:14px;line-height:1.85;padding-left:20px}
+  .suite-dtag{font-size:12px}
+}
+
+
+/* 图二：竞品对比表 移动端横向滑动 */
+@media(max-width:640px){
+  .m-table-scroll{overflow-x:auto!important;-webkit-overflow-scrolling:touch;border-radius:16px;scrollbar-width:none;margin-left:-16px;margin-right:-16px}
+  .m-table-scroll::-webkit-scrollbar{display:none}
+  .m-table-scroll table.cmp{min-width:680px}
+  .m-table-scroll table.cmp th,.m-table-scroll table.cmp td{white-space:normal}
+  .m-table-scroll table.cmp th:first-child,.m-table-scroll table.cmp td:first-child{position:sticky;left:0;background:#fff;z-index:2;box-shadow:2px 0 6px rgba(0,0,0,.04)}
+  .m-table-scroll table.cmp thead th:first-child{background:#f6f8fb;z-index:3}
+}
+
+
+/* 图一：hero 工作台三块 移动端横向滑动 */
+@media(max-width:640px){
+  .hero-stage{
+    display:flex!important;
+    flex-wrap:nowrap!important;
+    gap:14px!important;
+    overflow-x:auto!important;
+    overflow-y:hidden;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+    padding:2px 16px 14px 16px!important;
+    margin-left:-16px!important;margin-right:-16px!important;
+    scrollbar-width:none;
+    align-items:stretch;
+  }
+  .hero-stage::-webkit-scrollbar{display:none}
+  .hero-stage .stage-input,
+  .hero-stage .stage-main,
+  .hero-stage .stage-output{
+    display:block!important;
+    flex:0 0 auto;
+    width:82vw;
+    max-width:340px;
+    scroll-snap-align:start;
+    order:0!important;
+    margin:0!important;
+  }
+  .hero-stage .stage-input{order:1!important}
+  .hero-stage .stage-main{order:2!important}
+  .hero-stage .stage-output{order:3!important}
+  .hero-stage .stage-output ul{grid-template-columns:1fr 1fr}
+}
+
+
+/* 图三：修复移动端汉堡按钮被压扁/导航容器塌陷 */
+@media(max-width:900px){
+  .nav-inner{display:flex!important;align-items:center;width:100%!important;box-sizing:border-box}
+  .nav .brand{flex:0 0 auto!important}
+  .nav-links{display:none!important}
+  .nav-toggle{display:flex!important;flex:0 0 42px!important;width:42px!important;height:42px!important;margin-left:auto!important;margin-right:10px!important;min-width:42px!important}
+  .nav-cta{margin-left:0!important;flex:0 0 auto!important}
+}
+@media(max-width:600px){
+  .nav-inner{height:56px;padding:0 12px}
+  .nav-cta .btn-primary{padding:9px 15px;font-size:13px}
+}
+
+
+/* 汉堡三条横线可见性修复 */
+.nav-toggle{overflow:visible}
+.nav-toggle span{display:block!important;width:18px!important;height:2px!important;background:#2a3140!important;border-radius:2px!important;flex:0 0 2px!important;margin:0!important}
+
+
+@media(max-width:900px){
+  .nav-toggle{flex-direction:column!important;justify-content:center!important;align-items:center!important;gap:5px!important;background:#fff!important;border:1px solid #e5e9ef!important}
+  .nav-toggle span{background:#2a3140!important;width:18px!important;height:2px!important;display:block!important}
+}
+
+
+/* ==== 根治：移动抽屉菜单默认强制隐藏，仅 .open 显示 ==== */
+.mobile-menu{display:none!important}
+.mobile-menu.open{display:block!important}
+@media(min-width:901px){.mobile-menu{display:none!important}}
+/* 汉堡按钮：去焦点黄框 */
+.nav-toggle{outline:none!important;-webkit-tap-highlight-color:transparent}
+.nav-toggle:focus,.nav-toggle:focus-visible{outline:none!important;box-shadow:none!important;border-color:#e5e9ef!important}
+
+
+/* ==== 根治：≤960 一律隐藏横排链接，改用汉堡 ==== */
+@media(max-width:960px){
+  .nav-links{display:none!important}
+  .nav-toggle{display:flex!important}
+}
+@media(min-width:961px){
+  .nav-toggle{display:none!important}
+  .mobile-menu{display:none!important}
+}
+
+
+/* 移动端：立即购买按钮紧贴汉堡菜单 */
+@media(max-width:900px){
+  .nav-inner{gap:0!important}
+  .nav-cta{margin-left:auto!important;flex:0 0 auto!important;padding-right:0!important}
+  .nav-toggle{margin-left:8px!important;margin-right:0!important}
+  .nav-cta .btn-primary{padding:8px 14px!important;font-size:13px!important;height:38px;display:inline-flex;align-items:center}
+}
+
+
+/* ==== 修复移动抽屉菜单完整定位与列表 ==== */
+.mobile-menu{
+  display:none;
+  position:fixed!important;
+  left:0!important;right:0!important;top:0!important;
+  width:100%!important;
+  margin:0!important;
+  z-index:200!important;
+  background:#fff!important;
+  box-shadow:0 24px 60px rgba(20,40,70,.18)!important;
+  border-radius:0 0 20px 20px!important;
+  padding:74px 20px 24px!important;
+  box-sizing:border-box!important;
+  transform:translateY(-110%)!important;
+  visibility:hidden!important;
+  transition:transform .3s ease,visibility .3s ease!important;
+  overflow-y:auto;
+  max-height:100vh;
+}
+.mobile-menu.open{
+  display:block!important;
+  transform:translateY(0)!important;
+  visibility:visible!important;
+}
+.mobile-menu a{
+  display:block!important;
+  width:100%!important;
+  padding:16px 6px!important;
+  font-size:16px!important;
+  font-weight:650!important;
+  color:#2a3140!important;
+  border-bottom:1px solid #eef1f5!important;
+  box-sizing:border-box!important;
+}
+.mobile-menu a.active{color:#2160f0!important}
+.mobile-menu .mm-cta{
+  margin-top:16px!important;
+  display:block!important;
+  text-align:center!important;
+  background:#2160f0!important;
+  color:#fff!important;
+  border-radius:12px!important;
+  padding:15px!important;
+  border-bottom:0!important;
+}
+
+
+/* 移动端：企业版紧贴logo，避免与汉堡错位 */
+@media(max-width:900px){
+  .nav .brand{display:flex!important;align-items:center!important;flex:0 0 auto!important}
+  .nav .brand::after{position:static!important;margin-left:8px!important;padding-left:8px!important;flex:0 0 auto!important}
+  .nav-toggle{margin-left:auto!important}
+}
+
+
+/* ==== 导航顺序统一：… 立即购买 | 汉堡(最右) ==== */
+@media(max-width:900px){
+  .nav-inner{display:flex!important;align-items:center!important;flex-wrap:nowrap!important}
+  .nav .brand{flex:0 0 auto!important}
+  .nav-links{display:none!important}
+  .nav-cta{margin-left:auto!important;flex:0 0 auto!important;padding:0!important}
+  .nav-toggle{margin-left:10px!important;margin-right:0!important;flex:0 0 42px!important}
+  .nav-cta .btn-primary{padding:8px 16px!important;font-size:13px!important;height:38px;display:inline-flex;align-items:center}
+}
+
+
+/* ==== 桌面端悬浮咨询：贴右边缘、不遮挡内容 ==== */
+@media(min-width:901px){
+  .contact-dock{right:0!important;bottom:70px!important}
+  .dock-main{
+    writing-mode:vertical-rl;letter-spacing:2px;
+    padding:20px 8px!important;width:28px!important;min-width:28px!important;
+    font-size:12px!important;line-height:1.3;
+    border-radius:10px 0 0 10px!important;
+    background:#2160f0!important;
+    box-shadow:-4px 0 16px rgba(33,96,240,.18)!important;
+    opacity:.92;
+  }
+  .dock-main:hover{opacity:1}
+  .contact-pop{right:34px!important}
+}
+
+
+/* 页脚声明标题 */
+footer .note-title{color:#e6ebf2;font-weight:700;font-size:13px;margin-bottom:8px;letter-spacing:.5px}
+footer .note{line-height:1.9}
+
+
+/* 宽屏导航顺序：立即购买最右，汉堡在其左 */
+@media(min-width:901px){
+  .nav-inner{gap:14px!important}
+  .nav-links{margin-left:8px}
+  .nav-toggle{display:none!important}   /* 桌面不显示汉堡（有完整菜单） */
+  .nav-cta{margin-left:auto!important;order:3!important}
+}
+
+
+.hero .cta{justify-content:center!important}
+.page-hero .actions{justify-content:center!important}
+
+
+/* 「怎么选」卡美化 */
+.suite-decision{background:#fff;border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);padding:36px 32px;margin-top:26px}
+.suite-decision-head{text-align:center;margin-bottom:28px}
+.suite-decision-head h3{font-size:22px;color:#131c28;font-weight:800;margin-bottom:8px}
+.suite-decision-head p{font-size:14px;color:#6a7482}
+.suite-decision-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.suite-dcard{border-radius:18px;padding:28px 26px;display:flex;flex-direction:column;border:1px solid var(--line);position:relative;overflow:hidden}
+.suite-dcard::before{content:"";position:absolute;top:0;left:0;right:0;height:4px}
+.suite-dcard-a{background:linear-gradient(160deg,#f2f7ff,#fafcff)}
+.suite-dcard-a::before{background:var(--brand)}
+.suite-dcard-b{background:linear-gradient(160deg,#f0fcf6,#fafffc)}
+.suite-dcard-b::before{background:var(--accent)}
+.sd-top{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.sd-icon{font-size:20px}
+.suite-dcard-a .suite-dtag{background:var(--brand);color:#fff;padding:5px 13px;border-radius:999px;font-weight:700;font-size:13px}
+.suite-dcard-b .suite-dtag{background:var(--accent);color:#fff;padding:5px 13px;border-radius:999px;font-weight:700;font-size:13px}
+.suite-dcard h4{font-size:17px;color:#1a2430;line-height:1.5;margin-bottom:16px;font-weight:750}
+.suite-dcard ul{list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:24px;flex:1}
+.suite-dcard li{font-size:14px;color:#4f5a68;line-height:1.7;padding-left:22px;position:relative}
 .suite-dcard li::before{content:"✓";position:absolute;left:0;top:0;font-weight:800}
 .suite-dcard-a li::before{color:var(--brand)}
 .suite-dcard-b li::before{color:var(--accent)}
 .suite-dcard .btn{width:100%}
-@media(max-width:900px){.suite-decision-grid{grid-template-columns:1fr}.suite-decision{padding:24px}}
+@media(max-width:640px){
+  .suite-decision{padding:22px 18px;border-radius:20px}
+  .suite-decision-grid{grid-template-columns:1fr;gap:16px}
+  .suite-dcard{padding:22px 20px}
+  .suite-dcard h4{font-size:16px}
+  .suite-dcard li{font-size:13.5px;line-height:1.8}
+}
 
 
-/* 购买页顶部按钮居中 */
-.page-hero .actions{justify-content:center!important}
+/* 六指标条 */
+.metric-strip-6{grid-template-columns:repeat(6,1fr)!important;gap:14px}
+.metric-strip-6 .metric{padding:22px 14px;background:#f6f8fb;border-radius:16px;text-align:left;border:1px solid var(--line)}
+.metric-strip-6 .m-label{display:block;font-size:12px;color:#8b95a3;margin-bottom:8px;font-weight:600}
+.metric-strip-6 .metric b{display:block;font-size:17px;color:#2175df;font-weight:800;line-height:1.4}
+.metric-strip-6 .metric span{display:block;font-size:12px;color:#7d8694;margin-top:4px}
+@media(max-width:960px){
+  .metric-strip-6{grid-template-columns:none!important}
+}
+@media(max-width:600px){
+  .metric-strip-6{display:flex!important;flex-wrap:nowrap!important;overflow-x:auto!important;scroll-snap-type:x mandatory;padding:2px 16px 12px;margin-left:-16px;margin-right:-16px;scrollbar-width:none}
+  .metric-strip-6::-webkit-scrollbar{display:none}
+  .metric-strip-6 .metric{flex:0 0 auto;width:44vw;max-width:180px;scroll-snap-align:start}
+}
+
+
+/* 合并后的浅红说明框 */
+.source-box.source-red{background:#fff5f5!important;border:1px solid #ffdada!important;border-radius:14px;padding:18px 22px;display:block!important}
+.source-box.source-red .sb-warn{color:#d13a3a;font-weight:700;font-size:13.5px;margin:0 0 8px}
+.source-box.source-red .sb-ref{color:#8a6a6a;font-size:12.5px;line-height:1.75;margin:0}
+.source-box.source-red a{color:#c0392b;text-decoration:underline;text-underline-offset:3px}
+
+
+/* ==== 本轮：分段标题 + 表格首列醒目 ==== */
+.sub-head{text-align:center;max-width:680px;margin:64px auto 30px}
+.sub-head h3{font-size:28px;font-weight:800;color:#13233d;letter-spacing:-.3px}
+.sub-head p{color:#6a7482;font-size:15px;margin-top:10px;line-height:1.8}
+table.cmp th:first-child{background:#e8f1fd!important;color:#1c3d6e!important;font-weight:800!important}
+table.cmp td:first-child{background:#eef4fd!important;color:#1c3d6e!important;font-weight:750!important}
+table.cmp tbody tr:hover td:first-child{background:#e4eefb!important}
+.m-table-scroll table.cmp th:first-child,.m-table-scroll table.cmp td:first-child{background:#eef4fd!important}
+.m-table-scroll table.cmp thead th:first-child{background:#e8f1fd!important;z-index:3}
+
+
+/* 企业适配区：类型卡 + 居中跳转入口 */
+#fit .card{min-height:230px}
+.fit-entry{max-width:640px;margin:34px auto 0;background:#fff;border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);padding:36px 32px;text-align:center}
+.fit-entry-head h3{font-size:22px;color:#131c28;font-weight:800;margin-bottom:10px}
+.fit-entry-head p{font-size:14.5px;color:#6a7482;line-height:1.85;margin-bottom:22px}
+@media(max-width:640px){.fit-entry{padding:24px 18px;margin-top:22px}.fit-entry-head h3{font-size:19px}#fit .card{min-height:0}}
+
+
+/* fit 区横幅：与 cta-band 同宽同款 */
+#fit .cta-band{margin-top:36px}
 

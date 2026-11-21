@@ -2,12 +2,10 @@
 <html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>常见问题 · 安全、兼容与服务 | WorkBuddy</title>
 <meta name="description" content="WorkBuddy 企业版在安全合规、系统兼容、企业资产与服务支持方面的常见问题。">
-<link rel="stylesheet" href="style.css"></head><body>
-<header class="nav"><div class="wrap nav-inner">
-<a class="brand" href="index.html" aria-label="WorkBuddy 首页"><img src="assets/wb-logo.svg" alt="WorkBuddy"></a>
-<nav class="nav-links"><a href="index.html">了解 WorkBuddy</a><a href="pricing.html">价格与选型</a><a class="active" href="faq.html">常见问题</a></nav>
-<div class="nav-cta" style="margin-left:auto"><a class="btn btn-primary" href="buy.html">立即购买</a></div>
-</div></header>
+<link rel="stylesheet" href="style.css?v=20261122c"></head><body>
+<header class="nav"><div class="wrap nav-inner"><a class="brand" href="index.html" aria-label="WorkBuddy 首页"><img src="assets/wb-logo.svg" alt="WorkBuddy"></a><nav class="nav-links"><a href="index.html">了解 WorkBuddy</a><a href="pricing.html">价格与选型</a><a href="ongoing.html">落地陪跑</a><a class="active" href="faq.html">常见问题</a></nav><div class="nav-cta"><a class="btn btn-primary" href="buy.html">立即购买</a></div><button class="nav-toggle" aria-label="打开菜单" onclick="toggleMobileMenu()"><span></span><span></span><span></span></button></div></header>
+<div class="mobile-menu" id="mobileMenu"><a href="index.html">了解 WorkBuddy</a><a href="pricing.html">价格与选型</a><a href="ongoing.html">落地陪跑</a><a class="active" href="faq.html">常见问题</a><a class="mm-cta" href="buy.html">立即购买</a></div>
+<script>function toggleMobileMenu(){var m=document.getElementById('mobileMenu');var b=document.querySelector('.nav-toggle');m.classList.toggle('open');b.classList.toggle('open');}document.addEventListener('click',function(e){var m=document.getElementById('mobileMenu');var b=document.querySelector('.nav-toggle');if(m.classList.contains('open')&&!m.contains(e.target)&&!b.contains(e.target)){m.classList.remove('open');b.classList.remove('open');}});</script>
 
 <section class="page-hero"><div class="wrap"><div class="kicker" style="color:var(--blue);font-weight:700;margin-bottom:10px">常见问题</div><h1>安全、兼容与服务支持</h1><p>产品能力和业务场景问题见「了解 WorkBuddy」页；价格、套件和下单问题见「价格与选型」页。本页保留其他企业采购与使用中需要了解的问题。</p></div></section>
 
@@ -40,7 +38,7 @@
 <div class="contact-pop"><b>获取购买方案与报价</b><img src="assets/wechat-contact.jpg" alt="企业微信咨询二维码"><span>企业微信扫码沟通</span></div>
 </aside>
 
-<footer><div class="wrap"><div class="cols"><div><a class="brand" href="index.html"><img src="assets/wb-logo.svg" alt="WorkBuddy" style="width:96px;height:32px"></a><p style="color:#9fb0c4;font-size:13.5px;margin-top:12px">企业级 AI 办公工作台，支持任务执行、企业资产沉淀与组织治理。</p></div><div><h4>网站导航</h4><a href="index.html">了解 WorkBuddy</a><a href="pricing.html">价格与选型</a><a href="buy.html">立即购买</a><a href="faq.html">常见问题</a></div><div><h4>官方资料</h4><a href="https://cloud.tencent.com/product/workbuddy" target="_blank" rel="noopener">产品官网</a><a href="https://www.workbuddy.cn/docs/enterprise/215235277250076672" target="_blank" rel="noopener">官方购买文档</a></div><div><h4>购买咨询</h4><a href="buy.html#contact">扫码沟通方案</a><a href="pricing.html#suite">查看套件对比</a></div></div><div class="note">本网站用于产品信息与购买选型参考。价格、权益与产品能力以 WorkBuddy / 腾讯云官方最新页面和正式合同为准。</div></div></footer>
+<footer><div class="wrap"><div class="cols"><div><a class="brand" href="index.html"><img src="assets/wb-logo.svg" alt="WorkBuddy" style="width:96px;height:32px"></a><p style="color:#9fb0c4;font-size:13.5px;margin-top:12px">企业级 AI 办公工作台，支持任务执行、企业资产沉淀与组织治理。</p></div><div><h4>网站导航</h4><a href="index.html">了解 WorkBuddy</a><a href="pricing.html">价格与选型</a><a href="ongoing.html">落地陪跑</a><a href="faq.html">常见问题</a></div><div><h4>官方资料</h4><a href="https://cloud.tencent.com/product/workbuddy" target="_blank" rel="noopener">产品官网</a><a href="https://www.workbuddy.cn/docs/enterprise/215235277250076672" target="_blank" rel="noopener">官方购买文档</a></div><div><h4>购买咨询</h4><a href="buy.html#contact">扫码沟通方案</a><a href="pricing.html#suite">查看套件对比</a></div></div><div class="note"><div class="note-title">重要声明</div>1. 本网站不属于 WorkBuddy 官方／腾讯公司。本站由腾讯云授权合作伙伴为推广 WorkBuddy 而建立。<br>2. 本网站仅供购买 WorkBuddy 及相关服务时参考。WorkBuddy 的销售价格、包含权益与产品能力以 WorkBuddy / 腾讯云官方最新页面和正式合同为准。</div></div></footer>
 <script>
 (function(){var input=document.getElementById("faqSearch"),items=Array.prototype.slice.call(document.querySelectorAll("[data-faq]")),heads=Array.prototype.slice.call(document.querySelectorAll("[data-heading]")),total=document.getElementById("faqTotal"),none=document.getElementById("noResult");function run(){var k=input.value.trim().toLowerCase(),n=0;items.forEach(function(x){var show=!k||x.textContent.toLowerCase().indexOf(k)>=0;x.style.display=show?"":"none";if(show)n++;});heads.forEach(function(h){var el=h.nextElementSibling,visible=false;while(el&&!el.hasAttribute("data-heading")){if(el.hasAttribute("data-faq")&&el.style.display!=="none")visible=true;el=el.nextElementSibling;}h.style.display=visible?"":"none";});total.textContent="当前显示 "+n+" 条问题";none.style.display=n?"none":"";}input.addEventListener("input",run);run();})();
 </script></body></html>
