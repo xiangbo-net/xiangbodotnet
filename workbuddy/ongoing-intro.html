@@ -8,23 +8,30 @@
 <link data-page-node-id="Vz3b9z55RJRpl0s0575qYt" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
 <style data-page-node-id="itNNP2YcGPp3bVRnXTSuNL" data-pnid-children="l8st5STd9LKWqKEBTMO4EJ">
   :root{
-    /* 仅三种主色：克莱红 / 孔雀青 / 橘色；其余为中性色 */
-    --claret:#7A0C30;
-    --teal:#0D7680;
-    --mandarin:#FF8833;
-    --mandarin-ink:#C25E00;
-    --slate:#262A33;
-    --paper:#FFF1E5;
-    --card:#FFFDF9;
-    --wheat:#F2DFCE;
-    --ink:#262A33;
-    --ink-soft:#6B6059;
-    --line:#EBD9C8;
+    /* 暖纸编辑主题：森林绿 / 暖金 / 陶土锈；其余为中性色 */
+    --claret:#193C35;
+    --teal:#0F5A4F;
+    --mandarin:#E9C46A;
+    --mandarin-ink:#A35436;
+    --slate:#193C35;
+    --paper:#F5F2EA;
+    --card:#FCFAF6;
+    --wheat:#E7EDD9;
+    --ink:#193C35;
+    --ink-soft:#59675E;
+    --line:#E0DACA;
     --shadow:0 10px 30px rgba(96,64,35,.10);
-    --radius:14px;
+    --radius:6px;
     --serif:"Financier Display","Source Serif 4",Georgia,"Songti SC","Noto Serif SC",serif;
     --sans:"MetricWeb","IBM Plex Sans","Helvetica Neue",Arial,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
   }
+  /* 主题修正：--mandarin 已改为浅金，凡浅金底上一律禁用白字 */
+  .stage-tab[data-stage="2"].active .st-name{color:var(--slate);}
+  .stage-tab[data-stage="2"].active .st-line{color:rgba(25,60,53,.85);}
+  .stage-tab[data-stage="2"].active .st-month{color:var(--mandarin-ink);}
+  .tl-item:nth-child(3) .tl-dot{color:var(--slate);}
+  .dcard:nth-child(2) .d-stage{color:var(--slate);}
+  .blocks .blk:nth-child(3) .blk-badge{color:var(--slate);}
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
   body{
