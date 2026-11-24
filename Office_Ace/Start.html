@@ -46,18 +46,6 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:15
 .brand-name{font-family:var(--serif);font-size:17px;font-weight:800;letter-spacing:.02em;line-height:1.2}
 .brand-sub{font-size:11.5px;color:var(--text-dim);letter-spacing:.14em;margin-top:3px}
 
-/* 进度环 */
-.prog-wrap{display:flex;align-items:center;gap:13px;margin-top:17px;padding:12px 13px;
-  background:var(--bg-soft);border:1px solid var(--bg-soft-2);border-radius:11px}
-.ring{position:relative;width:46px;height:46px;flex:none}
-.ring svg{transform:rotate(-90deg);display:block}
-.ring-txt{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-  font-size:12.5px;font-weight:800;color:var(--brand-deep);font-family:var(--sans)}
-.prog-meta{flex:1;min-width:0}
-.prog-label{font-size:11px;color:var(--text-dim);letter-spacing:.08em}
-.prog-num{font-size:13px;font-weight:700;color:var(--text);margin-top:1px}
-.prog-num b{color:var(--brand-deep);font-size:15px}
-
 /* 目录 */
 .toc{flex:1;overflow-y:auto;padding:12px 0 24px}
 .toc-top{display:flex;align-items:center;justify-content:space-between;padding:10px 22px 8px;
@@ -414,17 +402,8 @@ a:hover{border-bottom-color:var(--brand)}
 .hero h1{font-size:44px}
 .hero-sub{max-width:none;font-size:15.5px}
 
-/* 顶部进度（放在 hero 右侧） */
 .hero-row{display:flex;align-items:flex-start;gap:30px;position:relative;z-index:2}
 .hero-main{flex:1;min-width:0}
-.hero-prog{display:flex;align-items:center;gap:13px;flex:none;padding:13px 18px;border-radius:13px;
-  background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.13)}
-.hero-prog .ring{width:54px;height:54px}
-.hero-prog .ring svg{width:54px;height:54px}
-.hero-prog .ring-txt{font-size:14px;color:#fff}
-.hero-prog .pl{font-size:11px;letter-spacing:.12em;color:rgba(255,255,255,.55);font-weight:700}
-.hero-prog .pn{font-size:14px;color:rgba(255,255,255,.9);margin-top:3px;font-weight:600}
-.hero-prog .pn b{color:#ffb48f;font-size:17px;font-weight:900}
 
 /* ============ Tabs ============ */
 .tabs{display:flex;gap:8px;margin:22px 0 0;overflow-x:auto;padding-bottom:2px;
@@ -505,7 +484,6 @@ a:hover{border-bottom-color:var(--brand)}
   .hero{margin:0 -24px 0;padding:32px 24px 28px}
   .hero h1{font-size:34px}
   .hero-row{flex-direction:column;gap:18px}
-  .hero-prog{align-self:stretch}
   .tab{flex:0 0 auto;min-width:auto}
   .tab .t{overflow:visible}
   .pane-h{flex-wrap:wrap;padding:18px 20px 15px}
@@ -539,21 +517,6 @@ a:hover{border-bottom-color:var(--brand)}
           <div class="hero-kicker">果办 OfficeAce 企业版 · 课前准备</div>
           <h1>上课前，<em>把这五件事做完</em></h1>
           <p class="hero-sub">装好果办、读完讲义、划出工作空间、跑通一个练习任务、填一份课前调查。</p>
-        </div>
-        <div class="hero-prog">
-          <div class="ring">
-            <svg width="54" height="54" viewBox="0 0 46 46">
-              <circle cx="23" cy="23" r="19" fill="none" stroke="rgba(255,255,255,.16)" stroke-width="5"/>
-              <circle id="ringFill" cx="23" cy="23" r="19" fill="none" stroke="#ff9a6e" stroke-width="5"
-                      stroke-linecap="round" stroke-dasharray="119.4" stroke-dashoffset="119.4"
-                      style="transition:stroke-dashoffset .5s ease"/>
-            </svg>
-            <div class="ring-txt" id="ringTxt">0%</div>
-          </div>
-          <div>
-            <div class="pl">准备进度</div>
-            <div class="pn">已看过 <b id="doneCount">0</b> / <span id="totalTask">5</span> 件</div>
-          </div>
         </div>
       </div>
     </div>
@@ -808,15 +771,17 @@ a:hover{border-bottom-color:var(--brand)}
 
   /* ---------- Tab 切换 ---------- */
   var current = 't1';
-  function activate(id, push, doScroll){
+  function activate(id, push, toTop){
     if(TABS.indexOf(id) < 0) return;
     current = id;
     $$('.tab').forEach(function(b){ b.classList.toggle('on', b.getAttribute('data-tab') === id); });
     $$('.tabpane').forEach(function(p){ p.classList.toggle('on', p.getAttribute('data-tab') === id); });
     if(push && history.replaceState) history.replaceState(null, '', '#' + id);
-    if(seen.indexOf(id) < 0){ seen.push(id); save(); refresh(); }
-    var pane = $('#p-' + id);
-    if(doScroll && pane) pane.scrollIntoView({ block: 'start' });
+    /* 「看过」只做后台记录，不在页面上显示（页内进度环已移除），数据保留供后续使用 */
+    if(seen.indexOf(id) < 0){ seen.push(id); save(); }
+    /* 统一从页首显示：切换后回到页面顶部，五个 Tab 的起始位置完全一致。
+       （旧实现用 pane.scrollIntoView，面板高度不同 → 文档总高不同 → 矮面板滚不到底就停在半空，位置各异） */
+    if(toTop) window.scrollTo({ top: 0, behavior: 'auto' });
   }
   $$('.tab').forEach(function(b){
     b.addEventListener('click', function(){ activate(b.getAttribute('data-tab'), true, true); });
@@ -834,16 +799,6 @@ a:hover{border-bottom-color:var(--brand)}
     if(n < 0 || n >= TABS.length) return;
     activate(TABS[n], true, true);
   });
-
-  /* ---------- 刷新 ---------- */
-  function refresh(){
-    var pct = Math.round(seen.length / TABS.length * 100);
-    $('#doneCount').textContent = seen.length;
-    $('#totalTask').textContent = TABS.length;
-    $('#ringTxt').textContent = pct + '%';
-    var C = 2 * Math.PI * 19;
-    $('#ringFill').style.strokeDashoffset = (C * (1 - seen.length / TABS.length)).toFixed(1);
-  }
 
   /* ---------- 复制 ---------- */
   $$('.copy-btn[data-copy]').forEach(function(b){
@@ -875,14 +830,14 @@ a:hover{border-bottom-color:var(--brand)}
   /* ---------- 回到顶部 ---------- */
   var totop = $('#totop');
   window.addEventListener('scroll', function(){
-    totop.style.display = window.scrollY > 700 ? 'flex' : 'none';
+    /* 阈值取 100：本页内容较短，最大可滚动距离仅 30–637px，原 700 的阈值让按钮永远不出现 */
+    totop.style.display = window.scrollY > 100 ? 'flex' : 'none';
   });
   totop.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
 
   /* ---------- 初始 ---------- */
   var hash = (location.hash || '').replace('#','');
   activate(TABS.indexOf(hash) >= 0 ? hash : 't1', false, false);
-  refresh();
 })();
 </script>
 </body>
