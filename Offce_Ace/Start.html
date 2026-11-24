@@ -438,11 +438,7 @@ a:hover{border-bottom-color:var(--brand)}
   display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex:none;transition:.16s}
 .tab.on{background:var(--brand);border-color:var(--brand);color:#fff;box-shadow:0 3px 12px rgba(232,102,63,.24)}
 .tab.on .n{background:rgba(255,255,255,.25);color:#fff}
-.tab.seen .n{background:var(--success);color:#fff}
-.tab.on.seen .n{background:rgba(255,255,255,.32);color:#fff}
 .tab .t{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis}
-.tab .ck{font-size:11px;color:var(--success);font-weight:900;flex:none}
-.tab.on .ck{color:rgba(255,255,255,.9)}
 
 /* 面板 */
 .tabpane{display:none;background:var(--bg-elev);border:1px solid var(--border);border-radius:14px;
@@ -565,11 +561,11 @@ a:hover{border-bottom-color:var(--brand)}
 
   <!-- Tabs -->
   <nav class="tabs" id="tabs" role="tablist">
-    <button class="tab on" data-tab="t1" role="tab"><span class="n">1</span><span class="t">下载安装果办</span><span class="ck"></span></button>
-    <button class="tab" data-tab="t2" role="tab"><span class="n">2</span><span class="t">学完入门讲义</span><span class="ck"></span></button>
-    <button class="tab" data-tab="t3" role="tab"><span class="n">3</span><span class="t">创建工作空间</span><span class="ck"></span></button>
-    <button class="tab" data-tab="t4" role="tab"><span class="n">4</span><span class="t">完成练习任务</span><span class="ck"></span></button>
-    <button class="tab" data-tab="t5" role="tab"><span class="n">5</span><span class="t">填写课前调查</span><span class="ck"></span></button>
+    <button class="tab on" data-tab="t1" role="tab"><span class="n">1</span><span class="t">下载安装果办</span></button>
+    <button class="tab" data-tab="t2" role="tab"><span class="n">2</span><span class="t">学完入门讲义</span></button>
+    <button class="tab" data-tab="t3" role="tab"><span class="n">3</span><span class="t">创建工作空间</span></button>
+    <button class="tab" data-tab="t4" role="tab"><span class="n">4</span><span class="t">完成练习任务</span></button>
+    <button class="tab" data-tab="t5" role="tab"><span class="n">5</span><span class="t">填写课前调查</span></button>
   </nav>
 
   <!-- 面板 1 -->
@@ -847,12 +843,6 @@ a:hover{border-bottom-color:var(--brand)}
     $('#ringTxt').textContent = pct + '%';
     var C = 2 * Math.PI * 19;
     $('#ringFill').style.strokeDashoffset = (C * (1 - seen.length / TABS.length)).toFixed(1);
-    $$('.tab').forEach(function(b){
-      var id = b.getAttribute('data-tab');
-      var on = seen.indexOf(id) >= 0;
-      b.classList.toggle('seen', on);
-      b.querySelector('.ck').textContent = on ? '✓' : '';
-    });
   }
 
   /* ---------- 复制 ---------- */
